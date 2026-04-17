@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Roster – WordPress Staff Rostering Plugin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; }
+    header { background: #1e3a5f; color: white; padding: 60px 20px; text-align: center; }
+    header h1 { font-size: 2.5rem; margin-bottom: 12px; }
+    header p { font-size: 1.2rem; opacity: 0.85; max-width: 600px; margin: 0 auto 28px; }
+    .btn-primary { background: #f59e0b; color: #1a1a1a; padding: 14px 32px; border-radius: 6px;
+      text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; }
+    .btn-secondary { background: transparent; color: white; padding: 14px 32px; border-radius: 6px;
+      text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid white;
+      display: inline-block; margin-left: 12px; }
+    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
+    h2 { font-size: 1.8rem; margin-bottom: 24px; color: #1e3a5f; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+    .feature-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; }
+    .feature-card h3 { margin-bottom: 8px; color: #1e3a5f; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+    th { background: #f3f4f6; font-weight: 600; }
+    td:last-child, th:last-child { text-align: center; }
+    .check { color: #16a34a; font-weight: 700; }
+    .cross { color: #dc2626; }
+    .pricing { background: #f9fafb; padding: 60px 20px; text-align: center; }
+    .pricing h2 { color: #1e3a5f; margin-bottom: 8px; }
+    .pricing-cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+    .pricing-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px;
+      padding: 32px; width: 260px; }
+    .pricing-card.featured { border-color: #1e3a5f; box-shadow: 0 4px 20px rgba(30,58,95,0.15); }
+    .pricing-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .price { font-size: 2rem; font-weight: 700; color: #1e3a5f; margin: 12px 0; }
+    .price span { font-size: 1rem; font-weight: 400; color: #6b7280; }
+    .pricing-card ul { list-style: none; text-align: left; margin: 16px 0 24px; }
+    .pricing-card ul li { padding: 6px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.95rem; }
+    .btn-plan { display: block; background: #1e3a5f; color: white; padding: 12px;
+      border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .btn-plan.alt { background: #f59e0b; color: #1a1a1a; }
+    footer { background: #1a1a1a; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.9rem; }
+    footer a { color: #9ca3af; }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header>
+  <h1>Employee Roster</h1>
+  <p>The complete staff rostering plugin for WordPress. Schedule shifts, track attendance, and manage leave — all inside your WP Admin.</p>
+  <a href="YOUR_FREEMIUS_CHECKOUT_URL" class="btn-primary">Get Pro – From $79/yr</a>
+  <a href="YOUR_FREE_DOWNLOAD_URL" class="btn-secondary">Download Free</a>
+</header>
+
+<!-- FEATURES -->
+<section>
+  <h2>Everything you need to manage your team</h2>
+  <div class="features">
+    <div class="feature-card">
+      <h3>📅 Shift Scheduling</h3>
+      <p>Build weekly rosters with drag-and-drop simplicity. Assign staff to shifts in seconds.</p>
+    </div>
+    <div class="feature-card">
+      <h3>⏱ Clock In / Clock Out</h3>
+      <p>Staff clock in directly from the WordPress dashboard. Track actual hours worked automatically.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🏖 Leave Management</h3>
+      <p>Employees submit leave requests, managers approve or reject — all within WP Admin.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📊 Manager Dashboard</h3>
+      <p>See your whole team at a glance. Monitor availability, upcoming shifts, and attendance records.</p>
+    </div>
+    <div class="feature-card">
+      <h3>🔒 Role-Based Access</h3>
+      <p>Separate views for Administrators, Managers, and Employees. Everyone sees only what they need.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📱 Mobile Friendly</h3>
+      <p>Fully responsive. Staff can check their roster and clock in from any device.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FREE VS PRO TABLE -->
+<section>
+  <h2>Free vs Pro</h2>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Shift scheduling</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Up to 5 employees</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Unlimited employees</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      <tr><td>Clock in / Clock out</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      <tr><td>Leave management</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      <tr><td>Availability management</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      <tr><td>Manager dashboard</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      <tr><td>Attendance reports</td><td class="cross">✗</td><td class="check">✓</td></tr>
+      <tr><td>Priority support</td><td class="cross">✗</td><td class="check">✓</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- PRICING -->
+<div class="pricing">
+  <h2>Simple, honest pricing</h2>
+  <p>Annual subscription. Cancel anytime. 14-day money-back guarantee.</p>
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h3>Single Site</h3>
+      <div class="price">$79 <span>/ year</span></div>
+      <ul>
+        <li>1 WordPress site</li>
+        <li>All Pro features</li>
+        <li>Email support</li>
+        <li>1 year of updates</li>
+      </ul>
+      <a href="YOUR_FREEMIUS_CHECKOUT_URL_SINGLE" class="btn-plan">Get Started</a>
+    </div>
+    <div class="pricing-card featured">
+      <h3>Agency</h3>
+      <div class="price">$149 <span>/ year</span></div>
+      <ul>
+        <li>Up to 5 sites</li>
+        <li>All Pro features</li>
+        <li>Priority support</li>
+        <li>1 year of updates</li>
+      </ul>
+      <a href="YOUR_FREEMIUS_CHECKOUT_URL_AGENCY" class="btn-plan alt">Most Popular</a>
+    </div>
+    <div class="pricing-card">
+      <h3>Unlimited</h3>
+      <div class="price">$249 <span>/ year</span></div>
+      <ul>
+        <li>Unlimited sites</li>
+        <li>All Pro features</li>
+        <li>Priority support</li>
+        <li>1 year of updates</li>
+      </ul>
+      <a href="YOUR_FREEMIUS_CHECKOUT_URL_UNLIMITED" class="btn-plan">Get Started</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>Employee Roster is an independent WordPress plugin. &nbsp;|&nbsp;
+  <a href="mailto:support@employeeroster.io">support@employeeroster.io</a> &nbsp;|&nbsp;
+  <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="/terms.html">Terms of Service</a>
+  </p>
+  <p style="margin-top:8px;">© 2026 EmployeeRoster.io. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
