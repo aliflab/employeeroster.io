@@ -5,156 +5,490 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Employee Roster – WordPress Staff Rostering Plugin</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; }
-    header { background: #1e3a5f; color: white; padding: 60px 20px; text-align: center; }
-    header h1 { font-size: 2.5rem; margin-bottom: 12px; }
-    header p { font-size: 1.2rem; opacity: 0.85; max-width: 600px; margin: 0 auto 28px; }
-    .btn-primary { background: #f59e0b; color: #1a1a1a; padding: 14px 32px; border-radius: 6px;
-      text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; }
-    .btn-secondary { background: transparent; color: white; padding: 14px 32px; border-radius: 6px;
-      text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid white;
-      display: inline-block; margin-left: 12px; }
-    section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
-    h2 { font-size: 1.8rem; margin-bottom: 24px; color: #1e3a5f; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-    .feature-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; }
-    .feature-card h3 { margin-bottom: 8px; color: #1e3a5f; }
-    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e5e7eb; }
-    th { background: #f3f4f6; font-weight: 600; }
-    td:last-child, th:last-child { text-align: center; }
-    .check { color: #16a34a; font-weight: 700; }
-    .cross { color: #dc2626; }
-    .pricing { background: #f9fafb; padding: 60px 20px; text-align: center; }
-    .pricing h2 { color: #1e3a5f; margin-bottom: 8px; }
-    .pricing-cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
-    .pricing-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px;
-      padding: 32px; width: 260px; }
-    .pricing-card.featured { border-color: #1e3a5f; box-shadow: 0 4px 20px rgba(30,58,95,0.15); }
-    .pricing-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
-    .price { font-size: 2rem; font-weight: 700; color: #1e3a5f; margin: 12px 0; }
-    .price span { font-size: 1rem; font-weight: 400; color: #6b7280; }
-    .pricing-card ul { list-style: none; text-align: left; margin: 16px 0 24px; }
-    .pricing-card ul li { padding: 6px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.95rem; }
-    .btn-plan { display: block; background: #1e3a5f; color: white; padding: 12px;
-      border-radius: 6px; text-decoration: none; font-weight: 600; }
-    .btn-plan.alt { background: #f59e0b; color: #1a1a1a; }
-    footer { background: #1a1a1a; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.9rem; }
-    footer a { color: #9ca3af; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1e3a5f;
+      --navy-d: #152d4a;
+      --amber:  #f59e0b;
+      --amber-d:#d97706;
+      --green:  #16a34a;
+      --red:    #dc2626;
+      --gray-50: #f9fafb;
+      --gray-100:#f3f4f6;
+      --gray-200:#e5e7eb;
+      --gray-400:#9ca3af;
+      --gray-500:#6b7280;
+      --gray-700:#374151;
+      --gray-900:#111827;
+      --radius:  8px;
+      --shadow:  0 4px 24px rgba(30,58,95,.12);
+    }
+
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-900); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy); padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+    .nav-brand { color: white; font-weight: 700; font-size: 1.1rem; text-decoration: none; letter-spacing: -.3px; }
+    .nav-links { display: flex; gap: 8px; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; padding: 6px 12px; border-radius: 6px; transition: color .15s; }
+    .nav-links a:hover { color: white; }
+    .nav-cta { background: var(--amber); color: var(--gray-900) !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 6px !important; }
+    .nav-cta:hover { background: var(--amber-d); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4f7c 100%);
+      color: white; padding: 96px 24px 80px; text-align: center;
+    }
+    .hero-badge {
+      display: inline-block; background: rgba(245,158,11,.15); color: var(--amber);
+      border: 1px solid rgba(245,158,11,.3); font-size: .8rem; font-weight: 600;
+      letter-spacing: .5px; text-transform: uppercase; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -.5px; }
+    .hero h1 span { color: var(--amber); }
+    .hero p { font-size: 1.15rem; opacity: .85; max-width: 580px; margin: 0 auto 36px; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--amber); color: var(--gray-900); padding: 14px 32px;
+      border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: 1rem;
+      display: inline-block; transition: background .15s, transform .1s;
+    }
+    .btn-primary:hover { background: var(--amber-d); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: white; padding: 14px 32px; border-radius: var(--radius);
+      text-decoration: none; font-weight: 600; font-size: 1rem; border: 2px solid rgba(255,255,255,.4);
+      display: inline-block; transition: border-color .15s;
+    }
+    .btn-outline:hover { border-color: white; }
+    .hero-sub { margin-top: 24px; font-size: .85rem; opacity: .55; }
+
+    /* ── TRUST BAR ── */
+    .trust {
+      background: var(--gray-50); border-bottom: 1px solid var(--gray-200);
+      padding: 20px 24px; display: flex; gap: 32px; justify-content: center;
+      flex-wrap: wrap; align-items: center;
+    }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: .9rem; color: var(--gray-500); font-weight: 500; }
+    .trust-item strong { color: var(--gray-700); }
+
+    /* ── SECTIONS ── */
+    .section { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+    .section-center { text-align: center; }
+    .section-label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--amber); margin-bottom: 10px; }
+    h2.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 14px; letter-spacing: -.3px; }
+    .section-sub { font-size: 1.05rem; color: var(--gray-500); max-width: 560px; margin: 0 auto 52px; }
+
+    /* ── FEATURES GRID ── */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .feature-card {
+      background: white; border: 1px solid var(--gray-200); border-radius: 12px;
+      padding: 28px; transition: box-shadow .2s, transform .2s;
+    }
+    .feature-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .feature-icon { font-size: 2rem; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .feature-card p { font-size: .92rem; color: var(--gray-500); line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .how-bg { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; counter-reset: steps; }
+    .step { padding: 32px 28px; position: relative; }
+    .step + .step::before {
+      content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+      height: 40%; width: 1px; background: var(--gray-200);
+    }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: white;
+      font-weight: 800; font-size: .95rem; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .step p { font-size: .88rem; color: var(--gray-500); }
+
+    /* ── COMPARISON TABLE ── */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    thead th { background: var(--navy); color: white; padding: 14px 16px; text-align: center; font-weight: 600; font-size: .88rem; }
+    thead th:first-child { text-align: left; border-radius: 8px 0 0 0; }
+    thead th:last-child { border-radius: 0 8px 0 0; }
+    tbody tr:nth-child(even) td { background: var(--gray-50); }
+    tbody td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); color: var(--gray-700); }
+    tbody td:not(:first-child) { text-align: center; }
+    tbody tr:last-child td { border-bottom: none; }
+    .check { color: var(--green); font-size: 1.1rem; }
+    .cross { color: var(--red); font-size: 1rem; opacity: .6; }
+    .plan-col { font-weight: 700; font-size: .8rem; }
+    .plan-col.starter { color: #0284c7; }
+    .plan-col.pro { color: #7c3aed; }
+    .plan-col.biz { color: var(--amber-d); }
+    .cell-note { font-size: .78rem; color: var(--gray-500); display: block; }
+
+    /* ── PRICING ── */
+    .pricing-bg { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+    .pricing-cards { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+    .pricing-card {
+      background: white; border: 1px solid var(--gray-200); border-radius: 14px;
+      padding: 32px 28px; width: 220px; display: flex; flex-direction: column;
+    }
+    .pricing-card.featured { border-color: #7c3aed; box-shadow: 0 4px 28px rgba(124,58,237,.15); position: relative; }
+    .badge-popular {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: #7c3aed; color: white; font-size: .72rem; font-weight: 700;
+      padding: 4px 14px; border-radius: 20px; white-space: nowrap; letter-spacing: .4px;
+    }
+    .pricing-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .pricing-tier-desc { font-size: .8rem; color: var(--gray-500); margin-bottom: 16px; }
+    .price { font-size: 2.2rem; font-weight: 800; color: var(--navy); line-height: 1; }
+    .price sup { font-size: 1rem; font-weight: 600; vertical-align: top; margin-top: 6px; }
+    .price-period { font-size: .82rem; color: var(--gray-500); margin: 4px 0 20px; }
+    .pricing-card ul { list-style: none; flex: 1; margin-bottom: 24px; }
+    .pricing-card ul li { padding: 7px 0; border-bottom: 1px solid var(--gray-100); font-size: .85rem; color: var(--gray-700); display: grid; grid-template-columns: 16px 1fr; gap: 8px; align-items: start; line-height: 1.5; }
+    .pricing-card ul li::before { content: '✓'; color: var(--green); font-weight: 700; line-height: 1.5; }
+    .btn-plan {
+      display: block; text-align: center; padding: 12px;
+      border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: .9rem;
+      transition: opacity .15s;
+    }
+    .btn-plan:hover { opacity: .85; }
+    .btn-plan-navy { background: var(--navy); color: white; }
+    .btn-plan-amber { background: var(--amber); color: var(--gray-900); }
+    .btn-plan-purple { background: #7c3aed; color: white; }
+    .btn-plan-outline { border: 2px solid var(--gray-200); color: var(--gray-700); }
+    .pricing-guarantee { text-align: center; margin-top: 32px; font-size: .88rem; color: var(--gray-500); }
+    .pricing-guarantee strong { color: var(--gray-700); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--gray-900); color: var(--gray-400); text-align: center; padding: 36px 24px; font-size: .88rem; }
+    footer a { color: var(--gray-400); text-decoration: none; }
+    footer a:hover { color: white; }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .step + .step::before { display: none; }
+      .pricing-card { width: 100%; max-width: 320px; }
+    }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Employee Roster</a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#plans">Plans</a>
+    <a href="#pricing">Pricing</a>
+    <a href="YOUR_FREE_DOWNLOAD_URL" class="nav-cta">Get Started Free</a>
+  </div>
+</nav>
+
 <!-- HERO -->
-<header>
-  <h1>Employee Roster</h1>
-  <p>The complete staff rostering plugin for WordPress. Schedule shifts, track attendance, and manage leave — all inside your WP Admin.</p>
-  <a href="YOUR_FREEMIUS_CHECKOUT_URL" class="btn-primary">Get Pro – From $79/yr</a>
-  <a href="YOUR_FREE_DOWNLOAD_URL" class="btn-secondary">Download Free</a>
-</header>
+<div class="hero">
+  <div class="hero-badge">WordPress Plugin</div>
+  <h1>Staff rostering that lives<br><span>inside your WordPress.</span></h1>
+  <p>Schedule shifts, track attendance, manage leave, and run payroll — all from your WP Admin. Your data, your server, no SaaS fees.</p>
+  <div class="hero-btns">
+    <a href="YOUR_FREEMIUS_CHECKOUT_URL" class="btn-primary">Get Pro</a>
+    <a href="YOUR_FREE_DOWNLOAD_URL" class="btn-outline">Download Free Version</a>
+  </div>
+  <p class="hero-sub">No per-user fees &nbsp;·&nbsp; Cancel anytime</p>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-item">🔒 <strong>Self-hosted</strong> — your data stays on your server</div>
+  <div class="trust-item">⚡ <strong>No SaaS dependency</strong> — works offline</div>
+  <div class="trust-item">🌐 <strong>WordPress 5.8+</strong> compatible</div>
+  <div class="trust-item">💳 <strong>Money-back</strong> guarantee</div>
+</div>
 
 <!-- FEATURES -->
-<section>
-  <h2>Everything you need to manage your team</h2>
-  <div class="features">
-    <div class="feature-card">
-      <h3>📅 Shift Scheduling</h3>
-      <p>Build weekly rosters with drag-and-drop simplicity. Assign staff to shifts in seconds.</p>
+<div id="features">
+  <div class="section">
+    <div class="section-center">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything your team needs, nothing they don't</h2>
+      <p class="section-sub">A complete rostering system built for WordPress — no third-party accounts, no monthly per-seat costs.</p>
     </div>
-    <div class="feature-card">
-      <h3>⏱ Clock In / Clock Out</h3>
-      <p>Staff clock in directly from the WordPress dashboard. Track actual hours worked automatically.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🏖 Leave Management</h3>
-      <p>Employees submit leave requests, managers approve or reject — all within WP Admin.</p>
-    </div>
-    <div class="feature-card">
-      <h3>📊 Manager Dashboard</h3>
-      <p>See your whole team at a glance. Monitor availability, upcoming shifts, and attendance records.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🔒 Role-Based Access</h3>
-      <p>Separate views for Administrators, Managers, and Employees. Everyone sees only what they need.</p>
-    </div>
-    <div class="feature-card">
-      <h3>📱 Mobile Friendly</h3>
-      <p>Fully responsive. Staff can check their roster and clock in from any device.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>Shift Scheduling</h3>
+        <p>Create shifts with direct assignment or open slots. View your team in weekly roster or monthly calendar. Drag-and-drop simplicity from your WP Admin.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⏱</div>
+        <h3>Clock In / Clock Out</h3>
+        <p>Staff clock in from the WordPress dashboard or the frontend portal. Break tracking and shift linking included. One active session per user enforced.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏖</div>
+        <h3>Leave Management</h3>
+        <p>Employees submit annual or sick leave requests. Managers approve or decline. Optional leave balance tracking with per-job-type entitlements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Timesheets &amp; Payroll</h3>
+        <p>Weekly summaries per employee with hours, pay rate calculations, optional tax, and daily labour budget tracking against a configurable target.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <h3>Shift Swap Requests</h3>
+        <p>Employees request swaps between each other. Managers review and approve — assignments update automatically on approval.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📆</div>
+        <h3>Staff Availability</h3>
+        <p>Each employee sets their weekly recurring availability. Availability hints appear inside the shift assignment modal so managers avoid conflicts instantly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✉️</div>
+        <h3>Email Notifications</h3>
+        <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. No HTML templates to break.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Frontend Employee Portal</h3>
+        <p>Five shortcode-powered pages let staff check shifts, clock in, request leave, and set availability without ever touching WP Admin.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Role-Based Access</h3>
+        <p>Separate roles for Managers, Supervisors, and Employees. Profile Mode blocks employee WordPress logins entirely while email notifications keep working.</p>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- FREE VS PRO TABLE -->
-<section>
-  <h2>Free vs Pro</h2>
-  <table>
-    <thead>
-      <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Shift scheduling</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>Up to 5 employees</td><td class="check">✓</td><td class="check">✓</td></tr>
-      <tr><td>Unlimited employees</td><td class="cross">✗</td><td class="check">✓</td></tr>
-      <tr><td>Clock in / Clock out</td><td class="cross">✗</td><td class="check">✓</td></tr>
-      <tr><td>Leave management</td><td class="cross">✗</td><td class="check">✓</td></tr>
-      <tr><td>Availability management</td><td class="cross">✗</td><td class="check">✓</td></tr>
-      <tr><td>Manager dashboard</td><td class="cross">✗</td><td class="check">✓</td></tr>
-      <tr><td>Attendance reports</td><td class="cross">✗</td><td class="check">✓</td></tr>
-      <tr><td>Priority support</td><td class="cross">✗</td><td class="check">✓</td></tr>
-    </tbody>
-  </table>
-</section>
+<!-- HOW IT WORKS -->
+<div class="how-bg">
+  <div class="section">
+    <div class="section-center">
+      <div class="section-label">Setup</div>
+      <h2 class="section-title">Up and running in minutes</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Install &amp; Activate</h3>
+        <p>Upload to <code>/wp-content/plugins/</code> and activate. 7 database tables and 3 custom roles are created automatically.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Configure</h3>
+        <p>Add your departments, locations, and pay settings from <strong>Employee Roster &gt; Settings</strong>.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Add Staff</h3>
+        <p>Create staff accounts with job type, pay rate, and role. Welcome emails with login links are sent automatically.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Build the Roster</h3>
+        <p>Create shifts, assign employees, and publish. Staff see their schedules immediately — in WP Admin or the frontend portal.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PLAN COMPARISON -->
+<div id="plans">
+  <div class="section">
+    <div class="section-center">
+      <div class="section-label">Plan Comparison</div>
+      <h2 class="section-title">Compare plans</h2>
+      <p class="section-sub">Free-plan users see the full UI — locked features show an upgrade prompt, never a broken screen.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free</th>
+            <th class="plan-col starter">Starter</th>
+            <th class="plan-col pro">Professional</th>
+            <th class="plan-col biz">Business</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Active shifts</td>
+            <td><span class="cell-note">Up to 15</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
+          </tr>
+          <tr>
+            <td>Staff accounts</td>
+            <td><span class="cell-note">5 employees, 1 manager</span></td>
+            <td><span class="cell-note">Up to 3 managers</span></td>
+            <td><span class="cell-note">Unlimited managers</span></td>
+            <td><span class="cell-note">Unlimited managers</span></td>
+          </tr>
+          <tr>
+            <td>WordPress sites</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td><strong>5</strong></td>
+          </tr>
+          <tr>
+            <td>Day roster view</td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Weekly roster view</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Monthly calendar view</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Attendance history</td>
+            <td><span class="cell-note">Last 7 days</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Full history</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Full history</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Full history</span></td>
+          </tr>
+          <tr>
+            <td>Leave approval workflow</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Email notifications</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>CSV export (timesheets)</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>PDF export</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <!-- PRICING -->
-<div class="pricing">
-  <h2>Simple, honest pricing</h2>
-  <p>Annual subscription. Cancel anytime. 14-day money-back guarantee.</p>
-  <div class="pricing-cards">
-    <div class="pricing-card">
-      <h3>Single Site</h3>
-      <div class="price">$79 <span>/ year</span></div>
-      <ul>
-        <li>1 WordPress site</li>
-        <li>All Pro features</li>
-        <li>Email support</li>
-        <li>1 year of updates</li>
-      </ul>
-      <a href="YOUR_FREEMIUS_CHECKOUT_URL_SINGLE" class="btn-plan">Get Started</a>
+<div class="pricing-bg" id="pricing">
+  <div class="section section-center">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, honest pricing</h2>
+    <p class="section-sub">Annual licence. One-time payment per year — no per-user fees, ever.</p>
+    <div class="pricing-cards">
+
+      <div class="pricing-card">
+        <h3>Free</h3>
+        <p class="pricing-tier-desc">Get started at no cost</p>
+        <div class="price">$0</div>
+        <p class="price-period">forever</p>
+        <ul>
+          <li>1 WordPress site</li>
+          <li>Up to 5 employees</li>
+          <li>Up to 15 active shifts</li>
+          <li>Day roster view</li>
+          <li>7-day attendance history</li>
+        </ul>
+        <a href="YOUR_FREE_DOWNLOAD_URL" class="btn-plan btn-plan-outline">Download Free</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <p class="pricing-tier-desc">Small teams</p>
+        <div class="price"><sup>$</sup>99</div>
+        <p class="price-period">per year</p>
+        <ul>
+          <li>1 WordPress site</li>
+          <li>Up to 3 managers</li>
+          <li>Unlimited shifts</li>
+          <li>Weekly &amp; monthly views</li>
+          <li>Leave approval workflow</li>
+          <li>Email notifications</li>
+          <li>CSV export</li>
+        </ul>
+        <a href="YOUR_FREEMIUS_CHECKOUT_URL_STARTER" class="btn-plan btn-plan-navy">Get Starter</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="badge-popular">Most Popular</div>
+        <h3>Professional</h3>
+        <p class="pricing-tier-desc">Growing businesses</p>
+        <div class="price"><sup>$</sup>159</div>
+        <p class="price-period">per year</p>
+        <ul>
+          <li>1 WordPress site</li>
+          <li>Unlimited managers</li>
+          <li>Everything in Starter</li>
+          <li>PDF export</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="YOUR_FREEMIUS_CHECKOUT_URL_PRO" class="btn-plan btn-plan-purple">Get Professional</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Business</h3>
+        <p class="pricing-tier-desc">Agencies &amp; multi-site</p>
+        <div class="price"><sup>$</sup>599</div>
+        <p class="price-period">per year</p>
+        <ul>
+          <li><strong>5 WordPress sites</strong></li>
+          <li>Unlimited managers</li>
+          <li>Everything in Professional</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="YOUR_FREEMIUS_CHECKOUT_URL_BUSINESS" class="btn-plan btn-plan-amber">Get Business</a>
+      </div>
+
     </div>
-    <div class="pricing-card featured">
-      <h3>Agency</h3>
-      <div class="price">$149 <span>/ year</span></div>
-      <ul>
-        <li>Up to 5 sites</li>
-        <li>All Pro features</li>
-        <li>Priority support</li>
-        <li>1 year of updates</li>
-      </ul>
-      <a href="YOUR_FREEMIUS_CHECKOUT_URL_AGENCY" class="btn-plan alt">Most Popular</a>
-    </div>
-    <div class="pricing-card">
-      <h3>Unlimited</h3>
-      <div class="price">$249 <span>/ year</span></div>
-      <ul>
-        <li>Unlimited sites</li>
-        <li>All Pro features</li>
-        <li>Priority support</li>
-        <li>1 year of updates</li>
-      </ul>
-      <a href="YOUR_FREEMIUS_CHECKOUT_URL_UNLIMITED" class="btn-plan">Get Started</a>
-    </div>
+    <p class="pricing-guarantee">Licences are annual and per-site unless noted.</p>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <p>Employee Roster is an independent WordPress plugin. &nbsp;|&nbsp;
-  <a href="mailto:support@employeeroster.io">support@employeeroster.io</a> &nbsp;|&nbsp;
-  <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
-  <a href="/terms.html">Terms of Service</a>
-  </p>
-  <p style="margin-top:8px;">© 2026 EmployeeRoster.io. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="mailto:support@employeeroster.io">support@employeeroster.io</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="YOUR_FREE_DOWNLOAD_URL">Download Free</a>
+  </div>
+  <p>Employee Roster is an independent WordPress plugin.</p>
+  <p style="margin-top:8px;opacity:.5;">© 2026 EmployeeRoster.io. All rights reserved.</p>
 </footer>
 
 </body>
