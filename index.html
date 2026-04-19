@@ -30,7 +30,8 @@
       display: flex; align-items: center; justify-content: space-between; height: 60px;
       box-shadow: 0 2px 12px rgba(0,0,0,.2);
     }
-    .nav-brand { color: var(--white); font-weight: 700; font-size: 1.1rem; text-decoration: none; letter-spacing: -.3px; }
+    .nav-brand { color: var(--white); font-weight: 700; font-size: 1.1rem; text-decoration: none; letter-spacing: -.3px; display: flex; align-items: center; gap: 10px; }
+    .nav-brand img { width: 32px; height: 32px; object-fit: contain; }
     .nav-links { display: flex; gap: 8px; align-items: center; }
     .nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; padding: 6px 12px; border-radius: 6px; transition: color .15s; }
     .nav-links a:hover { color: var(--white); }
@@ -178,7 +179,10 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">Employee Roster</a>
+  <a href="#" class="nav-brand">
+    <img src="assets/logo/only-logo-transparent2.png" alt="Employee Roster logo" />
+    Employee Roster
+  </a>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#plans">Plans</a>
