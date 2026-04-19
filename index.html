@@ -56,6 +56,11 @@
       letter-spacing: .5px; text-transform: uppercase; padding: 5px 14px;
       border-radius: 20px; margin-bottom: 24px;
     }
+    .typing-cursor {
+      display: inline-block; color: var(--teal); font-weight: 300;
+      animation: blink .7s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
     .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -.5px; }
     .hero h1 span { color: var(--teal); }
     .hero p { font-size: 1.15rem; opacity: .85; max-width: 580px; margin: 0 auto 36px; }
@@ -200,7 +205,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">WordPress Plugin</div>
+  <div class="hero-badge"><span id="typing-text"></span><span class="typing-cursor">|</span></div>
   <h1>Staff rostering that lives<br><span>inside your WordPress.</span></h1>
   <p>Schedule shifts, track attendance, manage leave, and run payroll — all from your WP Admin. Your data, your server, no SaaS fees.</p>
   <div class="hero-btns">
@@ -498,5 +503,25 @@
   <p style="margin-top:8px;opacity:.5;">© 2026 EmployeeRoster.io. All rights reserved.</p>
 </footer>
 
+<script>
+  (function () {
+    var text = 'WordPress Plugin';
+    var el = document.getElementById('typing-text');
+    var cursor = document.querySelector('.typing-cursor');
+    var i = 0;
+    var speed = 80;
+
+    function type() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i++);
+        setTimeout(type, speed);
+      } else {
+        setTimeout(function () { cursor.style.display = 'none'; }, 1000);
+      }
+    }
+
+    setTimeout(type, 400);
+  })();
+</script>
 </body>
 </html>
