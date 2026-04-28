@@ -372,7 +372,7 @@
 
     <article id="article-requirements" class="doc-article">
       <h1>Requirements</h1>
-      <p>Employee Roster is entirely self-hosted — it stores all data in your own WordPress database and has no external API dependencies or SaaS connections. Before installing, verify your environment meets the following minimum versions.</p>
+      <p>Employee Roster is entirely self-hosted and stores all data in your own WordPress database with no external API dependencies or SaaS connections. Before installing, verify your environment meets the following minimum versions.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Component</th><th>Minimum Version</th></tr></thead>
@@ -391,7 +391,7 @@
 
     <article id="article-installation" class="doc-article">
       <h1>Installation</h1>
-      <p>Installation follows the standard WordPress plugin process. On first activation, the plugin automatically creates all database tables, registers the three custom roles, seeds default settings, and creates the five frontend portal pages — no manual setup is required.</p>
+      <p>Installation follows the standard WordPress plugin process. On first activation, the plugin automatically creates all database tables, registers the three custom roles, seeds default settings, and creates the five frontend portal pages with no manual setup required.</p>
       <ol>
         <li>Upload the <code>emp-roster</code> folder to <code>/wp-content/plugins/</code>.</li>
         <li>Activate the plugin via <strong>Plugins &gt; Installed Plugins</strong>.</li>
@@ -416,11 +416,11 @@
       <h1>Quick Start</h1>
       <p>Follow these five steps to go from a fresh install to a working roster. Each step takes only a few minutes once the plugin is activated.</p>
       <ol>
-        <li><strong>Create departments</strong> — Go to <strong>Employee Roster &gt; Settings &gt; General</strong> and enter department names, one per line. The Free plan supports 1 department; Starter supports up to 5; Professional and Business are unlimited.</li>
-        <li><strong>Create locations</strong> — In the same General settings panel, add location names and pick a colour for each. Limits follow the same per-plan tiers as departments.</li>
-        <li><strong>Add staff</strong> — Go to <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>. Assign each person a role (Manager, Supervisor, or Employee), a job type (Full-time, Part-time, or Casual), and an hourly pay rate. A WordPress user account is created automatically.</li>
-        <li><strong>Create a shift</strong> — Open <strong>Employee Roster &gt; Dashboard</strong> and click <strong>+ Add Shift</strong>. Fill in the title, date/time, location, department, and assignment type. Assign employees directly or leave it open for self-assignment.</li>
-        <li><strong>Employees log in</strong> — Staff can use the WordPress admin or the frontend portal pages to view their roster, submit leave requests, clock in/out, and set their weekly availability.</li>
+        <li><strong>Create departments:</strong> Go to <strong>Employee Roster &gt; Settings &gt; General</strong> and enter department names, one per line. The Free plan supports 1 department; Starter supports up to 5; Professional and Business are unlimited.</li>
+        <li><strong>Create locations:</strong> In the same General settings panel, add location names and pick a colour for each. Limits follow the same per-plan tiers as departments.</li>
+        <li><strong>Add staff:</strong> Go to <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>. Assign each person a role (Manager, Supervisor, or Employee), a job type (Full-time, Part-time, or Casual), and an hourly pay rate. A WordPress user account is created automatically.</li>
+        <li><strong>Create a shift:</strong> Open <strong>Employee Roster &gt; Dashboard</strong> and click <strong>+ Add Shift</strong>. Fill in the title, date/time, location, department, and assignment type. Assign employees directly or leave it open for self-assignment.</li>
+        <li><strong>Employees log in:</strong> Staff can use the WordPress admin or the frontend portal pages to view their roster, submit leave requests, clock in/out, and set their weekly availability.</li>
       </ol>
       <div class="callout">
         <span class="callout-icon">✅</span>
@@ -434,18 +434,18 @@
 
     <article id="article-custom-roles-overview" class="doc-article">
       <h1>Custom Roles Overview</h1>
-      <p>Employee Roster registers three custom WordPress roles on activation. These roles determine what each user can see and do within the plugin, and they also control the WordPress admin experience — roster users see only the Employee Roster menu, not the full WordPress dashboard.</p>
+      <p>Employee Roster registers three custom WordPress roles on activation. These roles determine what each user can see and do within the plugin, and they also control the WordPress admin experience; roster users see only the Employee Roster menu, not the full WordPress dashboard.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Role</th><th>Display Name</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td><code>emr_manager</code></td><td>Roster Manager</td><td>Full roster management access — create/edit/delete shifts, manage staff, approve leave, view payroll</td></tr>
+            <tr><td><code>emr_manager</code></td><td>Roster Manager</td><td>Full roster management access: create/edit/delete shifts, manage staff, approve leave, view payroll</td></tr>
             <tr><td><code>emr_supervisor</code></td><td>Roster Supervisor</td><td>Manage shifts and staff within their scope; subset of manager capabilities</td></tr>
             <tr><td><code>emr_employee</code></td><td>Roster Employee</td><td>View own shifts, clock in/out, submit leave, set availability</td></tr>
           </tbody>
         </table>
       </div>
-      <p>WP Administrators retain full access to all Employee Roster features in addition to their normal WordPress capabilities. Administrators are not included as roster staff by default — see <em>Admin Inclusion Settings</em> to change this.</p>
+      <p>WP Administrators retain full access to all Employee Roster features in addition to their normal WordPress capabilities. Administrators are not included as roster staff by default. See <em>Admin Inclusion Settings</em> to change this.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Role assignment happens at the WordPress user level. When you create a staff member through <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>, the plugin automatically assigns the correct WordPress role to the newly created user account.</div>
@@ -479,8 +479,8 @@
 
     <article id="article-admin-inclusion-settings" class="doc-article">
       <h1>Admin Inclusion Settings</h1>
-      <p>By default, WordPress Administrators are not treated as roster staff — they do not appear in staff lists, shift assignment dropdowns, or attendance queries. This keeps the roster clean for sites where the WP Admin account belongs to a developer or site owner who is not part of the scheduling team.</p>
-      <p>Two settings in <strong>Employee Roster &gt; Settings &gt; Roles &amp; Permissions</strong> override this default. Both settings are visible only to WP Administrators — they are hidden from Roster Manager accounts.</p>
+      <p>By default, WordPress Administrators are not treated as roster staff and do not appear in staff lists, shift assignment dropdowns, or attendance queries. This keeps the roster clean for sites where the WP Admin account belongs to a developer or site owner who is not part of the scheduling team.</p>
+      <p>Two settings in <strong>Employee Roster &gt; Settings &gt; Roles &amp; Permissions</strong> override this default. Both settings are visible only to WP Administrators; they are hidden from Roster Manager accounts.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Effect</th></tr></thead>
@@ -529,7 +529,7 @@
             <tr><td><strong>End date/time</strong></td><td>Shift end timestamp</td></tr>
             <tr><td><strong>Location</strong></td><td>Dropdown populated from configured locations</td></tr>
             <tr><td><strong>Department</strong></td><td>Dropdown populated from configured departments</td></tr>
-            <tr><td><strong>Assignment type</strong></td><td><strong>Direct</strong> — assign specific employees; or <strong>Open</strong> — slot-based, employees self-assign (Starter+)</td></tr>
+            <tr><td><strong>Assignment type</strong></td><td><strong>Direct</strong>: assign specific employees; or <strong>Open</strong>: slot-based, employees self-assign (Starter+)</td></tr>
             <tr><td><strong>Break minutes</strong></td><td>Unpaid break duration deducted from hours worked in payroll and timesheets</td></tr>
             <tr><td><strong>Colour</strong></td><td>Visual colour shown on shift blocks in the weekly and monthly views</td></tr>
             <tr><td><strong>Slot limit</strong></td><td>(Open shifts only) Maximum number of employees who can claim this shift</td></tr>
@@ -548,12 +548,12 @@
       <h1>Assignment Types (Direct vs Open)</h1>
       <p>Each shift uses one of two assignment modes. The mode is selected in the shift modal at creation time and can be changed when editing a shift.</p>
       <h2>Direct Assignment</h2>
-      <p>The manager selects specific employees from the staff list when creating or editing the shift. Assigned employees receive a shift assignment email immediately (if notifications are enabled). When multiple employees are assigned to a direct shift, each employee gets their own independent shift record — editing or deleting one employee's shift does not affect any other employee's record.</p>
+      <p>The manager selects specific employees from the staff list when creating or editing the shift. Assigned employees receive a shift assignment email immediately (if notifications are enabled). When multiple employees are assigned to a direct shift, each employee gets their own independent shift record; editing or deleting one employee's shift does not affect any other employee's record.</p>
       <h2>Open Shifts</h2>
-      <p>The shift is published with a configurable slot limit. Eligible employees see it in their roster and can claim a slot themselves. Once claimed, managers can review and adjust the assignment from the shift modal. Open shifts require the <strong>Starter plan or above</strong> — on the Free plan the Open Shifts row is always shown to managers so that unassigned direct shifts are never hidden, but self-assignment is not available to employees.</p>
+      <p>The shift is published with a configurable slot limit. Eligible employees see it in their roster and can claim a slot themselves. Once claimed, managers can review and adjust the assignment from the shift modal. Open shifts require the <strong>Starter plan or above</strong>. On the Free plan, the Open Shifts row is always shown to managers so that unassigned direct shifts are never hidden, but self-assignment is not available to employees.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">Use <strong>Direct</strong> when you know exactly who is working a shift. Use <strong>Open</strong> when you need to fill a slot and want employees to self-select — for example, for casual or on-call positions.</div>
+        <div class="callout-body">Use <strong>Direct</strong> when you know exactly who is working a shift. Use <strong>Open</strong> when you need to fill a slot and want employees to self-select, for example for casual or on-call positions.</div>
       </div>
     </article>
 
@@ -562,10 +562,10 @@
       <p>Employee Roster provides three views for browsing and managing shifts, selectable from the roster toolbar at the top of the screen.</p>
       <h2>Weekly Roster View</h2>
       <p>Displays a grid of staff rows versus day columns for the selected week. Each cell shows the shift blocks assigned to that employee on that day, including the shift time, location, and colour. Available on all plans.</p>
-      <p><strong>Staff visibility:</strong> Only staff members who have at least one shift assigned in the selected week are displayed — employees with no shifts in that window are automatically hidden to keep the view focused. Employees always see their own row regardless of this rule.</p>
+      <p><strong>Staff visibility:</strong> Only staff members who have at least one shift assigned in the selected week are displayed; employees with no shifts in that window are automatically hidden to keep the view focused. Employees always see their own row regardless of this rule.</p>
       <p><strong>Unassigned shifts:</strong> Direct shifts with no assigned employees appear in the Open Shifts row for managers with an "Unassigned" badge. The Open Shifts row is always shown to managers so that no shift is ever silently hidden.</p>
       <h2>Monthly Calendar View</h2>
-      <p>A full month grid where each day cell shows colour-coded shift summary badges. Today's cell is highlighted. Requires the <strong>Starter plan or above</strong> — Free plan users see an upgrade prompt instead of the month grid.</p>
+      <p>A full month grid where each day cell shows colour-coded shift summary badges. Today's cell is highlighted. Requires the <strong>Starter plan or above</strong>; Free plan users see an upgrade prompt instead of the month grid.</p>
       <h2>List View</h2>
       <p>A tabular list of all upcoming shifts with their title, date/time, location, department, and assignment count. Useful for a quick overview without the visual calendar layout. Available on all plans.</p>
       <h2>Today Indicator</h2>
@@ -577,7 +577,7 @@
       <h1>Editing &amp; Deleting Shifts</h1>
       <p>Click any shift block in the weekly or monthly view, or any row in the list view, to open the shift modal. Managers can edit all shift fields, reassign employees, or delete the shift from within the same modal.</p>
       <h2>Editing a Shift</h2>
-      <p>All fields set at creation — title, date/time, location, department, assignment type, break minutes, colour, slot limit, and notes — are fully editable after saving. Reassigning employees (adding or removing assignees) can also be done from the edit modal at any time.</p>
+      <p>All fields set at creation (title, date/time, location, department, assignment type, break minutes, colour, slot limit, and notes) are fully editable after saving. Reassigning employees (adding or removing assignees) can also be done from the edit modal at any time.</p>
       <div class="callout">
         <span class="callout-icon">✉️</span>
         <div class="callout-body"><strong>Timing change notification:</strong> If you change a shift's start or end time, all currently assigned employees automatically receive a Shift Timing Change email (if email notifications are enabled). This fires on save, so employees are notified immediately.</div>
@@ -596,15 +596,15 @@
 
     <article id="article-clocking-in-out" class="doc-article">
       <h1>Clocking In and Out</h1>
-      <p>Employees navigate to <strong>Employee Roster &gt; Attendance</strong> in the WP admin, or visit the frontend <code>/emp-roster-attendance</code> page, to start and end a clock session. Only one active clock-in session is permitted per user at a time — starting a new session while one is already open is blocked.</p>
+      <p>Employees navigate to <strong>Employee Roster &gt; Attendance</strong> in the WP admin, or visit the frontend <code>/emp-roster-attendance</code> page, to start and end a clock session. Only one active clock-in session is permitted per user at a time; starting a new session while one is already open is blocked.</p>
       <h2>What the system records</h2>
       <p>Each attendance entry stores the following fields:</p>
       <ul>
-        <li><strong>Clock-in timestamp</strong> — recorded when the employee clicks Clock In</li>
-        <li><strong>Clock-out timestamp</strong> — recorded when the employee clicks Clock Out; null while the session is still open</li>
-        <li><strong>Break minutes</strong> — entered at clock-out; deducted from total hours worked in timesheets</li>
-        <li><strong>Optional notes</strong> — free-text field the employee can fill in at clock-out</li>
-        <li><strong>Associated shift</strong> — linked to a shift if the employee selects one at clock-in (optional)</li>
+        <li><strong>Clock-in timestamp:</strong> recorded when the employee clicks Clock In</li>
+        <li><strong>Clock-out timestamp:</strong> recorded when the employee clicks Clock Out; null while the session is still open</li>
+        <li><strong>Break minutes:</strong> entered at clock-out; deducted from total hours worked in timesheets</li>
+        <li><strong>Optional notes:</strong> free-text field the employee can fill in at clock-out</li>
+        <li><strong>Associated shift:</strong> linked to a shift if the employee selects one at clock-in (optional)</li>
       </ul>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
@@ -688,7 +688,7 @@
       <p>When a manager approves or declines a request, the employee receives a Leave Decision email containing the outcome and the dates (if email notifications are enabled).</p>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Free plan limitation:</strong> On the Free plan, employees can submit leave requests but managers cannot approve or decline them — the Approve and Decline buttons display an upgrade prompt. The leave approval workflow requires the <strong>Starter plan or above</strong>.</div>
+        <div class="callout-body"><strong>Free plan limitation:</strong> On the Free plan, employees can submit leave requests but managers cannot approve or decline them; the Approve and Decline buttons display an upgrade prompt. The leave approval workflow requires the <strong>Starter plan or above</strong>.</div>
       </div>
     </article>
 
@@ -703,12 +703,12 @@
           <tbody>
             <tr><td>Full-time</td><td>Configurable (default 20 hrs)</td><td>Configurable (default 10 hrs)</td></tr>
             <tr><td>Part-time</td><td>Configurable (default 10 hrs)</td><td>Configurable (default 5 hrs)</td></tr>
-            <tr><td>Casual</td><td>—</td><td>—</td></tr>
+            <tr><td>Casual</td><td>N/A</td><td>N/A</td></tr>
           </tbody>
         </table>
       </div>
       <h2>Annual leave pro-rating for new accounts</h2>
-      <p>Annual leave accrual starts from the employee's WordPress account creation date when the account was created during the current calendar year, rather than always accruing from January 1st. This pro-rates the entitlement so a new employee hired in July does not immediately receive a full year's allocation. Sick leave allocation is not pro-rated — casual employees receive no balance on either leave type.</p>
+      <p>Annual leave accrual starts from the employee's WordPress account creation date when the account was created during the current calendar year, rather than always accruing from January 1st. This pro-rates the entitlement so a new employee hired in July does not immediately receive a full year's allocation. Sick leave allocation is not pro-rated; casual employees receive no balance on either leave type.</p>
       <h2>Manager controls</h2>
       <p>Managers can manually trigger an accrual run, view the current balance for any employee, and apply manual adjustments (positive or negative) to correct discrepancies.</p>
     </article>
@@ -719,26 +719,26 @@
 
     <article id="article-setting-availability" class="doc-article">
       <h1>Setting Availability</h1>
-      <p>Employees set their working availability via <strong>Employee Roster &gt; Shifts &gt; Availability</strong> in the WP admin, or through the frontend <code>/emp-roster-availability</code> page. Availability is <strong>weekly and recurring</strong> — it represents which days and times the employee is generally available each week, not availability for a specific date.</p>
+      <p>Employees set their working availability via <strong>Employee Roster &gt; Shifts &gt; Availability</strong> in the WP admin, or through the frontend <code>/emp-roster-availability</code> page. Availability is <strong>weekly and recurring</strong>; it represents which days and times the employee is generally available each week, not availability for a specific date.</p>
       <h2>How the availability grid works</h2>
       <p>The grid shows all 7 days of the week. For each day the employee is available, they set a time range using start-time and end-time pickers. Days left empty or toggled off are treated as unavailable.</p>
       <ul>
         <li>An employee available Monday through Friday from 8 am to 5 pm sets those ranges on each weekday row.</li>
         <li>A day with no time range set is recorded as "unavailable" for that day of the week.</li>
-        <li>Availability data is re-used every week — there is no need to re-enter it each week unless the employee's availability changes.</li>
+        <li>Availability data is re-used every week; there is no need to re-enter it each week unless the employee's availability changes.</li>
       </ul>
       <h2>When no availability is set</h2>
       <p>If an employee has not set any availability at all, the shift assignment modal shows their status as <strong>Not set</strong>. This is distinct from <strong>Unavailable</strong>, which means the employee has recorded availability but it does not cover the shift's day and time. See <em>Availability Hints in Shift Modal</em> for how this information is surfaced to managers.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">Availability data is advisory only — it does not block a manager from assigning an employee to a shift outside their stated availability. It is surfaced as a hint inside the shift modal to help managers make informed scheduling decisions.</div>
+        <div class="callout-body">Availability data is advisory only; it does not block a manager from assigning an employee to a shift outside their stated availability. It is surfaced as a hint inside the shift modal to help managers make informed scheduling decisions.</div>
       </div>
     </article>
 
     <article id="article-availability-hints" class="doc-article">
       <h1>Availability Hints in Shift Modal</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>When a manager opens the shift assignment modal to add or review employees, each employee row shows an availability indicator based on that employee's recurring weekly availability. This allows managers to spot scheduling conflicts at a glance without leaving the modal. Requires the <strong>Starter plan or above</strong> — hints are not shown on the Free plan.</p>
+      <p>When a manager opens the shift assignment modal to add or review employees, each employee row shows an availability indicator based on that employee's recurring weekly availability. This allows managers to spot scheduling conflicts at a glance without leaving the modal. Requires the <strong>Starter plan or above</strong>; hints are not shown on the Free plan.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Indicator</th><th>Meaning</th></tr></thead>
@@ -751,7 +751,7 @@
       </div>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">Availability indicators are hints only — they do not prevent assignment. A manager can assign any employee to any shift regardless of their availability status.</div>
+        <div class="callout-body">Availability indicators are hints only and do not prevent assignment. A manager can assign any employee to any shift regardless of their availability status.</div>
       </div>
     </article>
 
@@ -769,10 +769,10 @@
         <li>Optionally specify a <strong>target employee</strong> they have arranged to swap with</li>
         <li>Add an optional <strong>reason</strong> for the swap (visible to the reviewing manager)</li>
       </ul>
-      <p>If no target employee is specified, the request is open — any eligible employee could potentially take the shift. The submitted request immediately appears in the manager's swap review queue with a <strong>Pending</strong> status.</p>
+      <p>If no target employee is specified, the request is open, meaning any eligible employee could potentially take the shift. The submitted request immediately appears in the manager's swap review queue with a <strong>Pending</strong> status.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">On the Free and Starter plans, the Request Swap button is hidden from shift detail views. No upgrade prompt is shown to employees — the feature is silently omitted for plans that do not support it.</div>
+        <div class="callout-body">On the Free and Starter plans, the Request Swap button is hidden from shift detail views. No upgrade prompt is shown to employees; the feature is silently omitted for plans that do not support it.</div>
       </div>
     </article>
 
@@ -781,7 +781,7 @@
       <span class="plan-badge plan-pro">Professional+</span>
       <p>Managers see all pending swap requests in the shift swap queue. Each entry in the queue shows the requesting employee, the shift they want to give up, and the target employee (if one was specified in the request).</p>
       <h2>Approving a swap</h2>
-      <p>When a manager approves a swap, the plugin automatically reassigns the two shifts between the employees involved. No manual editing of shift assignments is needed — the handover is applied atomically on approval.</p>
+      <p>When a manager approves a swap, the plugin automatically reassigns the two shifts between the employees involved. No manual editing of shift assignments is needed; the handover is applied atomically on approval.</p>
       <h2>Declining a swap</h2>
       <p>When a manager declines a swap, the original assignments remain exactly as they were. The requesting employee's shift is unchanged.</p>
       <div class="callout callout-note">
@@ -804,7 +804,7 @@
             <tr><td><strong>First name / Last name</strong></td><td>Required. Used in shift views, emails, and reports.</td></tr>
             <tr><td><strong>Email</strong></td><td>Used as the WordPress login email address and as the destination for all notification emails.</td></tr>
             <tr><td><strong>Role</strong></td><td>Roster Manager, Roster Supervisor, or Roster Employee</td></tr>
-            <tr><td><strong>Job type</strong></td><td>Full-time, Part-time, or Casual — determines leave entitlements and weekly hour limit thresholds</td></tr>
+            <tr><td><strong>Job type</strong></td><td>Full-time, Part-time, or Casual; determines leave entitlements and weekly hour limit thresholds</td></tr>
             <tr><td><strong>Pay rate</strong></td><td>Hourly rate used for payroll earnings calculations (Starter+)</td></tr>
           </tbody>
         </table>
@@ -821,9 +821,9 @@
 
     <article id="article-editing-staff" class="doc-article">
       <h1>Editing Staff</h1>
-      <p>Click any staff row in <strong>Employee Roster &gt; Staff</strong> to open the staff edit modal. All fields set at creation — first name, last name, email, role, job type, and pay rate — are editable after the account has been created.</p>
+      <p>Click any staff row in <strong>Employee Roster &gt; Staff</strong> to open the staff edit modal. All fields set at creation (first name, last name, email, role, job type, and pay rate) are editable after the account has been created.</p>
       <h2>Role changes</h2>
-      <p>Changing a staff member's role (for example, from Employee to Supervisor) immediately updates their WordPress capabilities. The change takes effect on their next page load — no re-login is required.</p>
+      <p>Changing a staff member's role (for example, from Employee to Supervisor) immediately updates their WordPress capabilities. The change takes effect on their next page load with no re-login required.</p>
       <h2>Pay rate visibility for supervisors</h2>
       <p>Supervisors do not see pay rate fields in the staff list or shift modal by default. The <strong>Supervisors can see pay rates</strong> setting in Roles &amp; Permissions (Professional+) enables this visibility when your organisational structure requires it.</p>
       <h2>Job type changes</h2>
@@ -856,10 +856,10 @@
       <p>Navigate to <strong>Employee Roster &gt; Timesheets</strong> to access timesheet data. This screen is the central location for reviewing hours worked and payroll calculations across all staff, and is the starting point for payroll exports.</p>
       <h2>What the view shows</h2>
       <ul>
-        <li>Weekly summary per employee — total hours worked for the selected period</li>
-        <li>Per-shift breakdown — individual clock-in/out times, break deductions, and net hours for each session</li>
-        <li>Earnings — gross pay calculated from hours worked × pay rate (when payroll is enabled)</li>
-        <li>Date range filter — narrow the view to any date range</li>
+        <li>Weekly summary per employee: total hours worked for the selected period</li>
+        <li>Per-shift breakdown: individual clock-in/out times, break deductions, and net hours for each session</li>
+        <li>Earnings: gross pay calculated from hours worked × pay rate (when payroll is enabled)</li>
+        <li>Date range filter: narrow the view to any date range</li>
       </ul>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
@@ -884,7 +884,7 @@
       </ul>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">Pay rates are set per employee in the Staff screen. On the Free plan, pay rate fields are hidden entirely — they are not shown to employees or managers rather than displaying an upgrade prompt.</div>
+        <div class="callout-body">Pay rates are set per employee in the Staff screen. On the Free plan, pay rate fields are hidden entirely from employees and managers, with no upgrade prompt displayed.</div>
       </div>
     </article>
 
@@ -919,7 +919,7 @@
     <article id="article-job-type-hour-limits" class="doc-article">
       <h1>Job Type Hour Limits</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Weekly hour thresholds can be configured per job type to flag employees who are approaching or have exceeded their scheduled hours. This feature requires the <strong>Starter plan or above</strong> — flags are hidden on the Free plan.</p>
+      <p>Weekly hour thresholds can be configured per job type to flag employees who are approaching or have exceeded their scheduled hours. This feature requires the <strong>Starter plan or above</strong>; flags are hidden on the Free plan.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Job Type</th><th>Default Weekly Hours</th></tr></thead>
@@ -944,7 +944,7 @@
         <li>Colour-coded shift cards matching the roster colour scheme</li>
         <li>Inter font for clean print output</li>
       </ul>
-      <p>The browser's print dialog launches automatically. Choose <strong>Save as PDF</strong> in the print destination to generate a PDF file using the browser's built-in PDF printer — no additional software is needed.</p>
+      <p>The browser's print dialog launches automatically. Choose <strong>Save as PDF</strong> in the print destination to generate a PDF file using the browser's built-in PDF printer. No additional software is needed.</p>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -958,9 +958,9 @@
       <h2>Technical details</h2>
       <ul>
         <li>All emails are sent as <strong>plain text</strong> using WordPress's <code>wp_mail()</code> function</li>
-        <li>The From name and From address follow the WordPress site settings — no plugin-specific From address is used</li>
+        <li>The From name and From address follow the WordPress site settings with no plugin-specific From address</li>
         <li>No HTML templates are involved, which maximises deliverability across different mail server configurations</li>
-        <li>Notifications are triggered server-side by manager actions — they do not require the employee to be logged in when the event occurs</li>
+        <li>Notifications are triggered server-side by manager actions and do not require the employee to be logged in when the event occurs</li>
       </ul>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
@@ -971,7 +971,7 @@
     <article id="article-welcome-email" class="doc-article">
       <h1>Welcome Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>The welcome email is sent automatically when a manager creates a new staff account through <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>, provided email notifications are enabled. It fires for any new account created through the plugin's staff creation flow — including existing WordPress users who are added to the roster for the first time.</p>
+      <p>The welcome email is sent automatically when a manager creates a new staff account through <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>, provided email notifications are enabled. It fires for any new account created through the plugin's staff creation flow, including existing WordPress users who are added to the roster for the first time.</p>
       <h2>Email contents</h2>
       <ul>
         <li>Employee's name and login email address</li>
@@ -983,7 +983,7 @@
     <article id="article-shift-assignment-email" class="doc-article">
       <h1>Shift Assignment Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>A shift assignment email is sent to each employee the moment they are assigned to a shift by a manager. The email fires on save — employees are notified immediately when a direct assignment is created or when an open-shift claim is confirmed.</p>
+      <p>A shift assignment email is sent to each employee the moment they are assigned to a shift by a manager. The email fires on save; employees are notified immediately when a direct assignment is created or when an open-shift claim is confirmed.</p>
       <h2>Email contents</h2>
       <ul>
         <li>Shift title</li>
@@ -996,7 +996,7 @@
     <article id="article-shift-timing-change-email" class="doc-article">
       <h1>Shift Timing Change Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>A timing change email is sent to <strong>all currently assigned employees</strong> whenever a manager changes a shift's start time or end time. This fires automatically on save — there is no separate notification step for the manager.</p>
+      <p>A timing change email is sent to <strong>all currently assigned employees</strong> whenever a manager changes a shift's start time or end time. This fires automatically on save with no separate notification step for the manager.</p>
       <h2>Email contents</h2>
       <ul>
         <li>Shift title</li>
@@ -1012,12 +1012,12 @@
     <article id="article-leave-decision-email" class="doc-article">
       <h1>Leave Decision Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>A leave decision email is sent to an employee the moment a manager approves or declines their leave request. The email fires at the point the manager saves the decision — no additional confirmation step is needed.</p>
+      <p>A leave decision email is sent to an employee the moment a manager approves or declines their leave request. The email fires at the point the manager saves the decision with no additional confirmation step needed.</p>
       <h2>Email contents</h2>
       <ul>
         <li>Leave type (Annual Leave or Sick Leave)</li>
         <li>Leave dates (start and end)</li>
-        <li>Decision — <strong>Approved</strong> or <strong>Declined</strong></li>
+        <li>Decision: <strong>Approved</strong> or <strong>Declined</strong></li>
       </ul>
     </article>
 
@@ -1027,7 +1027,7 @@
 
     <article id="article-shortcode-pages" class="doc-article">
       <h1>Shortcode Pages</h1>
-      <p>Employee Roster automatically creates five WordPress pages pre-loaded with shortcodes when the plugin is first activated. These pages let employees manage their roster from the public-facing side of the WordPress site, without needing to navigate the WP Admin at all. Unauthenticated visitors who land on any of these pages see a login prompt — the roster content is never publicly exposed through these shortcodes.</p>
+      <p>Employee Roster automatically creates five WordPress pages pre-loaded with shortcodes when the plugin is first activated. These pages let employees manage their roster from the public-facing side of the WordPress site, without needing to navigate the WP Admin at all. Unauthenticated visitors who land on any of these pages see a login prompt; the roster content is never publicly exposed through these shortcodes.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Page</th><th>Default Slug</th><th>Shortcode</th></tr></thead>
@@ -1040,7 +1040,7 @@
           </tbody>
         </table>
       </div>
-      <p>The same JavaScript SPA that powers the WP Admin views also powers the frontend shortcode pages — only the rendered content differs based on the <code>data-page</code> attribute of the app container. If any of the auto-created pages are deleted, you can re-create them manually by placing the corresponding shortcode on any WordPress page.</p>
+      <p>The same JavaScript SPA that powers the WP Admin views also powers the frontend shortcode pages; only the rendered content differs based on the <code>data-page</code> attribute of the app container. If any of the auto-created pages are deleted, you can re-create them manually by placing the corresponding shortcode on any WordPress page.</p>
     </article>
 
     <article id="article-public-roster-shortcode" class="doc-article">
@@ -1067,8 +1067,8 @@
     <!-- ─────────────────────────────────────────── -->
 
     <article id="article-settings-general" class="doc-article">
-      <h1>Settings — General</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; General</strong> to configure site-wide display and organisation options. Department and location limits are enforced per plan — the "Add" button is hidden once the limit is reached and an upgrade prompt appears.</p>
+      <h1>Settings: General</h1>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; General</strong> to configure site-wide display and organisation options. Department and location limits are enforced per plan; the "Add" button is hidden once the limit is reached and an upgrade prompt appears.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
@@ -1084,7 +1084,7 @@
     </article>
 
     <article id="article-settings-shift-attendance" class="doc-article">
-      <h1>Settings — Shift &amp; Attendance</h1>
+      <h1>Settings: Shift &amp; Attendance</h1>
       <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Shift &amp; Attendance</strong> to configure clock-in/out behaviour. This section controls whether the attendance submenu and frontend clock widget are made available to employees.</p>
       <div class="table-wrap">
         <table>
@@ -1098,25 +1098,25 @@
     </article>
 
     <article id="article-settings-leave" class="doc-article">
-      <h1>Settings — Leave</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Professional+ feature — the relevant rows show an upgrade prompt on Free and Starter plans.</p>
+      <h1>Settings: Leave</h1>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Professional+ feature; the relevant rows show an upgrade prompt on Free and Starter plans.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
           <tbody>
             <tr><td><strong>Enable leave management</strong></td><td>Show the Leave menu and allow leave requests to be submitted</td><td>Enabled</td></tr>
             <tr><td><strong>Enable leave balance tracking</strong></td><td>Track accrued vs used leave per employee <em>(Professional+ only)</em></td><td>Disabled</td></tr>
-            <tr><td><strong>Annual leave — full-time</strong></td><td>Entitlement in days per year for full-time employees</td><td>20</td></tr>
-            <tr><td><strong>Annual leave — part-time</strong></td><td>Entitlement in days per year for part-time employees</td><td>10</td></tr>
-            <tr><td><strong>Sick leave — full-time</strong></td><td>Entitlement in days per year for full-time employees</td><td>10</td></tr>
-            <tr><td><strong>Sick leave — part-time</strong></td><td>Entitlement in days per year for part-time employees</td><td>5</td></tr>
+            <tr><td><strong>Annual leave (full-time)</strong></td><td>Entitlement in days per year for full-time employees</td><td>20</td></tr>
+            <tr><td><strong>Annual leave (part-time)</strong></td><td>Entitlement in days per year for part-time employees</td><td>10</td></tr>
+            <tr><td><strong>Sick leave (full-time)</strong></td><td>Entitlement in days per year for full-time employees</td><td>10</td></tr>
+            <tr><td><strong>Sick leave (part-time)</strong></td><td>Entitlement in days per year for part-time employees</td><td>5</td></tr>
           </tbody>
         </table>
       </div>
     </article>
 
     <article id="article-settings-payroll" class="doc-article">
-      <h1>Settings — Payroll</h1>
+      <h1>Settings: Payroll</h1>
       <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Payroll</strong> to configure earnings calculations, tax, and daily budget. Payroll itself requires Starter+; the Tax and Budgeting sub-sections each require Professional+.</p>
       <div class="table-wrap">
         <table>
@@ -1133,8 +1133,8 @@
     </article>
 
     <article id="article-settings-roles" class="doc-article">
-      <h1>Settings — Roles &amp; Permissions</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Roles &amp; Permissions</strong> to configure role-based access controls and admin visibility. The Admin Visibility rows (<em>Include self in roster</em> and <em>Include all admins in roster</em>) are shown only to WP Administrators — Roster Manager accounts do not see them.</p>
+      <h1>Settings: Roles &amp; Permissions</h1>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Roles &amp; Permissions</strong> to configure role-based access controls and admin visibility. The Admin Visibility rows (<em>Include self in roster</em> and <em>Include all admins in roster</em>) are shown only to WP Administrators; Roster Manager accounts do not see them.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
@@ -1149,8 +1149,8 @@
     </article>
 
     <article id="article-settings-email" class="doc-article">
-      <h1>Settings — Email Notifications</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Email Notifications</strong> to enable or disable all automated plugin emails. This entire settings card shows an upgrade prompt on the Free plan — email notifications require <strong>Starter or above</strong>.</p>
+      <h1>Settings: Email Notifications</h1>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Email Notifications</strong> to enable or disable all automated plugin emails. This entire settings card shows an upgrade prompt on the Free plan; email notifications require <strong>Starter or above</strong>.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
@@ -1163,8 +1163,8 @@
     </article>
 
     <article id="article-settings-access" class="doc-article">
-      <h1>Settings — Access Control</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Access Control</strong> to configure Profile Mode. This entire settings card shows an upgrade prompt on the Free plan — Profile Mode requires <strong>Starter or above</strong>.</p>
+      <h1>Settings: Access Control</h1>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Access Control</strong> to configure Profile Mode. This entire settings card shows an upgrade prompt on the Free plan; Profile Mode requires <strong>Starter or above</strong>.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
@@ -1173,7 +1173,7 @@
           </tbody>
         </table>
       </div>
-      <p>See <em>Profile Mode — Overview &amp; Use Case</em> for a full description of what happens when this setting is enabled.</p>
+      <p>See <em>Profile Mode: Overview &amp; Use Case</em> for a full description of what happens when this setting is enabled.</p>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -1181,17 +1181,17 @@
     <!-- ─────────────────────────────────────────── -->
 
     <article id="article-profile-mode-overview" class="doc-article">
-      <h1>Profile Mode — Overview &amp; Use Case</h1>
+      <h1>Profile Mode: Overview &amp; Use Case</h1>
       <span class="plan-badge plan-starter">Starter+</span>
       <p>Profile Mode is an access control feature that prevents employees and supervisors from logging into WordPress while still allowing them to receive email notifications. It requires the <strong>Starter plan or above</strong>.</p>
       <h2>Use case</h2>
-      <p>Businesses that manage schedules internally and only want employees to receive email updates — without granting them any WordPress access — can enable Profile Mode. This is common where the WP Admin should be restricted to managers and the IT team only. Managers and WP Administrators are never affected by Profile Mode.</p>
+      <p>Businesses that manage schedules internally and only want employees to receive email updates, without granting them any WordPress access, can enable Profile Mode. This is common where the WP Admin should be restricted to managers and the IT team only. Managers and WP Administrators are never affected by Profile Mode.</p>
       <h2>Behaviour when enabled</h2>
       <ul>
         <li>Any login attempt by a user with the <code>emr_employee</code> or <code>emr_supervisor</code> role is rejected with the message: <em>"Employee login is currently disabled. You will continue to receive schedule updates by email."</em></li>
         <li>WP Administrators and Roster Managers can always log in regardless of this setting.</li>
-        <li>All existing active WordPress sessions for employees and supervisors are <strong>immediately terminated</strong> the moment Profile Mode is switched on — affected users cannot continue browsing even if they were already logged in.</li>
-        <li>Email notifications continue to fire normally — they are triggered server-side by manager actions and do not require employees to be logged in.</li>
+        <li>All existing active WordPress sessions for employees and supervisors are <strong>immediately terminated</strong> the moment Profile Mode is switched on; affected users cannot continue browsing even if they were already logged in.</li>
+        <li>Email notifications continue to fire normally; they are triggered server-side by manager actions and do not require employees to be logged in.</li>
       </ul>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
@@ -1223,7 +1223,7 @@
 
     <article id="article-feature-availability" class="doc-article">
       <h1>Feature Availability by Plan</h1>
-      <p>Employee Roster is sold in four tiers: Free, Starter ($99/year), Professional ($199/year), and Business ($599/year for 5 sites). Licences are annual and per-site unless noted. Free-plan users always see a fully functional UI — locked features display an upgrade prompt rather than a broken or missing control.</p>
+      <p>Employee Roster is sold in four tiers: Free, Starter ($99/year), Professional ($199/year), and Business ($599/year for 5 sites). Licences are annual and per-site unless noted. Free-plan users always see a fully functional UI; locked features display an upgrade prompt rather than a broken or missing control.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1259,7 +1259,7 @@
             <tr><td>Supervisors can see pay rates</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Support</td><td>Community forum</td><td>Email (72 hr)</td><td>Email (24 hr)</td><td>Priority (same day)</td></tr>
             <tr><td>Updates</td><td>Security only</td><td>1 year</td><td>1 year</td><td>1 year</td></tr>
-            <tr><td>14-day free trial</td><td>—</td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td></tr>
+            <tr><td>14-day free trial</td><td>No</td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1267,7 +1267,7 @@
 
     <article id="article-staff-account-limits" class="doc-article">
       <h1>Staff Account Limits by Plan</h1>
-      <p>The number of staff accounts you can create for each role is determined by your plan. Limits are enforced at the backend the moment a new account is created — the request is rejected with an HTTP 403 error if the plan limit would be exceeded.</p>
+      <p>The number of staff accounts you can create for each role is determined by your plan. Limits are enforced at the backend the moment a new account is created; the request is rejected with an HTTP 403 error if the plan limit would be exceeded.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1286,7 +1286,7 @@
       </div>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body"><strong>Upgrading restores all configuration immediately.</strong> If settings such as extra departments, locations, or plan-gated features were previously configured and then limited by a plan downgrade, they take effect again automatically the moment the site upgrades back — no manual re-enabling is needed.</div>
+        <div class="callout-body"><strong>Upgrading restores all configuration immediately.</strong> If settings such as extra departments, locations, or plan-gated features were previously configured and then limited by a plan downgrade, they take effect again automatically the moment the site upgrades back with no manual re-enabling needed.</div>
       </div>
     </article>
 
