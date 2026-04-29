@@ -304,6 +304,7 @@
         <ul class="sidebar-group-links">
           <li><a href="#timesheet-views" data-article="timesheet-views">Timesheet Views</a></li>
           <li><a href="#payroll-calculations" data-article="payroll-calculations">Payroll Calculations</a></li>
+          <li><a href="#penalty-rates" data-article="penalty-rates">Penalty Rates</a></li>
           <li><a href="#tax" data-article="tax">Tax</a></li>
           <li><a href="#daily-budget" data-article="daily-budget">Daily Budget</a></li>
           <li><a href="#job-type-hour-limits" data-article="job-type-hour-limits">Job Type Hour Limits</a></li>
@@ -892,17 +893,55 @@
     <article id="article-payroll-calculations" class="doc-article">
       <h1>Payroll Calculations</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Payroll calculations require the <strong>Starter plan or above</strong>. When <strong>Enable payroll</strong> is turned on in <strong>Employee Roster &gt; Settings &gt; Payroll</strong>, the plugin computes gross earnings from hours worked and each employee's configured hourly pay rate.</p>
+      <p>Payroll calculations require the <strong>Starter plan or above</strong>. When <strong>Enable payroll</strong> is turned on in <strong>Employee Roster &gt; Settings &gt; Payroll</strong>, the plugin computes gross earnings from hours worked and each employee's configured hourly pay rate. On the Free plan, all payroll fields are hidden with no upgrade prompt displayed.</p>
+      <h2>Enabling payroll</h2>
+      <p>Go to <strong>Employee Roster &gt; Settings &gt; Payroll</strong> and toggle <strong>Enable payroll</strong> on. Once enabled:</p>
+      <ul>
+        <li>Pay rate fields become visible in the Staff screen for each employee</li>
+        <li>Earnings columns appear in the Timesheets view</li>
+        <li>Daily labour costs appear in the roster week and month view column headers</li>
+        <li>Saturday and Sunday penalty rate multipliers are applied automatically to shifts on those days</li>
+      </ul>
       <h2>How earnings are calculated</h2>
+      <p>The base formula for each shift session is:</p>
       <ul>
         <li>Net hours worked = (clock-out − clock-in) − break minutes</li>
-        <li>Gross earnings = net hours worked × pay rate</li>
+        <li>Effective rate = pay rate × penalty multiplier (1.0× on weekdays; configurable on Saturday and Sunday)</li>
+        <li>Gross earnings = net hours worked × effective rate</li>
         <li>Totals are shown per employee per date range in the Timesheets view</li>
-        <li>Daily labour cost (sum of all employee earnings for that day) is displayed in the roster view column headers for the week and month views</li>
       </ul>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">Pay rates are set per employee in the Staff screen. On the Free plan, pay rate fields are hidden entirely from employees and managers, with no upgrade prompt displayed.</div>
+        <div class="callout-body">Pay rates are set per employee in the Staff screen. On the Free plan, pay rate fields are hidden entirely with no upgrade prompt displayed.</div>
+      </div>
+    </article>
+
+    <article id="article-penalty-rates" class="doc-article">
+      <h1>Penalty Rates</h1>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Penalty rates allow a multiplier to be applied to an employee's base pay rate for shifts that fall on Saturday or Sunday. This requires the <strong>Starter plan or above</strong>. Penalty rate multipliers are configured in <strong>Employee Roster &gt; Settings &gt; Payroll</strong>.</p>
+      <h2>How penalty rates work</h2>
+      <p>When a shift falls on Saturday or Sunday, the plugin multiplies the employee's base hourly pay rate by the configured day multiplier before computing earnings for that shift:</p>
+      <ul>
+        <li>Effective rate = base pay rate × day multiplier</li>
+        <li>Gross earnings = net hours worked × effective rate</li>
+      </ul>
+      <p>Shifts on weekdays (Monday–Friday) always use a multiplier of 1.0 with no penalty applied. Saturday and Sunday multipliers are configured independently of each other.</p>
+      <h2>Default multipliers</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Day</th><th>Default multiplier</th><th>Effective rate (e.g. $25.00/hr base)</th></tr></thead>
+          <tbody>
+            <tr><td>Monday–Friday</td><td>1.0×</td><td>$25.00/hr</td></tr>
+            <tr><td>Saturday</td><td>1.5×</td><td>$37.50/hr</td></tr>
+            <tr><td>Sunday</td><td>2.0×</td><td>$50.00/hr</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Set either multiplier to <strong>1.0</strong> to disable the penalty for that day without needing to turn off payroll entirely.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Penalty multipliers apply site-wide to all employees regardless of job type. Per-employee override rates are not supported; adjust the site-wide multiplier if a different rate is needed for a pay period.</div>
       </div>
     </article>
 
@@ -1140,16 +1179,18 @@
 
     <article id="article-settings-payroll" class="doc-article">
       <h1>Settings: Payroll</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Payroll</strong> to configure earnings calculations, tax, and daily budget. Payroll itself requires Starter+; the Tax and Budgeting sub-sections each require Professional+.</p>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Payroll</strong> to configure earnings calculations, penalty rate multipliers, tax, and daily budget. Payroll and penalty rates require <strong>Starter+</strong>; the Tax and Budgeting sub-sections each require <strong>Professional+</strong>.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
+          <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
           <tbody>
-            <tr><td><strong>Enable payroll</strong></td><td>Show pay rates and calculate gross earnings <em>(Starter+ only)</em></td><td>Enabled</td></tr>
-            <tr><td><strong>Enable tax</strong></td><td>Apply a percentage tax rate to gross earnings <em>(Professional+ only)</em></td><td>Disabled</td></tr>
-            <tr><td><strong>Tax rate (%)</strong></td><td>Tax percentage applied when tax is enabled <em>(Professional+ only)</em></td><td>0</td></tr>
-            <tr><td><strong>Enable daily budget</strong></td><td>Show daily labour cost vs target in the roster header <em>(Professional+ only)</em></td><td>Disabled</td></tr>
-            <tr><td><strong>Daily budget target ($)</strong></td><td>Target daily labour cost; days above are flagged red, days below are flagged green <em>(Professional+ only)</em></td><td>0</td></tr>
+            <tr><td><strong>Enable payroll</strong></td><td>Activates pay rate fields and gross earnings calculations throughout the plugin. When disabled, all payroll data is hidden.</td><td>Starter+</td><td>Enabled</td></tr>
+            <tr><td><strong>Saturday penalty rate</strong></td><td>Pay rate multiplier applied to all shifts that fall on a Saturday. Set to 1.0 to disable the penalty for Saturdays.</td><td>Starter+</td><td>1.5</td></tr>
+            <tr><td><strong>Sunday penalty rate</strong></td><td>Pay rate multiplier applied to all shifts that fall on a Sunday. Set to 1.0 to disable the penalty for Sundays.</td><td>Starter+</td><td>2.0</td></tr>
+            <tr><td><strong>Enable tax</strong></td><td>Applies a percentage tax deduction to each employee's gross earnings, producing a net pay figure displayed in the Timesheets view.</td><td>Professional+</td><td>Disabled</td></tr>
+            <tr><td><strong>Tax rate (%)</strong></td><td>Tax percentage deducted from gross earnings when tax is enabled. Setting this to 0 produces no deduction without needing to toggle the setting off.</td><td>Professional+</td><td>0</td></tr>
+            <tr><td><strong>Enable daily budget</strong></td><td>Shows a daily labour cost row in the roster week and month views, colour-coded against the target: red when over budget, green when within budget.</td><td>Professional+</td><td>Disabled</td></tr>
+            <tr><td><strong>Daily budget target ($)</strong></td><td>Site-wide target daily labour cost used for budget colour-coding in the roster view. Set to 0 to clear the target.</td><td>Professional+</td><td>0</td></tr>
           </tbody>
         </table>
       </div>
@@ -1338,7 +1379,7 @@
     'setting-availability','availability-hints',
     'requesting-a-swap','manager-review-swap',
     'adding-staff','editing-staff','deactivating-staff',
-    'timesheet-views','payroll-calculations','tax','daily-budget','job-type-hour-limits','print-pdf',
+    'timesheet-views','payroll-calculations','penalty-rates','tax','daily-budget','job-type-hour-limits','print-pdf',
     'enabling-notifications','welcome-email','shift-assignment-email','shift-timing-change-email','leave-decision-email',
     'shortcode-pages','public-roster-shortcode',
     'settings-general','settings-shift-attendance','settings-leave','settings-payroll','settings-roles','settings-email','settings-access',
