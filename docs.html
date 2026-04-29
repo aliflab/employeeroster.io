@@ -336,11 +336,16 @@
         <ul class="sidebar-group-links">
           <li><a href="#settings-general" data-article="settings-general">General</a></li>
           <li><a href="#settings-shift-attendance" data-article="settings-shift-attendance">Roster &amp; Attendance</a></li>
-          <li><a href="#settings-leave" data-article="settings-leave">Leave & Accrual</a></li>
+          <li><a href="#settings-departments" data-article="settings-departments">Departments</a></li>
+          <li><a href="#settings-locations" data-article="settings-locations">Locations</a></li>
+          <li><a href="#settings-leave" data-article="settings-leave">Leave &amp; Accrual</a></li>
+          <li><a href="#settings-employment-type" data-article="settings-employment-type">Employment Type &amp; Overtime</a></li>
           <li><a href="#settings-payroll" data-article="settings-payroll">Payroll</a></li>
           <li><a href="#settings-roles" data-article="settings-roles">Roles &amp; Permissions</a></li>
+          <li><a href="#settings-integrations" data-article="settings-integrations">Integrations &amp; Public View</a></li>
           <li><a href="#settings-email" data-article="settings-email">Email Notifications</a></li>
           <li><a href="#settings-attachments" data-article="settings-attachments">Job Sheet Attachments</a></li>
+          <li><a href="#settings-frontend" data-article="settings-frontend">Frontend Pages</a></li>
         </ul>
       </div>
 
@@ -1159,6 +1164,46 @@
       <p>See <em>Self-Clock Setting</em> for a full description of what changes when this setting is disabled.</p>
     </article>
 
+    <article id="article-settings-departments" class="doc-article">
+      <h1>Settings: Departments</h1>
+      <p>Departments are managed in <strong>Employee Roster &gt; Settings &gt; General</strong>. Each department entered here becomes available as a selectable option in the shift creation form, allowing shifts to be organised by team or business function. The <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Department limit</th></tr></thead>
+          <tbody>
+            <tr><td>Free</td><td>1</td></tr>
+            <tr><td>Starter</td><td>5</td></tr>
+            <tr><td>Professional</td><td>Unlimited</td></tr>
+            <tr><td>Business</td><td>Unlimited</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Departments are stored as a newline-separated list. Renaming a department in settings does not retroactively update existing shifts — those shifts retain the department name that was in use when they were created.</div>
+      </div>
+    </article>
+
+    <article id="article-settings-locations" class="doc-article">
+      <h1>Settings: Locations</h1>
+      <p>Locations are managed in <strong>Employee Roster &gt; Settings &gt; General</strong>. Each location has a name and a colour. The name appears in shift forms and the roster view; the colour visually distinguishes shifts assigned to that location in calendar views. The <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Location limit</th></tr></thead>
+          <tbody>
+            <tr><td>Free</td><td>1</td></tr>
+            <tr><td>Starter</td><td>5</td></tr>
+            <tr><td>Professional</td><td>Unlimited</td></tr>
+            <tr><td>Business</td><td>Unlimited</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Each location requires a unique name and a hex colour. The default location (<em>Main Location</em>, <code>#2563EB</code>) is seeded on activation. Deleting a location that is still referenced by existing shifts will leave those shifts with the original location name intact — the name is stored on the shift record, not resolved dynamically.</div>
+      </div>
+    </article>
+
     <article id="article-settings-leave" class="doc-article">
       <h1>Settings: Leave & Accrual</h1>
       <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Professional+ feature; the relevant rows show an upgrade prompt on Free and Starter plans.</p>
@@ -1174,6 +1219,26 @@
             <tr><td><strong>Sick leave (part-time)</strong></td><td>Entitlement in days per year for part-time employees</td><td>5</td></tr>
           </tbody>
         </table>
+      </div>
+    </article>
+
+    <article id="article-settings-employment-type" class="doc-article">
+      <h1>Settings: Employment Type &amp; Overtime</h1>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Weekly hour thresholds are configured in <strong>Employee Roster &gt; Settings</strong> and require the <strong>Starter plan or above</strong>. Each threshold sets the expected maximum scheduled hours per week for that employment type. When a staff member's total scheduled hours in the displayed week approaches or exceeds their threshold, a flag is shown against their row in the roster view. On the Free plan the flags are hidden entirely.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Full-time weekly hours</strong></td><td>Maximum scheduled hours per week before a full-time employee is flagged in the roster</td><td>Starter+</td><td>38</td></tr>
+            <tr><td><strong>Part-time weekly hours</strong></td><td>Maximum scheduled hours per week before a part-time employee is flagged in the roster</td><td>Starter+</td><td>24</td></tr>
+            <tr><td><strong>Casual weekly hours</strong></td><td>No enforced limit applies; casual employees are never flagged regardless of hours scheduled</td><td>Starter+</td><td>No limit</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Hour limit flags are advisory only — they do not prevent a manager from scheduling an employee beyond their threshold. Thresholds apply to <em>scheduled</em> hours (shift duration), not to <em>worked</em> hours from clock-in/out records.</div>
       </div>
     </article>
 
@@ -1240,6 +1305,25 @@
       </div>
     </article>
 
+    <article id="article-settings-integrations" class="doc-article">
+      <h1>Settings: Integrations &amp; Public View</h1>
+      <span class="plan-badge plan-pro">Professional+</span>
+      <p>The Public View setting is located in <strong>Employee Roster &gt; Settings &gt; Roles &amp; Permissions</strong>. It enables a read-only shortcode that exposes the current roster to visitors who are not logged in. This feature requires the <strong>Professional plan or above</strong>; sites on Free or Starter plans see an upgrade prompt in place of this toggle.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Public roster shortcode</strong></td><td>Enables the <code>[emp_roster_public]</code> shortcode. When active, the shortcode renders a read-only view of the current week's roster on any page — no login required. When disabled, the shortcode outputs a login gate instead of roster content.</td><td>Professional+</td><td>Disabled</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">The public roster view displays the same week and month views available to logged-in users but with all editing and management actions removed. Employee names and shift details are visible to anyone who can reach the page — consider placing it behind a password-protected page if unrestricted public exposure is not intended.</div>
+      </div>
+      <p>See <em>Public Roster Shortcode</em> in the Frontend Portal section for full usage details.</p>
+    </article>
+
     <article id="article-settings-email" class="doc-article">
       <h1>Settings: Email Notifications</h1>
       <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Email Notifications</strong> to enable or disable all automated plugin emails. This entire settings card shows an upgrade prompt on the Free plan; email notifications require <strong>Starter or above</strong>.</p>
@@ -1303,6 +1387,24 @@
         <span class="callout-icon">⚠️</span>
         <div class="callout-body">Auto-deletion is permanent. If you need to retain job sheet files for compliance or record-keeping, download and archive them externally before the configured retention period expires, or set the policy to <strong>Never</strong>.</div>
       </div>
+    </article>
+
+    <article id="article-settings-frontend" class="doc-article">
+      <h1>Settings: Frontend Pages</h1>
+      <p>Employee Roster automatically creates five WordPress pages with embedded shortcodes when the plugin is first activated. These pages give employees access to their roster, leave, attendance, and availability without needing to navigate the WordPress admin. Each page can be renamed, moved, or embedded in a custom template — the shortcode remains functional regardless of the page's title or URL.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Page</th><th>Default slug</th><th>Shortcode</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Dashboard</strong></td><td><code>/emp-roster-dashboard</code></td><td><code>[emp_roster_dashboard]</code></td></tr>
+            <tr><td><strong>My Shifts</strong></td><td><code>/emp-roster-shifts</code></td><td><code>[emp_roster_shifts]</code></td></tr>
+            <tr><td><strong>Leave</strong></td><td><code>/emp-roster-leave</code></td><td><code>[emp_roster_leave]</code></td></tr>
+            <tr><td><strong>Clock In / Out</strong></td><td><code>/emp-roster-attendance</code></td><td><code>[emp_roster_attendance]</code></td></tr>
+            <tr><td><strong>Availability</strong></td><td><code>/emp-roster-availability</code></td><td><code>[emp_roster_availability]</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Unauthenticated visitors see a login prompt on all frontend pages. The same application that powers the WordPress admin views also powers the frontend — only the rendered layout changes based on context. See <em>Shortcode Pages</em> in the Frontend Portal section for a full description of each page's functionality.</p>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -1447,7 +1549,7 @@
     'timesheet-views','payroll-calculations','penalty-rates','tax','daily-budget','job-type-hour-limits','print-pdf',
     'enabling-notifications','welcome-email','shift-assignment-email','shift-timing-change-email','leave-decision-email',
     'shortcode-pages','public-roster-shortcode',
-    'settings-general','settings-shift-attendance','settings-leave','settings-payroll','settings-roles','settings-email','settings-attachments',
+    'settings-general','settings-shift-attendance','settings-departments','settings-locations','settings-leave','settings-employment-type','settings-payroll','settings-roles','settings-integrations','settings-email','settings-attachments','settings-frontend',
     'profile-mode-overview','enabling-profile-mode',
     'feature-availability','staff-account-limits'
   ];
