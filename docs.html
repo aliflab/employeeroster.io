@@ -334,8 +334,8 @@
         <button class="sidebar-group-toggle" aria-expanded="false">Settings Reference <span class="ti">▼</span></button>
         <ul class="sidebar-group-links">
           <li><a href="#settings-general" data-article="settings-general">General</a></li>
-          <li><a href="#settings-shift-attendance" data-article="settings-shift-attendance">Shift &amp; Attendance</a></li>
-          <li><a href="#settings-leave" data-article="settings-leave">Leave</a></li>
+          <li><a href="#settings-shift-attendance" data-article="settings-shift-attendance">Roster &amp; Attendance</a></li>
+          <li><a href="#settings-leave" data-article="settings-leave">Leave & Accrual</a></li>
           <li><a href="#settings-payroll" data-article="settings-payroll">Payroll</a></li>
           <li><a href="#settings-roles" data-article="settings-roles">Roles &amp; Permissions</a></li>
           <li><a href="#settings-email" data-article="settings-email">Email Notifications</a></li>
@@ -416,11 +416,16 @@
       <h1>Quick Start</h1>
       <p>Follow these five steps to go from a fresh install to a working roster. Each step takes only a few minutes once the plugin is activated.</p>
       <ol>
-        <li><strong>Create departments:</strong> Go to <strong>Employee Roster &gt; Settings &gt; General</strong> and enter department names, one per line. The Free plan supports 1 department; Starter supports up to 5; Professional and Business are unlimited.</li>
-        <li><strong>Create locations:</strong> In the same General settings panel, add location names and pick a colour for each. Limits follow the same per-plan tiers as departments.</li>
-        <li><strong>Add staff:</strong> Go to <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>. Assign each person a role (Manager, Supervisor, or Employee), a job type (Full-time, Part-time, or Casual), and an hourly pay rate. A WordPress user account is created automatically.</li>
-        <li><strong>Create a shift:</strong> Open <strong>Employee Roster &gt; Dashboard</strong> and click <strong>+ Add Shift</strong>. Fill in the title, date/time, location, department, and assignment type. Assign employees directly or leave it open for self-assignment.</li>
-        <li><strong>Employees log in:</strong> Staff can use the WordPress admin or the frontend portal pages to view their roster, submit leave requests, clock in/out, and set their weekly availability.</li>
+        <li style="margin: 20px 0;"><strong>Create departments:</strong> Go to <strong>Employee Roster &gt; Settings &gt; General</strong> and enter department names, one per line. The Free plan supports 1 department; Starter supports up to 5; Professional and Business are unlimited.</li>
+        <img src="assets/docs/departments.png" alt="Create departments"> <style>img { max-width: 100%; height: auto; }</style>
+        <li style="margin: 20px 0;"><strong>Create locations:</strong> In the same General settings panel, add location names and pick a colour for each. Limits follow the same per-plan tiers as departments.</li>
+        <img src="assets/docs/locations.png" alt="Create locations"> <style>img { max-width: 100%; height: auto; }</style>
+        <li style="margin: 20px 0;"><strong>Add staff:</strong> Go to <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>. Assign each person a role (Manager, Supervisor, or Employee), a job type (Full-time, Part-time, or Casual), and an hourly pay rate. A WordPress user account is created automatically.</li>
+        <img src="assets/docs/add_staff.png" alt="Add staff"> <style>img { max-width: 100%; height: auto; }</style>
+        <li style="margin: 20px 0;"><strong>Create a shift:</strong> Open <strong>Employee Roster &gt; Dashboard</strong> and click <strong>+ Add Shift</strong>. Fill in the title, date/time, location, department, and assignment type. Assign employees directly or leave it open for self-assignment.</li>
+        <img src="assets/docs/add_new_shift.png" alt="Create a shift"> <style>img { max-width: 100%; height: auto; }</style>
+        <li style="margin: 20px 0;"><strong>Employees log in:</strong> Staff can use the WordPress admin or the frontend portal pages to view their roster, submit leave requests, clock in/out, and set their weekly availability.</li>
+        <img src="assets/docs/employee_login.png" alt="Employees log in"> <style>img { max-width: 100%; height: auto; }</style>
       </ol>
       <div class="callout">
         <span class="callout-icon">✅</span>
@@ -534,6 +539,7 @@
             <tr><td><strong>Colour</strong></td><td>Visual colour shown on shift blocks in the weekly and monthly views</td></tr>
             <tr><td><strong>Slot limit</strong></td><td>(Open shifts only) Maximum number of employees who can claim this shift</td></tr>
             <tr><td><strong>Notes</strong></td><td>Optional internal notes visible to all assignees</td></tr>
+            <tr><td><strong>Search by name</strong></td><td>Search by employee name to find the correct person to assign to the shift when using the direct assignment type.</td></tr>
           </tbody>
         </table>
       </div>
@@ -541,7 +547,7 @@
         <span class="callout-icon">⚠️</span>
         <div class="callout-body"><strong>Free plan limit:</strong> The Free plan supports up to 15 active shifts at a time. Attempting to create a 16th shift will return an error until an existing shift is deleted. Starter, Professional, and Business plans have no shift limit.</div>
       </div>
-      <div class="screenshot-placeholder"><span>Screenshot coming soon</span></div>
+      <img src="assets/docs/add_new_shift.png" alt="Add new shift"> <style>img { max-width: 100%; height: auto; }</style>
     </article>
 
     <article id="article-assignment-types" class="doc-article">
@@ -551,6 +557,14 @@
       <p>The manager selects specific employees from the staff list when creating or editing the shift. Assigned employees receive a shift assignment email immediately (if notifications are enabled). When multiple employees are assigned to a direct shift, each employee gets their own independent shift record; editing or deleting one employee's shift does not affect any other employee's record.</p>
       <h2>Open Shifts</h2>
       <p>The shift is published with a configurable slot limit. Eligible employees see it in their roster and can claim a slot themselves. Once claimed, managers can review and adjust the assignment from the shift modal. Open shifts require the <strong>Starter plan or above</strong>. On the Free plan, the Open Shifts row is always shown to managers so that unassigned direct shifts are never hidden, but self-assignment is not available to employees.</p>
+      <p><strong>Admin/Manager: Creating an open shift with approval:</strong></p>
+      <img src="assets/docs/open_with_approval.png" alt="Open shift approval"> <style>img { max-width: 100%; height: auto; }</style>
+      <p style="margin-top: 20px;"><strong>Employee: Claiming an open shift:</strong></p>
+      <img src="assets/docs/employee_shifts.png" alt="Open shift without approval"> <style>img { max-width: 100%; height: auto; }</style>
+      <p style="margin-top: 20px;"><strong>Employee: Requests for open shift:</strong></p>
+      <img src="assets/docs/employee_shifts_request.png" alt="Employee shifts request"> <style>img { max-width: 100%; height: auto; }</style>
+      <p style="margin-top: 20px;"><strong>Admin/Manager: Accepting a request for an open shift:</strong></p>
+      <img src="assets/docs/admin_open_shift_accept.png" alt="Employee shifts request"> <style>img { max-width: 100%; height: auto; }</style>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Use <strong>Direct</strong> when you know exactly who is working a shift. Use <strong>Open</strong> when you need to fill a slot and want employees to self-select, for example for casual or on-call positions.</div>
@@ -570,7 +584,7 @@
       <p>A tabular list of all upcoming shifts with their title, date/time, location, department, and assignment count. Useful for a quick overview without the visual calendar layout. Available on all plans.</p>
       <h2>Today Indicator</h2>
       <p>In both the weekly roster and monthly calendar views, the current day receives a distinct highlighted background. The day column header displays <strong>"Today"</strong> instead of the date string, and individual shift rows for today also display "Today" in their date column.</p>
-      <div class="screenshot-placeholder"><span>Screenshot coming soon</span></div>
+      <img src="assets/docs/calendar_view_weekly.png" alt="Weekly callendar view"> <style>img { max-width: 100%; height: auto; }</style>
     </article>
 
     <article id="article-editing-deleting-shifts" class="doc-article">
@@ -610,12 +624,12 @@
         <span class="callout-icon">📋</span>
         <div class="callout-body">Managers can always view, edit, and delete attendance records through <strong>Employee Roster &gt; Timesheets</strong> regardless of whether self clock-in/out is enabled. The Self-Clock Setting only controls employee-facing access.</div>
       </div>
-      <div class="screenshot-placeholder"><span>Screenshot coming soon</span></div>
+      <img src="assets/docs/clock_in.png" alt="Clock in"> <style>img { max-width: 100%; height: auto; }</style>
     </article>
 
     <article id="article-self-clock-setting" class="doc-article">
       <h1>Self-Clock Setting</h1>
-      <p>The <strong>Allow self clock-in/out</strong> setting in <strong>Employee Roster &gt; Settings &gt; Shift &amp; Attendance</strong> controls whether employees can record their own attendance. It is enabled by default.</p>
+      <p>The <strong>Allow self clock-in/out</strong> setting in <strong>Employee Roster &gt; Settings &gt; Roster &amp; Attendance</strong> controls whether employees can record their own attendance. It is enabled by default.</p>
       <h2>When enabled</h2>
       <ul>
         <li>The <strong>Attendance</strong> submenu is visible to employees and supervisors in the WP admin.</li>
@@ -669,6 +683,7 @@
         </table>
       </div>
       <p>After submission, the employee can view the status of their request (Pending, Approved, or Declined) in the Leave section. They will receive an email notification once a manager reviews it, provided email notifications are enabled.</p>
+      <img src="assets/docs/employee_requesting_leave.png" alt="Employee requests a leave"> <style>img { max-width: 100%; height: auto; }</style>
     </article>
 
     <article id="article-approval-workflow" class="doc-article">
@@ -696,6 +711,7 @@
       <h1>Leave Balances</h1>
       <span class="plan-badge plan-pro">Professional+</span>
       <p>Leave balance tracking requires the <strong>Professional plan or above</strong>. When the <strong>Enable Leave Balance Tracking</strong> setting is turned on, each employee has annual and sick leave balances tracked per calendar year. Balances accrue based on configured hourly entitlements and are automatically reduced when leave is approved.</p>
+      <img src="assets/docs/employee_leave_balances.png" alt="Employees leave balances"> <style>img { max-width: 100%; height: auto; }</style>
       <h2>Default entitlements (hours per year)</h2>
       <div class="table-wrap">
         <table>
@@ -765,6 +781,7 @@
       <p>Shift swap requests require the <strong>Professional plan or above</strong>. The feature lets employees formally request that a shift be reassigned to another employee, subject to manager approval. Employees cannot swap shifts directly without a manager approving the request.</p>
       <h2>How to submit a swap request</h2>
       <p>An employee navigates to the shift they want to give up and clicks <strong>Request Swap</strong>. In the request form they can:</p>
+      <img src="assets/docs/employee_swap_request.png" alt="Employees swap request"> <style>img { max-width: 100%; height: auto; }</style>
       <ul>
         <li>Optionally specify a <strong>target employee</strong> they have arranged to swap with</li>
         <li>Add an optional <strong>reason</strong> for the swap (visible to the reviewing manager)</li>
@@ -780,6 +797,7 @@
       <h1>Manager Review (Shift Swaps)</h1>
       <span class="plan-badge plan-pro">Professional+</span>
       <p>Managers see all pending swap requests in the shift swap queue. Each entry in the queue shows the requesting employee, the shift they want to give up, and the target employee (if one was specified in the request).</p>
+      <img src="assets/docs/admin_swap_shift.png" alt="Admin/Manager swap shift accept/decline"> <style>img { max-width: 100%; height: auto; }</style>
       <h2>Approving a swap</h2>
       <p>When a manager approves a swap, the plugin automatically reassigns the two shifts between the employees involved. No manual editing of shift assignments is needed; the handover is applied atomically on approval.</p>
       <h2>Declining a swap</h2>
@@ -959,12 +977,11 @@
       <ul>
         <li>All emails are sent as <strong>plain text</strong> using WordPress's <code>wp_mail()</code> function</li>
         <li>The From name and From address follow the WordPress site settings with no plugin-specific From address</li>
-        <li>No HTML templates are involved, which maximises deliverability across different mail server configurations</li>
         <li>Notifications are triggered server-side by manager actions and do not require the employee to be logged in when the event occurs</li>
       </ul>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">If emails are not being delivered, check that your WordPress site has a working mail sending configuration. Many hosts require an SMTP plugin (such as WP Mail SMTP) to route outgoing mail reliably.</div>
+        <div class="callout-body">If emails are not being delivered, check that your WordPress site has a working mail sending configuration. Many hosts require an SMTP plugin (such as WP Mail SMTP or Gravity SMTP) to route outgoing mail reliably.</div>
       </div>
     </article>
 
@@ -972,6 +989,7 @@
       <h1>Welcome Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
       <p>The welcome email is sent automatically when a manager creates a new staff account through <strong>Employee Roster &gt; Staff &gt; Add New Staff</strong>, provided email notifications are enabled. It fires for any new account created through the plugin's staff creation flow, including existing WordPress users who are added to the roster for the first time.</p>
+      <img src="assets/docs/employee_welcome_email.png" alt="Employee welcome email"> <style>img { max-width: 100%; height: auto; }</style>
       <h2>Email contents</h2>
       <ul>
         <li>Employee's name and login email address</li>
@@ -984,6 +1002,7 @@
       <h1>Shift Assignment Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
       <p>A shift assignment email is sent to each employee the moment they are assigned to a shift by a manager. The email fires on save; employees are notified immediately when a direct assignment is created or when an open-shift claim is confirmed.</p>
+      <img src="assets/docs/employee_shift_assign_email.png" alt="Employee shift assign email"> <style>img { max-width: 100%; height: auto; }</style>
       <h2>Email contents</h2>
       <ul>
         <li>Shift title</li>
@@ -997,6 +1016,7 @@
       <h1>Shift Timing Change Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
       <p>A timing change email is sent to <strong>all currently assigned employees</strong> whenever a manager changes a shift's start time or end time. This fires automatically on save with no separate notification step for the manager.</p>
+      <img src="assets/docs/employee_shift_time_change_email.png" alt="Employee requests a leave"> <style>img { max-width: 100%; height: auto; }</style>
       <h2>Email contents</h2>
       <ul>
         <li>Shift title</li>
@@ -1013,6 +1033,8 @@
       <h1>Leave Decision Email</h1>
       <span class="plan-badge plan-starter">Starter+</span>
       <p>A leave decision email is sent to an employee the moment a manager approves or declines their leave request. The email fires at the point the manager saves the decision with no additional confirmation step needed.</p>
+      <img src="assets/docs/employee_leave_accept_email.png" alt="Employee leave accept email"> <style>img { max-width: 100%; height: auto; margin-bottom: 20px;}</style>
+      <img src="assets/docs/employee_leave_reject_email.png" alt="Employee leave reject email"> <style>img { max-width: 100%; height: auto; margin-bottom: 20px;}</style>
       <h2>Email contents</h2>
       <ul>
         <li>Leave type (Annual Leave or Sick Leave)</li>
@@ -1027,7 +1049,8 @@
 
     <article id="article-shortcode-pages" class="doc-article">
       <h1>Shortcode Pages</h1>
-      <p>Employee Roster automatically creates five WordPress pages pre-loaded with shortcodes when the plugin is first activated. These pages let employees manage their roster from the public-facing side of the WordPress site, without needing to navigate the WP Admin at all. Unauthenticated visitors who land on any of these pages see a login prompt; the roster content is never publicly exposed through these shortcodes.</p>
+      <p>Employee Roster automatically creates five WordPress pages pre-loaded with shortcodes when the plugin is first activated. These pages let employees manage their roster from the public-facing side of the WordPress site, without needing to navigate the WP Admin at all. Unauthenticated visitors who land on any of these pages see a login prompt; <strong>the roster content is never publicly exposed through these shortcodes.</strong></p>
+      <img src="assets/docs/frontend_pages_5.png" alt="Frontend Pages"> <style>img { max-width: 100%; height: auto; }</style>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Page</th><th>Default Slug</th><th>Shortcode</th></tr></thead>
@@ -1084,8 +1107,8 @@
     </article>
 
     <article id="article-settings-shift-attendance" class="doc-article">
-      <h1>Settings: Shift &amp; Attendance</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Shift &amp; Attendance</strong> to configure clock-in/out behaviour. This section controls whether the attendance submenu and frontend clock widget are made available to employees.</p>
+      <h1>Settings: Roster &amp; Attendance</h1>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Roster &amp; Attendance</strong> to configure clock-in/out behaviour. This section controls whether the attendance submenu and frontend clock widget are made available to employees.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
@@ -1098,14 +1121,14 @@
     </article>
 
     <article id="article-settings-leave" class="doc-article">
-      <h1>Settings: Leave</h1>
+      <h1>Settings: Leave & Accrual</h1>
       <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Professional+ feature; the relevant rows show an upgrade prompt on Free and Starter plans.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
           <tbody>
-            <tr><td><strong>Enable leave management</strong></td><td>Show the Leave menu and allow leave requests to be submitted</td><td>Enabled</td></tr>
-            <tr><td><strong>Enable leave balance tracking</strong></td><td>Track accrued vs used leave per employee <em>(Professional+ only)</em></td><td>Disabled</td></tr>
+            <tr><td><strong>Leave Module</strong></td><td>Show the Leave menu and allow leave requests to be submitted</td><td>Enabled</td></tr>
+            <tr><td><strong>Leave Balances</strong></td><td>Track accrued vs used leave per employee <em>(Professional+ only)</em></td><td>Disabled</td></tr>
             <tr><td><strong>Annual leave (full-time)</strong></td><td>Entitlement in days per year for full-time employees</td><td>20</td></tr>
             <tr><td><strong>Annual leave (part-time)</strong></td><td>Entitlement in days per year for part-time employees</td><td>10</td></tr>
             <tr><td><strong>Sick leave (full-time)</strong></td><td>Entitlement in days per year for full-time employees</td><td>10</td></tr>
