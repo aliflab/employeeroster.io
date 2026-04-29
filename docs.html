@@ -340,7 +340,6 @@
           <li><a href="#settings-payroll" data-article="settings-payroll">Payroll</a></li>
           <li><a href="#settings-roles" data-article="settings-roles">Roles &amp; Permissions</a></li>
           <li><a href="#settings-email" data-article="settings-email">Email Notifications</a></li>
-          <li><a href="#settings-access" data-article="settings-access">Access Control</a></li>
           <li><a href="#settings-attachments" data-article="settings-attachments">Job Sheet Attachments</a></li>
         </ul>
       </div>
@@ -1199,15 +1198,43 @@
 
     <article id="article-settings-roles" class="doc-article">
       <h1>Settings: Roles &amp; Permissions</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Roles &amp; Permissions</strong> to configure role-based access controls and admin visibility. The Admin Visibility rows (<em>Include self in roster</em> and <em>Include all admins in roster</em>) are shown only to WP Administrators; Roster Manager accounts do not see them.</p>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Roles &amp; Permissions</strong> to control which roles can access specific features and data within the plugin. Settings are organised into three groups — Access &amp; Profile Mode, Supervisor Pay Rate, and Admin Visibility — each corresponding to a distinct card section in the admin dashboard.</p>
+
+      <h2>Access &amp; Profile Mode</h2>
+      <p>Both toggles in this group require the <strong>Starter plan or above</strong>. On the Free plan the entire group shows an upgrade prompt and neither toggle can be changed.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
+          <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
           <tbody>
-            <tr><td><strong>Supervisors can see pay rates</strong></td><td>Allow supervisors to view employee pay rates in the staff list and shift modal <em>(Professional+ only)</em></td><td>Disabled</td></tr>
-            <tr><td><strong>Include self in roster (admin)</strong></td><td>Include the currently logged-in WP Admin in roster staff lists</td><td>Disabled</td></tr>
-            <tr><td><strong>Include all admins in roster</strong></td><td>Include all WP Administrators in roster staff lists</td><td>Disabled</td></tr>
-            <tr><td><strong>Public roster shortcode</strong></td><td>Enable the public (no-login) <code>[emp_roster_public]</code> shortcode <em>(Professional+ only)</em></td><td>Disabled</td></tr>
+            <tr><td><strong>Profile Mode</strong></td><td>Prevents employees and supervisors from logging into WordPress directly. Email notifications continue to function normally. Managers and WP Administrators are never affected by this toggle.</td><td>Starter+</td><td>Disabled</td></tr>
+            <tr><td><strong>Manager Settings Access</strong></td><td>Controls whether Roster Managers can open and save changes in the plugin settings pages. When disabled, Roster Managers can view the dashboard but cannot modify any plugin configuration.</td><td>Starter+</td><td>Enabled</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">Disabling <strong>Manager Settings Access</strong> locks all Roster Manager accounts out of plugin settings pages. Only WP Administrators will be able to change plugin configuration. Ensure at least one WP Administrator account remains accessible before applying this restriction.</div>
+      </div>
+      <p>See <em>Profile Mode: Overview &amp; Use Case</em> for a full description of how Profile Mode works and when to use it.</p>
+
+      <h2>Supervisor Pay Rate</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Supervisors can see pay rates</strong></td><td>When enabled, supervisors can view hourly pay rate fields and earnings columns in the staff list and shift assignment modal. When disabled, those fields are hidden from all supervisor accounts regardless of other settings.</td><td>Professional+</td><td>Disabled</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Admin Visibility</h2>
+      <p>These settings control whether WordPress Administrator accounts appear in roster staff lists alongside regular employees. This section is visible only to WP Administrators — Roster Manager accounts do not see it on the settings page and cannot modify these options.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Include Current Administrator</strong></td><td>Adds the currently logged-in WP Administrator to roster staff lists so they appear alongside employees in shift views.</td><td>All plans</td><td>Disabled</td></tr>
+            <tr><td><strong>Include All Administrators</strong></td><td>Adds every WP Administrator account to roster staff lists, regardless of which admin is currently logged in.</td><td>All plans</td><td>Disabled</td></tr>
           </tbody>
         </table>
       </div>
@@ -1225,20 +1252,6 @@
         </table>
       </div>
       <p>Enabling this single toggle activates all four notification types simultaneously: Welcome Email, Shift Assignment Email, Shift Timing Change Email, and Leave Decision Email. Individual notification types cannot be enabled or disabled separately.</p>
-    </article>
-
-    <article id="article-settings-access" class="doc-article">
-      <h1>Settings: Access Control</h1>
-      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Access Control</strong> to configure Profile Mode. This entire settings card shows an upgrade prompt on the Free plan; Profile Mode requires <strong>Starter or above</strong>.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Profile Mode</strong></td><td>Block employees and supervisors from logging into WordPress while keeping email notifications active</td><td>Disabled</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>See <em>Profile Mode: Overview &amp; Use Case</em> for a full description of what happens when this setting is enabled.</p>
     </article>
 
     <article id="article-settings-attachments" class="doc-article">
@@ -1321,7 +1334,7 @@
       <span class="plan-badge plan-starter">Starter+</span>
       <p>Profile Mode requires the <strong>Starter plan or above</strong>. Follow these steps to enable it:</p>
       <ol>
-        <li>Go to <strong>Employee Roster &gt; Settings &gt; Access Control</strong>.</li>
+        <li>Go to <strong>Employee Roster &gt; Settings &gt; Roles & Permissions</strong>.</li>
         <li>Toggle <strong>Enable Profile Mode</strong> on.</li>
         <li>Click <strong>Save Settings</strong>.</li>
       </ol>
@@ -1434,7 +1447,7 @@
     'timesheet-views','payroll-calculations','penalty-rates','tax','daily-budget','job-type-hour-limits','print-pdf',
     'enabling-notifications','welcome-email','shift-assignment-email','shift-timing-change-email','leave-decision-email',
     'shortcode-pages','public-roster-shortcode',
-    'settings-general','settings-shift-attendance','settings-leave','settings-payroll','settings-roles','settings-email','settings-access','settings-attachments',
+    'settings-general','settings-shift-attendance','settings-leave','settings-payroll','settings-roles','settings-email','settings-attachments',
     'profile-mode-overview','enabling-profile-mode',
     'feature-availability','staff-account-limits'
   ];
