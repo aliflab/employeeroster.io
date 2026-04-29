@@ -341,6 +341,7 @@
           <li><a href="#settings-roles" data-article="settings-roles">Roles &amp; Permissions</a></li>
           <li><a href="#settings-email" data-article="settings-email">Email Notifications</a></li>
           <li><a href="#settings-access" data-article="settings-access">Access Control</a></li>
+          <li><a href="#settings-attachments" data-article="settings-attachments">Job Sheet Attachments</a></li>
         </ul>
       </div>
 
@@ -1240,6 +1241,57 @@
       <p>See <em>Profile Mode: Overview &amp; Use Case</em> for a full description of what happens when this setting is enabled.</p>
     </article>
 
+    <article id="article-settings-attachments" class="doc-article">
+      <h1>Settings: Job Sheet Attachments</h1>
+      <span class="plan-badge plan-pro">Professional+</span>
+      <p>Navigate to <strong>Employee Roster &gt; Settings &gt; Attachments</strong> to configure job sheet file attachments. This feature requires the <strong>Professional plan or above</strong>; the Attachments settings card shows an upgrade prompt on Free and Starter plans.</p>
+      <h2>Enabling attachments</h2>
+      <p>Toggle <strong>Enable job sheet attachments</strong> on to allow managers to upload files directly to individual shifts. Once enabled, an <strong>Attachments</strong> section appears inside the shift edit form where files can be uploaded and removed.</p>
+      <h2>Supported file types and size limit</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Allowed types</th><th>Maximum file size</th></tr></thead>
+          <tbody>
+            <tr><td>PDF, PNG, JPG / JPEG</td><td>2 MB per file</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Uploads that exceed 2 MB or use an unsupported file type are rejected at the point of upload with an inline error. No partial upload is stored.</p>
+      <h2>How attachments appear in shifts</h2>
+      <p>Once a file is attached to a shift, it appears as a named link in the shift detail panel for both managers and assigned employees. Multiple files can be attached to a single shift. Managers can delete individual attachments from the shift edit form at any time.</p>
+      <h2>Employee access</h2>
+      <p>Employees assigned to a shift can view and download its attachments from:</p>
+      <ul>
+        <li>The shift detail panel in <strong>Employee Roster &gt; Shifts</strong> in the WP Admin</li>
+        <li>The frontend shift detail view (if the frontend portal shortcode is active)</li>
+      </ul>
+      <p>Employees can only download attachments; they cannot upload or delete files. Unassigned employees and employees on other shifts do not have access to attachments they are not linked to.</p>
+      <h2>Auto-delete policy</h2>
+      <p>Set <strong>Auto-delete attachments after</strong> to automatically remove uploaded files after a shift's date has passed by the configured period. This keeps storage usage in check and removes files that are no longer operationally relevant.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Option</th><th>Effect</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Never</strong></td><td>Files are retained indefinitely until manually deleted by a manager</td></tr>
+            <tr><td><strong>1 month</strong></td><td>Files are deleted approximately 30 days after the shift date</td></tr>
+            <tr><td><strong>3 months</strong></td><td>Files are deleted approximately 90 days after the shift date</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2>What happens when files are automatically removed</h2>
+      <p>When the auto-delete threshold is reached for a shift's attachments:</p>
+      <ul>
+        <li>The physical files are permanently deleted from the server — they cannot be recovered</li>
+        <li>The attachment links are removed from the shift detail panel for both managers and employees</li>
+        <li>No notification is sent to managers or employees when auto-deletion occurs</li>
+        <li>The shift itself and all other shift data (hours, notes, assignments) are unaffected</li>
+      </ul>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">Auto-deletion is permanent. If you need to retain job sheet files for compliance or record-keeping, download and archive them externally before the configured retention period expires, or set the policy to <strong>Never</strong>.</div>
+      </div>
+    </article>
+
     <!-- ─────────────────────────────────────────── -->
     <!-- PROFILE MODE                                -->
     <!-- ─────────────────────────────────────────── -->
@@ -1382,7 +1434,7 @@
     'timesheet-views','payroll-calculations','penalty-rates','tax','daily-budget','job-type-hour-limits','print-pdf',
     'enabling-notifications','welcome-email','shift-assignment-email','shift-timing-change-email','leave-decision-email',
     'shortcode-pages','public-roster-shortcode',
-    'settings-general','settings-shift-attendance','settings-leave','settings-payroll','settings-roles','settings-email','settings-access',
+    'settings-general','settings-shift-attendance','settings-leave','settings-payroll','settings-roles','settings-email','settings-access','settings-attachments',
     'profile-mode-overview','enabling-profile-mode',
     'feature-availability','staff-account-limits'
   ];
