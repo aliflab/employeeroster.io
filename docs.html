@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Documentation – Employee Roster</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-27SR5BZH9W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-27SR5BZH9W');
+  </script>
   <meta name="description" content="Complete documentation for the Employee Roster WordPress plugin. Installation, shift management, attendance, leave, payroll, and settings reference." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://employeeroster.io/docs.html" />
@@ -1707,6 +1715,34 @@
     searchEl.dispatchEvent(new Event('input'));
     searchEl.focus();
   });
+}());
+</script>
+
+<script>
+(function () {
+  window.addEventListener('hashchange', function () {
+    var active = document.querySelector('.doc-article.active');
+    if (active) {
+      var h1 = active.querySelector('h1');
+      if (h1) {
+        gtag('event', 'docs_article_view', { article: h1.textContent.trim() });
+      }
+    }
+  });
+
+  var docsSearch = document.getElementById('docs-search');
+  if (docsSearch) {
+    var searchTimer;
+    docsSearch.addEventListener('input', function () {
+      var q = docsSearch.value.trim();
+      clearTimeout(searchTimer);
+      if (q.length >= 3) {
+        searchTimer = setTimeout(function () {
+          gtag('event', 'docs_search', { query: q });
+        }, 300);
+      }
+    });
+  }
 }());
 </script>
 </body>

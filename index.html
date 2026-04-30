@@ -6,6 +6,14 @@
 
   <!-- Primary SEO -->
   <title>Employee Roster – WordPress Shift Scheduling &amp; Staff Rostering Plugin</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-27SR5BZH9W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-27SR5BZH9W');
+  </script>
   <meta name="description" content="Schedule shifts, track attendance, manage leave, and run payroll inside WordPress. Self-hosted. No SaaS fees, no per-user costs. Free plan available." />
   <meta name="keywords" content="WordPress staff rostering plugin, WordPress shift scheduling, WordPress employee scheduling, WordPress attendance tracking, WordPress leave management, WordPress payroll plugin, self-hosted rostering, shift management WordPress" />
   <meta name="robots" content="index, follow" />
@@ -744,6 +752,57 @@
 
     setTimeout(type, 400);
   })();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var heroBtns = document.querySelectorAll('.hero-btns a');
+  if (heroBtns[0]) {
+    heroBtns[0].addEventListener('click', function () {
+      gtag('event', 'cta_click', { button_label: 'start_free_trial', location: 'hero' });
+    });
+  }
+  if (heroBtns[1]) {
+    heroBtns[1].addEventListener('click', function () {
+      gtag('event', 'cta_click', { button_label: 'notify_me', location: 'hero' });
+    });
+  }
+
+  var navNotify = document.querySelector('.nav-links .btn-plan-outline');
+  if (navNotify) {
+    navNotify.addEventListener('click', function () {
+      gtag('event', 'cta_click', { button_label: 'notify_me', location: 'nav' });
+    });
+  }
+
+  [
+    { cls: 'btn-plan-outline', plan: 'free' },
+    { cls: 'btn-plan-navy',    plan: 'starter' },
+    { cls: 'btn-plan-purple',  plan: 'professional' },
+    { cls: 'btn-plan-amber',   plan: 'business' }
+  ].forEach(function (item) {
+    var btn = document.querySelector('.pricing-cards .' + item.cls);
+    if (btn) {
+      btn.addEventListener('click', function () {
+        gtag('event', 'pricing_click', { plan: item.plan });
+      });
+    }
+  });
+
+  [
+    { selector: '.nav-links a[href="#features"]', label: 'features' },
+    { selector: '.nav-links a[href="#plans"]',    label: 'plans' },
+    { selector: '.nav-links a[href="#pricing"]',  label: 'pricing' },
+    { selector: '.nav-links a[href*="docs.html"]', label: 'docs' }
+  ].forEach(function (item) {
+    var el = document.querySelector(item.selector);
+    if (el) {
+      el.addEventListener('click', function () {
+        gtag('event', 'nav_click', { link_label: item.label });
+      });
+    }
+  });
+});
 </script>
 </body>
 </html>
