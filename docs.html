@@ -233,6 +233,7 @@
           <li><a href="#requirements" data-article="requirements">Requirements</a></li>
           <li><a href="#installation" data-article="installation">Installation</a></li>
           <li><a href="#quick-start" data-article="quick-start">Quick Start</a></li>
+          <li><a href="#updating-plugin" data-article="updating-plugin">Updating the Plugin</a></li>
         </ul>
       </div>
 
@@ -437,6 +438,26 @@
         <span class="callout-icon">✅</span>
         <div class="callout-body">All five steps together typically take under 15 minutes on a fresh install. You can return to Settings at any time to adjust departments, locations, payroll, and notification options.</div>
       </div>
+    </article>
+
+    <article id="article-updating-plugin" class="doc-article">
+      <h1>Updating the Plugin</h1>
+      <p>Plugin updates are delivered through the standard WordPress update mechanism. All data — staff accounts, shifts, attendance records, leave history, settings, and licence information — is fully preserved across updates.</p>
+
+      <h2>Applying an update</h2>
+      <p>When a new version of Employee Roster is available, a notification appears in <strong>WordPress Admin &gt; Dashboard &gt; Updates</strong> and on the <strong>Plugins</strong> screen. Click <strong>Update Now</strong> to apply it. No manual preparation is needed before updating.</p>
+
+      <h2>Auto-deactivation during the update process</h2>
+      <p>WordPress briefly deactivates the plugin during the file-replacement step of an update. This is standard WordPress behaviour and is handled transparently — no manual deactivation or reactivation is required before or after the update. The plugin reactivates automatically once the new files are in place.</p>
+      <p>When the updated plugin loads for the first time after a version change, it runs an internal upgrade routine that applies any required database schema migrations. This routine is safe to run on a live site: it is idempotent, runs only when a version increment is detected, and does not modify or delete existing data.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">No manual steps are required before or after applying a plugin update. All settings, staff accounts, shifts, and historical records are preserved automatically. If you run a staging/production workflow, test the update on staging before applying it to the live site.</div>
+      </div>
+
+      <h2>Seamless plan upgrades</h2>
+      <p>Upgrading your licence plan (for example, from Starter to Professional) does not require a plugin update or any WordPress configuration change. Once the upgraded licence is verified, plan-gated features become available immediately on the next page load with no manual re-enabling needed.</p>
+      <p>If settings or data that were previously constrained by a lower plan already exist — for example, departments added during a higher-tier trial — they are restored automatically the moment the upgrade is applied. Downgrading to a lower plan does not delete data above the new limits; it only blocks the creation of new entries beyond the cap. See <em>Staff Account Limits by Plan</em> for the full breakdown.</p>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -855,9 +876,47 @@
     </article>
 
     <article id="article-deactivating-staff" class="doc-article">
-      <h1>Deactivating / Deleting Staff</h1>
-      <p>Staff can be removed from the list in <strong>Employee Roster &gt; Staff</strong>. When you delete a staff member through the plugin interface, the underlying WordPress user account is deleted along with all associated plugin data.</p>
-      <h2>What is deleted</h2>
+      <h1>Deactivating &amp; Deleting Staff</h1>
+      <p>Employee Roster provides a <strong>deactivation</strong> action that suspends a staff member's access and hides them from the roster while preserving all their historical data. If you need to permanently remove the WordPress user account itself, that is done separately by a WordPress Administrator through <strong>WordPress Admin &gt; Users</strong>.</p>
+
+      <h2>Deactivating a Staff Member</h2>
+      <p>Open a staff record in <strong>Employee Roster &gt; Staff</strong> and click <strong>Deactivate</strong>. A confirmation prompt is shown before the change is applied. The action takes effect immediately.</p>
+
+      <h3>Visibility after deactivation</h3>
+      <ul>
+        <li>The employee is hidden from the active staff list. A <strong>Show inactive</strong> toggle in the Staff screen reveals deactivated accounts when needed.</li>
+        <li>They are removed from shift assignment dropdowns — managers cannot assign new shifts to a deactivated employee.</li>
+        <li>In the weekly and monthly roster views, the deactivated employee's row no longer appears.</li>
+        <li>All historical data is preserved and fully accessible to managers: past shift assignments, attendance records, leave requests, and timesheet totals continue to appear in the Timesheets view under the employee's name.</li>
+      </ul>
+
+      <h3>Access revocation</h3>
+      <ul>
+        <li>The employee's active WordPress sessions are <strong>terminated immediately</strong> — they are logged out even if they were actively browsing at the time of deactivation.</li>
+        <li>Subsequent login attempts are rejected with the message: <em>"Your account has been deactivated. Please contact your manager."</em></li>
+        <li>All frontend portal pages (shifts, leave, clock in/out, availability) become inaccessible to the deactivated user.</li>
+      </ul>
+
+      <h3>Email flow</h3>
+      <p>No automated email is sent to the employee upon deactivation. Deactivation is an administrative action; whether to communicate it to the affected employee is left to the manager's discretion.</p>
+
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Deactivation is the recommended action for employees who have left the organisation but whose historical records — timesheets, payroll, attendance — must be retained for compliance or reporting purposes.</div>
+      </div>
+
+      <h2>Reactivating a Staff Member</h2>
+      <p>To reactivate a deactivated employee, open the Staff screen, enable the <strong>Show inactive</strong> filter to reveal their record, then click <strong>Reactivate</strong>.</p>
+      <ul>
+        <li>The employee reappears in the active staff list and shift assignment dropdowns immediately.</li>
+        <li>All historical data is restored in full — nothing is removed during the deactivation period.</li>
+        <li>The employee can log in again immediately after reactivation.</li>
+        <li>A welcome email is <strong>not</strong> re-sent on reactivation; the welcome email fires only when an account is first created.</li>
+      </ul>
+
+      <h2>Deleting a Staff Member</h2>
+      <p>Permanent deletion of a WordPress user account must be done by a WordPress Administrator through <strong>WordPress Admin &gt; Users</strong>, not through the Employee Roster interface. Deleting a user from the WordPress Users list removes their account entirely and also purges all associated plugin records.</p>
+      <h3>What is deleted</h3>
       <ul>
         <li>The WordPress user account</li>
         <li>All shift assignments for that employee</li>
@@ -867,7 +926,7 @@
       </ul>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>This action cannot be undone.</strong> Deleting a staff member permanently removes all their historical timesheet, attendance, leave, and shift data. If you need to retain historical payroll or attendance records, consider removing the employee's roster role rather than deleting the account entirely.</div>
+        <div class="callout-body"><strong>This action cannot be undone.</strong> Deleting a user from WordPress permanently removes all their historical timesheet, attendance, leave, and shift data from Employee Roster. If you need to retain any of this for payroll or compliance, <strong>deactivate</strong> the account instead.</div>
       </div>
     </article>
 
@@ -1538,7 +1597,7 @@
 <script>
 (function () {
   var ARTICLES = [
-    'requirements','installation','quick-start',
+    'requirements','installation','quick-start','updating-plugin',
     'custom-roles-overview','custom-capabilities','admin-inclusion-settings','hidden-wordpress-ui',
     'creating-shifts','assignment-types','roster-views','editing-deleting-shifts',
     'clocking-in-out','self-clock-setting','attendance-management',
