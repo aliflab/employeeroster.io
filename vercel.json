@@ -1,0 +1,31 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/docs.html",
+      "destination": "/docs",
+      "permanent": true
+    },
+    {
+      "source": "/blog/why-employee-roster-is-the-best-wordpress-rostering-plugin.html",
+      "destination": "/blog/why-employee-roster-is-the-best-wordpress-rostering-plugin",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-rachel-saved-2-hours-a-day-rostering-her-cafe-staff-on-wordpress.html",
+      "destination": "/blog/how-rachel-saved-2-hours-a-day-rostering-her-cafe-staff-on-wordpress",
+      "permanent": true
+    }
+  ]
+}
