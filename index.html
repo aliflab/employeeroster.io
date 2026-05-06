@@ -354,7 +354,7 @@
       <div class="feature-card">
         <div class="feature-icon">✉️</div>
         <h3>Email Notifications</h3>
-        <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. Triggered server-side. No employee login required.</p>
+        <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. Available on all plans — free plan sends a simplified welcome; Starter and above include full login credentials and setup links.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📱</div>
@@ -380,6 +380,21 @@
         <div class="feature-icon">⏳</div>
         <h3>Weekly Hour Limits</h3>
         <p>Configure weekly hour thresholds per job type: Full-time 38h, Part-time 24h, Casual unlimited. Employees approaching or exceeding their limit are flagged in the roster view.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👤</div>
+        <h3>Staff Deactivation</h3>
+        <p>Deactivate employees without deleting their records. Deactivated staff are hidden from the roster and shift assignments, their frontend access is revoked, and pending leave and swap requests are cancelled automatically. Reactivate any time with a fresh welcome email.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Weekend Penalty Rates</h3>
+        <p>Configure Saturday and Sunday pay multipliers that automatically apply to shift earnings in timesheets and daily labour cost calculations. Keeps your payroll accurate for businesses with weekend penalty award rates.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧙</div>
+        <h3>Setup Wizard</h3>
+        <p>A guided setup wizard walks you through company details, locations, departments, employment settings, and key features when you first activate the plugin — so you're ready to build your first roster in minutes.</p>
       </div>
     </div>
   </div>
@@ -453,7 +468,7 @@
           </tr>
           <tr>
             <td>Active shifts</td>
-            <td><span class="cell-note">Up to 15</span></td>
+            <td><span class="cell-note">Up to 15<br>today + future shifts only</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
@@ -564,6 +579,27 @@
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
+            <td>Weekend penalty rates</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Staff deactivation &amp; reactivation</td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Staff CSV export</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Staff directory</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
             <td>Manager Settings access</td>
             <td><span class="cross">✗</span></td>
             <td><span class="check">✓</span></td>
@@ -572,8 +608,8 @@
           </tr>
           <tr>
             <td>Email notifications</td>
-            <td><span class="cross">✗</span></td>
-            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Simplified welcome email</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Full onboarding email</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
@@ -650,9 +686,10 @@
           <li>1 location, 1 department</li>
           <li>Up to 5 employees</li>
           <li>1 manager, no supervisors</li>
-          <li>Up to 15 active shifts</li>
+          <li>Up to 15 active shifts <span style="font-size:.78rem;color:var(--muted)">(today + future only)</span></li>
           <li>Day &amp; weekly roster view</li>
           <li>14-day attendance history</li>
+          <li>Email notifications (simplified)</li>
         </ul>
         <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-plan btn-plan-outline">Notify me</a>
       </div>
@@ -675,7 +712,9 @@
           <li>Leave approval workflow</li>
           <li>Payroll (pay rates &amp; earnings)</li>
           <li>Profile Mode</li>
-          <li>CSV export &amp; email notifications</li>
+          <li>Full onboarding email notifications</li>
+          <li>CSV export (timesheets &amp; staff)</li>
+          <li>Weekend penalty rates</li>
         </ul>
         <a href="https://checkout.freemius.com/plugin/28057/plan/46315/" class="btn-plan btn-plan-navy">Get Started</a>
       </div>
