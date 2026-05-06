@@ -263,6 +263,7 @@
           <li><a href="#assignment-types" data-article="assignment-types">Assignment Types</a></li>
           <li><a href="#roster-views" data-article="roster-views">Roster Views</a></li>
           <li><a href="#editing-deleting-shifts" data-article="editing-deleting-shifts">Editing &amp; Deleting Shifts</a></li>
+          <li><a href="#active-shifts" data-article="active-shifts">Active Shifts</a></li>
         </ul>
       </div>
 
@@ -638,6 +639,31 @@
         <span class="callout-icon">⚠️</span>
         <div class="callout-body">Deleting a shift removes all employee assignments for that shift. If you only need to remove one employee from a shift, use the reassignment controls in the edit modal rather than deleting the whole shift.</div>
       </div>
+    </article>
+
+    <article id="article-active-shifts" class="doc-article">
+      <h1>Active Shifts</h1>
+      <p>An <strong>active shift</strong> is any shift whose date is today or in the future. Past shifts (start date before today) are not counted as active. The active-shift count determines how close you are to your plan's shift limit.</p>
+      <h2>Why active shifts are counted</h2>
+      <p>EmpRoster counts active shifts rather than total shifts so that historical records are never deleted just to make room. Once a shift's date passes it no longer occupies a slot in the limit, meaning the roster can grow indefinitely into the past without affecting how many upcoming shifts you can schedule.</p>
+      <h2>Plan limits</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Active shift limit</th></tr></thead>
+          <tbody>
+            <tr><td>Free</td><td>15</td></tr>
+            <tr><td>Starter</td><td>Unlimited</td></tr>
+            <tr><td>Professional</td><td>Unlimited</td></tr>
+            <tr><td>Business</td><td>Unlimited</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body"><strong>Free plan:</strong> When you reach 15 active shifts, attempting to create a new shift returns an error. Delete or wait for an existing upcoming shift to pass before adding another. Upgrading to Starter or above removes the limit entirely.</div>
+      </div>
+      <h2>Checking your active shift count</h2>
+      <p>Navigate to <strong>EmpRoster &gt; Dashboard</strong>. The summary bar at the top of the page shows the current active shift count. Free plan accounts also display a warning when the limit is approaching.</p>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -1624,7 +1650,7 @@
   var ARTICLES = [
     'requirements','installation','quick-start','updating-plugin',
     'custom-roles-overview','custom-capabilities','admin-inclusion-settings','hidden-wordpress-ui',
-    'creating-shifts','assignment-types','roster-views','editing-deleting-shifts',
+    'creating-shifts','assignment-types','roster-views','editing-deleting-shifts','active-shifts',
     'clocking-in-out','self-clock-setting','attendance-management',
     'submitting-leave','approval-workflow','leave-balances',
     'setting-availability','availability-hints',
