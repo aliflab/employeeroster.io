@@ -301,6 +301,13 @@
         </ul>
       </div>
 
+      <div class="sidebar-group" data-group="requests">
+        <button class="sidebar-group-toggle" aria-expanded="false">Requests <span class="ti">▼</span></button>
+        <ul class="sidebar-group-links">
+          <li><a href="#requests-page" data-article="requests-page">Requests Page Overview</a></li>
+        </ul>
+      </div>
+
       <div class="sidebar-group" data-group="staff">
         <button class="sidebar-group-toggle" aria-expanded="false">Staff Management <span class="ti">▼</span></button>
         <ul class="sidebar-group-links">
@@ -624,7 +631,7 @@
       <p><strong>Staff visibility:</strong> Only staff members who have at least one shift assigned in the selected week are displayed; employees with no shifts in that window are automatically hidden to keep the view focused. Employees always see their own row regardless of this rule.</p>
       <p><strong>Unassigned shifts:</strong> Direct shifts with no assigned employees appear in the Open Shifts row for managers with an "Unassigned" badge. The Open Shifts row is always shown to managers so that no shift is ever silently hidden.</p>
       <h2>Monthly Calendar View</h2>
-      <p>A full month grid where each day cell shows colour-coded shift summary badges. Today's cell is highlighted. Available on all plans.</p>
+      <p>Monthly calendar view is available on all plans including Free. Each day cell shows shift summaries with colour-coded badges. Today's cell is highlighted.</p>
       <h2>List View</h2>
       <p>A tabular list of all upcoming shifts with their title, date/time, location, department, and assignment count. Useful for a quick overview without the visual calendar layout. Available on all plans.</p>
       <h2>Today Indicator</h2>
@@ -659,19 +666,15 @@
         <table>
           <thead><tr><th>Plan</th><th>Active shift limit</th></tr></thead>
           <tbody>
-            <tr><td>Free</td><td>15</td></tr>
+            <tr><td>Free</td><td>Unlimited</td></tr>
             <tr><td>Starter</td><td>Unlimited</td></tr>
             <tr><td>Professional</td><td>Unlimited</td></tr>
             <tr><td>Business</td><td>Unlimited</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Free plan:</strong> When you reach 15 active shifts, attempting to create a new shift returns an error. Delete or wait for an existing upcoming shift to pass before adding another. Upgrading to Starter or above removes the limit entirely.</div>
-      </div>
       <h2>Checking your active shift count</h2>
-      <p>Navigate to <strong>EmpRoster &gt; Dashboard</strong>. The summary bar at the top of the page shows the current active shift count. Free plan accounts also display a warning when the limit is approaching.</p>
+      <p>Navigate to <strong>EmpRoster &gt; Dashboard</strong>. The summary bar at the top of the page shows the current active shift count.</p>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -681,7 +684,7 @@
     <article id="article-clocking-in-out" class="doc-article">
       <h1>Clocking In and Out</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Attendance and clock in/out requires the <strong>Starter plan or above</strong>. Employees navigate to <strong>EmpRoster &gt; Attendance</strong> in the WP admin, or visit the frontend <code>/emp-roster-attendance</code> page, to start and end a clock session. Only one active clock-in session is permitted per user at a time; starting a new session while one is already open is blocked.</p>
+      <p>Clocking in and out requires the <strong>Starter plan or above</strong>. On the Free plan, the Attendance submenu and the frontend clock page (<code>/emp-roster-attendance</code>) are hidden entirely — no upgrade prompt is shown to employees. On Starter and above, employees navigate to <strong>EmpRoster &gt; Attendance</strong> in the WP admin, or visit the frontend clock page, to start and end a clock session. Only one active clock-in session is permitted per user at a time; starting a new session while one is already open is blocked.</p>
       <h2>What the system records</h2>
       <p>Each attendance entry stores the following fields:</p>
       <ul>
@@ -700,7 +703,12 @@
 
     <article id="article-self-clock-setting" class="doc-article">
       <h1>Self-Clock Setting</h1>
+      <span class="plan-badge plan-starter">Starter+</span>
       <p>The <strong>Allow self clock-in/out</strong> setting in <strong>EmpRoster &gt; Settings &gt; Roster &amp; Attendance</strong> controls whether employees can record their own attendance. It is enabled by default.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">This setting only applies on the <strong>Starter plan and above</strong>. On the Free plan, the Attendance feature is unavailable entirely and this setting has no effect.</div>
+      </div>
       <h2>When enabled</h2>
       <ul>
         <li>The <strong>Attendance</strong> submenu is visible to employees and supervisors in the WP admin.</li>
@@ -721,7 +729,8 @@
 
     <article id="article-attendance-management" class="doc-article">
       <h1>Attendance Management (Managers)</h1>
-      <p>Managers access all attendance records from <strong>EmpRoster &gt; Timesheets</strong>. This view covers every staff member's clock history with filter and inline-edit capabilities.</p>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Attendance management requires the <strong>Starter plan or above</strong>. On the Free plan, the Attendance feature is unavailable entirely. Managers access all attendance records from <strong>EmpRoster &gt; Timesheets</strong>. This view covers every staff member's clock history with filter and inline-edit capabilities.</p>
       <h2>What managers can do</h2>
       <ul>
         <li>View the full clock-in/out history for any employee</li>
@@ -729,10 +738,6 @@
         <li>Delete incorrect or duplicate records</li>
         <li>Filter the view by date range and by individual employee</li>
       </ul>
-      <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Free plan limit:</strong> On the Free plan, attendance history is limited to the last 14 days. Records older than 14 days are not visible to managers until the site upgrades to Starter or above, which provides full history access.</div>
-      </div>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -742,7 +747,7 @@
     <article id="article-submitting-leave" class="doc-article">
       <h1>Submitting Leave</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Leave submission requires the <strong>Starter plan or above</strong>. Employees navigate to <strong>EmpRoster &gt; Leave</strong> and click <strong>Request Leave</strong> to submit a leave request. Once submitted, the request is created with a <strong>Pending</strong> status and becomes visible to managers for review.</p>
+      <p>Leave submission requires the <strong>Starter plan or above</strong>. On the Free plan, the Leave menu and the Requests page are hidden entirely from employees and managers — no upgrade prompt is shown. On Starter and above, employees navigate to <strong>EmpRoster &gt; Leave</strong> and click <strong>Request Leave</strong> to submit a leave request. Once submitted, the request is created with a <strong>Pending</strong> status and becomes visible to managers for review.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Field</th><th>Description</th></tr></thead>
@@ -760,7 +765,8 @@
 
     <article id="article-approval-workflow" class="doc-article">
       <h1>Approval Workflow</h1>
-      <p>When an employee submits a leave request it enters the <strong>Pending</strong> state. Managers see all pending requests in the Leave section of the WP admin and can take action on each one individually.</p>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>The leave approval workflow requires the <strong>Starter plan or above</strong>. On the Free plan, the Leave menu and Requests page are hidden entirely for both employees and managers. On Starter and above, when an employee submits a leave request it enters the <strong>Pending</strong> state. Managers see all pending requests in the Leave section of the WP admin and can take action on each one individually.</p>
       <h2>Status transitions</h2>
       <div class="table-wrap">
         <table>
@@ -773,10 +779,6 @@
         </table>
       </div>
       <p>When a manager approves or declines a request, the employee receives a Leave Decision email containing the outcome and the dates (if email notifications are enabled).</p>
-      <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Free plan limitation:</strong> On the Free plan, employees can submit leave requests but managers cannot approve or decline them; the Approve and Decline buttons display an upgrade prompt. The leave approval workflow requires the <strong>Starter plan or above</strong>.</div>
-      </div>
     </article>
 
     <article id="article-leave-balances" class="doc-article">
@@ -881,6 +883,46 @@
     </article>
 
     <!-- ─────────────────────────────────────────── -->
+    <!-- REQUESTS                                    -->
+    <!-- ─────────────────────────────────────────── -->
+
+    <article id="article-requests-page" class="doc-article">
+      <h1>Requests Page Overview</h1>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>The Requests page is the unified hub where managers review and action all pending staff requests. It brings together <strong>leave requests</strong> and <strong>shift swap requests</strong> in one place, so managers do not need to navigate to separate menus to stay on top of pending actions.</p>
+      <p>Access the Requests page from <strong>EmpRoster &gt; Requests</strong> in the WP admin. The page is available on the Starter plan and above; on the Free plan, the Leave and Requests menus are hidden entirely.</p>
+
+      <h2>Leave requests tab</h2>
+      <p>The Leave tab lists all employee leave requests with their current status. Managers can:</p>
+      <ul>
+        <li>View the requesting employee, leave type (Annual or Sick), start date, and end date</li>
+        <li>Filter by status (Pending, Approved, Declined) and by employee</li>
+        <li>Approve or decline a request directly from the list — no separate detail page is required</li>
+        <li>View an optional reason note left by the employee at submission time</li>
+      </ul>
+      <p>Approving a leave request automatically debits the employee's leave balance if balance tracking is enabled (Starter+).</p>
+      <div class="screenshot-placeholder">Screenshot placeholder — Requests page, Leave tab</div>
+
+      <h2>Shift swap requests tab</h2>
+      <span class="plan-badge plan-pro">Professional+</span>
+      <p>The Shift Swaps tab lists all pending shift swap requests. This tab is visible only on the Professional plan and above. Managers can:</p>
+      <ul>
+        <li>See the requesting employee, the shift they want to give up, and the target employee (if one was specified)</li>
+        <li>Approve or decline the swap — approval automatically reassigns both shifts</li>
+        <li>View an optional reason note from the requesting employee</li>
+      </ul>
+      <div class="screenshot-placeholder">Screenshot placeholder — Requests page, Shift Swaps tab</div>
+
+      <h2>Email notifications for managers</h2>
+      <p>When a new leave request or shift swap request is submitted, all Roster Managers receive an automated email notification (if email notifications are enabled). The email includes the employee name, request type, and dates, with a prompt to review the request in the admin.</p>
+
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">The Requests page is a manager-facing view only. Employees submit requests through the frontend portal or WP admin Leave / Shifts menus and can view the status of their own requests there, but they do not have access to the Requests page.</div>
+      </div>
+    </article>
+
+    <!-- ─────────────────────────────────────────── -->
     <!-- STAFF MANAGEMENT                            -->
     <!-- ─────────────────────────────────────────── -->
 
@@ -901,11 +943,11 @@
       </div>
       <div class="callout">
         <span class="callout-icon">✉️</span>
-        <div class="callout-body"><strong>Welcome email:</strong> If email notifications are enabled, a welcome email is sent to the new employee automatically. On the <strong>Free plan</strong>, this is a simplified notification (name and notification of roster addition; no credentials). On <strong>Starter and above</strong>, the full onboarding email is sent containing the employee's login email, a one-time password setup link, and the WordPress admin login URL.</div>
+        <div class="callout-body"><strong>Welcome email:</strong> If email notifications are enabled, a welcome email is sent to the new employee automatically. On the <strong>Free plan</strong>, this is a simplified notification (name and notification of roster addition; no credentials). On <strong>Starter and above</strong>, the full onboarding email is sent containing the employee's login email, a one-time password setup link, and a direct link to the EmpRoster dashboard.</div>
       </div>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Staff account limits apply by plan.</strong> The Free plan supports up to 5 employees, 0 supervisors, and 1 manager. Starter supports up to 25 employees, 2 supervisors, and 3 managers. Professional and Business plans are unlimited. Attempting to create a staff member beyond these limits returns an error. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
+        <div class="callout-body"><strong>Staff account limits and role restrictions apply by plan.</strong> On the Free plan, the <strong>Roster Supervisor role is not available</strong> and there is no dedicated Manager account — only the WordPress Administrator acts as manager. Starter supports up to 25 employees, 2 supervisors, and 3 managers. Professional and Business plans are unlimited. Attempting to create a staff member beyond these limits returns an error. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
       </div>
     </article>
 
@@ -923,12 +965,28 @@
     <article id="article-skill-tags" class="doc-article">
       <h1>Skill Tags</h1>
       <span class="plan-badge plan-pro">Professional+</span>
-      <p>Skill Tags let managers label employees with relevant competencies — for example "Barista", "First Aid", "Forklift Licence", or "Opening Shift". Tags are added from the <strong>Add Staff</strong> or <strong>Edit Staff</strong> modal, and appear on the employee's profile and in the shift assignment panel so managers can quickly identify the right person for a shift.</p>
-      <p>Skill Tags require the <strong>Professional plan or above</strong>. Starter plan users see an upgrade prompt in staff modals. Free plan users see no skill tag UI.</p>
+      <p>Skill Tags let managers label employees with relevant competencies — for example <em>Barista</em>, <em>First Aid</em>, <em>Forklift Licence</em>, or <em>Opening Shift Lead</em>. Tags appear on each employee's profile and in the shift assignment panel so managers can immediately identify the right person for a shift. Skill Tags require the <strong>Professional plan or above</strong>.</p>
+
+      <h2>Plan availability</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Skill Tags</th></tr></thead>
+          <tbody>
+            <tr><td>Free</td><td><span class="cross">✗</span> <span class="cell-note">No skill tag UI shown</span></td></tr>
+            <tr><td>Starter</td><td><span class="cross">✗</span> <span class="cell-note">Upgrade prompt in staff modal</span></td></tr>
+            <tr><td>Professional</td><td><span class="check">✓</span></td></tr>
+            <tr><td>Business</td><td><span class="check">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
       <h2>Adding skill tags to an employee</h2>
-      <p>Open the Add Staff or Edit Staff modal in <strong>EmpRoster &gt; Staff</strong>. A Skill Tags field is available on Professional and Business plans. Enter one or more tags for the employee and save. Tags are stored per employee and can be added, edited, or removed at any time.</p>
+      <p>Open the Add Staff or Edit Staff modal in <strong>EmpRoster &gt; Staff</strong>. A <strong>Skill Tags</strong> field is available on Professional and Business plans. Type to enter one or more tags for the employee and save. Tags are stored per employee and can be added, edited, or removed at any time.</p>
+      <div class="screenshot-placeholder">Screenshot placeholder — Skill Tags field in Edit Staff modal</div>
+
       <h2>Using skill tags when assigning shifts</h2>
-      <p>When a manager opens the shift assignment modal to add employees to a shift, each eligible employee's skill tags are displayed alongside their name and availability status. This allows managers to quickly identify the right person for a shift without leaving the modal.</p>
+      <p>When a manager opens the shift assignment modal to add employees to a shift, each eligible employee's skill tags are displayed as small chips alongside their name and availability indicator. This allows managers to identify qualified staff at a glance without leaving the modal.</p>
+      <div class="screenshot-placeholder">Screenshot placeholder — Skill tags visible in shift assignment modal</div>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Skill tags are display-only in the assignment modal — they do not restrict which employees can be assigned to a shift. A manager can assign any employee regardless of their tags.</div>
@@ -941,6 +999,7 @@
 
       <h2>Deactivating a Staff Member</h2>
       <p>Open a staff record in <strong>EmpRoster &gt; Staff</strong> and click <strong>Deactivate</strong> from the Edit modal. A confirmation prompt is shown before the change is applied. The action takes effect immediately.</p>
+      <div class="screenshot-placeholder">Screenshot placeholder — Deactivate button in Edit Staff modal</div>
 
       <h3>Visibility after deactivation</h3>
       <ul>
@@ -974,6 +1033,7 @@
         <li>The employee can log in again immediately after reactivation.</li>
         <li>A fresh password is generated, the deactivation flag is cleared, and a welcome email is sent to the employee.</li>
       </ul>
+      <div class="screenshot-placeholder">Screenshot placeholder — Deactivated Employees section with Reactivate button</div>
 
       <h2>Deleting a Staff Member</h2>
       <p>Permanent deletion of a WordPress user account must be done by a WordPress Administrator through <strong>WordPress Admin &gt; Users</strong>, not through the Employee Roster interface. Deleting a user from the WordPress Users list removes their account entirely and also purges all associated plugin records.</p>
@@ -1005,13 +1065,13 @@
         <li>Earnings: gross pay calculated from hours worked × pay rate (when payroll is enabled)</li>
         <li>Date range filter: narrow the view to any date range</li>
       </ul>
-      <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Free plan limit:</strong> Attendance history is limited to the last 14 days on the Free plan. Upgrading to Starter or above provides access to the full history.</div>
-      </div>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body"><strong>CSV export</strong> (Starter+): Managers can export the timesheet data in the current date range to a CSV file for external payroll processing. The export button is visible in the Timesheets toolbar on Starter plans and above.</div>
+      </div>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body"><strong>Reveal Pay Rate toggle:</strong> By default, pay rate and earnings columns are collapsed in the Timesheets view to keep the table compact. Use the <strong>Show Pay</strong> toggle in the toolbar to reveal individual pay rate and gross earnings columns for each session row.</div>
       </div>
     </article>
 
@@ -1037,7 +1097,7 @@
       </ul>
       <h2>Weekend Penalty Rates (Starter+)</h2>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Configure Saturday and Sunday pay multipliers in <strong>EmpRoster &gt; Settings &gt; Payroll</strong>. When enabled, the multiplier is applied to shift earnings in timesheet session rows, grouped totals, daily labour cost chips, and CSV exports. See <em>Penalty Rates</em> for full configuration details.</p>
+      <p>Configure Saturday and Sunday pay multipliers in <strong>EmpRoster &gt; Settings &gt; Payroll &gt; Earnings &amp; Rates</strong>. When a multiplier greater than 1.0 is set for a day, it is applied to all shift earnings that fall on that day — affecting timesheet session rows, grouped totals, daily labour cost chips, and CSV exports. Set either multiplier to <strong>1.0</strong> to effectively disable the penalty for that day. See <em>Penalty Rates</em> for full configuration details.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Pay rates are set per employee in the Staff screen. On the Free plan, pay rate fields are hidden entirely with no upgrade prompt displayed.</div>
@@ -1130,6 +1190,10 @@
         <li>Inter font for clean print output</li>
       </ul>
       <p>The browser's print dialog launches automatically. Choose <strong>Save as PDF</strong> in the print destination to generate a PDF file using the browser's built-in PDF printer. No additional software is needed.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Pay rates and earnings figures are <strong>not included</strong> in the Print PDF output. The exported roster is a shift schedule only, suitable for sharing with employees.</div>
+      </div>
     </article>
 
     <!-- ─────────────────────────────────────────── -->
@@ -1138,11 +1202,19 @@
 
     <article id="article-enabling-notifications" class="doc-article">
       <h1>Enabling Notifications</h1>
-      <p>Email notifications are available on all plans. Go to <strong>EmpRoster &gt; Settings &gt; Email Notifications</strong> and toggle <strong>Enable email notifications</strong> on to activate all automated emails. The emails sent depend on your plan:</p>
+      <p>Email notifications are available on all plans including Free. Go to <strong>EmpRoster &gt; Settings &gt; Email Notifications</strong> and toggle <strong>Enable email notifications</strong> on to activate all automated emails. The emails sent depend on your plan:</p>
       <ul>
-        <li><strong>Free plan:</strong> Sends a simplified welcome email when a new staff account is created (employee name and notification of roster addition; no login credentials).</li>
-        <li><strong>Starter and above:</strong> Sends the full onboarding welcome email (login email, one-time password setup link, WP admin URL) plus shift assignment emails, shift timing change emails, and leave decision emails.</li>
+        <li><strong>Free plan:</strong> Sends a simplified welcome email when a new staff account is created (employee name and notification of roster addition; no login credentials or dashboard link).</li>
+        <li><strong>Starter and above:</strong> Sends the full onboarding welcome email (login email, one-time password setup link, direct EmpRoster dashboard link) plus shift assignment emails, shift timing change emails, and leave decision emails.</li>
       </ul>
+
+      <h2>Manager notification emails</h2>
+      <p>In addition to employee-facing notifications, managers receive email alerts for key events:</p>
+      <ul>
+        <li><strong>New leave request:</strong> When an employee submits a leave request, all Roster Managers receive an email notification so no request goes unnoticed.</li>
+        <li><strong>New shift swap request:</strong> When an employee submits a shift swap request (Professional+), Roster Managers are notified by email.</li>
+      </ul>
+      <p>Manager notification emails use the same <strong>Enable email notifications</strong> toggle. They cannot be enabled or disabled independently of the employee notifications.</p>
       <h2>Technical details</h2>
       <ul>
         <li>All emails are sent as <strong>plain text</strong> using WordPress's <code>wp_mail()</code> function</li>
@@ -1173,7 +1245,7 @@
       <ul>
         <li>Employee's name and login email address</li>
         <li>A one-time password setup link (the link expiry follows WordPress default settings)</li>
-        <li>The WordPress admin login URL</li>
+        <li>A direct link to the EmpRoster dashboard</li>
       </ul>
     </article>
 
@@ -1236,7 +1308,7 @@
           <tbody>
             <tr><td><strong>Dashboard</strong></td><td><code>/emp-roster-dashboard</code></td><td><code>[emp_roster_dashboard]</code></td></tr>
             <tr><td><strong>My Shifts</strong></td><td><code>/emp-roster-shifts</code></td><td><code>[emp_roster_shifts]</code></td></tr>
-            <tr><td><strong>Leave</strong></td><td><code>/emp-roster-leave</code></td><td><code>[emp_roster_leave]</code></td></tr>
+            <tr><td><strong>Leave</strong></td><td><code>/emp-roster-leave</code></td><td><code>[emp_roster_leave]</code> <span class="cell-note">Starter+ only. Hidden on Free plan. Managers also review all leave and swap requests in <strong>EmpRoster &gt; Requests</strong> in the WP admin.</span></td></tr>
             <tr><td><strong>Clock In/Out</strong></td><td><code>/emp-roster-attendance</code></td><td><code>[emp_roster_attendance]</code></td></tr>
             <tr><td><strong>Availability</strong></td><td><code>/emp-roster-availability</code></td><td><code>[emp_roster_availability]</code></td></tr>
           </tbody>
@@ -1341,13 +1413,13 @@
 
     <article id="article-settings-leave" class="doc-article">
       <h1>Settings: Leave & Accrual</h1>
-      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Professional+ feature; the relevant rows show an upgrade prompt on Free and Starter plans.</p>
+      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Starter+ feature; the relevant rows show an upgrade prompt on the Free plan.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
           <tbody>
             <tr><td><strong>Leave Module</strong></td><td>Show the Leave menu and allow leave requests to be submitted</td><td>Enabled</td></tr>
-            <tr><td><strong>Leave Balances</strong></td><td>Track accrued vs used leave per employee <em>(Professional+ only)</em></td><td>Disabled</td></tr>
+            <tr><td><strong>Leave Balances</strong></td><td>Track accrued vs used leave per employee <em>(Starter+ only)</em></td><td>Disabled</td></tr>
             <tr><td><strong>Annual leave (full-time)</strong></td><td>Entitlement in days per year for full-time employees</td><td>20</td></tr>
             <tr><td><strong>Annual leave (part-time)</strong></td><td>Entitlement in days per year for part-time employees</td><td>10</td></tr>
             <tr><td><strong>Sick leave (full-time)</strong></td><td>Entitlement in days per year for full-time employees</td><td>10</td></tr>
@@ -1564,6 +1636,8 @@
         <div class="callout-body"><strong>Session termination is immediate.</strong> Any employee or supervisor who is actively using the WordPress admin when Profile Mode is enabled will be logged out instantly. Communicate this change to affected staff before enabling it.</div>
       </div>
       <p>An amber warning banner is displayed on the Settings page while Profile Mode is active as a persistent visual reminder for admins and managers.</p>
+      <h2>Plan downgrade behaviour</h2>
+      <p>If a site with Profile Mode enabled downgrades from Starter to Free, Profile Mode is automatically disabled. Employees and supervisors regain the ability to log into WordPress immediately. No data is lost; the setting can be re-enabled if the site upgrades back to Starter or above.</p>
     </article>
 
     <article id="article-enabling-profile-mode" class="doc-article">
@@ -1590,28 +1664,56 @@
     <article id="article-employee-login-logs" class="doc-article">
       <h1>Employee Login Logs</h1>
       <span class="plan-badge plan-pro">Professional+</span>
-      <p>The Employee Login Logs feature tracks authentication events for roster employees. It requires the <strong>Professional plan or above</strong>. Enable it from <strong>Settings &gt; Access Control</strong>. Once enabled, managers can view a filterable log of successful logins, logouts, and failed login attempts.</p>
-      <h2>What is logged</h2>
-      <p>Each entry in the log shows:</p>
-      <ul>
-        <li><strong>Timestamp:</strong> date and time of the event</li>
-        <li><strong>Event type:</strong> Login, Logout, or Failed login attempt</li>
-        <li><strong>Employee name:</strong> the roster staff member the event relates to</li>
-        <li><strong>IP address:</strong> the IP from which the request originated</li>
-        <li><strong>Device / browser:</strong> detected user agent string</li>
-      </ul>
+      <p>Employee Login Logs tracks authentication events for all roster user accounts. It requires the <strong>Professional plan or above</strong>. Once enabled, managers can access a filterable audit log showing successful logins, logouts, and failed login attempts for every <code>emr_employee</code>, <code>emr_supervisor</code>, and <code>emr_manager</code> account.</p>
+
+      <h2>Enabling login logs</h2>
+      <p>Go to <strong>EmpRoster &gt; Settings &gt; Access Control</strong> and toggle <strong>Enable employee login logs</strong> on. Logging begins immediately on save; no historical events prior to enabling are recorded.</p>
+
+      <h2>Log columns</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Column</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Timestamp</strong></td><td>Date and time the event occurred, using the WordPress site timezone</td></tr>
+            <tr><td><strong>Event type</strong></td><td>Login, Logout, or Failed login attempt</td></tr>
+            <tr><td><strong>Employee</strong></td><td>The roster staff member the event relates to</td></tr>
+            <tr><td><strong>IP address</strong></td><td>The IP address from which the request originated</td></tr>
+            <tr><td><strong>Device / browser</strong></td><td>The detected user agent string</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="screenshot-placeholder">Screenshot placeholder — Employee Login Logs table in EmpRoster admin</div>
+
       <h2>Filtering the log</h2>
-      <p>Managers can filter the log by:</p>
-      <ul>
-        <li>Event type (login, logout, or failed)</li>
-        <li>Date range</li>
-        <li>Employee name</li>
-      </ul>
+      <p>Managers can filter the log by event type (login, logout, or failed), date range, and individual employee. Filters are applied in combination; narrowing by employee and date range together is supported.</p>
+
       <h2>Retention policy</h2>
-      <p>A configurable auto-delete retention policy keeps the log size manageable. Available retention periods are 30, 60, 90, 180, or 365 days, or <strong>Never</strong> to retain all records indefinitely. Set the retention period in <strong>Settings &gt; Access Control</strong>.</p>
+      <p>A configurable auto-delete retention policy keeps the log size manageable. Set the retention period in <strong>EmpRoster &gt; Settings &gt; Access Control</strong>:</p>
+      <ul>
+        <li>30 days</li>
+        <li>60 days</li>
+        <li>90 days</li>
+        <li>180 days</li>
+        <li>365 days</li>
+        <li><strong>Never</strong> — retain all records indefinitely</li>
+      </ul>
+      <p>Records older than the configured period are automatically purged on a daily schedule. Changing the retention period to a shorter window immediately deletes any records that now fall outside the new limit.</p>
+
+      <h2>Plan availability</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Plan</th><th>Employee Login Logs</th></tr></thead>
+          <tbody>
+            <tr><td>Free</td><td><span class="cross">✗</span></td></tr>
+            <tr><td>Starter</td><td><span class="cross">✗</span></td></tr>
+            <tr><td>Professional</td><td><span class="check">✓</span></td></tr>
+            <tr><td>Business</td><td><span class="check">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">Login logs cover only roster employee accounts (<code>emr_employee</code>, <code>emr_supervisor</code>, <code>emr_manager</code>). WordPress Administrator login events are not tracked by this feature.</div>
+        <div class="callout-body">WordPress Administrator login events are not tracked by this feature. The log covers only accounts with the <code>emr_employee</code>, <code>emr_supervisor</code>, or <code>emr_manager</code> role.</div>
       </div>
     </article>
 
@@ -1674,9 +1776,9 @@
             <tr><th>Role</th><th>Free</th><th>Starter</th><th>Professional</th><th>Business</th></tr>
           </thead>
           <tbody>
-            <tr><td>Roster Employee (<code>emr_employee</code>)</td><td>Up to 5</td><td>Up to 25</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Roster Supervisor (<code>emr_supervisor</code>)</td><td>Not available</td><td>Up to 2</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td>Up to 1</td><td>Up to 3</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Employee (<code>emr_employee</code>)</td><td>Unlimited</td><td>Up to 25</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Supervisor (<code>emr_supervisor</code>)</td><td><span class="cross">✗</span> <span class="cell-note">Not available on Free</span></td><td>Up to 2</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td><span class="cross">✗</span> <span class="cell-note">Admin account only</span></td><td>Up to 3</td><td>Unlimited</td><td>Unlimited</td></tr>
           </tbody>
         </table>
       </div>
@@ -1714,6 +1816,7 @@
     'submitting-leave','approval-workflow','leave-balances',
     'setting-availability','availability-hints',
     'requesting-a-swap','manager-review-swap',
+    'requests-page',
     'adding-staff','editing-staff','skill-tags','deactivating-staff',
     'timesheet-views','payroll-calculations','penalty-rates','tax','daily-budget','job-type-hour-limits','print-pdf',
     'enabling-notifications','welcome-email','shift-assignment-email','shift-timing-change-email','leave-decision-email',
