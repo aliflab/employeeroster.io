@@ -252,6 +252,7 @@
           <li><a href="#custom-roles-overview" data-article="custom-roles-overview">Custom Roles Overview</a></li>
           <li><a href="#custom-capabilities" data-article="custom-capabilities">Custom Capabilities</a></li>
           <li><a href="#admin-inclusion-settings" data-article="admin-inclusion-settings">Admin Inclusion Settings</a></li>
+          <li><a href="#admin-visibility" data-article="admin-visibility">Admin Visibility (Per-Administrator Control)</a></li>
           <li><a href="#hidden-wordpress-ui" data-article="hidden-wordpress-ui">Hidden WordPress UI</a></li>
         </ul>
       </div>
@@ -536,21 +537,106 @@
 
     <article id="article-admin-inclusion-settings" class="doc-article">
       <h1>Admin Inclusion Settings</h1>
-      <p>By default, WordPress Administrators are not treated as roster staff and do not appear in staff lists, shift assignment dropdowns, or attendance queries. This keeps the roster clean for sites where the WP Admin account belongs to a developer or site owner who is not part of the scheduling team.</p>
-      <p>Two settings in <strong>EmpRoster &gt; Settings &gt; Roles &amp; Permissions</strong> override this default. Both settings are visible only to WP Administrators; they are hidden from Roster Manager accounts.</p>
+      <p>EmpRoster provides two settings that control whether WordPress administrator accounts appear in the staff list: a per-administrator personal toggle and a global override that includes all administrators at once. For full details on how these settings interact and what happens when the global setting is disabled, see <a href="#admin-visibility">Admin Visibility (Per-Administrator Control)</a>.</p>
+    </article>
+
+    <article id="article-admin-visibility" class="doc-article">
+      <h1>Admin Visibility</h1>
+      <p class="doc-admin-note" style="font-size:.82rem;color:var(--muted);margin:-8px 0 20px;">Available to WordPress Administrators only. Roster Managers do not see this setting.</p>
+      <p>The Admin Visibility settings control whether WordPress administrator accounts appear in the EmpRoster staff list as Managers. Because administrators are not roster staff by default, these two settings let each administrator independently decide their own participation, with an optional global override to include all administrators at once.</p>
+      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Roles &amp; Permissions</strong> to find the Admin Visibility section. These settings are visible only to WordPress Administrators — Roster Managers do not see this section.</p>
+      <div class="screenshot-placeholder">Screenshot placeholder — Admin Visibility section in Roles &amp; Permissions settings</div>
+
+      <h2>The Two Settings</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Setting</th><th>Effect</th></tr></thead>
+          <thead><tr><th>Setting</th><th>Scope</th><th>Description</th></tr></thead>
           <tbody>
-            <tr><td><strong>Include self in roster</strong></td><td>Includes only the currently logged-in WP Admin in staff lists and roster queries.</td></tr>
-            <tr><td><strong>Include all admins in roster</strong></td><td>Includes every WordPress Administrator in roster staff queries, regardless of who is logged in.</td></tr>
+            <tr>
+              <td><strong>Include Current Administrator in the staff list</strong></td>
+              <td>Per-administrator</td>
+              <td>When enabled, only the currently logged-in administrator account is added to the EmpRoster staff list as a Manager. Each administrator controls this independently — enabling it for one admin has no effect on any other admin account.</td>
+            </tr>
+            <tr>
+              <td><strong>Include All Administrators in the roster</strong></td>
+              <td>Global override</td>
+              <td>When enabled by any administrator, all WordPress administrator accounts are automatically added to the EmpRoster staff list as Managers. Acts as a global switch that overrides individual settings.</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+      <h2>How Per-Administrator Inclusion Works</h2>
+      <p>Each WordPress administrator controls their own roster participation independently via the <strong>Include Current Administrator in the staff list</strong> toggle.</p>
+      <p>When an administrator <strong>enables</strong> this setting and saves:</p>
+      <ul>
+        <li>Only that specific administrator account is added to the staff list</li>
+        <li>They appear throughout EmpRoster with the Manager role — in the roster view, staff list, analytics, timesheets, dashboards, and all manager-based queries</li>
+        <li>A confirmation message appears on the Settings page confirming the current administrator is now included as a Manager</li>
+        <li>The setting state is stored per administrator account — it persists across sessions and is not affected by other administrators changing their own setting</li>
+      </ul>
+      <p>When an administrator <strong>disables</strong> this setting and saves:</p>
+      <ul>
+        <li>Only that administrator is removed from the staff list</li>
+        <li>All other administrators' inclusion settings remain unchanged</li>
+        <li>Historical records (attendance, leave, shifts) for that administrator are preserved</li>
+      </ul>
+      <p>Because this setting is per-account, two administrators on the same site can have different states — one included in the roster, one not — without any conflict.</p>
+
+      <h2>How Global Inclusion Works</h2>
+      <p>The <strong>Include All Administrators in the roster</strong> setting acts as a global override that affects every WordPress administrator account on the site simultaneously.</p>
+      <p><strong>When the global setting is enabled:</strong></p>
+      <ol>
+        <li>All WordPress administrator accounts are immediately added to the EmpRoster staff list as Managers</li>
+        <li>In the background, each administrator's personal <em>Include Current Administrator in the staff list</em> setting is permanently synced to enabled — so every admin now has their individual setting turned on</li>
+        <li>On the Settings page, both toggles appear checked for every administrator who views the page, because all admins are globally included</li>
+      </ol>
+      <p><strong>When the global setting is later disabled:</strong></p>
+      <p>Disabling the global setting does <strong>not</strong> remove administrators from the roster. Because each administrator's personal inclusion setting was already enabled during the global inclusion process, all administrators remain individually included as Managers.</p>
+      <p>After the global setting is turned off:</p>
+      <ul>
+        <li>Each administrator retains their personal <em>Include Current Administrator in the staff list</em> setting in the enabled state</li>
+        <li>Administrators continue to appear in the roster as Managers</li>
+        <li>Each administrator may independently disable their own personal setting if they wish to be removed from the roster</li>
+        <li>No administrator is removed automatically — removal requires each admin to manually disable their own personal toggle</li>
+      </ul>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">If you are the WP Admin and also part of the scheduling team, enable <strong>Include self in roster</strong>. Use <strong>Include all admins</strong> only when multiple administrator accounts should each appear in the roster.</div>
+        <div class="callout-body">This design ensures that turning off the global setting is non-destructive — it does not silently remove managers from active rosters or break existing shift assignments.</div>
       </div>
+      <div class="screenshot-placeholder">Screenshot placeholder — Both toggles shown in enabled state after global inclusion</div>
+
+      <h2>State Combinations Reference</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Include Current Admin</th><th>Include All Admins</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Off</td><td>Off</td><td>This administrator does not appear in the roster. Other admins unaffected.</td></tr>
+            <tr><td>On</td><td>Off</td><td>Only this administrator appears in the roster as a Manager.</td></tr>
+            <tr><td>On (synced)</td><td>On</td><td>All administrators appear in the roster as Managers. Both toggles show as checked for every admin.</td></tr>
+            <tr><td>On (retained)</td><td>Off (disabled after global was on)</td><td>This administrator remains in the roster because their personal setting was synced on during global inclusion. They can disable their personal toggle to opt out.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Where Admin Inclusion Takes Effect</h2>
+      <p>When an administrator is included in the roster, they appear as a Manager throughout EmpRoster:</p>
+      <ul>
+        <li><strong>Staff list</strong> — shown in <strong>EmpRoster &gt; Staff</strong> with the Manager role badge</li>
+        <li><strong>Roster views</strong> — appear as a staff row in weekly, day, and monthly views when shifts are assigned</li>
+        <li><strong>Shift assignment</strong> — available for selection when assigning shifts</li>
+        <li><strong>Analytics</strong> — included in timesheet summaries, payroll calculations, and labour cost totals</li>
+        <li><strong>Dashboard</strong> — counted in KPI cards and manager-scope queries</li>
+        <li><strong>Permissions</strong> — treated as a Roster Manager for all in-plugin permission checks</li>
+      </ul>
+
+      <h2>Important Considerations</h2>
+      <ul>
+        <li>These settings only affect WordPress administrator accounts. Regular Roster Manager accounts (<code>emr_manager</code> role) are always included in the staff list and are unaffected by these settings.</li>
+        <li>Enabling Admin Visibility does not change the administrator's WordPress role — they remain a WordPress Administrator. EmpRoster simply includes them in roster queries and treats them as a Manager within the plugin.</li>
+        <li>If a WordPress administrator account is deleted, their EmpRoster records (shifts, leave, attendance) follow standard WordPress user deletion behaviour.</li>
+        <li>The Admin Visibility section is not visible to Roster Managers — only WordPress Administrators can see and change these settings.</li>
+      </ul>
     </article>
 
     <article id="article-hidden-wordpress-ui" class="doc-article">
@@ -1810,7 +1896,7 @@
 (function () {
   var ARTICLES = [
     'requirements','installation','quick-start','updating-plugin',
-    'custom-roles-overview','custom-capabilities','admin-inclusion-settings','hidden-wordpress-ui',
+    'custom-roles-overview','custom-capabilities','admin-inclusion-settings','admin-visibility','hidden-wordpress-ui',
     'creating-shifts','assignment-types','roster-views','editing-deleting-shifts','active-shifts',
     'clocking-in-out','self-clock-setting','attendance-management',
     'submitting-leave','approval-workflow','leave-balances',
