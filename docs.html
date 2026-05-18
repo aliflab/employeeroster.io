@@ -306,6 +306,7 @@
         <ul class="sidebar-group-links">
           <li><a href="#adding-staff" data-article="adding-staff">Adding Staff</a></li>
           <li><a href="#editing-staff" data-article="editing-staff">Editing Staff</a></li>
+          <li><a href="#skill-tags" data-article="skill-tags">Skill Tags</a></li>
           <li><a href="#deactivating-staff" data-article="deactivating-staff">Deactivating / Deleting Staff</a></li>
         </ul>
       </div>
@@ -365,6 +366,13 @@
         <ul class="sidebar-group-links">
           <li><a href="#profile-mode-overview" data-article="profile-mode-overview">Overview &amp; Use Case</a></li>
           <li><a href="#enabling-profile-mode" data-article="enabling-profile-mode">Enabling Profile Mode</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-group" data-group="security-access">
+        <button class="sidebar-group-toggle" aria-expanded="false">Security &amp; Access <span class="ti">▼</span></button>
+        <ul class="sidebar-group-links">
+          <li><a href="#employee-login-logs" data-article="employee-login-logs">Employee Login Logs</a></li>
         </ul>
       </div>
 
@@ -616,7 +624,7 @@
       <p><strong>Staff visibility:</strong> Only staff members who have at least one shift assigned in the selected week are displayed; employees with no shifts in that window are automatically hidden to keep the view focused. Employees always see their own row regardless of this rule.</p>
       <p><strong>Unassigned shifts:</strong> Direct shifts with no assigned employees appear in the Open Shifts row for managers with an "Unassigned" badge. The Open Shifts row is always shown to managers so that no shift is ever silently hidden.</p>
       <h2>Monthly Calendar View</h2>
-      <p>A full month grid where each day cell shows colour-coded shift summary badges. Today's cell is highlighted. Requires the <strong>Starter plan or above</strong>; Free plan users see an upgrade prompt instead of the month grid.</p>
+      <p>A full month grid where each day cell shows colour-coded shift summary badges. Today's cell is highlighted. Available on all plans.</p>
       <h2>List View</h2>
       <p>A tabular list of all upcoming shifts with their title, date/time, location, department, and assignment count. Useful for a quick overview without the visual calendar layout. Available on all plans.</p>
       <h2>Today Indicator</h2>
@@ -672,7 +680,8 @@
 
     <article id="article-clocking-in-out" class="doc-article">
       <h1>Clocking In and Out</h1>
-      <p>Employees navigate to <strong>EmpRoster &gt; Attendance</strong> in the WP admin, or visit the frontend <code>/emp-roster-attendance</code> page, to start and end a clock session. Only one active clock-in session is permitted per user at a time; starting a new session while one is already open is blocked.</p>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Attendance and clock in/out requires the <strong>Starter plan or above</strong>. Employees navigate to <strong>EmpRoster &gt; Attendance</strong> in the WP admin, or visit the frontend <code>/emp-roster-attendance</code> page, to start and end a clock session. Only one active clock-in session is permitted per user at a time; starting a new session while one is already open is blocked.</p>
       <h2>What the system records</h2>
       <p>Each attendance entry stores the following fields:</p>
       <ul>
@@ -732,7 +741,8 @@
 
     <article id="article-submitting-leave" class="doc-article">
       <h1>Submitting Leave</h1>
-      <p>Employees navigate to <strong>EmpRoster &gt; Leave</strong> and click <strong>Request Leave</strong> to submit a leave request. Once submitted, the request is created with a <strong>Pending</strong> status and becomes visible to managers for review.</p>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Leave submission requires the <strong>Starter plan or above</strong>. Employees navigate to <strong>EmpRoster &gt; Leave</strong> and click <strong>Request Leave</strong> to submit a leave request. Once submitted, the request is created with a <strong>Pending</strong> status and becomes visible to managers for review.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Field</th><th>Description</th></tr></thead>
@@ -771,8 +781,8 @@
 
     <article id="article-leave-balances" class="doc-article">
       <h1>Leave Balances</h1>
-      <span class="plan-badge plan-pro">Professional+</span>
-      <p>Leave balance tracking requires the <strong>Professional plan or above</strong>. When the <strong>Enable Leave Balance Tracking</strong> setting is turned on, each employee has annual and sick leave balances tracked per calendar year. Balances accrue based on configured hourly entitlements and are automatically reduced when leave is approved.</p>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Leave balance tracking requires the <strong>Starter plan or above</strong>. When the <strong>Enable Leave Balance Tracking</strong> setting is turned on, each employee has annual and sick leave balances tracked per calendar year. Balances accrue based on configured hourly entitlements and are automatically reduced when leave is approved.</p>
       <img src="assets/docs/employee_leave_balances.png" alt="Employees leave balances"> <style>img { max-width: 100%; height: auto; }</style>
       <h2>Default entitlements (hours per year)</h2>
       <div class="table-wrap">
@@ -908,6 +918,21 @@
       <p>Supervisors do not see pay rate fields in the staff list or shift modal by default. The <strong>Supervisors can see pay rates</strong> setting in Roles &amp; Permissions (Professional+) enables this visibility when your organisational structure requires it.</p>
       <h2>Job type changes</h2>
       <p>Changing an employee's job type affects future leave accrual calculations and the weekly hour threshold used for overtime flagging. It does not retroactively alter existing leave balances or timesheet records.</p>
+    </article>
+
+    <article id="article-skill-tags" class="doc-article">
+      <h1>Skill Tags</h1>
+      <span class="plan-badge plan-pro">Professional+</span>
+      <p>Skill Tags let managers label employees with relevant competencies — for example "Barista", "First Aid", "Forklift Licence", or "Opening Shift". Tags are added from the <strong>Add Staff</strong> or <strong>Edit Staff</strong> modal, and appear on the employee's profile and in the shift assignment panel so managers can quickly identify the right person for a shift.</p>
+      <p>Skill Tags require the <strong>Professional plan or above</strong>. Starter plan users see an upgrade prompt in staff modals. Free plan users see no skill tag UI.</p>
+      <h2>Adding skill tags to an employee</h2>
+      <p>Open the Add Staff or Edit Staff modal in <strong>EmpRoster &gt; Staff</strong>. A Skill Tags field is available on Professional and Business plans. Enter one or more tags for the employee and save. Tags are stored per employee and can be added, edited, or removed at any time.</p>
+      <h2>Using skill tags when assigning shifts</h2>
+      <p>When a manager opens the shift assignment modal to add employees to a shift, each eligible employee's skill tags are displayed alongside their name and availability status. This allows managers to quickly identify the right person for a shift without leaving the modal.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Skill tags are display-only in the assignment modal — they do not restrict which employees can be assigned to a shift. A manager can assign any employee regardless of their tags.</div>
+      </div>
     </article>
 
     <article id="article-deactivating-staff" class="doc-article">
@@ -1559,6 +1584,38 @@
     </article>
 
     <!-- ─────────────────────────────────────────── -->
+    <!-- SECURITY & ACCESS                           -->
+    <!-- ─────────────────────────────────────────── -->
+
+    <article id="article-employee-login-logs" class="doc-article">
+      <h1>Employee Login Logs</h1>
+      <span class="plan-badge plan-pro">Professional+</span>
+      <p>The Employee Login Logs feature tracks authentication events for roster employees. It requires the <strong>Professional plan or above</strong>. Enable it from <strong>Settings &gt; Access Control</strong>. Once enabled, managers can view a filterable log of successful logins, logouts, and failed login attempts.</p>
+      <h2>What is logged</h2>
+      <p>Each entry in the log shows:</p>
+      <ul>
+        <li><strong>Timestamp:</strong> date and time of the event</li>
+        <li><strong>Event type:</strong> Login, Logout, or Failed login attempt</li>
+        <li><strong>Employee name:</strong> the roster staff member the event relates to</li>
+        <li><strong>IP address:</strong> the IP from which the request originated</li>
+        <li><strong>Device / browser:</strong> detected user agent string</li>
+      </ul>
+      <h2>Filtering the log</h2>
+      <p>Managers can filter the log by:</p>
+      <ul>
+        <li>Event type (login, logout, or failed)</li>
+        <li>Date range</li>
+        <li>Employee name</li>
+      </ul>
+      <h2>Retention policy</h2>
+      <p>A configurable auto-delete retention policy keeps the log size manageable. Available retention periods are 30, 60, 90, 180, or 365 days, or <strong>Never</strong> to retain all records indefinitely. Set the retention period in <strong>Settings &gt; Access Control</strong>.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Login logs cover only roster employee accounts (<code>emr_employee</code>, <code>emr_supervisor</code>, <code>emr_manager</code>). WordPress Administrator login events are not tracked by this feature.</div>
+      </div>
+    </article>
+
+    <!-- ─────────────────────────────────────────── -->
     <!-- PLANS & PRICING                             -->
     <!-- ─────────────────────────────────────────── -->
 
@@ -1571,19 +1628,19 @@
             <tr><th>Feature</th><th>Free</th><th>Starter</th><th>Professional</th><th>Business</th></tr>
           </thead>
           <tbody>
-            <tr><td>Active shifts</td><td><span class="cell-note">Up to 15<br>today + future shifts only</span></td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Active shifts</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
             <tr><td>Locations</td><td>1</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
             <tr><td>Departments</td><td>1</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
             <tr><td>WordPress sites</td><td>1</td><td>1</td><td>1</td><td><strong>5</strong></td></tr>
             <tr><td>Day roster view</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Weekly roster view</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-            <tr><td>Monthly calendar view</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Monthly calendar view</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Open shifts (post &amp; self-assign)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Copy roster</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-            <tr><td>Attendance history</td><td><span class="cell-note">Last 14 days</span></td><td>Full history</td><td>Full history</td><td>Full history</td></tr>
-            <tr><td>Leave requests (submit)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Attendance &amp; clock in/out</td><td><span class="cross">✗</span><span class="cell-note">Starter+ only</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Leave requests (submit)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Leave approval workflow</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-            <tr><td>Leave balance tracking &amp; accrual</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Leave balance tracking &amp; accrual</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Staff availability management</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Availability hints in shift modal</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Shift swap requests</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1594,6 +1651,8 @@
             <tr><td>Daily budget tracking</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Weekly hour limits per job type</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>CSV export (timesheets)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Skill Tags</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Employee Login Logs</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>PDF export (Print PDF roster)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Email notifications</td><td><span class="check">✓</span><span class="cell-note">Simplified welcome</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Public roster shortcode</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1655,12 +1714,12 @@
     'submitting-leave','approval-workflow','leave-balances',
     'setting-availability','availability-hints',
     'requesting-a-swap','manager-review-swap',
-    'adding-staff','editing-staff','deactivating-staff',
+    'adding-staff','editing-staff','skill-tags','deactivating-staff',
     'timesheet-views','payroll-calculations','penalty-rates','tax','daily-budget','job-type-hour-limits','print-pdf',
     'enabling-notifications','welcome-email','shift-assignment-email','shift-timing-change-email','leave-decision-email',
     'shortcode-pages','public-roster-shortcode',
     'settings-general','settings-shift-attendance','settings-departments','settings-locations','settings-leave','settings-employment-type','settings-payroll','settings-roles','settings-integrations','settings-email','settings-attachments','settings-frontend',
-    'profile-mode-overview','enabling-profile-mode',
+    'profile-mode-overview','enabling-profile-mode','employee-login-logs',
     'feature-availability','staff-account-limits'
   ];
 

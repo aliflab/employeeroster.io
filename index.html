@@ -63,14 +63,14 @@
         "name": "Free",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Up to 5 employees, 1 location, 15 active shifts."
+        "description": "Unlimited employees, 1 location, 1 department."
       },
       {
         "@type": "Offer",
         "name": "Starter",
         "price": "99",
         "priceCurrency": "USD",
-        "description": "Up to 25 employees, 5 locations, unlimited shifts. Payroll, email notifications, and Profile Mode."
+        "description": "Unlimited employees, 5 locations, unlimited shifts. Attendance, leave, payroll, email notifications, and Profile Mode."
       },
       {
         "@type": "Offer",
@@ -301,7 +301,7 @@
     <a href="https://checkout.freemius.com/plugin/28057/plan/46316/?trial=free" class="btn-primary">Start Free Trial</a>
     <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-primary">Notify me</a>
   </div>
-  <p class="hero-sub">No per-user fees &nbsp;·&nbsp; 14-day free trial &nbsp;·&nbsp; No credit card required</p>
+  <p class="hero-sub">No per-user fees &nbsp;·&nbsp; Unlimited employees &nbsp;·&nbsp; 14-day free trial</p>
 </div>
 
 <!-- TRUST BAR -->
@@ -396,6 +396,16 @@
         <h3>Setup Wizard</h3>
         <p>A guided setup wizard walks you through company details, locations, departments, employment settings, and key features when you first activate the plugin — so you're ready to build your first roster in minutes.</p>
       </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏷️</div>
+        <h3>Skill Tags</h3>
+        <p>Tag employees with skills (e.g. "Barista", "First Aid", "Forklift Licence") so managers can quickly identify the right person for each shift. Skill tags appear on staff profiles and in the shift assignment modal. Professional plan and above.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔐</div>
+        <h3>Employee Login Logs</h3>
+        <p>Track successful logins, logouts, and failed login attempts for roster employees. Filter by event type, date range, or staff member. Includes IP address, device detection, and a configurable auto-delete retention policy. Professional plan and above.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -468,28 +478,28 @@
           </tr>
           <tr>
             <td>Active shifts</td>
-            <td><span class="cell-note">Up to 15<br>today + future shifts only</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
           <tr>
             <td>Employees</td>
-            <td><span class="cell-note">Up to 5</span></td>
-            <td><span class="cell-note">Up to 25</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
           <tr>
             <td>Supervisors</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span><span class="cell-note">Not available on Free</span></td>
             <td><span class="cell-note">Up to 2</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
           <tr>
             <td>Managers</td>
-            <td><span class="cell-note">Up to 1</span></td>
+            <td><span class="cross">✗</span><span class="cell-note">Admin account only</span></td>
             <td><span class="cell-note">Up to 3</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
@@ -517,7 +527,7 @@
           </tr>
           <tr>
             <td>Monthly calendar view</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
@@ -544,11 +554,18 @@
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
-            <td>Attendance history</td>
-            <td><span class="cell-note">Last 14 days</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Full history</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Full history</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Full history</span></td>
+            <td>Attendance &amp; clock in/out</td>
+            <td><span class="cross">✗</span><span class="cell-note">Starter+ only</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Leave requests (submit)</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Leave approval workflow</td>
@@ -560,7 +577,7 @@
           <tr>
             <td>Leave balance tracking</td>
             <td><span class="cross">✗</span></td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
@@ -628,6 +645,20 @@
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
+            <td>Skill Tags</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td>Employee Login Logs</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
             <td>PDF export</td>
             <td><span class="cross">✗</span></td>
             <td><span class="cross">✗</span></td>
@@ -682,14 +713,13 @@
         <div class="price">$0</div>
         <p class="price-period">forever</p>
         <ul>
-          <li>1 WordPress site</li>
+          <li>Unlimited employees</li>
+          <li>Unlimited active shifts</li>
           <li>1 location, 1 department</li>
-          <li>Up to 5 employees</li>
-          <li>1 manager, no supervisors</li>
-          <li>Up to 15 active shifts</li>
           <li>Day &amp; weekly roster view</li>
-          <li>14-day attendance history</li>
-          <li>Email notifications (simplified)</li>
+          <li>Monthly calendar view</li>
+          <li>Email notifications</li>
+          <li>Community forum support</li>
         </ul>
         <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-plan btn-plan-outline">Notify me</a>
       </div>
@@ -701,15 +731,17 @@
         <p class="price-period">per year</p>
         <ul>
           <li>1 WordPress site</li>
-          <li>Up to 25 employees</li>
+          <li>Unlimited employees</li>
           <li>Up to 2 supervisors, 3 managers</li>
           <li>Up to 5 locations, 5 departments</li>
           <li>Unlimited shifts</li>
           <li>Monthly calendar view</li>
           <li>Open shifts &amp; copy roster</li>
+          <li>Clock in / clock out attendance</li>
+          <li>Leave requests &amp; approval</li>
+          <li>Leave balance tracking &amp; accrual</li>
           <li>Availability hints in shift modal</li>
           <li>Weekly hour limits per job type</li>
-          <li>Leave approval workflow</li>
           <li>Payroll (pay rates &amp; earnings)</li>
           <li>Profile Mode</li>
           <li>Full onboarding email notifications</li>
@@ -729,12 +761,13 @@
           <li>1 WordPress site</li>
           <li>Everything in Starter, plus:</li>
           <li>Unlimited staff, locations &amp; departments</li>
-          <li>Leave balance tracking &amp; accrual</li>
           <li>Tax calculations</li>
           <li>Daily budget tracking</li>
           <li>Shift swap requests</li>
           <li>PDF roster export</li>
           <li>Public roster shortcode</li>
+          <li>Skill Tags</li>
+          <li>Employee Login Logs</li>
           <li>Priority support (24 hr)</li>
         </ul>
         <a href="https://checkout.freemius.com/plugin/28057/plan/46316/" class="btn-plan btn-plan-purple">Get Started</a>
