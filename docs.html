@@ -1033,7 +1033,7 @@
       </div>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Staff account limits and role restrictions apply by plan.</strong> On the Free plan, the <strong>Roster Supervisor role is not available</strong> and there is no dedicated Manager account — only the WordPress Administrator acts as manager. Starter supports up to 25 employees, 2 supervisors, and 3 managers. Professional and Business plans are unlimited. Attempting to create a staff member beyond these limits returns an error. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
+        <div class="callout-body"><strong>Staff account limits and role restrictions apply by plan.</strong> On the Free plan, the <strong>Roster Supervisor role is not available</strong> and there is no dedicated Manager account — only the WordPress Administrator acts as manager. Starter supports up to 25 employees and 2 supervisors; the Roster Manager account limit has been removed (unlimited). Professional and Business plans are unlimited. Attempting to create a staff member beyond the employee or supervisor limits returns an error. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
       </div>
     </article>
 
@@ -1864,10 +1864,11 @@
           <tbody>
             <tr><td>Roster Employee (<code>emr_employee</code>)</td><td>Unlimited</td><td>Up to 25</td><td>Unlimited</td><td>Unlimited</td></tr>
             <tr><td>Roster Supervisor (<code>emr_supervisor</code>)</td><td><span class="cross">✗</span> <span class="cell-note">Not available on Free</span></td><td>Up to 2</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td><span class="cross">✗</span> <span class="cell-note">Admin account only</span></td><td>Up to 3</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td><span class="cross">✗</span> <span class="cell-note">Admin account only</span></td><td>Unlimited *</td><td>Unlimited</td><td>Unlimited</td></tr>
           </tbody>
         </table>
       </div>
+      <p style="font-size:.85rem;color:var(--muted);margin:6px 0 18px;">* On the Starter plan, WordPress administrator accounts can be included in the roster as Managers via the Admin Visibility settings (<strong>Settings &gt; Roles &amp; Permissions</strong>). There is no cap on how many administrator accounts can be included this way. The <code>emr_manager</code> role account limit has been removed from the Starter plan — creating dedicated Roster Manager accounts via Add Staff is also unrestricted.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body"><strong>Existing staff are grandfathered.</strong> If a site downgrades to a lower plan, existing staff accounts above the new limit are not deleted and continue working normally. The cap only blocks the creation of new accounts beyond the limit.</div>
