@@ -278,10 +278,12 @@
       </div>
 
       <div class="sidebar-group" data-group="leave">
-        <button class="sidebar-group-toggle" aria-expanded="false">Leave Management <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Requests <span class="ti">▼</span></button>
         <ul class="sidebar-group-links">
-          <li><a href="#submitting-leave" data-article="submitting-leave">Submitting Leave</a></li>
-          <li><a href="#approval-workflow" data-article="approval-workflow">Approval Workflow</a></li>
+          <li><a href="#requests-overview" data-article="requests-overview">Overview</a></li>
+          <li><a href="#leave-requests" data-article="leave-requests">Leave Requests</a></li>
+          <li><a href="#open-shift-requests" data-article="open-shift-requests">Open Shift Requests</a></li>
+          <li><a href="#shift-swap-requests" data-article="shift-swap-requests">Shift Swap Requests</a></li>
           <li><a href="#leave-balances" data-article="leave-balances">Leave Balances</a></li>
         </ul>
       </div>
@@ -291,21 +293,6 @@
         <ul class="sidebar-group-links">
           <li><a href="#setting-availability" data-article="setting-availability">Setting Availability</a></li>
           <li><a href="#availability-hints" data-article="availability-hints">Availability Hints in Shift Modal</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-group" data-group="swap">
-        <button class="sidebar-group-toggle" aria-expanded="false">Shift Swap Requests <span class="ti">▼</span></button>
-        <ul class="sidebar-group-links">
-          <li><a href="#requesting-a-swap" data-article="requesting-a-swap">Requesting a Swap</a></li>
-          <li><a href="#manager-review-swap" data-article="manager-review-swap">Manager Review</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-group" data-group="requests">
-        <button class="sidebar-group-toggle" aria-expanded="false">Requests <span class="ti">▼</span></button>
-        <ul class="sidebar-group-links">
-          <li><a href="#requests-page" data-article="requests-page">Requests Page Overview</a></li>
         </ul>
       </div>
 
@@ -830,41 +817,151 @@
     <!-- LEAVE MANAGEMENT                            -->
     <!-- ─────────────────────────────────────────── -->
 
-    <article id="article-submitting-leave" class="doc-article">
-      <h1>Submitting Leave</h1>
+    <!-- ─────────────────────────────────────────── -->
+    <!-- REQUESTS                                    -->
+    <!-- ─────────────────────────────────────────── -->
+
+    <article id="article-requests-overview" class="doc-article">
+      <h1>Requests</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Leave submission requires the <strong>Starter plan or above</strong>. On the Free plan, the Leave menu and the Requests page are hidden entirely from employees and managers — no upgrade prompt is shown. On Starter and above, employees navigate to <strong>EmpRoster &gt; Leave</strong> and click <strong>Request Leave</strong> to submit a leave request. Once submitted, the request is created with a <strong>Pending</strong> status and becomes visible to managers for review.</p>
+      <p>The Requests page consolidates all staff request types into a single location. Access it from <strong>EmpRoster &gt; Requests</strong> in the WordPress admin sidebar, or from the Requests link in the in-plugin navigation.</p>
+      <p>The page contains three independently paginated sections:</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Field</th><th>Description</th></tr></thead>
+          <thead><tr><th>Section</th><th>Who submits</th><th>Who approves</th></tr></thead>
           <tbody>
-            <tr><td><strong>Leave type</strong></td><td>Annual Leave or Sick Leave</td></tr>
-            <tr><td><strong>Start date</strong></td><td>First day of the leave period</td></tr>
-            <tr><td><strong>End date</strong></td><td>Last day of the leave period (inclusive)</td></tr>
-            <tr><td><strong>Reason</strong></td><td>Optional free-text reason visible to the reviewing manager</td></tr>
+            <tr><td><strong>Leave Requests</strong></td><td>Employees, Supervisors</td><td>Managers, Admins</td></tr>
+            <tr><td><strong>Open Shift Requests</strong></td><td>Employees, Supervisors</td><td>Managers, Admins</td></tr>
+            <tr><td><strong>Shift Swap Requests</strong></td><td>Employees, Supervisors</td><td>Managers, Admins</td></tr>
           </tbody>
         </table>
       </div>
-      <p>After submission, the employee can view the status of their request (Pending, Approved, or Declined) in the Leave section. They will receive an email notification once a manager reviews it, provided email notifications are enabled.</p>
-      <img src="assets/docs/employee_requesting_leave.png" alt="Employee requests a leave"> <style>img { max-width: 100%; height: auto; }</style>
+      <p>Each section shows 10 entries per page with its own Prev/Next pagination controls — navigating one section does not affect the others.</p>
+      <h2>Pending count badge</h2>
+      <p>The Requests nav item displays a live badge showing the total number of pending items across all three sections relevant to the current user's role. The badge updates whenever the dashboard or Requests page is loaded.</p>
+      <h2>Plan availability</h2>
+      <p>The Requests page requires the <strong>Starter plan or above</strong>. On the Free plan, the Requests menu item is hidden entirely for all roles including managers. Leave submission, open shift claiming, and shift swaps all require Starter plan or above.</p>
+      <div class="screenshot-placeholder">Screenshot placeholder — Requests page showing all three sections</div>
+      <h2>Frontend access</h2>
+      <p>Employees on Starter+ can submit leave requests from the frontend portal at <code>/emp-roster-leave</code>. The shortcode <code>[emp_roster_leave]</code> renders the leave submission form for authenticated employees.</p>
     </article>
 
-    <article id="article-approval-workflow" class="doc-article">
-      <h1>Approval Workflow</h1>
+    <article id="article-leave-requests" class="doc-article">
+      <h1>Leave Requests</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>The leave approval workflow requires the <strong>Starter plan or above</strong>. On the Free plan, the Leave menu and Requests page are hidden entirely for both employees and managers. On Starter and above, when an employee submits a leave request it enters the <strong>Pending</strong> state. Managers see all pending requests in the Leave section of the WP admin and can take action on each one individually.</p>
-      <h2>Status transitions</h2>
+
+      <h2>Submitting a Leave Request</h2>
+      <p>Employees and supervisors navigate to <strong>EmpRoster &gt; Requests</strong> and use the Leave Requests section, or use the frontend portal at <code>/emp-roster-leave</code>. Fields:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>Options</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Leave type</strong></td><td>Annual Leave, Sick Leave</td></tr>
+            <tr><td><strong>Start date</strong></td><td>Date picker</td></tr>
+            <tr><td><strong>End date</strong></td><td>Date picker</td></tr>
+            <tr><td><strong>Reason</strong></td><td>Optional text</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>On submission:</p>
+      <ul>
+        <li>The request appears in the Leave Requests section of the Requests page with a <strong>Pending</strong> status</li>
+        <li>An automatic email notification is sent to all active Roster Managers (and WP Administrators when Admin Include Self is enabled)</li>
+        <li>The submitting employee receives a confirmation</li>
+      </ul>
+
+      <h2>Approval Workflow</h2>
+      <p>Managers see all pending leave requests in the Leave Requests section of <strong>EmpRoster &gt; Requests</strong>. Each request shows the employee name, leave type, dates, reason, and current status.</p>
+      <p>Managers can:</p>
+      <ul>
+        <li><strong>Approve</strong> — request status changes to Approved; employee receives an email notification with the decision</li>
+        <li><strong>Decline</strong> — request status changes to Declined; employee receives an email notification with the decision</li>
+      </ul>
+      <div class="screenshot-placeholder">Screenshot placeholder — Leave Requests section on the Requests page</div>
+
+      <h2>Leave Request Statuses</h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
           <tbody>
-            <tr><td><strong>Pending</strong></td><td>Submitted by the employee, awaiting manager review</td></tr>
-            <tr><td><strong>Approved</strong></td><td>Manager approved the request; leave balance is debited if balance tracking is enabled</td></tr>
-            <tr><td><strong>Declined</strong></td><td>Manager declined the request; no balance change occurs</td></tr>
+            <tr><td><strong>Pending</strong></td><td>Submitted, awaiting manager review</td></tr>
+            <tr><td><strong>Approved</strong></td><td>Approved by a manager</td></tr>
+            <tr><td><strong>Declined</strong></td><td>Declined by a manager</td></tr>
           </tbody>
         </table>
       </div>
-      <p>When a manager approves or declines a request, the employee receives a Leave Decision email containing the outcome and the dates (if email notifications are enabled).</p>
+    </article>
+
+    <article id="article-open-shift-requests" class="doc-article">
+      <h1>Open Shift Requests</h1>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Open Shift Requests appear when an employee or supervisor claims a slot on an open shift. Managers review these claims from the Open Shift Requests section of <strong>EmpRoster &gt; Requests</strong>.</p>
+
+      <h2>How Employees Claim Open Shifts</h2>
+      <p>Eligible employees and supervisors see open shifts in the Open Shifts row of the roster view. Clicking a shift shows the available slots and a <strong>Claim</strong> button. On claiming:</p>
+      <ul>
+        <li>A pending open shift request is created</li>
+        <li>An email notification is sent to all active Roster Managers</li>
+        <li>The shift shows as <strong>Pending</strong> for the claiming employee until a manager reviews it</li>
+      </ul>
+
+      <h2>Manager Review</h2>
+      <p>Managers see all pending open shift claims in the Open Shift Requests section. Each entry shows the shift title, date, time, and the claiming employee's name.</p>
+      <p>Managers can:</p>
+      <ul>
+        <li><strong>Confirm</strong> — the employee is assigned to the shift; all remaining pending claims for the last available slot are automatically declined</li>
+        <li><strong>Decline</strong> — the employee's claim is rejected; the slot remains available for others to claim</li>
+      </ul>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Fully-filled shifts (all slots confirmed) are automatically hidden from the Open Shifts row so employees cannot claim additional slots beyond the limit.</div>
+      </div>
+      <div class="screenshot-placeholder">Screenshot placeholder — Open Shift Requests section on the Requests page</div>
+
+      <h2>Past Shifts</h2>
+      <p>Past shifts are not shown to employees in the Open Shifts row or month calendar. Attempting to join a shift that has already started returns a clear error message.</p>
+    </article>
+
+    <article id="article-shift-swap-requests" class="doc-article">
+      <h1>Shift Swap Requests</h1>
+      <span class="plan-badge plan-pro">Professional+</span>
+      <p>Shift swap requests require the <strong>Professional plan or above</strong>. The feature lets employees formally request that a shift be reassigned to another employee, subject to manager approval. Employees cannot swap shifts directly without a manager approving the request.</p>
+      <p>Shift Swap Requests appear as the third section on the <strong>EmpRoster &gt; Requests</strong> page, below Leave Requests and Open Shift Requests. Each section is independently paginated.</p>
+
+      <h2>How to Submit a Swap Request</h2>
+      <p>An employee navigates to the shift they want to give up and clicks <strong>Request Swap</strong>. In the request form they can:</p>
+      <img src="assets/docs/employee_swap_request.png" alt="Employees swap request"> <style>img { max-width: 100%; height: auto; }</style>
+      <ul>
+        <li>Optionally specify a <strong>target employee</strong> they have arranged to swap with</li>
+        <li>Add an optional <strong>reason</strong> for the swap (visible to the reviewing manager)</li>
+      </ul>
+      <p>If no target employee is specified, the request is open, meaning any eligible employee could potentially take the shift. The submitted request immediately appears in the Shift Swap Requests section with a <strong>Pending</strong> status.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">On the Free and Starter plans, the Request Swap button is hidden from shift detail views. No upgrade prompt is shown to employees; the feature is silently omitted for plans that do not support it.</div>
+      </div>
+
+      <h2>Manager Review</h2>
+      <p>Managers see all pending swap requests in the Shift Swap Requests section of the Requests page. Each entry shows the requesting employee, the shift they want to give up, and the target employee (if one was specified in the request).</p>
+      <img src="assets/docs/admin_swap_shift.png" alt="Admin/Manager swap shift accept/decline"> <style>img { max-width: 100%; height: auto; }</style>
+
+      <h3>Approving a swap</h3>
+      <p>When a manager approves a swap, the plugin automatically reassigns the two shifts between the employees involved. No manual editing of shift assignments is needed; the handover is applied atomically on approval.</p>
+
+      <h3>Declining a swap</h3>
+      <p>When a manager declines a swap, the original assignments remain exactly as they were. The requesting employee's shift is unchanged.</p>
+
+      <h2>Manager Actions on the Requests Page</h2>
+      <p>Managers can also Edit or Delete swap requests directly from the Requests page:</p>
+      <ul>
+        <li><strong>Edit</strong> — opens a modal to update the request status and reason</li>
+        <li><strong>Delete</strong> — removes the request after a confirmation prompt</li>
+      </ul>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">The Shift Swap Requests section is only visible to Managers and WP Administrators. Supervisors with <code>emr_approve_leave</code> capability can see leave requests but swap requests require manager-level access.</div>
+      </div>
+      <div class="screenshot-placeholder">Screenshot placeholder — Shift Swap Requests section on the Requests page</div>
     </article>
 
     <article id="article-leave-balances" class="doc-article">
@@ -928,83 +1025,6 @@
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Availability indicators are hints only and do not prevent assignment. A manager can assign any employee to any shift regardless of their availability status.</div>
-      </div>
-    </article>
-
-    <!-- ─────────────────────────────────────────── -->
-    <!-- SHIFT SWAP REQUESTS                         -->
-    <!-- ─────────────────────────────────────────── -->
-
-    <article id="article-requesting-a-swap" class="doc-article">
-      <h1>Requesting a Swap</h1>
-      <span class="plan-badge plan-pro">Professional+</span>
-      <p>Shift swap requests require the <strong>Professional plan or above</strong>. The feature lets employees formally request that a shift be reassigned to another employee, subject to manager approval. Employees cannot swap shifts directly without a manager approving the request.</p>
-      <h2>How to submit a swap request</h2>
-      <p>An employee navigates to the shift they want to give up and clicks <strong>Request Swap</strong>. In the request form they can:</p>
-      <img src="assets/docs/employee_swap_request.png" alt="Employees swap request"> <style>img { max-width: 100%; height: auto; }</style>
-      <ul>
-        <li>Optionally specify a <strong>target employee</strong> they have arranged to swap with</li>
-        <li>Add an optional <strong>reason</strong> for the swap (visible to the reviewing manager)</li>
-      </ul>
-      <p>If no target employee is specified, the request is open, meaning any eligible employee could potentially take the shift. The submitted request immediately appears in the manager's swap review queue with a <strong>Pending</strong> status.</p>
-      <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
-        <div class="callout-body">On the Free and Starter plans, the Request Swap button is hidden from shift detail views. No upgrade prompt is shown to employees; the feature is silently omitted for plans that do not support it.</div>
-      </div>
-    </article>
-
-    <article id="article-manager-review-swap" class="doc-article">
-      <h1>Manager Review (Shift Swaps)</h1>
-      <span class="plan-badge plan-pro">Professional+</span>
-      <p>Managers see all pending swap requests in the shift swap queue. Each entry in the queue shows the requesting employee, the shift they want to give up, and the target employee (if one was specified in the request).</p>
-      <img src="assets/docs/admin_swap_shift.png" alt="Admin/Manager swap shift accept/decline"> <style>img { max-width: 100%; height: auto; }</style>
-      <h2>Approving a swap</h2>
-      <p>When a manager approves a swap, the plugin automatically reassigns the two shifts between the employees involved. No manual editing of shift assignments is needed; the handover is applied atomically on approval.</p>
-      <h2>Declining a swap</h2>
-      <p>When a manager declines a swap, the original assignments remain exactly as they were. The requesting employee's shift is unchanged.</p>
-      <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
-        <div class="callout-body">The swap review queue is only visible to Managers and WP Administrators. Supervisors with <code>emr_approve_leave</code> capability can see leave requests but the swap queue requires manager-level access.</div>
-      </div>
-    </article>
-
-    <!-- ─────────────────────────────────────────── -->
-    <!-- REQUESTS                                    -->
-    <!-- ─────────────────────────────────────────── -->
-
-    <article id="article-requests-page" class="doc-article">
-      <h1>Requests Page Overview</h1>
-      <span class="plan-badge plan-starter">Starter+</span>
-      <p>The Requests page is the unified hub where managers review and action all pending staff requests. It brings together <strong>leave requests</strong> and <strong>shift swap requests</strong> in one place, so managers do not need to navigate to separate menus to stay on top of pending actions.</p>
-      <p>Access the Requests page from <strong>EmpRoster &gt; Requests</strong> in the WP admin. The page is available on the Starter plan and above; on the Free plan, the Leave and Requests menus are hidden entirely.</p>
-
-      <h2>Leave requests tab</h2>
-      <p>The Leave tab lists all employee leave requests with their current status. Managers can:</p>
-      <ul>
-        <li>View the requesting employee, leave type (Annual or Sick), start date, and end date</li>
-        <li>Filter by status (Pending, Approved, Declined) and by employee</li>
-        <li>Approve or decline a request directly from the list — no separate detail page is required</li>
-        <li>View an optional reason note left by the employee at submission time</li>
-      </ul>
-      <p>Approving a leave request automatically debits the employee's leave balance if balance tracking is enabled (Starter+).</p>
-      <div class="screenshot-placeholder">Screenshot placeholder — Requests page, Leave tab</div>
-
-      <h2>Shift swap requests tab</h2>
-      <span class="plan-badge plan-pro">Professional+</span>
-      <p>The Shift Swaps tab lists all pending shift swap requests. This tab is visible only on the Professional plan and above. Managers can:</p>
-      <ul>
-        <li>See the requesting employee, the shift they want to give up, and the target employee (if one was specified)</li>
-        <li>Approve or decline the swap — approval automatically reassigns both shifts</li>
-        <li>View an optional reason note from the requesting employee</li>
-      </ul>
-      <div class="screenshot-placeholder">Screenshot placeholder — Requests page, Shift Swaps tab</div>
-
-      <h2>Email notifications for managers</h2>
-      <p>When a new leave request or shift swap request is submitted, all Roster Managers receive an automated email notification (if email notifications are enabled). The email includes the employee name, request type, and dates, with a prompt to review the request in the admin.</p>
-
-      <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
-        <div class="callout-body">The Requests page is a manager-facing view only. Employees submit requests through the frontend portal or WP admin Leave / Shifts menus and can view the status of their own requests there, but they do not have access to the Requests page.</div>
       </div>
     </article>
 
@@ -1500,11 +1520,15 @@
     <article id="article-settings-leave" class="doc-article">
       <h1>Settings: Leave & Accrual</h1>
       <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Starter+ feature; the relevant rows show an upgrade prompt on the Free plan.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">The Leave menu item has been renamed to <strong>Requests</strong>. The <code>/emp-roster-leave</code> frontend shortcode page and <code>[emp_roster_leave]</code> shortcode are unchanged.</div>
+      </div>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
           <tbody>
-            <tr><td><strong>Leave Module</strong></td><td>Show the Leave menu and allow leave requests to be submitted</td><td>Enabled</td></tr>
+            <tr><td><strong>Leave Module</strong></td><td>Show the Requests menu item and allow leave requests to be submitted</td><td>Enabled</td></tr>
             <tr><td><strong>Leave Balances</strong></td><td>Track accrued vs used leave per employee <em>(Starter+ only)</em></td><td>Disabled</td></tr>
             <tr><td><strong>Annual leave (full-time)</strong></td><td>Entitlement in days per year for full-time employees</td><td>20</td></tr>
             <tr><td><strong>Annual leave (part-time)</strong></td><td>Entitlement in days per year for part-time employees</td><td>10</td></tr>
@@ -1900,10 +1924,8 @@
     'custom-roles-overview','custom-capabilities','admin-inclusion-settings','admin-visibility','hidden-wordpress-ui',
     'creating-shifts','assignment-types','roster-views','editing-deleting-shifts','active-shifts',
     'clocking-in-out','self-clock-setting','attendance-management',
-    'submitting-leave','approval-workflow','leave-balances',
+    'requests-overview','leave-requests','open-shift-requests','shift-swap-requests','leave-balances',
     'setting-availability','availability-hints',
-    'requesting-a-swap','manager-review-swap',
-    'requests-page',
     'adding-staff','editing-staff','skill-tags','deactivating-staff',
     'timesheet-views','payroll-calculations','penalty-rates','tax','daily-budget','job-type-hour-limits','print-pdf',
     'enabling-notifications','welcome-email','shift-assignment-email','shift-timing-change-email','leave-decision-email',
