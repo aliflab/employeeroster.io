@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Page Not Found – Employee Roster</title>
-  <link rel="icon" type="image/x-icon" href="assets/logo/favicon/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon/favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo/favicon/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/logo/favicon/android-chrome-512x512.png" />
-  <link rel="manifest" href="assets/logo/favicon/site.webmanifest" />
+  <link rel="icon" type="image/x-icon" href="/assets/logo/favicon/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo/favicon/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/logo/favicon/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/logo/favicon/android-chrome-512x512.png" />
+  <link rel="manifest" href="/assets/logo/favicon/site.webmanifest" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -44,9 +44,9 @@
     .nav-links { display: flex; gap: 8px; align-items: center; }
     .nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; padding: 6px 12px; border-radius: 6px; transition: color .15s; }
     .nav-links a:hover { color: var(--white); }
-    .btn-plan { display: block; text-align: center; padding: 12px; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: .9rem; transition: opacity .15s; }
+    .btn-plan { display: inline-block; text-align: center; padding: 8px 14px; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: .88rem; transition: opacity .15s; }
     .btn-plan:hover { opacity: .85; }
-    .btn-plan-outline { border: 2px solid var(--border); color: var(--dark); }
+    .btn-plan-outline { border: 2px solid rgba(255,255,255,.35); color: rgba(255,255,255,.85) !important; }
 
     /* ── 404 BODY ── */
     .not-found {
@@ -150,13 +150,15 @@
 <!-- NAV -->
 <nav>
   <a href="https://employeeroster.io/" class="nav-brand">
-    <img src="assets/logo/only-logo-transparent.png" alt="Employee Roster logo" />
+    <img src="/assets/logo/only-logo-transparent.png" alt="Employee Roster logo" />
     Employee Roster
   </a>
   <div class="nav-links">
     <a href="https://employeeroster.io/#features">Features</a>
     <a href="https://employeeroster.io/#plans">Plans</a>
     <a href="https://employeeroster.io/#pricing">Pricing</a>
+    <a href="https://employeeroster.io/docs">Documentation</a>
+    <a href="https://employeeroster.io/blog/">Blog</a>
     <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-plan btn-plan-outline">Notify me</a>
   </div>
 </nav>
