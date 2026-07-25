@@ -436,7 +436,7 @@
       <h1>Quick Start</h1>
       <p>Follow these five steps to go from a fresh install to a working roster. Each step takes only a few minutes once the plugin is activated.</p>
       <ol>
-        <li style="margin: 20px 0;"><strong>Create departments:</strong> Go to <strong>EmpRoster &gt; Settings &gt; General</strong> and enter department names, one per line. The free version supports unlimited departments; Starter supports up to 5; Professional and Business are unlimited.</li>
+        <li style="margin: 20px 0;"><strong>Create departments:</strong> Go to <strong>EmpRoster &gt; Settings &gt; General</strong> and enter department names, one per line. Departments are unlimited on every version and plan.</li>
         <img src="assets/docs/departments.png" alt="Create departments"> <style>img { max-width: 100%; height: auto; }</style>
         <li style="margin: 20px 0;"><strong>Create locations:</strong> In the same General settings panel, add location names and pick a colour for each. Limits follow the same per-plan tiers as departments.</li>
         <img src="assets/docs/locations.png" alt="Create locations"> <style>img { max-width: 100%; height: auto; }</style>
@@ -1458,8 +1458,8 @@
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
           <tbody>
             <tr><td><strong>Company name</strong></td><td>Displayed in email notifications and PDF roster exports</td><td>WordPress site name</td></tr>
-            <tr><td><strong>Departments</strong></td><td>Newline-separated list. Limit: unlimited in the free version, 5 on Starter, unlimited on Professional and Business.</td><td>General Department</td></tr>
-            <tr><td><strong>Locations</strong></td><td>Location names with colour pickers. Limit: unlimited in the free version, 5 on Starter, unlimited on Professional and Business.</td><td>Main Location (#2563EB)</td></tr>
+            <tr><td><strong>Departments</strong></td><td>Newline-separated list. Unlimited on every version and plan.</td><td>General Department</td></tr>
+            <tr><td><strong>Locations</strong></td><td>Location names with colour pickers. Unlimited on every version and plan.</td><td>Main Location (#2563EB)</td></tr>
             <tr><td><strong>Week start</strong></td><td>First day of the week in all calendar views</td><td>Monday</td></tr>
             <tr><td><strong>Primary colour</strong></td><td>Brand colour used throughout the plugin UI</td><td>#2563EB</td></tr>
           </tbody>
@@ -1483,18 +1483,7 @@
 
     <article id="article-settings-departments" class="doc-article">
       <h1>Settings: Departments</h1>
-      <p>Departments are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each department entered here becomes available as a selectable option in the shift creation form, allowing shifts to be organised by team or business function. On the Starter plan, the <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list. The free version and the Professional and Business plans are unlimited.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Plan</th><th>Department limit</th></tr></thead>
-          <tbody>
-            <tr><td>Free (WordPress.org)</td><td>Unlimited</td></tr>
-            <tr><td>Starter</td><td>5</td></tr>
-            <tr><td>Professional</td><td>Unlimited</td></tr>
-            <tr><td>Business</td><td>Unlimited</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Departments are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each department entered here becomes available as a selectable option in the shift creation form, allowing shifts to be organised by team or business function. You can add as many departments as you need — there is no limit on any version or plan.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Departments are stored as a newline-separated list. Renaming a department in settings does not retroactively update existing shifts — those shifts retain the department name that was in use when they were created.</div>
@@ -1503,18 +1492,7 @@
 
     <article id="article-settings-locations" class="doc-article">
       <h1>Settings: Locations</h1>
-      <p>Locations are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each location has a name and a colour. The name appears in shift forms and the roster view; the colour visually distinguishes shifts assigned to that location in calendar views. On the Starter plan, the <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list. The free version and the Professional and Business plans are unlimited.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Plan</th><th>Location limit</th></tr></thead>
-          <tbody>
-            <tr><td>Free (WordPress.org)</td><td>Unlimited</td></tr>
-            <tr><td>Starter</td><td>5</td></tr>
-            <tr><td>Professional</td><td>Unlimited</td></tr>
-            <tr><td>Business</td><td>Unlimited</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Locations are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each location has a name and a colour. The name appears in shift forms and the roster view; the colour visually distinguishes shifts assigned to that location in calendar views. You can add as many locations as you need — there is no limit on any version or plan.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Each location requires a unique name and a hex colour. The default location (<em>Main Location</em>, <code>#2563EB</code>) is seeded on activation. Deleting a location that is still referenced by existing shifts will leave those shifts with the original location name intact — the name is stored on the shift record, not resolved dynamically.</div>
@@ -1847,8 +1825,8 @@
           </thead>
           <tbody>
             <tr><td>Active shifts</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Locations</td><td>Unlimited</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Departments</td><td>Unlimited</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Locations</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Departments</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
             <tr><td>Employees</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
             <tr><td>WordPress sites</td><td>1</td><td>1</td><td>1</td><td><strong>5</strong></td></tr>
             <tr><td>Day roster view</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>

@@ -63,7 +63,7 @@
         "name": "Starter",
         "price": "99",
         "priceCurrency": "USD",
-        "description": "Unlimited employees, 5 locations, unlimited shifts. Attendance, leave, leave balance tracking, payroll, penalty rates, analytics dashboard, email notifications, and Profile Mode."
+        "description": "Unlimited employees, locations, departments, and shifts. Attendance, leave, leave balance tracking, payroll, penalty rates, analytics dashboard, email notifications, and Profile Mode."
       },
       {
         "@type": "Offer",
@@ -216,6 +216,10 @@
     .plan-col.pro { color: var(--teal); }
     .plan-col.biz { color: var(--white); }
     .cell-note { font-size: .78rem; color: var(--muted); display: block; }
+    #plans table { table-layout: fixed; min-width: 720px; }
+    #plans th:first-child, #plans td:first-child { width: 28%; }
+    #plans th:not(:first-child), #plans td:not(:first-child) { width: 18%; }
+    .table-footnote { font-size: .8rem; color: var(--muted); margin-top: 14px; line-height: 1.6; }
 
     /* ── PRICING ── */
     .pricing-bg { background: var(--bg); border-top: 1px solid var(--border); }
@@ -250,13 +254,6 @@
     .btn-plan-outline { border: 2px solid var(--border); color: var(--dark); }
     .pricing-guarantee { text-align: center; margin-top: 32px; font-size: .88rem; color: var(--muted); }
     .pricing-guarantee strong { color: var(--dark); }
-    .free-band {
-      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 24px; margin-top: 32px; max-width: 720px; margin-left: auto; margin-right: auto;
-    }
-    .free-band h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
-    .free-band p { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
-    .free-band .btn-plan { max-width: 320px; margin: 0 auto; }
 
     /* ── FOOTER ── */
     footer { background: var(--dark); color: var(--muted); text-align: center; padding: 36px 24px; font-size: .88rem; }
@@ -465,14 +462,14 @@
           <tr>
             <td>Locations</td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Up to 5</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
           <tr>
             <td>Departments</td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Up to 5</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
@@ -492,15 +489,15 @@
           </tr>
           <tr>
             <td>Supervisors</td>
-            <td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td>
+            <td><span class="cell-note">Not included *</span></td>
             <td><span class="cell-note">Up to 2</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
           <tr>
             <td>Managers</td>
-            <td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Unlimited via Admin Visibility</span></td>
+            <td><span class="cell-note">WP Admin *</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
@@ -555,7 +552,7 @@
           </tr>
           <tr>
             <td>Attendance &amp; clock in/out</td>
-            <td><span class="cross">✗</span><span class="cell-note">Starter+ only</span></td>
+            <td><span class="cross">✗</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
@@ -619,7 +616,7 @@
           <tr>
             <td>Staff CSV export</td>
             <td><span class="cross">✗</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Staff directory</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
@@ -639,14 +636,14 @@
           </tr>
           <tr>
             <td>Email notifications</td>
-            <td><span class="check">✓</span><span class="cell-note">Simplified welcome email</span></td>
-            <td><span class="check">✓</span><span class="cell-note">Full onboarding email</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Simplified welcome</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Full onboarding</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Profile Mode <span class="cell-note">(optional employee login restriction)</span></td>
-            <td><span class="cell-note">Employee logins are never restricted on the free version</span></td>
+            <td><span class="cell-note">Logins never restricted</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
@@ -717,6 +714,7 @@
         </tbody>
       </table>
     </div>
+    <p class="table-footnote">* The Roster Supervisor and Roster Manager roles are not part of the free version. Management is handled through your WordPress Administrator account, which has full access to every roster feature.</p>
   </div>
 </div>
 
@@ -737,7 +735,7 @@
           <li>1 WordPress site</li>
           <li>Unlimited employees</li>
           <li>Up to 2 supervisors · Unlimited managers via Admin Visibility</li>
-          <li>Up to 5 locations, 5 departments</li>
+          <li>Unlimited locations &amp; departments</li>
           <li>Unlimited shifts</li>
           <li>Monthly calendar view</li>
           <li>Open shifts &amp; copy roster</li>
@@ -796,11 +794,6 @@
     </div>
     <p class="pricing-guarantee">Licences are annual and per-site unless noted. Every paid plan includes a 14-day free trial — no credit card required.</p>
 
-    <div class="free-band">
-      <h3>Prefer the free version?</h3>
-      <p>Employee Roster is also available as a free plugin on WordPress.org. It is a complete rostering tool, not a trial: <strong>unlimited employees, unlimited departments, unlimited locations, and unlimited shifts</strong>, with day, weekly, and monthly roster views and email notifications. Staff are managed directly from your WordPress Administrator account. Attendance, leave, payroll, and the other features listed above are part of the paid plans.</p>
-      <a href="https://wordpress.org/plugins/employee-roster/" class="btn-plan btn-plan-outline">Download Free on WordPress.org</a>
-    </div>
   </div>
 </div>
 
@@ -857,13 +850,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (navFree) {
     navFree.addEventListener('click', function () {
       gtag('event', 'cta_click', { button_label: 'download_free_wporg', location: 'nav' });
-    });
-  }
-
-  var bandFree = document.querySelector('.free-band .btn-plan-outline');
-  if (bandFree) {
-    bandFree.addEventListener('click', function () {
-      gtag('event', 'cta_click', { button_label: 'download_free_wporg', location: 'pricing' });
     });
   }
 
