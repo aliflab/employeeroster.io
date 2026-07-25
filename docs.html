@@ -220,7 +220,7 @@
       <a href="https://employeeroster.io/#pricing">Pricing</a>
       <a href="https://employeeroster.io/docs" class="nav-active">Documentation</a>
       <a href="https://employeeroster.io/blog/">Blog</a>
-      <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-plan btn-plan-outline">Notify me</a>
+      <a href="https://wordpress.org/plugins/employee-roster/" class="btn-plan btn-plan-outline">Download Free</a>
     </div>
   </nav>
 
@@ -436,7 +436,7 @@
       <h1>Quick Start</h1>
       <p>Follow these five steps to go from a fresh install to a working roster. Each step takes only a few minutes once the plugin is activated.</p>
       <ol>
-        <li style="margin: 20px 0;"><strong>Create departments:</strong> Go to <strong>EmpRoster &gt; Settings &gt; General</strong> and enter department names, one per line. The Free plan supports 1 department; Starter supports up to 5; Professional and Business are unlimited.</li>
+        <li style="margin: 20px 0;"><strong>Create departments:</strong> Go to <strong>EmpRoster &gt; Settings &gt; General</strong> and enter department names, one per line. The free version supports unlimited departments; Starter supports up to 5; Professional and Business are unlimited.</li>
         <img src="assets/docs/departments.png" alt="Create departments"> <style>img { max-width: 100%; height: auto; }</style>
         <li style="margin: 20px 0;"><strong>Create locations:</strong> In the same General settings panel, add location names and pick a colour for each. Limits follow the same per-plan tiers as departments.</li>
         <img src="assets/docs/locations.png" alt="Create locations"> <style>img { max-width: 100%; height: auto; }</style>
@@ -479,7 +479,11 @@
 
     <article id="article-custom-roles-overview" class="doc-article">
       <h1>Custom Roles Overview</h1>
-      <p>Employee Roster registers three custom WordPress roles on activation. These roles determine what each user can see and do within the plugin, and they also control the WordPress admin experience; roster users see only the Employee Roster menu, not the full WordPress dashboard.</p>
+      <p>The paid plans register three custom WordPress roles on activation. These roles determine what each user can see and do within the plugin, and they also control the WordPress admin experience; roster users see only the Employee Roster menu, not the full WordPress dashboard.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body"><strong>Free version:</strong> the WordPress.org version registers the Roster Employee role only. The Roster Manager and Roster Supervisor roles are not part of the free version — you manage your team directly through your WordPress Administrator account, which has full access to every roster feature.</div>
+      </div>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Role</th><th>Display Name</th><th>Description</th></tr></thead>
@@ -668,9 +672,9 @@
           </tbody>
         </table>
       </div>
-      <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Free plan limit:</strong> The Free plan supports up to 15 active shifts at a time (today + future shifts only). Attempting to create a 16th shift will return an error until an existing shift is deleted. Starter, Professional, and Business plans have no shift limit.</div>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body"><strong>No shift limit:</strong> every version, including the free version on WordPress.org, supports an unlimited number of active shifts.</div>
       </div>
       <img src="assets/docs/add_new_shift.png" alt="Add new shift"> <style>img { max-width: 100%; height: auto; }</style>
     </article>
@@ -681,7 +685,7 @@
       <h2>Direct Assignment</h2>
       <p>The manager selects specific employees from the staff list when creating or editing the shift. Assigned employees receive a shift assignment email immediately (if notifications are enabled). When multiple employees are assigned to a direct shift, each employee gets their own independent shift record; editing or deleting one employee's shift does not affect any other employee's record.</p>
       <h2>Open Shifts</h2>
-      <p>The shift is published with a configurable slot limit. Eligible employees see it in their roster and can claim a slot themselves. Once claimed, managers can review and adjust the assignment from the shift modal. Open shifts require the <strong>Starter plan or above</strong>. On the Free plan, the Open Shifts row is always shown to managers so that unassigned direct shifts are never hidden, but self-assignment is not available to employees.</p>
+      <p>The shift is published with a configurable slot limit. Eligible employees see it in their roster and can claim a slot themselves. Once claimed, managers can review and adjust the assignment from the shift modal. Open shifts require the <strong>Starter plan or above</strong>. In the free version, the Open Shifts row is always shown to managers so that unassigned direct shifts are never hidden, but self-assignment is not available to employees.</p>
       <p><strong>Admin/Manager: Creating an open shift with approval:</strong></p>
       <img src="assets/docs/open_with_approval.png" alt="Open shift approval"> <style>img { max-width: 100%; height: auto; }</style>
       <p style="margin-top: 20px;"><strong>Employee: Claiming an open shift:</strong></p>
@@ -757,7 +761,7 @@
     <article id="article-clocking-in-out" class="doc-article">
       <h1>Clocking In and Out</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Clocking in and out requires the <strong>Starter plan or above</strong>. On the Free plan, the Attendance submenu and the frontend clock page (<code>/emp-roster-attendance</code>) are hidden entirely — no upgrade prompt is shown to employees. On Starter and above, employees navigate to <strong>EmpRoster &gt; Attendance</strong> in the WP admin, or visit the frontend clock page, to start and end a clock session. Only one active clock-in session is permitted per user at a time; starting a new session while one is already open is blocked.</p>
+      <p>Clocking in and out requires the <strong>Starter plan or above</strong>. In the free version, the Attendance submenu and the frontend clock page (<code>/emp-roster-attendance</code>) are hidden entirely — no upgrade prompt is shown to employees. On Starter and above, employees navigate to <strong>EmpRoster &gt; Attendance</strong> in the WP admin, or visit the frontend clock page, to start and end a clock session. Only one active clock-in session is permitted per user at a time; starting a new session while one is already open is blocked.</p>
       <h2>What the system records</h2>
       <p>Each attendance entry stores the following fields:</p>
       <ul>
@@ -780,7 +784,7 @@
       <p>The <strong>Allow self clock-in/out</strong> setting in <strong>EmpRoster &gt; Settings &gt; Roster &amp; Attendance</strong> controls whether employees can record their own attendance. It is enabled by default.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">This setting only applies on the <strong>Starter plan and above</strong>. On the Free plan, the Attendance feature is unavailable entirely and this setting has no effect.</div>
+        <div class="callout-body">This setting only applies on the <strong>Starter plan and above</strong>. In the free version, the Attendance feature is unavailable entirely and this setting has no effect.</div>
       </div>
       <h2>When enabled</h2>
       <ul>
@@ -803,7 +807,7 @@
     <article id="article-attendance-management" class="doc-article">
       <h1>Attendance Management (Managers)</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Attendance management requires the <strong>Starter plan or above</strong>. On the Free plan, the Attendance feature is unavailable entirely. Managers access all attendance records from <strong>EmpRoster &gt; Timesheets</strong>. This view covers every staff member's clock history with filter and inline-edit capabilities.</p>
+      <p>Attendance management requires the <strong>Starter plan or above</strong>. In the free version, the Attendance feature is unavailable entirely. Managers access all attendance records from <strong>EmpRoster &gt; Timesheets</strong>. This view covers every staff member's clock history with filter and inline-edit capabilities.</p>
       <h2>What managers can do</h2>
       <ul>
         <li>View the full clock-in/out history for any employee</li>
@@ -840,7 +844,7 @@
       <h2>Pending count badge</h2>
       <p>The Requests nav item displays a live badge showing the total number of pending items across all three sections relevant to the current user's role. The badge updates whenever the dashboard or Requests page is loaded.</p>
       <h2>Plan availability</h2>
-      <p>The Requests page requires the <strong>Starter plan or above</strong>. On the Free plan, the Requests menu item is hidden entirely for all roles including managers. Leave submission, open shift claiming, and shift swaps all require Starter plan or above.</p>
+      <p>The Requests page requires the <strong>Starter plan or above</strong>. In the free version, the Requests menu item is hidden entirely for all roles including managers. Leave submission, open shift claiming, and shift swaps all require Starter plan or above.</p>
       <div class="screenshot-placeholder">Screenshot placeholder — Requests page showing all three sections</div>
       <h2>Frontend access</h2>
       <p>Employees on Starter+ can submit leave requests from the frontend portal at <code>/emp-roster-leave</code>. The shortcode <code>[emp_roster_leave]</code> renders the leave submission form for authenticated employees.</p>
@@ -938,7 +942,7 @@
       <p>If no target employee is specified, the request is open, meaning any eligible employee could potentially take the shift. The submitted request immediately appears in the Shift Swap Requests section with a <strong>Pending</strong> status.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">On the Free and Starter plans, the Request Swap button is hidden from shift detail views. No upgrade prompt is shown to employees; the feature is silently omitted for plans that do not support it.</div>
+        <div class="callout-body">In the free version and on the Starter plan, the Request Swap button is hidden from shift detail views. No upgrade prompt is shown to employees; the feature is silently omitted for plans that do not support it.</div>
       </div>
 
       <h2>Manager Review</h2>
@@ -1011,7 +1015,7 @@
     <article id="article-availability-hints" class="doc-article">
       <h1>Availability Hints in Shift Modal</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>When a manager opens the shift assignment modal to add or review employees, each employee row shows an availability indicator based on that employee's recurring weekly availability. This allows managers to spot scheduling conflicts at a glance without leaving the modal. Requires the <strong>Starter plan or above</strong>; hints are not shown on the Free plan.</p>
+      <p>When a manager opens the shift assignment modal to add or review employees, each employee row shows an availability indicator based on that employee's recurring weekly availability. This allows managers to spot scheduling conflicts at a glance without leaving the modal. Requires the <strong>Starter plan or above</strong>; hints are not shown in the free version.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Indicator</th><th>Meaning</th></tr></thead>
@@ -1049,11 +1053,11 @@
       </div>
       <div class="callout">
         <span class="callout-icon">✉️</span>
-        <div class="callout-body"><strong>Welcome email:</strong> If email notifications are enabled, a welcome email is sent to the new employee automatically. On the <strong>Free plan</strong>, this is a simplified notification (name and notification of roster addition; no credentials). On <strong>Starter and above</strong>, the full onboarding email is sent containing the employee's login email, a one-time password setup link, and a direct link to the EmpRoster dashboard.</div>
+        <div class="callout-body"><strong>Welcome email:</strong> If email notifications are enabled, a welcome email is sent to the new employee automatically. In the <strong>free version</strong>, this is a simplified notification (name and notification of roster addition; no credentials). On <strong>Starter and above</strong>, the full onboarding email is sent containing the employee's login email, a one-time password setup link, and a direct link to the EmpRoster dashboard.</div>
       </div>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Staff account limits and role restrictions apply by plan.</strong> On the Free plan, the <strong>Roster Supervisor role is not available</strong> and there is no dedicated Manager account — only the WordPress Administrator acts as manager. Starter supports up to 25 employees and 2 supervisors; the Roster Manager account limit has been removed (unlimited). Professional and Business plans are unlimited. Attempting to create a staff member beyond the employee or supervisor limits returns an error. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
+        <div class="callout-body"><strong>Supervisor account limits apply on the Starter plan.</strong> Employee accounts are unlimited on every version. In the free version, the Roster Supervisor and Roster Manager roles are not part of the product — manage your team directly through your WordPress Administrator account. Starter supports up to 2 supervisors and unlimited managers; Professional and Business are unlimited. Attempting to create a supervisor beyond the Starter limit returns an error. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
       </div>
     </article>
 
@@ -1184,7 +1188,7 @@
     <article id="article-payroll-calculations" class="doc-article">
       <h1>Payroll Calculations</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Payroll calculations require the <strong>Starter plan or above</strong>. When <strong>Enable payroll</strong> is turned on in <strong>EmpRoster &gt; Settings &gt; Payroll</strong>, the plugin computes gross earnings from hours worked and each employee's configured hourly pay rate. On the Free plan, all payroll fields are hidden with no upgrade prompt displayed.</p>
+      <p>Payroll calculations require the <strong>Starter plan or above</strong>. When <strong>Enable payroll</strong> is turned on in <strong>EmpRoster &gt; Settings &gt; Payroll</strong>, the plugin computes gross earnings from hours worked and each employee's configured hourly pay rate. In the free version, all payroll fields are hidden with no upgrade prompt displayed.</p>
       <h2>Enabling payroll</h2>
       <p>Go to <strong>EmpRoster &gt; Settings &gt; Payroll</strong> and toggle <strong>Enable payroll</strong> on. Once enabled:</p>
       <ul>
@@ -1206,7 +1210,7 @@
       <p>Configure Saturday and Sunday pay multipliers in <strong>EmpRoster &gt; Settings &gt; Payroll &gt; Earnings &amp; Rates</strong>. When a multiplier greater than 1.0 is set for a day, it is applied to all shift earnings that fall on that day — affecting timesheet session rows, grouped totals, daily labour cost chips, and CSV exports. Set either multiplier to <strong>1.0</strong> to effectively disable the penalty for that day. See <em>Penalty Rates</em> for full configuration details.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">Pay rates are set per employee in the Staff screen. On the Free plan, pay rate fields are hidden entirely with no upgrade prompt displayed.</div>
+        <div class="callout-body">Pay rates are set per employee in the Staff screen. In the free version, pay rate fields are hidden entirely with no upgrade prompt displayed.</div>
       </div>
     </article>
 
@@ -1242,7 +1246,7 @@
     <article id="article-tax" class="doc-article">
       <h1>Tax</h1>
       <span class="plan-badge plan-pro">Professional+</span>
-      <p>Tax calculations require the <strong>Professional plan or above</strong>. Free and Starter plan users see a locked upgrade prompt in the Taxation row of the Payroll settings card.</p>
+      <p>Tax calculations require the <strong>Professional plan or above</strong>. Starter users see a locked upgrade prompt in the Taxation row of the Payroll settings card. The free version does not include payroll settings at all.</p>
       <h2>How tax is applied</h2>
       <p>When <strong>Enable tax</strong> is turned on in <strong>EmpRoster &gt; Settings &gt; Payroll</strong> and a tax rate percentage is configured:</p>
       <ul>
@@ -1256,7 +1260,7 @@
     <article id="article-daily-budget" class="doc-article">
       <h1>Daily Budget</h1>
       <span class="plan-badge plan-pro">Professional+</span>
-      <p>Daily budget tracking requires the <strong>Professional plan or above</strong>. Free and Starter plan users see a locked upgrade prompt in the Budgeting row of the Payroll settings card instead of the configuration fields.</p>
+      <p>Daily budget tracking requires the <strong>Professional plan or above</strong>. Starter users see a locked upgrade prompt in the Budgeting row of the Payroll settings card instead of the configuration fields. The free version does not include payroll settings at all.</p>
       <h2>How it works</h2>
       <p>When <strong>Enable daily budget</strong> is turned on and a daily budget target amount is configured:</p>
       <ul>
@@ -1270,7 +1274,7 @@
     <article id="article-job-type-hour-limits" class="doc-article">
       <h1>Job Type Hour Limits</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Weekly hour thresholds can be configured per job type to flag employees who are approaching or have exceeded their scheduled hours. This feature requires the <strong>Starter plan or above</strong>; flags are hidden on the Free plan.</p>
+      <p>Weekly hour thresholds can be configured per job type to flag employees who are approaching or have exceeded their scheduled hours. This feature requires the <strong>Starter plan or above</strong>; flags are hidden in the free version.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Job Type</th><th>Default Weekly Hours</th></tr></thead>
@@ -1287,7 +1291,7 @@
     <article id="article-print-pdf" class="doc-article">
       <h1>Print PDF</h1>
       <span class="plan-badge plan-pro">Professional+</span>
-      <p>PDF roster export requires the <strong>Professional plan or above</strong>. Free and Starter plan users see an inline upgrade prompt in the roster toolbar instead of the Print PDF button.</p>
+      <p>PDF roster export requires the <strong>Professional plan or above</strong>. Starter users see an inline upgrade prompt in the roster toolbar instead of the Print PDF button. The free version does not show the button.</p>
       <h2>How to export</h2>
       <p>Managers in the week or month view click <strong>Print PDF</strong> in the roster toolbar. A popup window opens with a self-contained, print-ready HTML layout containing:</p>
       <ul>
@@ -1310,7 +1314,7 @@
       <h1>Enabling Notifications</h1>
       <p>Email notifications are available on all plans including Free. Go to <strong>EmpRoster &gt; Settings &gt; Email Notifications</strong> and toggle <strong>Enable email notifications</strong> on to activate all automated emails. The emails sent depend on your plan:</p>
       <ul>
-        <li><strong>Free plan:</strong> Sends a simplified welcome email when a new staff account is created (employee name and notification of roster addition; no login credentials or dashboard link).</li>
+        <li><strong>Free version:</strong> Sends a simplified welcome email when a new staff account is created (employee name and notification of roster addition; no login credentials or dashboard link).</li>
         <li><strong>Starter and above:</strong> Sends the full onboarding welcome email (login email, one-time password setup link, direct EmpRoster dashboard link) plus shift assignment emails, shift timing change emails, and leave decision emails.</li>
       </ul>
 
@@ -1336,14 +1340,14 @@
     <article id="article-welcome-email" class="doc-article">
       <h1>Welcome Email</h1>
       <p>The welcome email is sent automatically when a manager creates a new staff account through <strong>EmpRoster &gt; Staff &gt; Add New Staff</strong>, provided email notifications are enabled. The content of the email depends on your plan.</p>
-      <h2>Free plan — Simplified welcome</h2>
+      <h2>Free version — Simplified welcome</h2>
       <span class="plan-badge plan-starter" style="background:rgba(61,189,168,.08);color:var(--muted)">Free</span>
-      <p>On the Free plan, a simplified welcome notification is sent to the new employee containing:</p>
+      <p>In the free version, a simplified welcome notification is sent to the new employee containing:</p>
       <ul>
         <li>Employee's name</li>
         <li>Notification that they have been added to the roster</li>
       </ul>
-      <p>No login credentials or password setup link are included in the Free plan welcome email.</p>
+      <p>No login credentials or password setup link are included in the free version welcome email.</p>
       <h2>Starter and above — Full onboarding email</h2>
       <span class="plan-badge plan-starter">Starter+</span>
       <p>On Starter and above, the full onboarding welcome email is sent containing:</p>
@@ -1414,7 +1418,7 @@
           <tbody>
             <tr><td><strong>Dashboard</strong></td><td><code>/emp-roster-dashboard</code></td><td><code>[emp_roster_dashboard]</code></td></tr>
             <tr><td><strong>My Shifts</strong></td><td><code>/emp-roster-shifts</code></td><td><code>[emp_roster_shifts]</code></td></tr>
-            <tr><td><strong>Leave</strong></td><td><code>/emp-roster-leave</code></td><td><code>[emp_roster_leave]</code> <span class="cell-note">Starter+ only. Hidden on Free plan. Managers also review all leave and swap requests in <strong>EmpRoster &gt; Requests</strong> in the WP admin.</span></td></tr>
+            <tr><td><strong>Leave</strong></td><td><code>/emp-roster-leave</code></td><td><code>[emp_roster_leave]</code> <span class="cell-note">Starter+ only. Not part of the free version. Managers also review all leave and swap requests in <strong>EmpRoster &gt; Requests</strong> in the WP admin.</span></td></tr>
             <tr><td><strong>Clock In/Out</strong></td><td><code>/emp-roster-attendance</code></td><td><code>[emp_roster_attendance]</code></td></tr>
             <tr><td><strong>Availability</strong></td><td><code>/emp-roster-availability</code></td><td><code>[emp_roster_availability]</code></td></tr>
           </tbody>
@@ -1438,7 +1442,7 @@
       </ul>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-body">On Free and Starter plans, the <code>[emp_roster_public]</code> shortcode renders a login gate instead of the public roster, even if the toggle was previously enabled. The public view only activates when the site is on a Professional or Business plan.</div>
+        <div class="callout-body">In the free version and on the Starter plan, the <code>[emp_roster_public]</code> shortcode renders a login gate instead of the public roster, even if the toggle was previously enabled. The public view only activates when the site is on a Professional or Business plan.</div>
       </div>
     </article>
 
@@ -1454,8 +1458,8 @@
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
           <tbody>
             <tr><td><strong>Company name</strong></td><td>Displayed in email notifications and PDF roster exports</td><td>WordPress site name</td></tr>
-            <tr><td><strong>Departments</strong></td><td>Newline-separated list. Limit: 1 on Free, 5 on Starter, unlimited on Professional and Business.</td><td>General Department</td></tr>
-            <tr><td><strong>Locations</strong></td><td>Location names with colour pickers. Limit: 1 on Free, 5 on Starter, unlimited on Professional and Business.</td><td>Main Location (#2563EB)</td></tr>
+            <tr><td><strong>Departments</strong></td><td>Newline-separated list. Limit: unlimited in the free version, 5 on Starter, unlimited on Professional and Business.</td><td>General Department</td></tr>
+            <tr><td><strong>Locations</strong></td><td>Location names with colour pickers. Limit: unlimited in the free version, 5 on Starter, unlimited on Professional and Business.</td><td>Main Location (#2563EB)</td></tr>
             <tr><td><strong>Week start</strong></td><td>First day of the week in all calendar views</td><td>Monday</td></tr>
             <tr><td><strong>Primary colour</strong></td><td>Brand colour used throughout the plugin UI</td><td>#2563EB</td></tr>
           </tbody>
@@ -1479,12 +1483,12 @@
 
     <article id="article-settings-departments" class="doc-article">
       <h1>Settings: Departments</h1>
-      <p>Departments are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each department entered here becomes available as a selectable option in the shift creation form, allowing shifts to be organised by team or business function. The <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list.</p>
+      <p>Departments are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each department entered here becomes available as a selectable option in the shift creation form, allowing shifts to be organised by team or business function. On the Starter plan, the <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list. The free version and the Professional and Business plans are unlimited.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Plan</th><th>Department limit</th></tr></thead>
           <tbody>
-            <tr><td>Free</td><td>1</td></tr>
+            <tr><td>Free (WordPress.org)</td><td>Unlimited</td></tr>
             <tr><td>Starter</td><td>5</td></tr>
             <tr><td>Professional</td><td>Unlimited</td></tr>
             <tr><td>Business</td><td>Unlimited</td></tr>
@@ -1499,12 +1503,12 @@
 
     <article id="article-settings-locations" class="doc-article">
       <h1>Settings: Locations</h1>
-      <p>Locations are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each location has a name and a colour. The name appears in shift forms and the roster view; the colour visually distinguishes shifts assigned to that location in calendar views. The <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list.</p>
+      <p>Locations are managed in <strong>EmpRoster &gt; Settings &gt; General</strong>. Each location has a name and a colour. The name appears in shift forms and the roster view; the colour visually distinguishes shifts assigned to that location in calendar views. On the Starter plan, the <strong>Add</strong> button is hidden once the plan limit is reached and an upgrade prompt appears below the list. The free version and the Professional and Business plans are unlimited.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Plan</th><th>Location limit</th></tr></thead>
           <tbody>
-            <tr><td>Free</td><td>1</td></tr>
+            <tr><td>Free (WordPress.org)</td><td>Unlimited</td></tr>
             <tr><td>Starter</td><td>5</td></tr>
             <tr><td>Professional</td><td>Unlimited</td></tr>
             <tr><td>Business</td><td>Unlimited</td></tr>
@@ -1519,7 +1523,7 @@
 
     <article id="article-settings-leave" class="doc-article">
       <h1>Settings: Leave & Accrual</h1>
-      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Starter+ feature; the relevant rows show an upgrade prompt on the Free plan.</p>
+      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave</strong> to configure leave management and annual entitlements. Leave balance tracking is a Starter+ feature. Leave management is not part of the free version, so these settings do not appear there.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">The Leave menu item has been renamed to <strong>Requests</strong>. The <code>/emp-roster-leave</code> frontend shortcode page and <code>[emp_roster_leave]</code> shortcode are unchanged.</div>
@@ -1542,7 +1546,7 @@
     <article id="article-settings-employment-type" class="doc-article">
       <h1>Settings: Employment Type &amp; Overtime</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Weekly hour thresholds are configured in <strong>EmpRoster &gt; Settings</strong> and require the <strong>Starter plan or above</strong>. Each threshold sets the expected maximum scheduled hours per week for that employment type. When a staff member's total scheduled hours in the displayed week approaches or exceeds their threshold, a flag is shown against their row in the roster view. On the Free plan the flags are hidden entirely.</p>
+      <p>Weekly hour thresholds are configured in <strong>EmpRoster &gt; Settings</strong> and require the <strong>Starter plan or above</strong>. Each threshold sets the expected maximum scheduled hours per week for that employment type. When a staff member's total scheduled hours in the displayed week approaches or exceeds their threshold, a flag is shown against their row in the roster view. In the free version the flags are hidden entirely.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
@@ -1583,7 +1587,7 @@
       <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Roles &amp; Permissions</strong> to control which roles can access specific features and data within the plugin. Settings are organised into three groups — Access &amp; Profile Mode, Supervisor Pay Rate, and Admin Visibility — each corresponding to a distinct card section in the admin dashboard.</p>
 
       <h2>Access &amp; Profile Mode</h2>
-      <p>Both toggles in this group require the <strong>Starter plan or above</strong>. On the Free plan the entire group shows an upgrade prompt and neither toggle can be changed.</p>
+      <p>Both toggles in this group require the <strong>Starter plan or above</strong>. They are not part of the free version.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
@@ -1625,7 +1629,7 @@
     <article id="article-settings-integrations" class="doc-article">
       <h1>Settings: Integrations &amp; Public View</h1>
       <span class="plan-badge plan-pro">Professional+</span>
-      <p>The Public View setting is located in <strong>EmpRoster &gt; Settings &gt; Roles &amp; Permissions</strong>. It enables a read-only shortcode that exposes the current roster to visitors who are not logged in. This feature requires the <strong>Professional plan or above</strong>; sites on Free or Starter plans see an upgrade prompt in place of this toggle.</p>
+      <p>The Public View setting is located in <strong>EmpRoster &gt; Settings &gt; Roles &amp; Permissions</strong>. It enables a read-only shortcode that exposes the current roster to visitors who are not logged in. This feature requires the <strong>Professional plan or above</strong>; sites on the Starter plan see an upgrade prompt in place of this toggle, and it is not part of the free version.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
@@ -1643,7 +1647,7 @@
 
     <article id="article-settings-email" class="doc-article">
       <h1>Settings: Email Notifications</h1>
-      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Email Notifications</strong> to enable or disable all automated plugin emails. This entire settings card shows an upgrade prompt on the Free plan; email notifications require <strong>Starter or above</strong>.</p>
+      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Email Notifications</strong> to enable or disable all automated plugin emails. Email notifications are available on <strong>every version, including the free version on WordPress.org</strong>. The free version sends a simplified welcome email; Starter and above send the full onboarding email with login credentials and setup links.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Default</th></tr></thead>
@@ -1658,7 +1662,7 @@
     <article id="article-settings-attachments" class="doc-article">
       <h1>Settings: Job Sheet Attachments</h1>
       <span class="plan-badge plan-pro">Professional+</span>
-      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Attachments</strong> to configure job sheet file attachments. This feature requires the <strong>Professional plan or above</strong>; the Attachments settings card shows an upgrade prompt on Free and Starter plans.</p>
+      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Attachments</strong> to configure job sheet file attachments. This feature requires the <strong>Professional plan or above</strong>; the Attachments settings card shows an upgrade prompt on the Starter plan and is not part of the free version.</p>
       <h2>Enabling attachments</h2>
       <p>Toggle <strong>Enable job sheet attachments</strong> on to allow managers to upload files directly to individual shifts. Once enabled, an <strong>Attachments</strong> section appears inside the shift edit form where files can be uploaded and removed.</p>
       <h2>Supported file types and size limit</h2>
@@ -1833,7 +1837,9 @@
 
     <article id="article-feature-availability" class="doc-article">
       <h1>Feature Availability by Plan</h1>
-      <p>Employee Roster is sold in four tiers: Free, Starter ($99/year), Professional ($199/year), and Business ($599/year for 5 sites). Licences are annual and per-site unless noted. Free-plan users always see a fully functional UI; locked features display an upgrade prompt rather than a broken or missing control.</p>
+      <p>Employee Roster is sold in three tiers: Starter ($99/year), Professional ($199/year), and Business ($599/year for 5 sites). Licences are annual and per-site unless noted. Every paid plan includes a 14-day free trial with no credit card required.</p>
+      <p>A separate <strong>free version</strong> is available on <a href="https://wordpress.org/plugins/employee-roster/">WordPress.org</a>. It is a complete rostering tool rather than a trial: unlimited employees, departments, locations, and shifts, with day, weekly, and monthly roster views and email notifications. Staff are managed directly from your WordPress Administrator account. The "Free" column below describes that version.</p>
+      <p>On the paid plans, features above your tier display an upgrade prompt rather than a broken or missing control.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1841,8 +1847,9 @@
           </thead>
           <tbody>
             <tr><td>Active shifts</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Locations</td><td>1</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Departments</td><td>1</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Locations</td><td>Unlimited</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Departments</td><td>Unlimited</td><td>Up to 5</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Employees</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
             <tr><td>WordPress sites</td><td>1</td><td>1</td><td>1</td><td><strong>5</strong></td></tr>
             <tr><td>Day roster view</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Weekly roster view</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1857,8 +1864,10 @@
             <tr><td>Availability hints in shift modal</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Shift swap requests</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Manager Settings access</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-            <tr><td>Profile Mode</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Profile Mode <span class="cell-note">(optional employee login restriction)</span></td><td><span class="cell-note">Employee logins are never restricted in the free version</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Payroll (pay rates, earnings)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Weekend penalty rates</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Analytics dashboard</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Tax calculations</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Daily budget tracking</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Weekly hour limits per job type</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1867,11 +1876,12 @@
             <tr><td>Employee Login Logs</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>PDF export (Print PDF roster)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Email notifications</td><td><span class="check">✓</span><span class="cell-note">Simplified welcome</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Job Sheet Attachments</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Public roster shortcode</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Supervisors can see pay rates</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Support</td><td>Community forum</td><td>Email (72 hr)</td><td>Email (24 hr)</td><td>Priority (same day)</td></tr>
             <tr><td>Updates</td><td>Security only</td><td>1 year</td><td>1 year</td><td>1 year</td></tr>
-            <tr><td>14-day free trial</td><td>No</td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td></tr>
+            <tr><td>14-day free trial</td><td><span class="cell-note">Not applicable — the free version is permanent, not a trial</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td><td><span class="check">✓</span><span class="cell-note">No card required</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1879,16 +1889,16 @@
 
     <article id="article-staff-account-limits" class="doc-article">
       <h1>Staff Account Limits by Plan</h1>
-      <p>The number of staff accounts you can create for each role is determined by your plan. Limits are enforced at the backend the moment a new account is created; the request is rejected with an HTTP 403 error if the plan limit would be exceeded.</p>
+      <p>Employee accounts are unlimited on every version. On the paid plans, the number of supervisor accounts you can create is determined by your plan; these limits are enforced at the backend the moment a new account is created, and the request is rejected with an HTTP 403 error if the plan limit would be exceeded. The free version on WordPress.org has no account limits of any kind.</p>
       <div class="table-wrap">
         <table>
           <thead>
             <tr><th>Role</th><th>Free</th><th>Starter</th><th>Professional</th><th>Business</th></tr>
           </thead>
           <tbody>
-            <tr><td>Roster Employee (<code>emr_employee</code>)</td><td>Unlimited</td><td>Up to 25</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Roster Supervisor (<code>emr_supervisor</code>)</td><td><span class="cross">✗</span> <span class="cell-note">Not available on Free</span></td><td>Up to 2</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td><span class="cross">✗</span> <span class="cell-note">Admin account only</span></td><td>Unlimited *</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Employee (<code>emr_employee</code>)</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Supervisor (<code>emr_supervisor</code>)</td><td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td><td>Up to 2</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td><td>Unlimited *</td><td>Unlimited</td><td>Unlimited</td></tr>
           </tbody>
         </table>
       </div>
@@ -1911,7 +1921,7 @@
     <a href="mailto:support@employeeroster.io">support@employeeroster.io</a>
     <a href="https://employeeroster.io/privacy">Privacy Policy</a>
     <a href="https://employeeroster.io/terms">Terms of Service</a>
-    <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org.">Free version coming soon</a>
+    <a href="https://wordpress.org/plugins/employee-roster/">Download free on WordPress.org</a>
   </div>
   <p>Employee Roster is an independent WordPress plugin.</p>
   <p style="margin-top:8px;opacity:.5;">© <script>document.write(new Date().getFullYear())</script> EmployeeRoster.io. All rights reserved.</p>

@@ -14,7 +14,7 @@
     gtag('js', new Date());
     gtag('config', 'G-27SR5BZH9W');
   </script>
-  <meta name="description" content="Schedule shifts, track attendance, manage leave, and run payroll inside WordPress. Self-hosted. No SaaS fees, no per-user costs. Free plan available." />
+  <meta name="description" content="Schedule shifts, track attendance, manage leave, and run payroll inside WordPress. Self-hosted. No SaaS fees, no per-user costs. Free version on WordPress.org." />
   <meta name="keywords" content="WordPress staff rostering plugin, WordPress shift scheduling, WordPress employee scheduling, WordPress attendance tracking, WordPress leave management, WordPress payroll plugin, self-hosted rostering, shift management WordPress" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://employeeroster.io/" />
@@ -24,7 +24,7 @@
   <meta property="og:url" content="https://employeeroster.io/" />
   <meta property="og:site_name" content="Employee Roster" />
   <meta property="og:title" content="Employee Roster – WordPress Shift Scheduling &amp; Staff Rostering Plugin" />
-  <meta property="og:description" content="Schedule shifts, track attendance, manage leave, and run payroll inside WordPress. Self-hosted. No SaaS fees, no per-user costs. Free plan available." />
+  <meta property="og:description" content="Schedule shifts, track attendance, manage leave, and run payroll inside WordPress. Self-hosted. No SaaS fees, no per-user costs. Free version on WordPress.org." />
   <meta property="og:image" content="https://employeeroster.io/assets/logo/favicon/android-chrome-512x512.png" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
@@ -60,24 +60,17 @@
     "offers": [
       {
         "@type": "Offer",
-        "name": "Free",
-        "price": "0",
-        "priceCurrency": "USD",
-        "description": "Unlimited employees, 1 location, 1 department."
-      },
-      {
-        "@type": "Offer",
         "name": "Starter",
         "price": "99",
         "priceCurrency": "USD",
-        "description": "Unlimited employees, 5 locations, unlimited shifts. Attendance, leave, payroll, email notifications, and Profile Mode."
+        "description": "Unlimited employees, 5 locations, unlimited shifts. Attendance, leave, leave balance tracking, payroll, penalty rates, analytics dashboard, email notifications, and Profile Mode."
       },
       {
         "@type": "Offer",
         "name": "Professional",
         "price": "199",
         "priceCurrency": "USD",
-        "description": "Unlimited employees and locations. Leave balance tracking, shift swaps, tax, daily budget, PDF export, and public roster shortcode."
+        "description": "Unlimited employees, locations, and departments. Shift swaps, skill tags, tax, daily budget, job sheet attachments, PDF export, and public roster shortcode."
       },
       {
         "@type": "Offer",
@@ -257,6 +250,13 @@
     .btn-plan-outline { border: 2px solid var(--border); color: var(--dark); }
     .pricing-guarantee { text-align: center; margin-top: 32px; font-size: .88rem; color: var(--muted); }
     .pricing-guarantee strong { color: var(--dark); }
+    .free-band {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; margin-top: 32px; max-width: 720px; margin-left: auto; margin-right: auto;
+    }
+    .free-band h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .free-band p { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .free-band .btn-plan { max-width: 320px; margin: 0 auto; }
 
     /* ── FOOTER ── */
     footer { background: var(--dark); color: var(--muted); text-align: center; padding: 36px 24px; font-size: .88rem; }
@@ -286,7 +286,7 @@
     <a href="#pricing">Pricing</a>
     <a href="https://employeeroster.io/docs">Documentation</a>
     <a href="https://employeeroster.io/blog/">Blog</a>
-    <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-plan btn-plan-outline">Notify me</a>
+    <a href="https://wordpress.org/plugins/employee-roster/" class="btn-plan btn-plan-outline">Download Free</a>
   </div>
 </nav>
 </header>
@@ -298,10 +298,10 @@
   <h1>Staff rostering that lives<br><span>inside your WordPress.</span></h1>
   <p>Schedule shifts, track attendance, manage leave, and run payroll, all from your WP Admin. Your data, your server, no SaaS fees.</p>
   <div class="hero-btns">
-    <a href="https://checkout.freemius.com/plugin/28057/plan/46316/?trial=free" class="btn-primary">Start Free Trial</a>
-    <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-primary">Notify me</a>
+    <a href="https://checkout.freemius.com/plugin/28057/plan/46316/?trial=free" class="btn-primary">Start free Professional trial</a>
+    <a href="https://wordpress.org/plugins/employee-roster/" class="btn-primary">Download Free on WordPress.org</a>
   </div>
-  <p class="hero-sub">No per-user fees &nbsp;·&nbsp; Unlimited employees &nbsp;·&nbsp; 14-day free trial</p>
+  <p class="hero-sub">No per-user fees &nbsp;·&nbsp; Unlimited employees &nbsp;·&nbsp; 14-day free trial on paid plans</p>
 </div>
 
 <!-- TRUST BAR -->
@@ -354,7 +354,7 @@
       <div class="feature-card">
         <div class="feature-icon">✉️</div>
         <h3>Email Notifications</h3>
-        <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. Available on all plans — free plan sends a simplified welcome; Starter and above include full login credentials and setup links.</p>
+        <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. Available on every version — the free WordPress.org version sends a simplified welcome; Starter and above include full login credentials and setup links.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📱</div>
@@ -364,7 +364,7 @@
       <div class="feature-card">
         <div class="feature-icon">🔒</div>
         <h3>Role-Based Access</h3>
-        <p>Separate Manager, Supervisor, and Employee roles with granular capabilities. Profile Mode blocks employee and supervisor WordPress logins entirely while keeping email notifications active.</p>
+        <p>The free WordPress.org version runs on Employee accounts managed directly from your WordPress Administrator account. Paid plans add dedicated Manager and Supervisor roles with granular capabilities, plus Profile Mode, which blocks employee and supervisor WordPress logins entirely while keeping email notifications active.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🌐</div>
@@ -448,7 +448,7 @@
     <div class="section-center">
       <div class="section-label">Plan Comparison</div>
       <h2 class="section-title">Compare plans</h2>
-      <p class="section-sub">Free-plan users see the full UI; locked features show an upgrade prompt, never a broken screen.</p>
+      <p class="section-sub">The free version on WordPress.org is a complete, unlimited rostering tool for the features it ships. Paid plans add attendance, leave, payroll, and more.</p>
     </div>
     <div class="table-wrap">
       <table>
@@ -464,14 +464,14 @@
         <tbody>
           <tr>
             <td>Locations</td>
-            <td><span class="cell-note">1 location</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Up to 5</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
           <tr>
             <td>Departments</td>
-            <td><span class="cell-note">1 department</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Up to 5</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
@@ -492,14 +492,14 @@
           </tr>
           <tr>
             <td>Supervisors</td>
-            <td><span class="cross">✗</span><span class="cell-note">Not available on Free</span></td>
+            <td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td>
             <td><span class="cell-note">Up to 2</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
           <tr>
             <td>Managers</td>
-            <td><span class="cross">✗</span><span class="cell-note">Admin account only</span></td>
+            <td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited via Admin Visibility</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
@@ -596,6 +596,13 @@
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
+            <td>Payroll (pay rates &amp; earnings)</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
             <td>Weekend penalty rates</td>
             <td><span class="cross">✗</span></td>
             <td><span class="check">✓</span></td>
@@ -617,6 +624,13 @@
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
+            <td>Analytics dashboard</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
             <td>Manager Settings access</td>
             <td><span class="cross">✗</span></td>
             <td><span class="check">✓</span></td>
@@ -631,8 +645,8 @@
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
-            <td>Profile Mode</td>
-            <td><span class="cross">✗</span></td>
+            <td>Profile Mode <span class="cell-note">(optional employee login restriction)</span></td>
+            <td><span class="cell-note">Employee logins are never restricted on the free version</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
@@ -680,6 +694,13 @@
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
+            <td>Job Sheet Attachments</td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
             <td>Public roster shortcode</td>
             <td><span class="cross">✗</span></td>
             <td><span class="cross">✗</span></td>
@@ -708,23 +729,6 @@
     <div class="pricing-cards">
 
       <div class="pricing-card">
-        <h3>Free</h3>
-        <p class="pricing-tier-desc">Get started at no cost</p>
-        <div class="price">$0</div>
-        <p class="price-period">forever</p>
-        <ul>
-          <li>Unlimited employees</li>
-          <li>Unlimited active shifts</li>
-          <li>1 location, 1 department</li>
-          <li>Day &amp; weekly roster view</li>
-          <li>Monthly calendar view</li>
-          <li>Email notifications</li>
-          <li>Community forum support</li>
-        </ul>
-        <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org." class="btn-plan btn-plan-outline">Notify me</a>
-      </div>
-
-      <div class="pricing-card">
         <h3>Starter</h3>
         <p class="pricing-tier-desc">Small teams</p>
         <div class="price"><sup>$</sup>99</div>
@@ -747,6 +751,7 @@
           <li>Full onboarding email notifications</li>
           <li>CSV export (timesheets &amp; staff)</li>
           <li>Weekend penalty rates</li>
+          <li>Analytics dashboard</li>
         </ul>
         <a href="https://checkout.freemius.com/plugin/28057/plan/46315/" class="btn-plan btn-plan-navy">Get Started</a>
       </div>
@@ -767,6 +772,7 @@
           <li>PDF roster export</li>
           <li>Public roster shortcode</li>
           <li>Skill Tags</li>
+          <li>Job Sheet Attachments</li>
           <li>Employee Login Logs</li>
           <li>Priority support (24 hr)</li>
         </ul>
@@ -788,7 +794,13 @@
       </div>
 
     </div>
-    <p class="pricing-guarantee">Licences are annual and per-site unless noted.</p>
+    <p class="pricing-guarantee">Licences are annual and per-site unless noted. Every paid plan includes a 14-day free trial — no credit card required.</p>
+
+    <div class="free-band">
+      <h3>Prefer the free version?</h3>
+      <p>Employee Roster is also available as a free plugin on WordPress.org. It is a complete rostering tool, not a trial: <strong>unlimited employees, unlimited departments, unlimited locations, and unlimited shifts</strong>, with day, weekly, and monthly roster views and email notifications. Staff are managed directly from your WordPress Administrator account. Attendance, leave, payroll, and the other features listed above are part of the paid plans.</p>
+      <a href="https://wordpress.org/plugins/employee-roster/" class="btn-plan btn-plan-outline">Download Free on WordPress.org</a>
+    </div>
   </div>
 </div>
 
@@ -800,7 +812,7 @@
     <a href="mailto:support@employeeroster.io">support@employeeroster.io</a>
     <a href="https://employeeroster.io/privacy">Privacy Policy</a>
     <a href="https://employeeroster.io/terms">Terms of Service</a>
-    <a href="mailto:support@employeeroster.io?subject=Notify%20me%20when%20free%20version%20launches&body=Please%20notify%20me%20when%20the%20free%20version%20of%20Employee%20Roster%20is%20available%20on%20WordPress.org.">Free version coming soon</a>
+    <a href="https://wordpress.org/plugins/employee-roster/">Download free on WordPress.org</a>
   </div>
   <p>Employee Roster is an independent WordPress plugin.</p>
   <p style="margin-top:8px;opacity:.5;">© <script>document.write(new Date().getFullYear())</script> EmployeeRoster.io. All rights reserved.</p>
@@ -837,19 +849,25 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if (heroBtns[1]) {
     heroBtns[1].addEventListener('click', function () {
-      gtag('event', 'cta_click', { button_label: 'notify_me', location: 'hero' });
+      gtag('event', 'cta_click', { button_label: 'download_free_wporg', location: 'hero' });
     });
   }
 
-  var navNotify = document.querySelector('.nav-links .btn-plan-outline');
-  if (navNotify) {
-    navNotify.addEventListener('click', function () {
-      gtag('event', 'cta_click', { button_label: 'notify_me', location: 'nav' });
+  var navFree = document.querySelector('.nav-links .btn-plan-outline');
+  if (navFree) {
+    navFree.addEventListener('click', function () {
+      gtag('event', 'cta_click', { button_label: 'download_free_wporg', location: 'nav' });
+    });
+  }
+
+  var bandFree = document.querySelector('.free-band .btn-plan-outline');
+  if (bandFree) {
+    bandFree.addEventListener('click', function () {
+      gtag('event', 'cta_click', { button_label: 'download_free_wporg', location: 'pricing' });
     });
   }
 
   [
-    { cls: 'btn-plan-outline', plan: 'free' },
     { cls: 'btn-plan-navy',    plan: 'starter' },
     { cls: 'btn-plan-purple',  plan: 'professional' },
     { cls: 'btn-plan-amber',   plan: 'business' }
