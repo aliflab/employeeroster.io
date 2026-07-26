@@ -63,14 +63,14 @@
         "name": "Starter",
         "price": "99",
         "priceCurrency": "USD",
-        "description": "Unlimited employees, locations, departments, and shifts. Attendance, leave, leave balance tracking, payroll, penalty rates, analytics dashboard, email notifications, and Profile Mode."
+        "description": "Dedicated Manager and Supervisor roles, clock in/out attendance, leave requests, approval and balance tracking, copy roster, analytics dashboard, and Manager Settings access."
       },
       {
         "@type": "Offer",
         "name": "Professional",
         "price": "199",
         "priceCurrency": "USD",
-        "description": "Unlimited employees, locations, and departments. Shift swaps, skill tags, tax, daily budget, job sheet attachments, PDF export, and public roster shortcode."
+        "description": "Everything in Starter, plus supervisor pay rate visibility, shift swap requests, PDF roster export, public roster shortcode, and 24-hour priority support."
       },
       {
         "@type": "Offer",
@@ -351,7 +351,7 @@
       <div class="feature-card">
         <div class="feature-icon">✉️</div>
         <h3>Email Notifications</h3>
-        <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. Available on every version — the free WordPress.org version sends a simplified welcome; Starter and above include full login credentials and setup links.</p>
+        <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. Available on every version, including the free WordPress.org version, with full login credentials and setup links.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">📱</div>
@@ -361,7 +361,7 @@
       <div class="feature-card">
         <div class="feature-icon">🔒</div>
         <h3>Role-Based Access</h3>
-        <p>The free WordPress.org version runs on Employee accounts managed directly from your WordPress Administrator account. Paid plans add dedicated Manager and Supervisor roles with granular capabilities, plus Profile Mode, which blocks employee and supervisor WordPress logins entirely while keeping email notifications active.</p>
+        <p>The free WordPress.org version runs on Employee accounts managed directly from your WordPress Administrator account. Paid plans add dedicated Manager and Supervisor roles with granular capabilities. Profile Mode, which blocks employee and supervisor WordPress logins entirely while keeping email notifications active, is available in every version including free.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🌐</div>
@@ -396,12 +396,12 @@
       <div class="feature-card">
         <div class="feature-icon">🏷️</div>
         <h3>Skill Tags</h3>
-        <p>Tag employees with skills (e.g. "Barista", "First Aid", "Forklift Licence") so managers can quickly identify the right person for each shift. Skill tags appear on staff profiles and in the shift assignment modal. Professional plan and above.</p>
+        <p>Tag employees with skills (e.g. "Barista", "First Aid", "Forklift Licence") so managers can quickly identify the right person for each shift. Skill tags appear on staff profiles and in the shift assignment modal.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔐</div>
         <h3>Employee Login Logs</h3>
-        <p>Track successful logins, logouts, and failed login attempts for roster employees. Filter by event type, date range, or staff member. Includes IP address, device detection, and a configurable auto-delete retention policy. Professional plan and above.</p>
+        <p>Track successful logins, logouts, and failed login attempts for roster employees. Filter by event type, date range, or staff member. Includes IP address, device detection, and a configurable auto-delete retention policy.</p>
       </div>
     </div>
   </div>
@@ -445,7 +445,7 @@
     <div class="section-center">
       <div class="section-label">Plan Comparison</div>
       <h2 class="section-title">Compare plans</h2>
-      <p class="section-sub">The free version on WordPress.org is a complete, unlimited rostering tool for the features it ships. Paid plans add attendance, leave, payroll, and more.</p>
+      <p class="section-sub">The free version on WordPress.org is a complete, unlimited rostering tool. Paid plans add dedicated Manager and Supervisor roles, shift swaps, PDF export, and priority support.</p>
     </div>
     <div class="table-wrap">
       <table>
@@ -490,7 +490,7 @@
           <tr>
             <td>Supervisors</td>
             <td><span class="cell-note">Not included *</span></td>
-            <td><span class="cell-note">Up to 2</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
             <td><span class="check">✓</span><span class="cell-note">Unlimited</span></td>
           </tr>
@@ -531,7 +531,7 @@
           </tr>
           <tr>
             <td>Open shifts (post &amp; self-assign)</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
@@ -580,28 +580,28 @@
           </tr>
           <tr>
             <td>Availability hints in shift modal</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Weekly hour limits per job type</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Payroll (pay rates &amp; earnings)</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Weekend penalty rates</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
@@ -615,7 +615,7 @@
           </tr>
           <tr>
             <td>Staff CSV export</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
@@ -636,36 +636,36 @@
           </tr>
           <tr>
             <td>Email notifications</td>
-            <td><span class="check">✓</span><span class="cell-note">Simplified welcome</span></td>
+            <td><span class="check">✓</span><span class="cell-note">Full onboarding</span></td>
             <td><span class="check">✓</span><span class="cell-note">Full onboarding</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Profile Mode <span class="cell-note">(optional employee login restriction)</span></td>
-            <td><span class="cell-note">Logins never restricted</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>CSV export (timesheets)</td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Skill Tags</td>
-            <td><span class="cross">✗</span></td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Employee Login Logs</td>
-            <td><span class="cross">✗</span></td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
@@ -678,22 +678,22 @@
           </tr>
           <tr>
             <td>Tax calculations</td>
-            <td><span class="cross">✗</span></td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Daily budget tracking</td>
-            <td><span class="cross">✗</span></td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
           <tr>
             <td>Job Sheet Attachments</td>
-            <td><span class="cross">✗</span></td>
-            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
             <td><span class="check">✓</span></td>
           </tr>
@@ -733,23 +733,11 @@
         <p class="price-period">per year</p>
         <ul>
           <li>1 WordPress site</li>
-          <li>Unlimited employees</li>
-          <li>Up to 2 supervisors · Unlimited managers via Admin Visibility</li>
-          <li>Unlimited locations &amp; departments</li>
-          <li>Unlimited shifts</li>
-          <li>Monthly calendar view</li>
-          <li>Open shifts &amp; copy roster</li>
+          <li>Dedicated Manager &amp; Supervisor roles</li>
           <li>Clock in / clock out attendance</li>
-          <li>Leave requests &amp; approval</li>
-          <li>Leave balance tracking &amp; accrual</li>
-          <li>Availability hints in shift modal</li>
-          <li>Weekly hour limits per job type</li>
-          <li>Payroll (pay rates &amp; earnings)</li>
-          <li>Profile Mode</li>
-          <li>Full onboarding email notifications</li>
-          <li>CSV export (timesheets &amp; staff)</li>
-          <li>Weekend penalty rates</li>
-          <li>Analytics dashboard</li>
+          <li>Leave requests, approval &amp; balance tracking</li>
+          <li>Copy roster week to week</li>
+          <li>Analytics dashboard &amp; Manager Settings access</li>
         </ul>
         <a href="https://checkout.freemius.com/plugin/28057/plan/46315/" class="btn-plan btn-plan-navy">Get Started</a>
       </div>
@@ -763,15 +751,9 @@
         <ul>
           <li>1 WordPress site</li>
           <li>Everything in Starter, plus:</li>
-          <li>Unlimited staff, locations &amp; departments</li>
-          <li>Tax calculations</li>
-          <li>Daily budget tracking</li>
+          <li>Supervisor pay rate visibility</li>
           <li>Shift swap requests</li>
-          <li>PDF roster export</li>
-          <li>Public roster shortcode</li>
-          <li>Skill Tags</li>
-          <li>Job Sheet Attachments</li>
-          <li>Employee Login Logs</li>
+          <li>PDF roster export &amp; public roster shortcode</li>
           <li>Priority support (24 hr)</li>
         </ul>
         <a href="https://checkout.freemius.com/plugin/28057/plan/46316/" class="btn-plan btn-plan-purple">Get Started</a>
