@@ -482,7 +482,7 @@
       <p>The paid plans register three custom WordPress roles on activation. These roles determine what each user can see and do within the plugin, and they also control the WordPress admin experience; roster users see only the Employee Roster menu, not the full WordPress dashboard.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body"><strong>Free version:</strong> the WordPress.org version registers the Roster Employee role only. The Roster Manager and Roster Supervisor roles are not part of the free version — you manage your team directly through your WordPress Administrator account, which has full access to every roster feature.</div>
+        <div class="callout-body"><strong>Free version:</strong> the WordPress.org version registers the Roster Employee role only. There is no manager or supervisor role of any kind — you run the roster yourself from your own WordPress Administrator account, which has full access to every roster feature. Paid plans add dedicated Manager and Supervisor roles so you can delegate roster management to other staff members without granting them full WordPress Administrator access.</div>
       </div>
       <div class="table-wrap">
         <table>
@@ -518,7 +518,7 @@
             <tr><td><code>emr_submit_leave</code></td><td>All roles</td></tr>
             <tr><td><code>emr_manage_availability</code></td><td>All roles</td></tr>
             <tr><td><code>emr_view_reports</code></td><td>Manager, Admin</td></tr>
-            <tr><td><code>emr_manage_settings</code></td><td>Manager, Admin <em>(Starter+ only for Managers)</em></td></tr>
+            <tr><td><code>emr_manage_settings</code></td><td>Manager, Admin</td></tr>
             <tr><td><code>emr_request_swap</code></td><td>All roles</td></tr>
           </tbody>
         </table>
@@ -1055,7 +1055,7 @@
       </div>
       <div class="callout callout-warn">
         <span class="callout-icon">⚠️</span>
-        <div class="callout-body">Employee accounts are unlimited on every version. In the free version, the Roster Supervisor and Roster Manager roles are not part of the product — manage your team directly through your WordPress Administrator account. Supervisors and managers are unlimited on all paid plans. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
+        <div class="callout-body">Employee accounts are unlimited on every version. The free version has no manager or supervisor role of any kind — you run the roster yourself from your own WordPress Administrator account. Paid plans add dedicated Manager and Supervisor roles, unlimited on every plan, so roster management can be delegated to staff without granting full WordPress Administrator access. See <em>Staff Account Limits by Plan</em> for the full breakdown.</div>
       </div>
     </article>
 
@@ -1531,19 +1531,14 @@
       <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Roles &amp; Permissions</strong> to control which roles can access specific features and data within the plugin. Settings are organised into three groups — Access &amp; Profile Mode, Supervisor Pay Rate, and Admin Visibility — each corresponding to a distinct card section in the admin dashboard.</p>
 
       <h2>Access &amp; Profile Mode</h2>
-      <p>Profile Mode is available on every version, including the free version. Manager Settings Access requires the <strong>Starter plan or above</strong>, since Roster Manager accounts are not part of the free version.</p>
+      <p>Profile Mode is available on every version, including the free version.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
           <tbody>
             <tr><td><strong>Profile Mode</strong></td><td>Prevents employees and supervisors from logging into WordPress directly. Email notifications continue to function normally. Managers and WP Administrators are never affected by this toggle.</td><td>All versions</td><td>Disabled</td></tr>
-            <tr><td><strong>Manager Settings Access</strong></td><td>Controls whether Roster Managers can open and save changes in the plugin settings pages. When disabled, Roster Managers can view the dashboard but cannot modify any plugin configuration.</td><td>Starter+</td><td>Enabled</td></tr>
           </tbody>
         </table>
-      </div>
-      <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body">Disabling <strong>Manager Settings Access</strong> locks all Roster Manager accounts out of plugin settings pages. Only WP Administrators will be able to change plugin configuration. Ensure at least one WP Administrator account remains accessible before applying this restriction.</div>
       </div>
       <p>See <em>Profile Mode: Overview &amp; Use Case</em> for a full description of how Profile Mode works and when to use it.</p>
 
@@ -1803,7 +1798,6 @@
             <tr><td>Staff availability management</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Availability hints in shift modal</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Shift swap requests</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-            <tr><td>Manager Settings access</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Profile Mode <span class="cell-note">(optional employee login restriction)</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Payroll (pay rates, earnings)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Weekend penalty rates</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -1829,7 +1823,7 @@
 
     <article id="article-staff-account-limits" class="doc-article">
       <h1>Staff Account Limits by Plan</h1>
-      <p>Employee, supervisor, and manager accounts are unlimited on every paid plan. The free version on WordPress.org has no account limits of any kind; the Roster Supervisor and Roster Manager roles are simply not part of it, so staff are managed directly through your WordPress Administrator account.</p>
+      <p>Employee, supervisor, and manager accounts are unlimited on every paid plan. The free version on WordPress.org has no account limits of any kind, but it has no manager or supervisor role either — you run the roster yourself from your own WordPress Administrator account. The paid plans exist to let you delegate that work: dedicated Manager and Supervisor accounts give staff members roster management without full WordPress Administrator access.</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -1837,8 +1831,8 @@
           </thead>
           <tbody>
             <tr><td>Roster Employee (<code>emr_employee</code>)</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Roster Supervisor (<code>emr_supervisor</code>)</td><td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
-            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td><span class="cell-note">Not part of the free version — manage your team directly through your WordPress Administrator account</span></td><td>Unlimited *</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Supervisor (<code>emr_supervisor</code>)</td><td><span class="cell-note">No such role — you run the roster yourself from your own WordPress Administrator account</span></td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Roster Manager (<code>emr_manager</code>)</td><td><span class="cell-note">No such role — you run the roster yourself from your own WordPress Administrator account</span></td><td>Unlimited *</td><td>Unlimited</td><td>Unlimited</td></tr>
           </tbody>
         </table>
       </div>
