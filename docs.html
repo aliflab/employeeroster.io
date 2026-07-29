@@ -1060,7 +1060,7 @@
       </div>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">When leave balances are enabled <span class="plan-badge plan-pro">Professional+</span>, the annual leave form shows how many days the employee has and warns them before they overspend — and the server refuses the request if they do.</div>
+        <div class="callout-body">When leave balances are enabled <span class="plan-badge plan-starter">Starter+</span>, the annual leave form shows how many days the employee has and warns them before they overspend — and the server refuses the request if they do.</div>
       </div>
 
       <h2>Approval Workflow</h2>
@@ -1171,11 +1171,11 @@
 
     <article id="article-leave-balances" class="doc-article">
       <h1>Leave Balances</h1>
-      <span class="plan-badge plan-pro">Professional+</span>
-      <p>Leave balance tracking requires the <strong>Professional plan or above</strong>. Turn on <strong>Settings &gt; Leave &amp; Accrual &gt; Leave Balances</strong> to track entitlements per person; each employee then has annual and sick leave balances tracked per calendar year, accruing against configured entitlements and reducing automatically when leave is approved.</p>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Leave balance tracking requires the <strong>Starter plan or above</strong>. Turn on <strong>Settings &gt; Leave &amp; Accrual &gt; Leave Balances</strong> to track entitlements per person; each employee then has annual and sick leave balances tracked per calendar year, accruing against configured entitlements and reducing automatically when leave is approved.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
-        <div class="callout-body">The Leave Balances setting row is visible from <strong>Starter</strong>, but the balance figures themselves are only calculated on <strong>Professional and above</strong>. On Starter the toggle can be switched on but no balances are produced.</div>
+        <div class="callout-body">Accrual is calculated lazily — the first time a balance is read after enabling the setting, the whole year to date is back-filled in one go. Earlier years are not back-filled: a mid-year opt-in starts from the current year.</div>
       </div>
       <img src="assets/docs/employee_leave_balances.png" alt="Employees leave balances"> <style>img { max-width: 100%; height: auto; }</style>
       <h2>Default entitlements (days per year)</h2>
@@ -1810,7 +1810,7 @@
     <article id="article-settings-leave" class="doc-article">
       <h1>Settings: Leave &amp; Accrual</h1>
       <span class="plan-badge plan-starter">Starter+</span>
-      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave &amp; Accrual</strong> to configure leave management and annual entitlements. The leave module requires the <strong>Starter plan or above</strong> and this card is not present in the free version at all. Balance figures require <strong>Professional or above</strong>.</p>
+      <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave &amp; Accrual</strong> to configure leave management and annual entitlements. The leave module and balance tracking both require the <strong>Starter plan or above</strong>, and this card is not present in the free version at all.</p>
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">The Leave menu item is now called <strong>Requests</strong>, and holds leave, open shift and swap requests together. The frontend leave page and the <code>[empr_leave]</code> shortcode are unchanged.</div>
@@ -1820,9 +1820,9 @@
           <thead><tr><th>Setting</th><th>Description</th><th>Plan</th><th>Default</th></tr></thead>
           <tbody>
             <tr><td><strong>Leave Module</strong></td><td>Show the Requests menu item and allow leave requests to be submitted</td><td><span class="plan-badge plan-starter">Starter+</span></td><td>On</td></tr>
-            <tr><td><strong>Leave Balances</strong></td><td>Track entitlements, accrual and balances per employee. The row is shown from Starter, but balances are only calculated on Professional and above</td><td><span class="plan-badge plan-pro">Professional+</span></td><td>Off</td></tr>
-            <tr><td><strong>Annual Leave</strong></td><td>Entitlement in days per year — full-time / part-time</td><td><span class="plan-badge plan-pro">Professional+</span></td><td>20 / 10</td></tr>
-            <tr><td><strong>Sick Leave</strong></td><td>Entitlement in days per year — full-time / part-time</td><td><span class="plan-badge plan-pro">Professional+</span></td><td>10 / 5</td></tr>
+            <tr><td><strong>Leave Balances</strong></td><td>Track entitlements, accrual and balances per employee</td><td><span class="plan-badge plan-starter">Starter+</span></td><td>Off</td></tr>
+            <tr><td><strong>Annual Leave</strong></td><td>Entitlement in days per year — full-time / part-time</td><td><span class="plan-badge plan-starter">Starter+</span></td><td>20 / 10</td></tr>
+            <tr><td><strong>Sick Leave</strong></td><td>Entitlement in days per year — full-time / part-time</td><td><span class="plan-badge plan-starter">Starter+</span></td><td>10 / 5</td></tr>
           </tbody>
         </table>
       </div>
@@ -2168,6 +2168,7 @@
             <tr><td>Copy Roster</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Attendance &amp; clock in/out</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Leave requests &amp; approval workflow</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Leave balances &amp; accrual</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Payroll (pay rates, earnings)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Weekend penalty rates</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Analytics dashboard</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -2175,7 +2176,6 @@
             <tr><td>Account reset (new password)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Employee login control (Profile Mode)</td><td><span class="cross">✗</span><span class="cell-note">No restriction — everyone can log in</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Weekly hour limit warnings per job type</td><td><span class="cross">✗</span><span class="cell-note">Thresholds configurable, warnings not shown</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-            <tr><td>Leave balances &amp; accrual</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Shift swap requests</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Skill Tags</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Tax calculations</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
