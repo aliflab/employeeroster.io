@@ -287,14 +287,6 @@ if the site later drops to Starter.
   [Installation](#installation)).
 - **No outbound HTTP.** The plugin calls no external APIs; all data stays in the WordPress
   database. Email goes through `wp_mail()`, so it uses whatever mailer the site already has.
-- **Local tier testing** — force a plan without a licence by defining the constant in
-  `wp-config.php`:
-
-  ```php
-  define( '***REDACTED***', 'starter' ); // 'starter' | 'professional' | 'business'
-  ```
-
-  (`***REDACTED***` is kept as a legacy shim.)
 - **Free vs premium builds are physically different ZIPs.** Premium code is absent from the
   WordPress.org build rather than gated at runtime, so "not in free" means genuinely not shipped.
 
