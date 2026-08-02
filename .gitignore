@@ -1,7 +1,13 @@
+# Internal / private notes — never publish
 CLAUDE.md
 plugin.md
-.claude
+plans.md
+employeeroster-shared/
+graphify-out/
+
+# Tooling
 .claude/
+.cursor/
 
 # OS
 .DS_Store
@@ -19,6 +25,3 @@ Thumbs.db
 # Env
 .env
 .env.local
-
-/employeeeroster-shared/
-
