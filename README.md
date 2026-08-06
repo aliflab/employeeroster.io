@@ -5,7 +5,7 @@
 <h1 align="center">Employee Roster</h1>
 
 <p align="center">
-  <strong>WordPress shift scheduling &amp; staff rostering — self-hosted, no SaaS fees, no per-user costs.</strong>
+  <strong>WordPress shift scheduling &amp; staff rostering. Self-hosted, no SaaS fees, no per-user costs.</strong>
 </p>
 
 <p align="center">
@@ -17,16 +17,16 @@
 
 ---
 
-Schedule shifts, track attendance, manage leave, and run payroll entirely inside WP Admin.
+Schedule shifts, track attendance, manage leave, and run payroll without ever leaving WP Admin.
 
 Employee Roster is a complete staff rostering system that runs on your own WordPress install. There
-are no external APIs, no third-party accounts, and no monthly per-seat costs — every shift,
-timesheet, and leave record stays in your own database.
+are no external APIs to sign up for, no third-party accounts, and no monthly per-seat costs. Every
+shift, timesheet, and leave record stays in your own database.
 
-- 🔒 **Self-hosted** — your data never leaves your server
-- ⚡ **No external APIs** — zero SaaS dependency
-- 👥 **Unlimited employees** on every plan, including the free version
-- 🧩 **Frontend portal** — staff never need to see WP Admin if you don't want them to
+- 🔒 **Self-hosted.** Your data never leaves your server.
+- ⚡ **No external APIs.** Nothing to depend on, nothing to go down.
+- 👥 **Unlimited employees** on every plan, including the free version.
+- 🧩 **Frontend portal.** Staff never need to see WP Admin if you'd rather they didn't.
 
 **[Documentation](https://employeeroster.io/docs)** ·
 **[Website](https://employeeroster.io/)** ·
@@ -47,60 +47,69 @@ timesheet, and leave record stays in your own database.
 
 ## Features
 
-Items marked `Starter+` or `Professional+` require a paid licence; everything else is in the free
-WordPress.org build. See [Plans](#plans--pricing) for the full matrix.
+Anything marked `Starter+` or `Professional+` needs a paid licence. Everything else ships in the free
+WordPress.org build. The full matrix is over in [Plans](#plans--pricing).
 
 ### Shift scheduling
 
-- Create shifts with **direct assignment** or as **open slots** staff claim themselves
+- Create shifts with **direct assignment**, or post them as **open slots** staff claim themselves
 - Day, week, and month roster views
-- **Open Shifts** — employees self-assign up to the slot limit, with optional manager approval `Starter+`
-- **Copy Roster** — rebuild next week from an existing week in one action `Starter+`
-- Edit and delete shifts, with automatic notification when timings change
-- No cap on the number of active shifts on any plan
+- **Open Shifts.** Employees self-assign up to the slot limit, with optional manager approval `Starter+`
+- **Copy Roster.** Rebuild next week from an existing week in a single action `Starter+`
+- Edit and delete shifts, with automatic notification whenever timings change
+- No cap on the number of active shifts, on any plan
 
 ### Attendance & time tracking
 
-- Clock in / clock out from WP Admin or the frontend portal `Starter+`
+- Clock in and out from WP Admin or the frontend portal `Starter+`
 - Break deductions and shift linking
-- One active session per user enforced
+- One active session per user, enforced
 - Managers can edit or correct any attendance record `Starter+`
-- Optional self-clock setting to control who may clock themselves in `Starter+`
+- An optional self-clock setting so you decide who may clock themselves in `Starter+`
 
 ### Leave & requests
 
 - Annual and sick leave requests with a manager approval workflow `Starter+`
-- **Leave balances** — entitlements auto-accrue per job type through the year, with manual adjustment `Starter+`
-- **Shift swap requests** — employees nominate an optional target and reason; assignments update automatically on approval `Professional+`
-- **Open shift requests** — approve or decline claims on open slots `Starter+`
+- **Leave balances.** Entitlements accrue automatically per job type through the year, and you can
+  adjust them by hand whenever you need to `Starter+`
+- **Shift swap requests.** Employees nominate an optional target and a reason, and assignments
+  update themselves once approved `Professional+`
+- **Open shift requests.** Approve or decline claims on open slots `Starter+`
 
 ### Timesheets & payroll
 
 - Weekly timesheet summaries with hours worked
 - Pay rate calculations and earnings `Starter+`
-- **Weekend penalty rates** — Saturday (default 25%) and Sunday (default 50%) multipliers applied automatically `Starter+`
+- **Weekend penalty rates.** Saturday (25% by default) and Sunday (50% by default) multipliers get
+  applied for you `Starter+`
 - Tax calculation with a configurable rate `Professional+`
 - **Daily labour budget** with per-day targets `Professional+`
-- Weekly hour limits per job type — full-time 38h, part-time 24h, casual unlimited (limits are configurable on every plan; over-limit warnings are `Starter+`)
+- Weekly hour limits per job type: 38h full-time, 24h part-time, unlimited casual. The limits are
+  configurable on every plan, though over-limit warnings are `Starter+`
 
 ### Staff availability
 
-- Weekly recurring availability with day-level time ranges
-- Availability hints (`Available` / `Unavailable` / `Not Set`) shown inline in the shift assignment modal
+- Weekly recurring availability, with day-level time ranges
+- Availability hints (`Available`, `Unavailable`, `Not Set`) shown inline in the shift assignment
+  modal, so you can see who's free while you're assigning
 
 ### Staff management
 
-- Add and edit staff, with a full onboarding welcome email `Starter+` (the free build sends a simplified welcome without credentials)
-- **Skill tags** — e.g. Barista, First Aid, Forklift Licence — shown on profiles, in the assignment modal, and as a roster filter `Professional+`
-- **Deactivation** — hide from the roster, revoke frontend access, and cancel pending leave and swap requests; reactivating sends a fresh welcome email
-- **Job sheet attachments** — PDF/JPG/PNG up to 2 MB per shift `Professional+`
+- Add and edit staff, with a full onboarding welcome email `Starter+`. The free build sends a
+  simplified welcome without credentials.
+- **Skill tags** such as Barista, First Aid, or Forklift Licence, shown on profiles, in the
+  assignment modal, and as a roster filter `Professional+`
+- **Deactivation.** Hides someone from the roster, revokes frontend access, and cancels pending
+  leave and swap requests. Reactivating them sends a fresh welcome email.
+- **Job sheet attachments.** PDF, JPG, or PNG up to 2 MB per shift `Professional+`
 
 ### Dashboard, analytics & exports
 
 - Analytics dashboard `Starter+`
-- Employees can export their own timesheet to CSV (free, client-side)
+- Employees can export their own timesheet to CSV (free, and done client-side)
 - Staff directory and team timesheet CSV export `Starter+`
-- **Print roster** — colour-coded, print-ready roster straight from the manager toolbar via the browser print dialog (print to PDF from there) `Professional+`
+- **Print roster.** A colour-coded, print-ready roster straight from the manager toolbar via the
+  browser print dialog, which is also where you'd print to PDF `Professional+`
 
 ### Email notifications
 
@@ -109,23 +118,29 @@ Plain-text emails sent through `wp_mail()`, available on **every** version inclu
 - Welcome email for new accounts
 - Shift assignment email
 - Shift timing change email
-- Leave decision (approved / rejected) email
+- Leave decision email (approved or rejected)
 
 ### Frontend employee portal
 
-Five shortcode-driven pages created automatically on activation, so staff can work entirely outside
-WP Admin. See [Shortcodes](#shortcodes).
+Five shortcode-driven pages get created automatically on activation, so staff can work entirely
+outside WP Admin. See [Shortcodes](#shortcodes).
+
+---
 
 ### Roles & access
 
-- Three custom roles — Roster Manager, Roster Supervisor, Roster Employee
+- Three custom roles: Roster Manager, Roster Supervisor, and Roster Employee
 - Per-administrator visibility control and admin inclusion settings
-- Roster users see only the EmpRoster menu; other menus, dashboard widgets, and plugin notices are hidden, and they are redirected to the EmpRoster dashboard on login
-- **Profile Mode** — blocks employee and supervisor WordPress logins entirely while keeping email notifications active `Starter+`
+- Roster users only see the EmpRoster menu. Other menus, dashboard widgets, and plugin notices stay
+  hidden, and they land on the EmpRoster dashboard when they log in.
+- **Profile Mode** blocks employee and supervisor WordPress logins entirely while keeping email
+  notifications running `Starter+`
 
 ### Security
 
-- **Employee login logs** — successful logins, logouts, and failed attempts, with IP address, device detection, filters by event type / date / staff, and configurable auto-delete retention `Professional+` (off by default)
+- **Employee login logs** capture successful logins, logouts, and failed attempts, along with IP
+  address and device detection. Filter by event type, date, or staff member, and set your own
+  auto-delete retention `Professional+`. Off by default.
 
 ---
 
@@ -135,11 +150,11 @@ WP Admin. See [Shortcodes](#shortcodes).
 |---|---|
 | WordPress | 5.8 or later (tested up to 7.0) |
 | PHP | 7.4 or later |
-| MySQL / MariaDB | No plugin-specific minimum — whatever your WordPress version requires |
+| MySQL / MariaDB | No plugin-specific minimum. Whatever your WordPress version requires. |
 | External services | None. All data is stored in your own WordPress database. |
 
-> The free and premium versions have identical requirements — upgrading to a paid plan does not
-> require a newer version of WordPress or PHP.
+> The free and premium versions have identical requirements, so upgrading to a paid plan won't ask
+> you for a newer version of WordPress or PHP.
 
 ---
 
@@ -149,16 +164,16 @@ WP Admin. See [Shortcodes](#shortcodes).
    **Plugins → Add New → Upload Plugin**.
 2. Activate the plugin via **Plugins → Installed Plugins**.
 3. On activation the plugin automatically:
-   - Creates **8 custom database tables** — `shifts`, `assignments`, `leave`, `attendance`,
-     `availability`, `swap_requests`, `leave_balances`, `login_logs`
-   - Registers the roster roles `emr_manager`, `emr_supervisor`, and `emr_employee` on paid plans
-     (the free WordPress.org build registers `emr_employee` only)
+   - Creates **8 custom database tables**: `shifts`, `assignments`, `leave`, `attendance`,
+     `availability`, `swap_requests`, `leave_balances`, and `login_logs`
+   - Registers the roster roles `emr_manager`, `emr_supervisor`, and `emr_employee` on paid plans.
+     The free WordPress.org build registers `emr_employee` only.
    - Seeds default settings, one department (**General Department**) and one location
      (**Main Location**)
    - Creates 5 WordPress pages pre-loaded with the frontend portal shortcodes
-4. The **setup wizard** opens automatically the first time an administrator visits an EmpRoster
-   screen — company details, locations, departments, employment types, leave, and key features.
-   Re-run it any time from **EmpRoster → Settings → Setup Wizard**.
+4. The **setup wizard** opens by itself the first time an administrator visits an EmpRoster screen.
+   It covers company details, locations, departments, employment types, leave, and the key features.
+   You can re-run it any time from **EmpRoster → Settings → Setup Wizard**.
 5. Add your staff at **EmpRoster → Staff → + Add Staff**, then create your first shift at
    **EmpRoster → Shifts → + New Shift**.
 
@@ -166,8 +181,8 @@ WP Admin. See [Shortcodes](#shortcodes).
 
 ## Shortcodes
 
-The five portal pages are created for you on activation; their addresses are listed under
-**Settings → Frontend Pages**. The free build registers 3 shortcodes, premium registers 5.
+The five portal pages are created for you on activation, and their addresses are listed under
+**Settings → Frontend Pages**. The free build registers 3 shortcodes; premium registers 5.
 
 | Page | Shortcode | Plan | Purpose |
 |---|---|---|---|
@@ -179,16 +194,16 @@ The five portal pages are created for you on activation; their addresses are lis
 
 ### Public roster `Professional+`
 
-Embed a read-only, print-friendly weekly roster on any public page — no login required. Enable it
-first at **EmpRoster → Settings → Integrations & Public View → Weekly Roster Shortcode**, then:
+Embed a read-only, print-friendly weekly roster on any public page, with no login required. Turn it
+on first at **EmpRoster → Settings → Integrations & Public View → Weekly Roster Shortcode**, then:
 
 ```
 [emp_roster_weekly]
 [emp_roster_weekly week="2026-08-03"]
 ```
 
-The `week` attribute takes any date inside the week you want to display; omit it to show the
-current week.
+The `week` attribute takes any date inside the week you want to display. Leave it off and you get
+the current week.
 
 ---
 
@@ -196,9 +211,9 @@ current week.
 
 | Role slug | Display name | Access |
 |---|---|---|
-| `emr_manager` | **Roster Manager** | Full roster management: create/edit/delete shifts, assign staff, manage staff accounts, approve leave and requests, edit attendance, manage settings, view payroll |
-| `emr_supervisor` | **Roster Supervisor** | Read-only elevated role. Sees the whole roster, all staff, attendance and analytics, and can submit their own leave, swap and open-shift requests — but cannot create shifts, assign people, or approve anything |
-| `emr_employee` | **Roster Employee** | View own shifts, clock in/out, submit leave, set availability, claim open shifts |
+| `emr_manager` | **Roster Manager** | Full roster management: create, edit and delete shifts, assign staff, manage staff accounts, approve leave and requests, edit attendance, manage settings, view payroll |
+| `emr_supervisor` | **Roster Supervisor** | A read-only elevated role. Sees the whole roster, all staff, attendance and analytics, and can submit their own leave, swap and open-shift requests, but can't create shifts, assign people, or approve anything |
+| `emr_employee` | **Roster Employee** | View own shifts, clock in and out, submit leave, set availability, claim open shifts |
 
 ### Capabilities
 
@@ -217,10 +232,10 @@ current week.
 | `emr_edit_attendance` | Manager, Admin |
 | `emr_manage_settings` | Manager, Admin |
 
-**Rules:**
+**Worth knowing:**
 
-- Capabilities are independent of plan gating — a capability grants access to a screen; the plan
-  decides whether the feature behind it is present at all.
+- Capabilities are independent of plan gating. A capability grants access to a screen; the plan
+  decides whether the feature behind it is even present.
 - Only a WordPress administrator can create, promote, demote or deactivate a Manager account, or
   reset a manager's password.
 - Nobody can change their own role.
@@ -229,8 +244,8 @@ current week.
 
 ## Plans & pricing
 
-Annual, per-site licences. One payment per year, no per-user fees, ever. Every paid plan includes a
-**14-day free trial with no credit card required**.
+Annual, per-site licences. One payment a year, and no per-user fees, ever. Every paid plan comes
+with a **14-day free trial, no credit card required**.
 
 | | **Free** | **Starter** | **Professional** | **Business** |
 |---|---|---|---|---|
@@ -261,7 +276,7 @@ Annual, per-site licences. One payment per year, no per-user fees, ever. Every p
 | Updates | Security only | 1 year | 1 year | 1 year |
 
 > **Business and Professional include the same features.** Business simply covers more sites per
-> licence (5 instead of 1) — there is no Business-only functionality.
+> licence, 5 instead of 1. There's no Business-only functionality.
 
 ### Staff account limits
 
@@ -269,10 +284,10 @@ Annual, per-site licences. One payment per year, no per-user fees, ever. Every p
 |---|---|---|---|---|
 | Roster Employee | Unlimited | Unlimited | Unlimited | Unlimited |
 | Roster Supervisor | Role not registered | 2 | Unlimited | Unlimited |
-| Roster Manager | Role not registered | Not assignable — use Admin Visibility instead | Unlimited | Unlimited |
+| Roster Manager | Role not registered | Not assignable, use Admin Visibility instead | Unlimited | Unlimited |
 
-Existing staff are retained on downgrade, and managers created while on Professional keep the role
-if the site later drops to Starter.
+Existing staff are kept if you downgrade, and managers created while you were on Professional keep
+the role even if the site later drops to Starter.
 
 **Buy:** [Starter](https://checkout.freemius.com/plugin/28057/plan/46315/) ·
 [Professional](https://checkout.freemius.com/plugin/28057/plan/46316/) ·
@@ -283,22 +298,22 @@ if the site later drops to Starter.
 
 ## Developer notes
 
-- **Tables** are created with the site's `$wpdb` prefix followed by `emr_` (8 tables, listed under
+- **Tables** are created with the site's `$wpdb` prefix followed by `emr_` (8 of them, listed under
   [Installation](#installation)).
-- **No outbound HTTP.** The plugin calls no external APIs; all data stays in the WordPress
+- **No outbound HTTP.** The plugin calls no external APIs, and all data stays in the WordPress
   database. Email goes through `wp_mail()`, so it uses whatever mailer the site already has.
-- **Free vs premium builds are physically different ZIPs.** Premium code is absent from the
+- **Free and premium builds are physically different ZIPs.** Premium code is absent from the
   WordPress.org build rather than gated at runtime, so "not in free" means genuinely not shipped.
 
 ---
 
 ## Support & links
 
-- 📖 Documentation — <https://employeeroster.io/docs>
-- ✉️ Support — <support@employeeroster.io>
-- 🌐 Website — <https://employeeroster.io/>
-- ✍️ Blog — <https://employeeroster.io/blog/>
-- ⬇️ Free download — <https://wordpress.org/plugins/employee-roster/>
+- 📖 Documentation: <https://employeeroster.io/docs>
+- ✉️ Support: <support@employeeroster.io>
+- 🌐 Website: <https://employeeroster.io/>
+- ✍️ Blog: <https://employeeroster.io/blog/>
+- ⬇️ Free download: <https://wordpress.org/plugins/employee-roster/>
 - 🔐 [Privacy Policy](https://employeeroster.io/privacy) · [Terms](https://employeeroster.io/terms)
 
 ---
