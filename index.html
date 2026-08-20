@@ -295,10 +295,10 @@
   <h1>Staff rostering that lives<br><span>inside your WordPress.</span></h1>
   <p>Schedule shifts, track attendance, manage leave, and run payroll, all from your WP Admin. Your data, your server, no SaaS fees.</p>
   <div class="hero-btns">
-    <a href="https://checkout.freemius.com/plugin/28057/plan/46316/?trial=free" class="btn-primary">Start free Professional trial</a>
+    <a href="https://checkout.freemius.com/plugin/28057/plan/46316/" class="btn-primary">Get Professional</a>
     <a href="https://wordpress.org/plugins/employee-roster/" class="btn-primary">Download Free on WordPress.org</a>
   </div>
-  <p class="hero-sub">No per-user fees &nbsp;·&nbsp; Unlimited employees &nbsp;·&nbsp; 14-day free trial on paid plans</p>
+  <p class="hero-sub">No per-user fees &nbsp;·&nbsp; Unlimited employees &nbsp;·&nbsp; Free version on WordPress.org</p>
 </div>
 
 <!-- TRUST BAR -->
@@ -306,7 +306,6 @@
   <div class="trust-item">🔒 <strong>Self-hosted</strong>: your data stays on your server</div>
   <div class="trust-item">⚡ <strong>No external APIs</strong>: no SaaS dependency</div>
   <div class="trust-item">🌐 <strong>WordPress 5.8+</strong> · PHP 7.4+ · MySQL 5.7+</div>
-  <div class="trust-item">💳 <strong>14-day free trial</strong> · No card required</div>
 </div>
 
 <!-- FEATURES -->
@@ -767,7 +766,7 @@
       </div>
 
     </div>
-    <p class="pricing-guarantee">Licences are annual and per-site unless noted. Every paid plan includes a 14-day free trial — no credit card required.</p>
+    <p class="pricing-guarantee">Licences are annual and per-site unless noted.</p>
 
   </div>
 </div>
@@ -812,7 +811,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var heroBtns = document.querySelectorAll('.hero-btns a');
   if (heroBtns[0]) {
     heroBtns[0].addEventListener('click', function () {
-      gtag('event', 'cta_click', { button_label: 'start_free_trial', location: 'hero' });
+      gtag('event', 'cta_click', { button_label: 'get_professional', location: 'hero' });
     });
   }
   if (heroBtns[1]) {

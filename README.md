@@ -244,8 +244,7 @@ the current week.
 
 ## Plans & pricing
 
-Annual, per-site licences. One payment a year, and no per-user fees, ever. Every paid plan comes
-with a **14-day free trial, no credit card required**.
+Annual, per-site licences. One payment a year, and no per-user fees, ever.
 
 | | **Free** | **Starter** | **Professional** | **Business** |
 |---|---|---|---|---|
@@ -291,8 +290,7 @@ the role even if the site later drops to Starter.
 
 **Buy:** [Starter](https://checkout.freemius.com/plugin/28057/plan/46315/) ·
 [Professional](https://checkout.freemius.com/plugin/28057/plan/46316/) ·
-[Business](https://checkout.freemius.com/plugin/28057/plan/46317/) ·
-[Start a free Professional trial](https://checkout.freemius.com/plugin/28057/plan/46316/?trial=free)
+[Business](https://checkout.freemius.com/plugin/28057/plan/46317/)
 
 ---
 
