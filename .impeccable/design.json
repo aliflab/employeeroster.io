@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T00:00:00Z",
+  "title": "Design System: Employee Roster",
+  "extensions": {
+    "colorMeta": {
+      "sea-glass-teal": { "role": "primary", "displayName": "Sea Glass Teal", "canonical": "#3DBDA8", "tonalRamp": ["#0f3a33", "#165a4f", "#1f7a6b", "#2A9D8A", "#3DBDA8", "#78d2c2", "#b3e6dc", "#e3f6f2"] },
+      "sea-glass-teal-deep": { "role": "primary", "displayName": "Sea Glass Teal, Deep", "canonical": "#2A9D8A", "tonalRamp": ["#0c302a", "#134a41", "#1b6658", "#22826f", "#2A9D8A", "#62bcac", "#a3d9cf", "#def2ee"] },
+      "deep-harbour-navy": { "role": "neutral", "displayName": "Deep Harbour Navy", "canonical": "#1E2D3D", "tonalRamp": ["#0d141b", "#1E2D3D", "#2f455c", "#435e7a", "#5d7896", "#8399b1", "#b4c3d3", "#e6ecf2"] },
+      "harbour-mist": { "role": "neutral", "displayName": "Harbour Mist", "canonical": "#EEF1F4", "tonalRamp": ["#2a3036", "#4b545d", "#6f7a85", "#96a1ac", "#bcc5ce", "#d8dee4", "#EEF1F4", "#f8f9fb"] },
+      "tide-line": { "role": "neutral", "displayName": "Tide Line", "canonical": "#D5E0E8", "tonalRamp": ["#26313a", "#44535f", "#647686", "#8799a8", "#adbdca", "#D5E0E8", "#e8eef3", "#f6f9fb"] },
+      "paper-white": { "role": "neutral", "displayName": "Paper White", "canonical": "#FFFFFF", "tonalRamp": ["#262626", "#474747", "#6b6b6b", "#919191", "#b8b8b8", "#dcdcdc", "#f2f2f2", "#FFFFFF"] },
+      "slate-muted": { "role": "neutral", "displayName": "Slate Muted", "canonical": "#7a8fa6", "tonalRamp": ["#1d242c", "#344150", "#4f6176", "#657a92", "#7a8fa6", "#9fb0c1", "#c6d1dc", "#ebeff3"] },
+      "status-green": { "role": "status", "displayName": "Status Green", "canonical": "#16a34a", "tonalRamp": ["#05301a", "#0a4f29", "#0f7236", "#16a34a", "#4ec174", "#86d8a1", "#bfecce", "#ebf9f0"] },
+      "status-red": { "role": "status", "displayName": "Status Red", "canonical": "#dc2626", "tonalRamp": ["#420b0b", "#6e1212", "#9c1a1a", "#dc2626", "#e75e5e", "#f09595", "#f8c9c9", "#fdeeee"] },
+      "note-blue": { "role": "status", "displayName": "Note Blue", "canonical": "#2563EB", "tonalRamp": ["#0b1e46", "#123173", "#1946a6", "#2563EB", "#5c8af0", "#93b2f5", "#c7d7fa", "#edf2fe"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only, white on the navy-to-teal gradient." },
+      "headline": { "displayName": "Headline", "purpose": "Landing section titles; docs and blog h1 at their own sizes." },
+      "title": { "displayName": "Title", "purpose": "Card titles, pricing tier names, docs h2, step titles." },
+      "body": { "displayName": "Body", "purpose": "Running copy in Slate Muted; line-height opens to 1.8 in docs and 1.85 in blog." },
+      "label": { "displayName": "Label", "purpose": "Uppercase eyebrows, sidebar group toggles, badges." },
+      "mono": { "displayName": "Mono", "purpose": "Inline code and shortcodes in docs." }
+    },
+    "shadows": [
+      { "name": "teal-glow", "value": "0 4px 24px rgba(61,189,168,.15)", "purpose": "Feature-card hover." },
+      { "name": "featured-glow", "value": "0 4px 28px rgba(61,189,168,.2)", "purpose": "Featured pricing card, always on." },
+      { "name": "nav-lift", "value": "0 2px 12px rgba(0,0,0,.2)", "purpose": "Sticky nav bar." },
+      { "name": "drawer", "value": "4px 0 20px rgba(0,0,0,.15)", "purpose": "Mobile docs sidebar drawer." }
+    ],
+    "motion": [
+      { "name": "hover-colour", "value": ".15s", "purpose": "Colour, border and opacity changes on links and buttons." },
+      { "name": "button-lift", "value": "transform .1s, translateY(-1px)", "purpose": "Primary button hover." },
+      { "name": "card-lift", "value": "box-shadow .2s, transform .2s, translateY(-2px)", "purpose": "Feature card hover." },
+      { "name": "drawer-slide", "value": "left .25s ease", "purpose": "Mobile docs sidebar." },
+      { "name": "cursor-blink", "value": "blink .7s step-end infinite", "purpose": "Hero badge typing cursor." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "600px" },
+      { "name": "docs-drawer", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action: hero, and anywhere a visitor should act.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Download Free</a>",
+      "css": ".ds-btn-primary { display: inline-block; background: #3DBDA8; color: #fff; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; font-size: 1rem; transition: background .15s, transform .1s; } .ds-btn-primary:hover { background: #2A9D8A; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #2A9D8A; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button (on dark)",
+      "kind": "button",
+      "refersTo": "button-outline-on-dark",
+      "description": "Secondary action beside the primary button on navy or the hero gradient.",
+      "html": "<div style=\"background:#1E2D3D;padding:16px;display:inline-block;border-radius:8px\"><a class=\"ds-btn-outline\" href=\"#\">See Pricing</a></div>",
+      "css": ".ds-btn-outline { display: inline-block; background: transparent; color: #fff; padding: 14px 32px; border-radius: 8px; border: 2px solid rgba(255,255,255,.4); text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; font-size: 1rem; transition: border-color .15s; } .ds-btn-outline:hover { border-color: #fff; } .ds-btn-outline:focus-visible { outline: 2px solid #3DBDA8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Sticky 60px navy bar with brand, links and teal CTA.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">Employee Roster</a><div class=\"ds-nav-links\"><a href=\"#\">Features</a><a href=\"#\" class=\"ds-nav-active\">Docs</a><a href=\"#\">Blog</a><a href=\"#\" class=\"ds-nav-cta\">Download Free</a></div></nav>",
+      "css": ".ds-nav { background: #1E2D3D; height: 60px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 12px rgba(0,0,0,.2); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .ds-nav-brand { color: #fff; font-weight: 700; font-size: 1.1rem; text-decoration: none; letter-spacing: -.3px; } .ds-nav-links { display: flex; gap: 8px; align-items: center; } .ds-nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; padding: 6px 12px; border-radius: 6px; transition: color .15s; } .ds-nav-links a:hover { color: #fff; } .ds-nav-links a.ds-nav-active { color: #3DBDA8; } .ds-nav-links a.ds-nav-cta { background: #3DBDA8; color: #fff; font-weight: 700; padding: 8px 18px; } .ds-nav-links a.ds-nav-cta:hover { background: #2A9D8A; } .ds-nav-links a:focus-visible { outline: 2px solid #3DBDA8; outline-offset: 2px; }"
+    },
+    {
+      "name": "Feature Card",
+      "kind": "card",
+      "refersTo": "feature-card",
+      "description": "White card in the features grid; lifts with a teal glow on hover.",
+      "html": "<div class=\"ds-feature-card\"><div class=\"ds-feature-icon\">📅</div><h3>Shift Scheduling</h3><p>Create shifts with direct assignment or open slots.</p></div>",
+      "css": ".ds-feature-card { background: #fff; border: 1px solid #D5E0E8; border-radius: 12px; padding: 28px; max-width: 300px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; transition: box-shadow .2s, transform .2s; } .ds-feature-card:hover { box-shadow: 0 4px 24px rgba(61,189,168,.15); transform: translateY(-2px); } .ds-feature-icon { font-size: 2rem; margin-bottom: 14px; } .ds-feature-card h3 { font-size: 1.05rem; font-weight: 700; color: #1E2D3D; margin: 0 0 8px; } .ds-feature-card p { font-size: .92rem; color: #7a8fa6; line-height: 1.6; margin: 0; }"
+    },
+    {
+      "name": "Featured Pricing Card",
+      "kind": "card",
+      "refersTo": "pricing-card",
+      "description": "Pricing tier card; the featured variant has a teal border, glow and Most Popular pill.",
+      "html": "<div class=\"ds-pricing-card ds-featured\"><span class=\"ds-popular\">Most Popular</span><h3>Professional</h3><p class=\"ds-tier\">Growing businesses</p><div class=\"ds-price\"><sup>$</sup>199</div><p class=\"ds-period\">per year</p><ul><li>Shift swap requests</li><li>Skill tags</li></ul><a class=\"ds-btn-plan\" href=\"#\">Get Started</a></div>",
+      "css": ".ds-pricing-card { position: relative; background: #fff; border: 1px solid #D5E0E8; border-radius: 14px; padding: 32px 28px; width: 220px; display: flex; flex-direction: column; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin-top: 14px; } .ds-pricing-card.ds-featured { border-color: #3DBDA8; box-shadow: 0 4px 28px rgba(61,189,168,.2); } .ds-popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #3DBDA8; color: #fff; font-size: .72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; white-space: nowrap; letter-spacing: .4px; } .ds-pricing-card h3 { font-size: 1rem; font-weight: 700; color: #1E2D3D; margin: 0 0 4px; } .ds-tier { font-size: .8rem; color: #7a8fa6; margin: 0 0 16px; } .ds-price { font-size: 2.2rem; font-weight: 800; color: #1E2D3D; line-height: 1; } .ds-price sup { font-size: 1rem; font-weight: 600; vertical-align: top; } .ds-period { font-size: .82rem; color: #7a8fa6; margin: 4px 0 20px; } .ds-pricing-card ul { list-style: none; padding: 0; margin: 0 0 24px; } .ds-pricing-card li { padding: 7px 0; border-bottom: 1px solid #D5E0E8; font-size: .85rem; color: #1E2D3D; } .ds-pricing-card li::before { content: '✓'; color: #3DBDA8; font-weight: 700; margin-right: 8px; } .ds-btn-plan { display: block; text-align: center; padding: 12px; border-radius: 8px; background: #3DBDA8; color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; transition: opacity .15s; } .ds-btn-plan:hover { opacity: .85; } .ds-btn-plan:focus-visible { outline: 2px solid #2A9D8A; outline-offset: 2px; }"
+    },
+    {
+      "name": "Plan Badge",
+      "kind": "chip",
+      "refersTo": "plan-badge",
+      "description": "Tier marker above a docs article's first paragraph.",
+      "html": "<span class=\"ds-plan-badge\">Starter+</span> <span class=\"ds-plan-badge ds-pro\">Professional+</span>",
+      "css": ".ds-plan-badge { display: inline-block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; background: rgba(61,189,168,.12); color: #2A9D8A; } .ds-plan-badge.ds-pro { background: rgba(61,189,168,.18); }"
+    },
+    {
+      "name": "Docs Search",
+      "kind": "input",
+      "refersTo": "docs-search",
+      "description": "Sidebar search field in the docs.",
+      "html": "<input class=\"ds-search\" type=\"search\" placeholder=\"Search docs…\">",
+      "css": ".ds-search { width: 232px; padding: 7px 30px 7px 12px; border: 1px solid #D5E0E8; border-radius: 8px; font-size: .87rem; color: #1E2D3D; background: #EEF1F4; outline: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; transition: border-color .15s; } .ds-search:focus, .ds-search:focus-visible { border-color: #3DBDA8; }"
+    },
+    {
+      "name": "Comparison Table",
+      "kind": "custom",
+      "refersTo": "table-header",
+      "description": "Plan comparison table: navy header, mist zebra rows, green ticks, faded red crosses.",
+      "html": "<table class=\"ds-table\"><thead><tr><th>Feature</th><th>Free</th><th>Starter</th></tr></thead><tbody><tr><td>Copy Roster</td><td><span class=\"ds-cross\">✗</span></td><td><span class=\"ds-check\">✓</span></td></tr><tr><td>Shift Confirmation</td><td><span class=\"ds-cross\">✗</span></td><td><span class=\"ds-check\">✓</span></td></tr><tr><td>Locations</td><td>Unlimited<span class=\"ds-note\">1 on a lapsed premium install</span></td><td>Unlimited</td></tr></tbody></table>",
+      "css": ".ds-table { width: 100%; max-width: 520px; border-collapse: collapse; font-size: .92rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .ds-table thead th { background: #1E2D3D; color: #fff; padding: 14px 16px; text-align: center; font-weight: 600; font-size: .88rem; } .ds-table thead th:first-child { text-align: left; border-radius: 8px 0 0 0; } .ds-table thead th:last-child { border-radius: 0 8px 0 0; } .ds-table tbody tr:nth-child(even) td { background: #EEF1F4; } .ds-table tbody td { padding: 12px 16px; border-bottom: 1px solid #D5E0E8; color: #1E2D3D; } .ds-table tbody td:not(:first-child) { text-align: center; } .ds-table tbody tr:last-child td { border-bottom: none; } .ds-check { color: #16a34a; font-size: 1.1rem; } .ds-cross { color: #dc2626; opacity: .6; } .ds-note { display: block; font-size: .78rem; color: #7a8fa6; }"
+    },
+    {
+      "name": "Callout",
+      "kind": "custom",
+      "refersTo": "callout",
+      "description": "Docs callout in default (teal), note (blue) and warn (red) variants.",
+      "html": "<div class=\"ds-callout\"><span>📋</span><div>Copied shifts are ordinary shifts.</div></div><div class=\"ds-callout ds-note\"><span>ℹ️</span><div>Responses already given are kept.</div></div><div class=\"ds-callout ds-warn\"><span>⚠️</span><div>Deleting a shift cannot be undone.</div></div>",
+      "css": ".ds-callout { display: flex; gap: 12px; align-items: flex-start; background: rgba(61,189,168,.07); border: 1px solid rgba(61,189,168,.25); border-left: 3px solid #3DBDA8; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-size: .9rem; line-height: 1.7; color: #1E2D3D; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 520px; } .ds-callout.ds-note { background: rgba(37,99,235,.05); border-color: rgba(37,99,235,.2); border-left-color: #2563EB; } .ds-callout.ds-warn { background: rgba(220,38,38,.05); border-color: rgba(220,38,38,.25); border-left-color: #dc2626; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Shift Board",
+    "overview": "The site looks like a well-run staff board: organised rows, calm colours, and one teal marker that points at what matters. Deep Harbour Navy frames every page top and bottom (nav bar and footer), cool Harbour Mist bands separate sections, and white cards and tables carry the content. Teal is the only accent, and it marks the things a visitor should act on or notice: buttons, active links, plan badges, ticks.\n\nThe feel is friendly and dependable. Corners are soft, motion is a gentle lift, and nothing shouts. It is aimed at small-business owners, not developers, so the system leans on familiar patterns (sticky nav, card grid, comparison table, three pricing cards) and keeps them tidy rather than inventing new ones. The same tokens are copied into all three surfaces: landing page, docs and blog.",
+    "keyCharacteristics": [
+      "Navy frame, mist bands, white content surfaces, one teal accent.",
+      "System font stack throughout; weight (700–800) does the hierarchy work, not a display face.",
+      "Soft 8–14px corners; pills for badges; circles for step numbers.",
+      "Flat at rest; a soft teal glow and a 1–2px lift appear only on hover.",
+      "Tables are a first-class component: navy header, mist zebra rows, green ticks and faded red crosses."
+    ],
+    "rules": [
+      { "name": "The One Marker Rule", "body": "Teal is the only accent colour. Plan buttons named navy, amber and purple in the CSS all render teal; keep it that way. A second accent would turn the board into noise.", "section": "colors" },
+      { "name": "The Navy Frame Rule", "body": "Every page opens with the navy nav bar and closes with the navy footer. Navy is also the colour of headings, so content always reads as part of the same frame.", "section": "colors" },
+      { "name": "The Tint, Don't Paint Rule", "body": "Teal and status colours appear on large areas only as faint tints (6–18% alpha backgrounds, 25–35% alpha borders), as in callouts, plan badges and the hero badge. Solid teal is reserved for small action surfaces.", "section": "colors" },
+      { "name": "The Weight Does the Work Rule", "body": "Never add a second typeface for emphasis. Step up the weight (700 → 800) or the size; colour headings navy.", "section": "typography" },
+      { "name": "The Lift on Touch Rule", "body": "Surfaces only rise in response to the pointer: buttons move up 1px, cards up 2px with the teal glow. The featured pricing card is the single exception that glows at rest.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Sea Glass Teal for every action and highlight, and Sea Glass Teal Deep for its hover.",
+      "Do alternate white and Harbour Mist sections, separated by 1px Tide Line borders.",
+      "Do colour headings and `strong` text Deep Harbour Navy and running copy Slate Muted.",
+      "Do keep comparison data in the navy-header table with ✓ / ✗ and `cell-note` caveats.",
+      "Do copy the shared `:root` token block exactly when adding a page; landing, docs and blog all use the same values.",
+      "Do keep hover motion small: 1px lift for buttons, 2px plus teal glow for cards."
+    ],
+    "donts": [
+      "Don't introduce a second accent colour; tier buttons stay teal regardless of their class names.",
+      "Don't add a display or web font; the system stack is part of the WordPress-native feel.",
+      "Don't use grey drop shadows on content surfaces; content shadows are teal-tinted and appear on hover only.",
+      "Don't paint large areas solid teal; use tints (6–18% alpha) for backgrounds and borders.",
+      "Don't use sharp 0px corners on cards or buttons."
+    ]
+  }
+}
