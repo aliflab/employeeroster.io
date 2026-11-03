@@ -4,13 +4,18 @@ description: WordPress shift scheduling and staff rostering, all in one plugin.
 colors:
   sea-glass-teal: "#3DBDA8"
   sea-glass-teal-deep: "#2A9D8A"
+  sea-glass-teal-ink: "#1B6F61"
+  sea-glass-teal-light: "#7FDCCB"
+  sea-glass-teal-hover: "#64CDBB"
   deep-harbour-navy: "#1E2D3D"
   harbour-mist: "#EEF1F4"
   tide-line: "#D5E0E8"
   paper-white: "#FFFFFF"
-  slate-muted: "#7a8fa6"
-  status-green: "#16a34a"
+  slate-muted: "#5b6e83"
+  slate-muted-on-dark: "#9aabbd"
+  status-green: "#15803d"
   status-red: "#dc2626"
+  status-cross: "#9a4f4f"
   note-blue: "#2563EB"
 typography:
   display:
@@ -58,23 +63,23 @@ spacing:
 components:
   button-primary:
     backgroundColor: "{colors.sea-glass-teal}"
-    textColor: "{colors.paper-white}"
+    textColor: "{colors.deep-harbour-navy}"
     rounded: "{rounded.md}"
     padding: "14px 32px"
   button-primary-hover:
-    backgroundColor: "{colors.sea-glass-teal-deep}"
+    backgroundColor: "{colors.sea-glass-teal-hover}"
   button-outline-on-dark:
     textColor: "{colors.paper-white}"
     rounded: "{rounded.md}"
     padding: "14px 32px"
   button-plan:
     backgroundColor: "{colors.sea-glass-teal}"
-    textColor: "{colors.paper-white}"
+    textColor: "{colors.deep-harbour-navy}"
     rounded: "{rounded.md}"
     padding: "12px"
   nav-cta:
     backgroundColor: "{colors.sea-glass-teal}"
-    textColor: "{colors.paper-white}"
+    textColor: "{colors.deep-harbour-navy}"
     rounded: "{rounded.sm}"
     padding: "8px 18px"
   nav-bar:
@@ -93,7 +98,7 @@ components:
     width: "220px"
   plan-badge:
     backgroundColor: "rgba(61,189,168,.12)"
-    textColor: "{colors.sea-glass-teal-deep}"
+    textColor: "{colors.sea-glass-teal-ink}"
     rounded: "{rounded.pill}"
     padding: "3px 10px"
   docs-search:
@@ -129,25 +134,32 @@ The feel is friendly and dependable. Corners are soft, motion is a gentle lift, 
 A cool, low-saturation palette of navy and grey-blue with a single sea-glass teal accent.
 
 ### Primary
-- **Sea Glass Teal** (`sea-glass-teal`): the one accent. Primary and plan buttons, nav CTA, active sidebar link, section labels, step-number circles, pricing ticks, the featured pricing card's border, the hero headline's highlighted words, callout left borders.
-- **Sea Glass Teal, Deep** (`sea-glass-teal-deep`): hover state for teal buttons, the end stop of the hero gradient, and the text colour of plan badges (more legible than the base teal on a tinted pill).
+- **Sea Glass Teal** (`sea-glass-teal`): the one accent, used as a **fill or border only**. Primary and plan buttons, nav CTA, step-number circles and the "Most Popular" pill (all with navy text), the featured pricing card's border, the active sidebar link's left rule, callout left borders, focus-free decorative tints.
+- **Sea Glass Teal, Ink** (`sea-glass-teal-ink`): teal **as text** on white or mist: section labels, plan badges, the active docs link, pricing ticks, list bullets, "Read more" links, the focus ring on light surfaces, and the end stop of the hero gradient.
+- **Sea Glass Teal, Light** (`sea-glass-teal-light`): teal as text on navy or the hero gradient: the hero headline's highlighted words, hero badge, Starter column label, the focus ring on dark surfaces.
+- **Sea Glass Teal, Hover** (`sea-glass-teal-hover`): hover fill for teal buttons (lighter, so navy text keeps its contrast).
+- **Sea Glass Teal, Deep** (`sea-glass-teal-deep`): legacy mid teal, kept for reference; don't use it behind or as text.
 
 ### Neutral
 - **Deep Harbour Navy** (`deep-harbour-navy`): nav bar, footer, table headers, all headings and strong text. The site's frame and its ink.
 - **Harbour Mist** (`harbour-mist`): alternate section backgrounds (trust bar, how-it-works, pricing), table zebra rows, inline code and search field backgrounds.
 - **Tide Line** (`tide-line`): every 1px border and divider: cards, table rows, sidebar groups, h2 underlines in docs.
 - **Paper White** (`paper-white`): cards, pricing cards, docs reading surface, text on navy and teal.
-- **Slate Muted** (`slate-muted`): secondary and body copy (feature card text, doc paragraphs, footer links, captions, cell notes).
+- **Slate Muted** (`slate-muted`): secondary and body copy on white and mist (feature card text, doc paragraphs, captions, cell notes). 5.3:1 on white, 4.6:1 on mist.
+- **Slate Muted on Dark** (`slate-muted-on-dark`): footer text and links on navy.
 
 ### Status
 - **Status Green** (`status-green`): ✓ in comparison tables.
-- **Status Red** (`status-red`): ✗ in comparison tables (at 60% opacity) and the warning callout border.
+- **Status Cross** (`status-cross`): ✗ in comparison tables; a quiet brick red rather than a faded alert red.
+- **Status Red** (`status-red`): the warning callout border and inline "red" examples.
 - **Note Blue** (`note-blue`): the informational callout variant only.
 
 ### Named Rules
 **The One Marker Rule.** Teal is the only accent colour. Plan buttons named navy, amber and purple in the CSS all render teal; keep it that way. A second accent would turn the board into noise.
 
 **The Navy Frame Rule.** Every page opens with the navy nav bar and closes with the navy footer. Navy is also the colour of headings, so content always reads as part of the same frame.
+
+**The Ink Rule.** Bright Sea Glass Teal never carries text and never sits behind white text; both fail contrast. Teal text uses Teal Ink on light surfaces and Teal Light on navy; teal fills carry navy text.
 
 **The Tint, Don't Paint Rule.** Teal and status colours appear on large areas only as faint tints (6–18% alpha backgrounds, 25–35% alpha borders), as in callouts, plan badges and the hero badge. Solid teal is reserved for small action surfaces.
 
@@ -199,14 +211,15 @@ Soft, friendly corners scaled to the element: 4px for inline code, 6px for nav l
 ### Buttons
 Friendly and dependable: solid, rounded and clearly clickable.
 - **Shape:** gently rounded (8px).
-- **Primary:** Sea Glass Teal fill, white 700-weight text, 14px × 32px padding.
-- **Hover:** fills to Sea Glass Teal Deep and lifts 1px (`transition: background .15s, transform .1s`).
+- **Primary:** Sea Glass Teal fill, navy 700-weight text (6.0:1), 14px × 32px padding.
+- **Hover:** fills to the lighter Sea Glass Teal Hover and lifts 1px (`transition: background .15s, transform .1s`); no lift under reduced motion.
+- **Focus:** 2px outline at 2px offset in Teal Ink (Teal Light on navy and the hero), shared by every link, button and input.
 - **Outline (on dark):** transparent with a 2px white border at 40% opacity; border goes solid white on hover. Used beside the primary button in the hero.
 - **Plan button:** full-width teal block at the foot of each pricing card (12px padding, 0.9rem); hover drops opacity to 85%. The outline variant uses a 2px Tide Line border with navy text.
 - **Nav CTA:** smaller teal pill-ish button (6px radius, 8px × 18px) in the nav bar.
 
 ### Chips / Badges
-- **Plan badge:** pill with a faint teal tint and deep-teal 700-weight text at 0.72rem (`Starter+` 12% tint, `Professional+` 18% tint). Sits above the first paragraph of a docs article.
+- **Plan badge:** pill with a faint teal tint and Teal Ink 700-weight text at 0.72rem (`Starter+` 12% tint, `Professional+` 18% tint). Sits above the first paragraph of a docs article.
 - **Hero / article badge:** uppercase pill with a teal tint, teal text and a 1px teal border at ~30% alpha.
 
 ### Cards / Containers
@@ -221,11 +234,13 @@ Friendly and dependable: solid, rounded and clearly clickable.
 - **Focus:** border turns Sea Glass Teal (outline removed).
 
 ### Navigation
-- **Top nav:** 60px sticky Deep Harbour Navy bar. Brand (32px logo + 700-weight name) on the left; links at 0.9rem in 80% white, going full white on hover; current page link in teal; teal CTA on the far right. Links hide below 600px.
+- **Top nav:** 60px sticky Deep Harbour Navy bar (`.site-nav`). Brand (32px logo + 700-weight name) on the left; links at 0.9rem in 80% white, going full white on hover; current page link in teal; Download Free on the far right.
+- **Mobile nav (≤600px):** links collapse behind a 44px menu button (SVG three-line icon, swaps to an X). Open, they drop down as a full-width navy panel of 1rem links with 12px padding. Closes on link tap, outside tap or Escape; the button reports `aria-expanded`.
+- **Skip link:** "Skip to content" sits above the nav, hidden until focused.
 - **Docs sidebar:** white, 260px, collapsible groups with uppercase 0.78rem navy toggles and a rotating ▼. Links are Slate Muted, indented, with a transparent 2px left border; hover gives a mist background; the active link turns teal with a teal left border and a 6% teal tint.
 
 ### Comparison Table (signature)
-The core proof surface on both the landing page and docs. Navy header row with white 600-weight text and 8px rounded top corners; Harbour Mist zebra rows; 1px Tide Line row dividers; green ✓ and 60%-opacity red ✗ centred in plan columns; small Slate Muted `cell-note` lines under values for caveats.
+The core proof surface on both the landing page and docs. Navy header row with white 600-weight text and 8px rounded top corners; Harbour Mist zebra rows; 1px Tide Line row dividers; green ✓ and brick-red ✗ (Status Cross) centred in plan columns; small Slate Muted `cell-note` lines under values for caveats.
 
 ### Callouts (signature, docs)
 Flex row with an emoji icon and body text in navy at 0.9rem. Default: 7% teal tint, teal 3px left rule. Note: 5% blue tint, Note Blue rule. Warn: 5% red tint, Status Red rule.
@@ -238,7 +253,9 @@ Flex row with an emoji icon and body text in navy at 0.9rem. Default: 7% teal ti
 - **Do** colour headings and `strong` text Deep Harbour Navy and running copy Slate Muted.
 - **Do** keep comparison data in the navy-header table with ✓ / ✗ and `cell-note` caveats.
 - **Do** copy the shared `:root` token block exactly when adding a page; landing, docs and blog all use the same values.
-- **Do** keep hover motion small: 1px lift for buttons, 2px plus teal glow for cards.
+- **Do** keep hover motion small: 1px lift for buttons, 2px plus teal glow for cards, and drop the lift under `prefers-reduced-motion`.
+- **Do** put navy text on teal fills, Teal Ink for teal text on light surfaces, and Teal Light for teal text on navy.
+- **Do** copy the shared accessibility block (focus ring, selection colour, skip link, mobile nav, reduced motion) into any new page.
 
 ### Don't:
 - **Don't** introduce a second accent colour; tier buttons stay teal regardless of their class names.
@@ -246,3 +263,5 @@ Flex row with an emoji icon and body text in navy at 0.9rem. Default: 7% teal ti
 - **Don't** use grey drop shadows on content surfaces; content shadows are teal-tinted and appear on hover only.
 - **Don't** paint large areas solid teal; use tints (6–18% alpha) for backgrounds and borders.
 - **Don't** use sharp 0px corners on cards or buttons.
+- **Don't** put white text on any teal, or use bright Sea Glass Teal as a text colour.
+- **Don't** hide navigation on small screens without a menu button to reach it.

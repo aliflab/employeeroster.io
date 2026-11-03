@@ -29,12 +29,18 @@
     :root {
       --teal:   #3DBDA8;
       --teal-d: #2A9D8A;
+      --teal-text: #1B6F61;
+      --teal-light: #7FDCCB;
+      --teal-hover: #64CDBB;
+      --on-teal: #1E2D3D;
+      --muted-on-dark: #9aabbd;
+      --cross: #9a4f4f;
       --dark:   #1E2D3D;
       --bg:     #EEF1F4;
       --border: #D5E0E8;
       --white:  #FFFFFF;
-      --muted:  #7a8fa6;
-      --green:  #16a34a;
+      --muted:  #5b6e83;
+      --green:  #15803d;
       --red:    #dc2626;
       --radius: 8px;
       --shadow: 0 4px 24px rgba(61,189,168,.15);
@@ -55,8 +61,8 @@
     .nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; padding: 6px 12px; border-radius: 6px; transition: color .15s; }
     .nav-links a:hover { color: var(--white); }
     .nav-links a.nav-active { color: var(--teal) !important; }
-    .nav-cta { background: var(--teal); color: var(--white) !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 6px !important; }
-    .nav-cta:hover { background: var(--teal-d); }
+    .nav-cta { background: var(--teal); color: var(--on-teal) !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 6px !important; }
+    .nav-cta:hover { background: var(--teal-hover); }
     .btn-plan { display: inline-block; text-align: center; padding: 8px 14px; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: .88rem; transition: opacity .15s; }
     .btn-plan:hover { opacity: .85; }
     .btn-plan-outline { border: 2px solid rgba(255,255,255,.35); color: rgba(255,255,255,.85) !important; }
@@ -76,9 +82,10 @@
     #docs-search {
       width: 100%; padding: 7px 30px 7px 12px;
       border: 1px solid var(--border); border-radius: var(--radius);
-      font-size: .87rem; color: var(--dark); background: var(--bg); outline: none;
+      font-size: .87rem; color: var(--dark); background: var(--bg);
     }
     #docs-search:focus { border-color: var(--teal); }
+    #docs-search::placeholder { color: var(--muted); }
     .search-clear {
       position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
       background: none; border: none; cursor: pointer; font-size: 1rem;
@@ -93,7 +100,7 @@
       padding: 9px 14px; font-size: .78rem; font-weight: 700;
       text-transform: uppercase; letter-spacing: .5px; color: var(--dark); text-align: left;
     }
-    .sidebar-group-toggle:hover { color: var(--teal); }
+    .sidebar-group-toggle:hover { color: var(--teal-text); }
     .sidebar-group-toggle .ti { font-size: .65rem; color: var(--muted); transition: transform .2s; }
     .sidebar-group.open .sidebar-group-toggle .ti { transform: rotate(180deg); }
     .sidebar-group-links { display: none; padding: 0 0 6px; list-style: none; }
@@ -107,7 +114,7 @@
     }
     .sidebar-group-links a:hover { color: var(--dark); background: var(--bg); }
     .sidebar-group-links a.active {
-      color: var(--teal); border-left-color: var(--teal);
+      color: var(--teal-text); border-left-color: var(--teal);
       font-weight: 600; background: rgba(61,189,168,.06);
     }
 
@@ -119,6 +126,9 @@
       font-size: .9rem; font-weight: 600; color: var(--dark); cursor: pointer; text-align: left;
     }
     .docs-menu-btn:hover { background: var(--border); }
+    .docs-menu-btn svg { vertical-align: -3px; margin-right: 8px; }
+    .doc-article img { max-width: 100%; height: auto; }
+    .doc-article img.img-gap { margin-bottom: 20px; }
 
     /* ── ARTICLES ── */
     .doc-article { max-width: 780px; padding: 48px 40px; display: none; }
@@ -165,7 +175,7 @@
     tbody td strong { color: var(--dark); }
     tbody tr:last-child td { border-bottom: none; }
     .check { color: var(--green); font-size: 1.05rem; }
-    .cross { color: var(--red); font-size: .95rem; opacity: .6; }
+    .cross { color: var(--cross); font-size: .95rem; }
     .cell-note { font-size: .78rem; color: var(--muted); display: block; }
 
     /* ── PLAN BADGES ── */
@@ -173,8 +183,8 @@
       display: inline-block; font-size: .72rem; font-weight: 700;
       padding: 3px 10px; border-radius: 20px; margin-bottom: 14px;
     }
-    .plan-starter { background: rgba(61,189,168,.12); color: var(--teal-d); }
-    .plan-pro     { background: rgba(61,189,168,.18); color: var(--teal-d); }
+    .plan-starter { background: rgba(61,189,168,.12); color: var(--teal-text); }
+    .plan-pro     { background: rgba(61,189,168,.18); color: var(--teal-text); }
 
     /* ── SCREENSHOT PLACEHOLDER ── */
     .screenshot-placeholder {
@@ -184,8 +194,8 @@
     }
 
     /* ── FOOTER ── */
-    footer { background: var(--dark); color: var(--muted); text-align: center; padding: 36px 24px; font-size: .88rem; }
-    footer a { color: var(--muted); text-decoration: none; }
+    footer { background: var(--dark); color: var(--muted-on-dark); text-align: center; padding: 36px 24px; font-size: .88rem; }
+    footer a { color: var(--muted-on-dark); text-decoration: none; }
     footer a:hover { color: var(--white); }
     .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
 
@@ -205,16 +215,38 @@
     @media (max-width: 600px) {
       .nav-links { display: none; }
     }
+
+    /* ── ACCESSIBILITY & MOBILE NAV ── */
+    :focus-visible { outline: 2px solid var(--teal-text); outline-offset: 2px; }
+    .site-nav :focus-visible, footer :focus-visible, .hero :focus-visible { outline-color: var(--teal-light); }
+    ::selection { background: rgba(61,189,168,.3); color: var(--dark); }
+    .skip-link { position: absolute; left: 16px; top: -64px; z-index: 300; background: var(--white); color: var(--dark); padding: 10px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; }
+    .skip-link:focus { top: 8px; }
+    .nav-toggle { display: none; }
+    @media (max-width: 600px) {
+      .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px; padding: 0; background: none; border: 0; border-radius: 6px; color: var(--white); cursor: pointer; }
+      .nav-toggle[aria-expanded="true"] .nav-icon-open, .nav-toggle[aria-expanded="false"] .nav-icon-close { display: none; }
+      .site-nav .nav-links { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 2px; padding: 8px 16px 16px; background: var(--dark); border-top: 1px solid rgba(255,255,255,.08); box-shadow: 0 12px 24px rgba(0,0,0,.25); }
+      .site-nav.nav-open .nav-links { display: flex; }
+      .site-nav .nav-links a { padding: 12px; font-size: 1rem; }
+      .site-nav .nav-links .btn-plan { margin-top: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; }
+      a:hover, button:hover, .feature-card:hover { transform: none !important; }
+    }
   </style>
 </head>
 <body>
+<a class="skip-link" href="#docs-main">Skip to content</a>
 
-  <nav>
+  <nav class="site-nav">
     <a href="https://employeeroster.io/" class="nav-brand">
-      <img src="assets/logo/only-logo-transparent.png" alt="Employee Roster logo" style="margin-top: 20px;"/>
+      <img src="assets/logo/only-logo-64.png" width="32" height="32" alt="Employee Roster logo" style="margin-top: 20px;"/>
       Employee Roster
     </a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Menu"><svg class="nav-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="nav-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="nav-links" id="site-nav-links">
       <a href="https://employeeroster.io/#features">Features</a>
       <a href="https://employeeroster.io/#plans">Plans</a>
       <a href="https://employeeroster.io/#pricing">Pricing</a>
@@ -230,7 +262,7 @@
   <aside class="docs-sidebar" id="docs-sidebar">
     <div class="sidebar-search-wrap">
       <div class="sidebar-search-inner">
-        <input type="search" id="docs-search" placeholder="Search docs…" autocomplete="off" />
+        <input type="search" id="docs-search" placeholder="Search docs…" aria-label="Search documentation" autocomplete="off" />
         <button class="search-clear" id="search-clear" aria-label="Clear search">×</button>
       </div>
     </div>
@@ -396,8 +428,8 @@
   </aside>
 
   <!-- ═══════ MAIN ═══════ -->
-  <main class="docs-main" id="docs-main">
-    <button class="docs-menu-btn" id="docs-menu-btn">☰ Menu</button>
+  <main class="docs-main" id="docs-main" tabindex="-1">
+    <button class="docs-menu-btn" id="docs-menu-btn" type="button" aria-controls="docs-sidebar" aria-expanded="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Browse topics</button>
 
     <!-- ─────────────────────────────────────────── -->
     <!-- GETTING STARTED                              -->
@@ -485,15 +517,15 @@
       <p>Follow these five steps to go from a fresh install to a working roster. Each step takes only a few minutes once the plugin is activated.</p>
       <ol>
         <li style="margin: 20px 0;"><strong>Create departments:</strong> Go to <strong>EmpRoster &gt; Settings &gt; Departments</strong> and add your departments. Departments are unlimited on every version and plan.</li>
-        <img src="assets/docs/departments.png" alt="Create departments"> <style>img { max-width: 100%; height: auto; }</style>
+        <img src="assets/docs/departments.png" alt="Create departments" width="632" height="355" loading="lazy" decoding="async">
         <li style="margin: 20px 0;"><strong>Create locations:</strong> In <strong>Settings &gt; Locations</strong>, add location names and pick a colour for each. The colour is used on shift cards and in the calendar views.</li>
-        <img src="assets/docs/locations.png" alt="Create locations"> <style>img { max-width: 100%; height: auto; }</style>
+        <img src="assets/docs/locations.png" alt="Create locations" width="623" height="318" loading="lazy" decoding="async">
         <li style="margin: 20px 0;"><strong>Add staff:</strong> Go to <strong>EmpRoster &gt; Staff &gt; + Add Staff</strong>. Assign each person a role (Manager, Supervisor, or Employee paid plans), a job type (Full-time, Part-time, or Casual), and an hourly pay rate (when payroll is enabled). A WordPress user account is created automatically.</li>
-        <img src="assets/docs/add_staff.png" alt="Add staff"> <style>img { max-width: 100%; height: auto; }</style>
+        <img src="assets/docs/add_staff.png" alt="Add staff" width="1717" height="830" loading="lazy" decoding="async">
         <li style="margin: 20px 0;"><strong>Create a shift:</strong> Open <strong>EmpRoster &gt; Shifts</strong> and click <strong>+ New Shift</strong>. Fill in the department, location, start and end times, break duration, and assignment type. Assign employees directly or publish the shift as an open shift for staff to claim (Starter+).</li>
-        <img src="assets/docs/add_new_shift.png" alt="Create a shift"> <style>img { max-width: 100%; height: auto; }</style>
+        <img src="assets/docs/add_new_shift.png" alt="Create a shift" width="1568" height="872" loading="lazy" decoding="async">
         <li style="margin: 20px 0;"><strong>Employees log in:</strong> Staff can use the WordPress admin or the frontend portal pages to view their roster, submit leave requests, clock in/out, and set their weekly availability.</li>
-        <img src="assets/docs/employee_login.png" alt="Employees log in"> <style>img { max-width: 100%; height: auto; }</style>
+        <img src="assets/docs/employee_login.png" alt="Employees log in" width="1530" height="737" loading="lazy" decoding="async">
       </ol>
       <div class="callout">
         <span class="callout-icon">✅</span>
@@ -637,7 +669,7 @@
       <p class="doc-admin-note" style="font-size:.82rem;color:var(--muted);margin:-8px 0 20px;">Available to WordPress Administrators only. Roster Managers do not see this setting.</p>
       <p>The Admin Visibility settings control whether WordPress administrator accounts appear in the EmpRoster staff list as Managers. Because administrators are not roster staff by default, these two settings let each administrator independently decide their own participation, with an optional global override to include all administrators at once.</p>
       <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Roles &amp; Permissions</strong> to find the Admin Visibility section. These settings are visible only to WordPress Administrators Roster Managers do not see this section.</p>
-      <img src="assets/docs/Admin-Visibility-section.png" alt="Admin Visibility section in Roles &amp; Permissions settings"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/Admin-Visibility-section.png" alt="Admin Visibility section in Roles &amp; Permissions settings" width="667" height="322" loading="lazy" decoding="async">
 
       <h2>The Two Settings</h2>
       <div class="table-wrap">
@@ -783,7 +815,7 @@
         <span class="callout-icon">📋</span>
         <div class="callout-body"><strong>No shift limit:</strong> every version, including the free version on WordPress.org, supports an unlimited number of shifts.</div>
       </div>
-      <img src="assets/docs/add_new_shift.png" alt="Add new shift"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/add_new_shift.png" alt="Add new shift" width="1568" height="872" loading="lazy" decoding="async">
     </article>
 
     <article id="article-assignment-types" class="doc-article">
@@ -800,13 +832,13 @@
       </ul>
       <p>See <em>Open Shifts</em> for how open shifts appear on the roster and how requests are reviewed.</p>
       <p><strong>Admin/Manager: Creating an open shift with approval:</strong></p>
-      <img src="assets/docs/open_with_approval.png" alt="Open shift approval"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/open_with_approval.png" alt="Open shift approval" width="1560" height="860" loading="lazy" decoding="async">
       <p style="margin-top: 20px;"><strong>Employee: Claiming an open shift:</strong></p>
-      <img src="assets/docs/employee_shifts.png" alt="Open shift without approval"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/employee_shifts.png" alt="Open shift without approval" width="1642" height="563" loading="lazy" decoding="async">
       <p style="margin-top: 20px;"><strong>Employee: Requests for open shift:</strong></p>
-      <img src="assets/docs/employee_shifts_request.png" alt="Employee shifts request"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/employee_shifts_request.png" alt="Employee shifts request" width="1646" height="805" loading="lazy" decoding="async">
       <p style="margin-top: 20px;"><strong>Admin/Manager: Accepting a request for an open shift:</strong></p>
-      <img src="assets/docs/admin_open_shift_accept.png" alt="Employee shifts request"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/admin_open_shift_accept.png" alt="Employee shifts request" width="1512" height="743" loading="lazy" decoding="async">
       <div class="callout callout-note">
         <span class="callout-icon">📋</span>
         <div class="callout-body">Use <strong>Direct</strong> when you know exactly who is working a shift. Use <strong>Open</strong> when you need to fill a slot and want employees to self-select, for example for casual or on-call positions.</div>
@@ -829,7 +861,7 @@
       <p>Managers also get an <strong>All Locations</strong> filter and an <strong>All Skills</strong> filter (<span class="plan-badge plan-pro">Professional+</span>, since skill tags are a Professional feature) in the roster toolbar.</p>
       <h2>Today Indicator</h2>
       <p>In both the weekly roster and monthly calendar views, the current day receives a distinct highlighted background. The day column header displays <strong>"Today"</strong> instead of the date string, and individual shift rows for today also display "Today" in their date column.</p>
-      <img src="assets/docs/calendar_view_weekly.png" alt="Weekly callendar view"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/calendar_view_weekly.png" alt="Weekly callendar view" width="1897" height="870" loading="lazy" decoding="async">
     </article>
 
     <article id="article-open-shifts" class="doc-article">
@@ -854,7 +886,7 @@
         <span class="callout-icon">📋</span>
         <div class="callout-body">When a manager approves the request that fills the <strong>last slot</strong>, any remaining pending requests for that shift are <strong>declined automatically</strong> and the manager is told how many.</div>
       </div>
-      <img src="assets/docs/open_with_approval.png" alt="Open shift with approval"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/open_with_approval.png" alt="Open shift with approval" width="1560" height="860" loading="lazy" decoding="async">
     </article>
 
     <article id="article-copy-roster" class="doc-article">
@@ -975,7 +1007,7 @@
         <span class="callout-icon">📋</span>
         <div class="callout-body">Managers can always view and correct attendance records regardless of whether self clock-in/out is enabled. The Self-Clock Setting only controls employee-facing access.</div>
       </div>
-      <img src="assets/docs/clock_in.png" alt="Clock in"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/clock_in.png" alt="Clock in" width="1553" height="762" loading="lazy" decoding="async">
     </article>
 
     <article id="article-self-clock-setting" class="doc-article">
@@ -1152,7 +1184,7 @@
 
       <h2>How to Submit a Swap Request</h2>
       <p>A <strong>Swap</strong> button appears on an employee's own future shifts in the roster. In the request form they can:</p>
-      <img src="assets/docs/employee_swap_request.png" alt="Employees swap request"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/employee_swap_request.png" alt="Employees swap request" width="1437" height="710" loading="lazy" decoding="async">
       <ul>
         <li>Optionally pick a <strong>preferred cover person</strong> from their colleagues</li>
         <li>Add an optional <strong>reason</strong> for the swap (visible to the reviewing manager)</li>
@@ -1169,7 +1201,7 @@
 
       <h2>Manager Review</h2>
       <p>Managers see all pending swap requests in the Shift Swap Requests section of the Requests page. Each entry shows the requesting employee, the shift they want to give up, and the target employee (if one was specified in the request).</p>
-      <img src="assets/docs/admin_swap_shift.png" alt="Admin/Manager swap shift accept/decline"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/admin_swap_shift.png" alt="Admin/Manager swap shift accept/decline" width="1542" height="217" loading="lazy" decoding="async">
 
       <h3>Approving a swap</h3>
       <p>When a manager approves a swap, the plugin automatically reassigns the two shifts between the employees involved. No manual editing of shift assignments is needed; the handover is applied atomically on approval.</p>
@@ -1197,7 +1229,7 @@
         <span class="callout-icon">📋</span>
         <div class="callout-body">Accrual is calculated lazily the first time a balance is read after enabling the setting, the whole year to date is back-filled in one go. Earlier years are not back-filled: a mid-year opt-in starts from the current year.</div>
       </div>
-      <img src="assets/docs/employee_leave_balances.png" alt="Employees leave balances"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/employee_leave_balances.png" alt="Employees leave balances" width="1650" height="447" loading="lazy" decoding="async">
       <h2>Default entitlements (days per year)</h2>
       <div class="table-wrap">
         <table>
@@ -1327,7 +1359,7 @@
 
       <h2>Adding skill tags to an employee</h2>
       <p>Open the Add Staff or Edit Staff modal in <strong>EmpRoster &gt; Staff</strong>. Type into the <strong>Skill Tags</strong> field and press <strong>Enter</strong> or <strong>comma</strong> to add each tag, then save. Tags are stored per employee and can be added, edited, or removed at any time.</p>
-      <img src="assets/docs/skill-tag.png" alt="Skill Tags field in Edit Staff modal"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/skill-tag.png" alt="Skill Tags field in Edit Staff modal" width="702" height="742" loading="lazy" decoding="async">
 
       <h2>Using skill tags when assigning shifts</h2>
       <p>When a manager opens the shift assignment modal to add employees to a shift, each eligible employee's skill tags are displayed as small chips alongside their name and availability indicator. This allows managers to identify qualified staff at a glance without leaving the modal.</p>
@@ -1379,7 +1411,7 @@
         <li>The employee can log in again immediately after reactivation.</li>
         <li>A fresh password is generated, the deactivation flag is cleared, and a welcome email is sent to the employee.</li>
       </ul>
-      <img src="assets/docs/reactivate-button.png" alt="Deactivated Employees section with Reactivate button"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/reactivate-button.png" alt="Deactivated Employees section with Reactivate button" width="1622" height="422" loading="lazy" decoding="async">
 
       <h2>Deleting a Staff Member</h2>
       <p>Permanent deletion of a WordPress user account must be done by a WordPress Administrator through <strong>WordPress Admin &gt; Users</strong>, not through the Employee Roster interface. Deleting a user from the WordPress Users list removes their account entirely and also purges all associated plugin records.</p>
@@ -1656,7 +1688,7 @@
       <p>The welcome email is sent automatically when a manager creates a new staff account through <strong>EmpRoster &gt; Staff &gt; + Add Staff</strong>, provided email notifications are enabled. It is also re-sent when a deactivated employee is reactivated.</p>
       <h2>Full onboarding email <span class="plan-badge plan-starter">Starter+</span></h2>
       <p>On paid plans the full onboarding welcome email is sent, containing:</p>
-      <img src="assets/docs/employee_welcome_email.png" alt="Employee welcome email"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/employee_welcome_email.png" alt="Employee welcome email" width="1646" height="727" loading="lazy" decoding="async">
       <ul>
         <li>Employee's name, login email address and username</li>
         <li>Their temporary password and a secure link to set their own password</li>
@@ -1669,7 +1701,7 @@
     <article id="article-shift-assignment-email" class="doc-article">
       <h1>Shift Assignment Email</h1>
       <p>A shift assignment email is sent to each employee the moment they are assigned to a shift by a manager. The email fires on save; employees are notified immediately when a direct assignment is created or when an open-shift claim is confirmed.</p>
-      <img src="assets/docs/employee_shift_assign_email.png" alt="Employee shift assign email"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/employee_shift_assign_email.png" alt="Employee shift assign email" width="1675" height="695" loading="lazy" decoding="async">
       <h2>Email contents</h2>
       <ul>
         <li>Shift title</li>
@@ -1682,7 +1714,7 @@
     <article id="article-shift-timing-change-email" class="doc-article">
       <h1>Shift Timing Change Email</h1>
       <p>A timing change email is sent to <strong>all currently assigned employees</strong> whenever a manager changes a shift's start time or end time. This fires automatically on save with no separate notification step for the manager.</p>
-      <img src="assets/docs/employee_shift_time_change_email.png" alt="Employee requests a leave"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/employee_shift_time_change_email.png" alt="Employee requests a leave" width="1668" height="700" loading="lazy" decoding="async">
       <h2>Email contents</h2>
       <ul>
         <li>Shift title</li>
@@ -1698,8 +1730,8 @@
     <article id="article-leave-decision-email" class="doc-article">
       <h1>Leave Decision Email</h1>
       <p>A leave decision email is sent to an employee the moment a manager approves or declines their leave request. The email fires at the point the manager saves the decision with no additional confirmation step needed.</p>
-      <img src="assets/docs/employee_leave_accept_email.png" alt="Employee leave accept email"> <style>img { max-width: 100%; height: auto; margin-bottom: 20px;}</style>
-      <img src="assets/docs/employee_leave_reject_email.png" alt="Employee leave reject email"> <style>img { max-width: 100%; height: auto; margin-bottom: 20px;}</style>
+      <img src="assets/docs/employee_leave_accept_email.png" alt="Employee leave accept email" width="1671" height="686" loading="lazy" decoding="async" class="img-gap">
+      <img src="assets/docs/employee_leave_reject_email.png" alt="Employee leave reject email" width="1675" height="697" loading="lazy" decoding="async" class="img-gap">
       <h2>Email contents</h2>
       <ul>
         <li>Leave type (Annual, Sick, Personal, Unpaid or Other)</li>
@@ -1719,7 +1751,7 @@
     <article id="article-shortcode-pages" class="doc-article">
       <h1>Shortcode Pages</h1>
       <p>Employee Roster automatically creates five WordPress pages pre-loaded with shortcodes when the plugin is first activated. These pages let employees manage their roster from the public-facing side of the WordPress site, without needing to navigate the WP Admin at all. Unauthenticated visitors who land on any of these pages see a login prompt; <strong>the roster content is never publicly exposed through these shortcodes.</strong></p>
-      <img src="assets/docs/frontend_pages_5.png" alt="Frontend Pages"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/frontend_pages_5.png" alt="Frontend Pages" width="620" height="422" loading="lazy" decoding="async">
       <div class="table-wrap">
         <table>
           <thead><tr><th>Page</th><th>Shortcode</th><th>What staff do there</th></tr></thead>
@@ -2117,7 +2149,7 @@
           </tbody>
         </table>
       </div>
-      <img src="assets/docs/login-logs.png" alt="Employee Login Logs table in EmpRoster admin"> <style>img { max-width: 100%; height: auto; }</style>
+      <img src="assets/docs/login-logs.png" alt="Employee Login Logs table in EmpRoster admin" width="1637" height="640" loading="lazy" decoding="async">
 
       <h2>Searching and filtering</h2>
       <p>You can search by name, email or IP; filter by <strong>All time / Today / This Week / This Month / This Year / Custom Range</strong>; filter by event type; and page through the results 25 at a time. <strong>Download Logs</strong> exports a CSV using exactly the filters currently on screen.</p>
@@ -2254,7 +2286,7 @@
     <a href="https://wordpress.org/plugins/employee-roster/">Download free on WordPress.org</a>
   </div>
   <p>Employee Roster is an independent WordPress plugin.</p>
-  <p style="margin-top:8px;opacity:.5;">© <script>document.write(new Date().getFullYear())</script> EmployeeRoster.io. All rights reserved.</p>
+  <p style="margin-top:8px;">© <script>document.write(new Date().getFullYear())</script> EmployeeRoster.io. All rights reserved.</p>
 </footer>
 
 <script>
@@ -2306,10 +2338,20 @@
     window.scrollTo(0, 0);
   }
 
-  function routeFromHash() {
+  function focusArticle() {
+    var h1 = document.querySelector('.doc-article.active h1');
+    if (!h1) return;
+    h1.setAttribute('tabindex', '-1');
+    h1.focus({ preventScroll: true });
+  }
+
+  function routeFromHash(e) {
     var hash = location.hash.replace('#', '');
     if (hash && ARTICLES.indexOf(hash) !== -1) {
       showArticle(hash);
+      if (e) focusArticle();
+    } else if (hash && document.getElementById(hash) && document.querySelector('.doc-article.active')) {
+      return; // in-page target such as the skip link
     } else {
       showArticle('requirements');
       if (!hash) history.replaceState(null, '', '#requirements');
@@ -2321,7 +2363,7 @@
 
   document.querySelectorAll('.sidebar-group-links a').forEach(function (a) {
     a.addEventListener('click', function () {
-      sidebar.classList.remove('open');
+      setSidebar(false);
     });
   });
 
@@ -2334,14 +2376,23 @@
     });
   });
 
+  function setSidebar(open) {
+    sidebar.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+  }
+
   menuBtn.addEventListener('click', function () {
-    sidebar.classList.toggle('open');
+    setSidebar(!sidebar.classList.contains('open'));
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) { setSidebar(false); menuBtn.focus(); }
   });
 
   document.addEventListener('click', function (e) {
     if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
-      if (!sidebar.contains(e.target) && e.target !== menuBtn) {
-        sidebar.classList.remove('open');
+      if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+        setSidebar(false);
       }
     }
   });
@@ -2398,6 +2449,27 @@
       }
     });
   }
+}());
+</script>
+<script>
+(function () {
+  var btn = document.querySelector('.site-nav .nav-toggle');
+  if (!btn) return;
+  var nav = btn.parentNode;
+  function setOpen(open) {
+    nav.classList.toggle('nav-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+  btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
+  nav.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('nav-open')) { setOpen(false); btn.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (nav.classList.contains('nav-open') && !nav.contains(e.target)) setOpen(false);
+  });
 }());
 </script>
 </body>
