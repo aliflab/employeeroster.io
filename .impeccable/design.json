@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-03T12:00:00Z",
+  "generatedAt": "2026-11-03T18:00:00Z",
   "title": "Design System: Employee Roster",
   "extensions": {
     "colorMeta": {
@@ -228,32 +228,182 @@
           "#e2c6c6",
           "#f6ecec"
         ]
+      },
+      "status-red-deep": {
+        "role": "status",
+        "displayName": "Status Red, Deep",
+        "canonical": "#b91c1c",
+        "tonalRamp": [
+          "#3b0909",
+          "#5e0f0f",
+          "#8a1616",
+          "#b91c1c",
+          "#d44a4a",
+          "#e58585",
+          "#f2bcbc",
+          "#fcecec"
+        ]
+      },
+      "row-hover": {
+        "role": "neutral",
+        "displayName": "Row Hover",
+        "canonical": "#f4f7fa",
+        "tonalRamp": [
+          "#2b3138",
+          "#4c5560",
+          "#707b88",
+          "#97a2ae",
+          "#bec7d0",
+          "#dde3e9",
+          "#f4f7fa",
+          "#fbfcfd"
+        ]
       }
     },
     "typographyMeta": {
+      "display-404": {
+        "displayName": "Display 404",
+        "purpose": "Oversized 404 numeral."
+      },
       "display": {
         "displayName": "Display",
-        "purpose": "Hero headline only, white on the navy-to-teal gradient."
+        "purpose": "Hero headline only."
+      },
+      "headline-post": {
+        "displayName": "Headline Post",
+        "purpose": "Blog post titles."
+      },
+      "headline-page": {
+        "displayName": "Headline Page",
+        "purpose": "Blog index and legal page titles."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Landing section titles; docs and blog h1 at their own sizes."
+        "purpose": "Landing section titles."
+      },
+      "headline-404": {
+        "displayName": "Headline 404",
+        "purpose": "404 message."
+      },
+      "headline-docs": {
+        "displayName": "Headline Docs",
+        "purpose": "Docs article titles."
+      },
+      "headline-docs-mobile": {
+        "displayName": "Headline Docs Mobile",
+        "purpose": "Docs article titles at ≤768px."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Pricing-card figure."
+      },
+      "title-lg": {
+        "displayName": "Title Lg",
+        "purpose": "Blog post h2."
+      },
+      "title-table": {
+        "displayName": "Title Table",
+        "purpose": "Blog comparison caption."
+      },
+      "title-legal": {
+        "displayName": "Title Legal",
+        "purpose": "Legal page h2."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Card titles, pricing tier names, docs h2, step titles."
+        "purpose": "Docs h2 and nav brand."
       },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Running copy in Slate Muted; line-height opens to 1.8 in docs and 1.85 in blog."
+      "title-card": {
+        "displayName": "Title Card",
+        "purpose": "Feature and blog card titles."
+      },
+      "title-post-h3": {
+        "displayName": "Title Post H3",
+        "purpose": "Blog post h3."
+      },
+      "title-docs-h3": {
+        "displayName": "Title Docs H3",
+        "purpose": "Docs h3."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero intro paragraph."
+      },
+      "body-lg": {
+        "displayName": "Body Lg",
+        "purpose": "Buttons and large UI text."
+      },
+      "body-post": {
+        "displayName": "Body Post",
+        "purpose": "Blog prose."
+      },
+      "body-docs": {
+        "displayName": "Body Docs",
+        "purpose": "Docs prose."
+      },
+      "body-sm": {
+        "displayName": "Body Sm",
+        "purpose": "Feature-card copy and tables."
+      },
+      "ui": {
+        "displayName": "Ui",
+        "purpose": "Nav links, callouts, plan buttons."
+      },
+      "ui-sm": {
+        "displayName": "Ui Sm",
+        "purpose": "Small UI text and captions in buttons."
+      },
+      "ui-nav-docs": {
+        "displayName": "Ui Nav Docs",
+        "purpose": "Docs sidebar links and search."
+      },
+      "ui-cell": {
+        "displayName": "Ui Cell",
+        "purpose": "Blog comparison partial values."
+      },
+      "ui-xs": {
+        "displayName": "Ui Xs",
+        "purpose": "List items and quick links."
+      },
+      "ui-th": {
+        "displayName": "Ui Th",
+        "purpose": "Blog comparison headers."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Dates and secondary captions."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Uppercase eyebrows, sidebar group toggles, badges."
+        "purpose": "Uppercase section labels."
+      },
+      "caption-sm": {
+        "displayName": "Caption Sm",
+        "purpose": "Cell notes and footnotes."
+      },
+      "badge": {
+        "displayName": "Badge",
+        "purpose": "Pills and plan badges."
+      },
+      "glyph": {
+        "displayName": "Glyph",
+        "purpose": "Sidebar toggle chevron."
+      },
+      "icon-lg": {
+        "displayName": "Icon Lg",
+        "purpose": "Feature-card emoji."
+      },
+      "icon-xl": {
+        "displayName": "Icon Xl",
+        "purpose": "404 emoji."
       },
       "mono": {
         "displayName": "Mono",
-        "purpose": "Inline code and shortcodes in docs."
+        "purpose": "Inline code in docs."
+      },
+      "mono-post": {
+        "displayName": "Mono Post",
+        "purpose": "Inline code in blog posts."
       }
     },
     "shadows": [
@@ -276,6 +426,16 @@
         "name": "drawer",
         "value": "4px 0 20px rgba(0,0,0,.15)",
         "purpose": "Mobile docs sidebar drawer."
+      },
+      {
+        "name": "menu-panel",
+        "value": "0 12px 24px rgba(0,0,0,.25)",
+        "purpose": "Open mobile nav panel."
+      },
+      {
+        "name": "table-card",
+        "value": "0 2px 20px rgba(30,45,61,.07)",
+        "purpose": "Blog comparison table card."
       }
     ],
     "motion": [
