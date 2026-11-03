@@ -267,6 +267,7 @@
           <li><a href="#roster-views" data-article="roster-views">Roster Views</a></li>
           <li><a href="#open-shifts" data-article="open-shifts">Open Shifts</a></li>
           <li><a href="#copy-roster" data-article="copy-roster">Copy Roster</a></li>
+          <li><a href="#shift-confirmation" data-article="shift-confirmation">Shift Confirmation</a></li>
           <li><a href="#editing-deleting-shifts" data-article="editing-deleting-shifts">Editing &amp; Deleting Shifts</a></li>
           <li><a href="#active-shifts" data-article="active-shifts">Shift Limits</a></li>
         </ul>
@@ -882,6 +883,41 @@
       </div>
     </article>
 
+    <article id="article-shift-confirmation" class="doc-article">
+      <h1>Shift Confirmation</h1>
+      <span class="plan-badge plan-starter">Starter+</span>
+      <p>Shift Confirmation requires the <strong>Starter plan or above</strong> and is not present in the free version. When it is on, staff accept or decline the shifts they are assigned, so you know who has seen and agreed to each shift. Turn it on or off under <strong>EmpRoster &gt; Settings &gt; Shift Confirmation</strong>.</p>
+      <h2>How it works</h2>
+      <ul>
+        <li>New assignments show as <strong>Pending</strong> until the employee responds. The roster shows each person's response.</li>
+        <li>Employees can <strong>Accept</strong> or <strong>Decline</strong> a shift, with an optional reason.</li>
+        <li>The <strong>Dashboard</strong> menu shows a badge with the number of upcoming shifts waiting for a response. It updates without reloading the page.</li>
+        <li>Once a shift has started, it can no longer be accepted or declined.</li>
+      </ul>
+      <h2>When a shift is declined</h2>
+      <p>Declining does <strong>not</strong> remove anyone from a shift. The shift stays on the roster marked <strong>Declined</strong> until a manager does one of the following:</p>
+      <ul>
+        <li>reassigns the shift to someone else</li>
+        <li>removes the employee from the shift</li>
+        <li>asks the employee to respond again</li>
+      </ul>
+      <p>Managers can also accept a shift on an employee's behalf.</p>
+      <h2>Time changes</h2>
+      <p>If a manager moves a shift's start or end time, assigned staff are asked to confirm the new time.</p>
+      <h2>Emails</h2>
+      <p>When <a href="#enabling-notifications" data-article="enabling-notifications">email notifications</a> are on:</p>
+      <ul>
+        <li>While a response is pending, the employee's shift emails ask them to sign in and respond.</li>
+        <li>Managers can choose to be emailed when a shift is <strong>declined</strong> (on by default) or <strong>accepted</strong> (off by default).</li>
+      </ul>
+      <h2>Turning it on or off</h2>
+      <p>When you turn Shift Confirmation on, existing assignments are treated as accepted, so nobody is asked to confirm shifts already on the roster.</p>
+      <div class="callout callout-note">
+        <span class="callout-icon">📋</span>
+        <div class="callout-body">Turning Shift Confirmation off hides every confirmation status and stops the related emails. Responses already given are kept and reappear if you turn it back on. While it is off, new assignments are recorded as accepted. The same applies if a paid licence lapses: stored responses are kept and return when you renew.</div>
+      </div>
+    </article>
+
     <article id="article-editing-deleting-shifts" class="doc-article">
       <h1>Editing &amp; Deleting Shifts</h1>
       <p>Click any shift block in the weekly or monthly view, or any row in the list view, to open the shift modal. Managers can edit all shift fields, reassign employees, or delete the shift from within the same modal.</p>
@@ -889,7 +925,7 @@
       <p>Clicking a shift opens its detail card. Managers get <strong>Edit</strong>, <strong>Assign</strong> and <strong>Delete</strong>. All fields set at creation (department, location, start/end, assignment type, break duration, slot limit, notes, and job sheet attachment) are fully editable after saving. Reassigning employees (adding or removing assignees) can also be done from the edit modal at any time.</p>
       <div class="callout">
         <span class="callout-icon">✉️</span>
-        <div class="callout-body"><strong>Timing change notification:</strong> If you change a shift's start or end time, all currently assigned employees automatically receive a Shift Timing Change email (if email notifications are enabled). This fires on save, so employees are notified immediately.</div>
+        <div class="callout-body"><strong>Timing change notification:</strong> If you change a shift's start or end time, all currently assigned employees automatically receive a Shift Timing Change email (if email notifications are enabled). This fires on save, so employees are notified immediately. If <a href="#shift-confirmation" data-article="shift-confirmation">Shift Confirmation</a> is on, assigned staff are also asked to confirm the new time.</div>
       </div>
       <h2>Deleting a Shift</h2>
       <p>The delete button is available inside the shift modal. Deleting a shift permanently removes the shift record and all its assignment records. This action cannot be undone.</p>
@@ -1590,6 +1626,7 @@
         <li><strong>Added to the roster / welcome</strong> on paid plans this includes their username, temporary password and a secure link to set their own password; the free version sends a simplified welcome without credentials</li>
         <li><strong>New shift scheduled for you</strong> also sent when a manager approves their open-shift request</li>
         <li><strong>Your shift has been updated</strong> sent when a shift's start or end time changes</li>
+        <li>While <a href="#shift-confirmation" data-article="shift-confirmation">Shift Confirmation</a> is on, shift emails ask the employee to sign in and accept or decline <span class="plan-badge plan-starter">Starter+</span></li>
         <li><strong>Your leave request was approved / declined</strong> <span class="plan-badge plan-starter">Starter+</span></li>
         <li><strong>Your account has been reset</strong> with the new credentials <span class="plan-badge plan-starter">Starter+</span></li>
       </ul>
@@ -1598,9 +1635,10 @@
       <ul>
         <li><strong>A new leave request has been submitted</strong> <span class="plan-badge plan-starter">Starter+</span></li>
         <li><strong>An employee has claimed an open shift</strong> flagged either <em>Pending your approval</em> or <em>Auto-confirmed</em> <span class="plan-badge plan-starter">Starter+</span></li>
+        <li><strong>A shift was declined</strong> (on by default) or <strong>accepted</strong> (off by default) by an employee, while Shift Confirmation is on <span class="plan-badge plan-starter">Starter+</span></li>
         <li><strong>A new swap request has been submitted</strong> <span class="plan-badge plan-pro">Professional+</span></li>
       </ul>
-      <p>Manager notification emails use the same <strong>Enable Notifications</strong> toggle. They cannot be enabled or disabled independently of the employee notifications, and features your plan does not include simply do not generate their emails.</p>
+      <p>Manager notification emails use the same <strong>Enable Notifications</strong> toggle. They cannot be switched on independently of the employee notifications. The shift declined and shift accepted alerts can also be switched off individually under <strong>Settings &gt; Shift Confirmation</strong>. Features your plan does not include simply do not generate their emails.</p>
       <h2>Technical details</h2>
       <ul>
         <li>All messages are <strong>branded HTML with a plain-text fallback</strong>, sent through WordPress's <code>wp_mail()</code> function, and use your configured company name</li>
@@ -1932,7 +1970,7 @@
           </tbody>
         </table>
       </div>
-      <p>This single toggle activates every notification type at once individual notification types cannot be enabled or disabled separately. Features your plan does not include simply do not generate their emails.</p>
+      <p>This single toggle activates every notification type at once individual notification types cannot be enabled or disabled separately. The one exception is the manager alerts for declined and accepted shifts, which have their own settings under <strong>Settings &gt; Shift Confirmation</strong> (see <a href="#shift-confirmation" data-article="shift-confirmation">Shift Confirmation</a>). Features your plan does not include simply do not generate their emails.</p>
     </article>
 
     <article id="article-settings-attachments" class="doc-article">
@@ -2148,6 +2186,7 @@
             <tr><td>Export your own timesheet (CSV)</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Open shifts (join / claim / approve)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Copy Roster</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Shift Confirmation (accept / decline)</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Attendance &amp; clock in/out</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Leave requests &amp; approval workflow</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
             <tr><td>Leave balances &amp; accrual</td><td><span class="cross">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
@@ -2223,7 +2262,7 @@
   var ARTICLES = [
     'requirements','installation','setup-wizard','quick-start','emproster-menu','updating-plugin',
     'custom-roles-overview','custom-capabilities','admin-inclusion-settings','admin-visibility','hidden-wordpress-ui',
-    'creating-shifts','assignment-types','roster-views','open-shifts','copy-roster','editing-deleting-shifts','active-shifts',
+    'creating-shifts','assignment-types','roster-views','open-shifts','copy-roster','shift-confirmation','editing-deleting-shifts','active-shifts',
     'clocking-in-out','self-clock-setting','attendance-management',
     'requests-overview','leave-requests','open-shift-requests','shift-swap-requests','leave-balances',
     'setting-availability','availability-hints',
