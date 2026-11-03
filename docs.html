@@ -29,8 +29,6 @@
   <style>
 
     /* ── NAV ── */
-    .nav-cta { background: var(--teal); color: var(--on-teal) !important; font-weight: 700 !important; padding: 8px 18px !important; border-radius: 6px !important; }
-    .nav-cta:hover { background: var(--teal-hover); }
     .btn-plan { display: inline-block; text-align: center; padding: 8px 14px; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: .88rem; transition: opacity .15s; }
     .btn-plan-outline { border: 2px solid rgba(255,255,255,.35); color: rgba(255,255,255,.85) !important; }
 
@@ -70,7 +68,7 @@
       text-transform: uppercase; letter-spacing: .5px; color: var(--dark); text-align: left;
     }
     .sidebar-group-toggle:hover { color: var(--teal-text); }
-    .sidebar-group-toggle .ti { font-size: .65rem; color: var(--muted); transition: transform .2s; }
+    .sidebar-group-toggle .ti { flex-shrink: 0; color: var(--muted); transition: transform .2s; }
     .sidebar-group.open .sidebar-group-toggle .ti { transform: rotate(180deg); }
     .sidebar-group-links { display: none; padding: 0 0 6px; list-style: none; }
     .sidebar-group.open .sidebar-group-links { display: block; }
@@ -156,13 +154,6 @@
     .plan-starter { background: rgba(61,189,168,.12); color: var(--teal-text); }
     .plan-pro     { background: rgba(61,189,168,.18); color: var(--teal-text); }
 
-    /* ── SCREENSHOT PLACEHOLDER ── */
-    .screenshot-placeholder {
-      background: var(--bg); border: 2px dashed var(--border); border-radius: 8px;
-      height: 200px; display: flex; align-items: center; justify-content: center;
-      color: var(--muted); font-size: .88rem; margin: 20px 0;
-    }
-
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       .docs-sidebar {
@@ -184,7 +175,7 @@
 
   <nav class="site-nav">
     <a href="https://employeeroster.io/" class="nav-brand">
-      <img src="assets/logo/only-logo-64.png" width="32" height="32" alt="Employee Roster logo" style="margin-top: 20px;"/>
+      <img src="assets/logo/only-logo-64.png" width="32" height="32" alt="Employee Roster logo" />
       Employee Roster
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Menu"><svg class="nav-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="nav-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -211,7 +202,7 @@
     <nav class="sidebar-nav" aria-label="Documentation topics">
 
       <div class="sidebar-group open" data-group="getting-started">
-        <button class="sidebar-group-toggle" aria-expanded="true">Getting Started <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="true">Getting Started <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#requirements" data-article="requirements">Requirements</a></li>
           <li><a href="#installation" data-article="installation">Installation</a></li>
@@ -223,7 +214,7 @@
       </div>
 
       <div class="sidebar-group" data-group="roles-access">
-        <button class="sidebar-group-toggle" aria-expanded="false">Roles &amp; Access <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Roles &amp; Access <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#custom-roles-overview" data-article="custom-roles-overview">Custom Roles Overview</a></li>
           <li><a href="#custom-capabilities" data-article="custom-capabilities">Custom Capabilities</a></li>
@@ -234,7 +225,7 @@
       </div>
 
       <div class="sidebar-group" data-group="shift-management">
-        <button class="sidebar-group-toggle" aria-expanded="false">Shift Management <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Shift Management <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#creating-shifts" data-article="creating-shifts">Creating Shifts</a></li>
           <li><a href="#assignment-types" data-article="assignment-types">Assignment Types</a></li>
@@ -248,7 +239,7 @@
       </div>
 
       <div class="sidebar-group" data-group="attendance">
-        <button class="sidebar-group-toggle" aria-expanded="false">Attendance &amp; Time Tracking <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Attendance &amp; Time Tracking <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#clocking-in-out" data-article="clocking-in-out">Clocking In and Out</a></li>
           <li><a href="#self-clock-setting" data-article="self-clock-setting">Self-Clock Setting</a></li>
@@ -257,7 +248,7 @@
       </div>
 
       <div class="sidebar-group" data-group="leave">
-        <button class="sidebar-group-toggle" aria-expanded="false">Requests <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Requests <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#requests-overview" data-article="requests-overview">Overview</a></li>
           <li><a href="#leave-requests" data-article="leave-requests">Leave Requests</a></li>
@@ -268,7 +259,7 @@
       </div>
 
       <div class="sidebar-group" data-group="availability">
-        <button class="sidebar-group-toggle" aria-expanded="false">Staff Availability <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Staff Availability <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#setting-availability" data-article="setting-availability">Setting Availability</a></li>
           <li><a href="#availability-hints" data-article="availability-hints">Availability Hints in Shift Modal</a></li>
@@ -276,7 +267,7 @@
       </div>
 
       <div class="sidebar-group" data-group="staff">
-        <button class="sidebar-group-toggle" aria-expanded="false">Staff Management <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Staff Management <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#adding-staff" data-article="adding-staff">Adding Staff</a></li>
           <li><a href="#editing-staff" data-article="editing-staff">Editing Staff</a></li>
@@ -286,7 +277,7 @@
       </div>
 
       <div class="sidebar-group" data-group="timesheets">
-        <button class="sidebar-group-toggle" aria-expanded="false">Timesheets &amp; Payroll <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Timesheets &amp; Payroll <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#timesheet-views" data-article="timesheet-views">Timesheet Views</a></li>
           <li><a href="#payroll-calculations" data-article="payroll-calculations">Payroll Calculations</a></li>
@@ -299,7 +290,7 @@
       </div>
 
       <div class="sidebar-group" data-group="analytics">
-        <button class="sidebar-group-toggle" aria-expanded="false">Dashboard &amp; Analytics <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Dashboard &amp; Analytics <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#analytics-dashboard" data-article="analytics-dashboard">Analytics Dashboard</a></li>
           <li><a href="#exports" data-article="exports">Exports &amp; Printing</a></li>
@@ -307,7 +298,7 @@
       </div>
 
       <div class="sidebar-group" data-group="notifications">
-        <button class="sidebar-group-toggle" aria-expanded="false">Email Notifications <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Email Notifications <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#enabling-notifications" data-article="enabling-notifications">Enabling Notifications</a></li>
           <li><a href="#welcome-email" data-article="welcome-email">Welcome Email</a></li>
@@ -318,7 +309,7 @@
       </div>
 
       <div class="sidebar-group" data-group="frontend">
-        <button class="sidebar-group-toggle" aria-expanded="false">Frontend Portal <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Frontend Portal <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#shortcode-pages" data-article="shortcode-pages">Shortcode Pages</a></li>
           <li><a href="#public-roster-shortcode" data-article="public-roster-shortcode">Public Roster Shortcode</a></li>
@@ -326,7 +317,7 @@
       </div>
 
       <div class="sidebar-group" data-group="settings">
-        <button class="sidebar-group-toggle" aria-expanded="false">Settings Reference <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Settings Reference <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#settings-general" data-article="settings-general">General</a></li>
           <li><a href="#settings-shift-attendance" data-article="settings-shift-attendance">Roster &amp; Attendance</a></li>
@@ -344,7 +335,7 @@
       </div>
 
       <div class="sidebar-group" data-group="profile-mode">
-        <button class="sidebar-group-toggle" aria-expanded="false">Profile Mode <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Profile Mode <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#profile-mode-overview" data-article="profile-mode-overview">Overview &amp; Use Case</a></li>
           <li><a href="#enabling-profile-mode" data-article="enabling-profile-mode">Enabling Profile Mode</a></li>
@@ -352,14 +343,14 @@
       </div>
 
       <div class="sidebar-group" data-group="security-access">
-        <button class="sidebar-group-toggle" aria-expanded="false">Security &amp; Access <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Security &amp; Access <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#employee-login-logs" data-article="employee-login-logs">Employee Login Logs</a></li>
         </ul>
       </div>
 
       <div class="sidebar-group" data-group="plans">
-        <button class="sidebar-group-toggle" aria-expanded="false">Plans &amp; Pricing <span class="ti">▼</span></button>
+        <button class="sidebar-group-toggle" aria-expanded="false">Plans &amp; Pricing <svg class="ti" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
         <ul class="sidebar-group-links">
           <li><a href="#feature-availability" data-article="feature-availability">Feature Availability by Plan</a></li>
           <li><a href="#staff-account-limits" data-article="staff-account-limits">Staff Account Limits by Plan</a></li>

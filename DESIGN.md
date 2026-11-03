@@ -207,10 +207,6 @@ components:
     padding: "14px 32px"
   button-primary-hover:
     backgroundColor: "{colors.sea-glass-teal-hover}"
-  button-outline-on-dark:
-    textColor: "{colors.paper-white}"
-    rounded: "{rounded.md}"
-    padding: "14px 32px"
   button-plan:
     backgroundColor: "{colors.sea-glass-teal}"
     textColor: "{colors.deep-harbour-navy}"
@@ -338,7 +334,7 @@ Every size in use is a token in the frontmatter; the groups below say where each
 
 ## Elevation & Depth
 
-Flat at rest. Depth comes from the navy/mist/white tonal layering and 1px Tide Line borders. Shadows are used sparingly and are teal-tinted, not grey, except on the nav bar and mobile drawer.
+Flat at rest. Depth comes from the navy/mist/white tonal layering and 1px Tide Line borders. Shadows are used sparingly and are teal-tinted, not grey, except on the nav bar, the mobile menu panel and the docs drawer, which sit over content.
 
 ### Shadow Vocabulary
 - **Teal glow** (`box-shadow: 0 4px 24px rgba(61,189,168,.15)`): feature-card hover.
@@ -363,7 +359,7 @@ Friendly and dependable: solid, rounded and clearly clickable.
 - **Primary:** Sea Glass Teal fill, navy 700-weight text (6.0:1), 14px × 32px padding.
 - **Hover:** fills to the lighter Sea Glass Teal Hover and lifts 1px (`transition: background .15s, transform .1s`); no lift under reduced motion.
 - **Focus:** 2px outline at 2px offset in Teal Ink (Teal Light on navy and the hero), shared by every link, button and input.
-- **Outline (on dark):** transparent with a 2px white border at 40% opacity; border goes solid white on hover. Used beside the primary button in the hero.
+- **Hero pair:** the hero shows two primary buttons side by side (Get Professional, Download Free). Both are deliberately the same weight; there is no outline variant.
 - **Plan button:** full-width teal block at the foot of each pricing card (12px padding, 0.9rem); hover drops opacity to 85%. The outline variant uses a 2px Tide Line border with navy text.
 - **Nav CTA:** smaller teal pill-ish button (6px radius, 8px × 18px) in the nav bar.
 

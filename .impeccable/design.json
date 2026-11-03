@@ -486,14 +486,6 @@
       "css": ".ds-btn-primary { display: inline-block; background: #3DBDA8; color: #1E2D3D; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; font-size: 1rem; transition: background .15s, transform .1s; } .ds-btn-primary:hover { background: #64CDBB; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #1B6F61; outline-offset: 2px; }"
     },
     {
-      "name": "Outline Button (on dark)",
-      "kind": "button",
-      "refersTo": "button-outline-on-dark",
-      "description": "Secondary action beside the primary button on navy or the hero gradient.",
-      "html": "<div style=\"background:#1E2D3D;padding:16px;display:inline-block;border-radius:8px\"><a class=\"ds-btn-outline\" href=\"#\">See Pricing</a></div>",
-      "css": ".ds-btn-outline { display: inline-block; background: transparent; color: #fff; padding: 14px 32px; border-radius: 8px; border: 2px solid rgba(255,255,255,.4); text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; font-size: 1rem; transition: border-color .15s; } .ds-btn-outline:hover { border-color: #fff; } .ds-btn-outline:focus-visible { outline: 2px solid #3DBDA8; outline-offset: 2px; }"
-    },
-    {
       "name": "Top Navigation",
       "kind": "nav",
       "refersTo": "nav-bar",
