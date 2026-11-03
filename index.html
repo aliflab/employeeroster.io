@@ -88,6 +88,7 @@
     }
   }
   </script>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
   <style>
@@ -107,6 +108,7 @@
       letter-spacing: .5px; text-transform: uppercase; padding: 5px 14px;
       border-radius: 20px; margin-bottom: 24px;
     }
+    html:not(.js) .typing-cursor { display: none; }
     .typing-cursor {
       display: inline-block; color: var(--teal-light); font-weight: 300;
       animation: blink .7s step-end infinite;
@@ -260,7 +262,7 @@
 <main id="main" tabindex="-1">
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge"><span id="typing-text"></span><span class="typing-cursor" aria-hidden="true">|</span></div>
+  <div class="hero-badge"><span id="typing-text">WordPress Plugin</span><span class="typing-cursor" aria-hidden="true">|</span></div>
   <h1>Staff rostering that lives<br><span>inside your WordPress.</span></h1>
   <p>Schedule shifts, track attendance, manage leave, and run payroll, all from your WP Admin. Your data, your server, no SaaS fees.</p>
   <div class="hero-btns">
@@ -272,9 +274,9 @@
 
 <!-- TRUST BAR -->
 <div class="trust">
-  <div class="trust-item">🔒 <strong>Self-hosted</strong>: your data stays on your server</div>
-  <div class="trust-item">⚡ <strong>No external APIs</strong>: no SaaS dependency</div>
-  <div class="trust-item">🌐 <strong>WordPress 5.8+</strong> · PHP 7.4+ · MySQL 5.7+</div>
+  <div class="trust-item"><span aria-hidden="true">🔒</span> <strong>Self-hosted</strong>: your data stays on your server</div>
+  <div class="trust-item"><span aria-hidden="true">⚡</span> <strong>No external APIs</strong>: no SaaS dependency</div>
+  <div class="trust-item"><span aria-hidden="true">🌐</span> <strong>WordPress 5.8+</strong> · PHP 7.4+ · MySQL 5.7+</div>
 </div>
 
 <!-- FEATURES -->
@@ -287,87 +289,87 @@
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">📅</div>
+        <div class="feature-icon" aria-hidden="true">📅</div>
         <h3>Shift Scheduling</h3>
         <p>Create shifts with direct assignment or open slots. Employees self-assign from open shifts up to the slot limit. Weekly roster and monthly calendar views. Copy an existing week to rebuild schedules instantly.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⏱</div>
+        <div class="feature-icon" aria-hidden="true">⏱</div>
         <h3>Clock In / Clock Out</h3>
         <p>Staff clock in from the WP dashboard or the frontend portal. Break deductions and shift linking included. One active session per user enforced; managers can edit or correct any record.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🏖</div>
+        <div class="feature-icon" aria-hidden="true">🏖</div>
         <h3>Leave Management</h3>
         <p>Annual and sick leave requests with a manager approval workflow. Optional balance tracking auto-accrues entitlements per job type through the year, with manual adjustment support.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon" aria-hidden="true">📊</div>
         <h3>Timesheets &amp; Payroll</h3>
         <p>Weekly summaries with hours worked, pay rate calculations, optional tax, and a configurable daily labour budget. Weekend penalty rate multipliers apply automatically to Saturday and Sunday shifts.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔄</div>
+        <div class="feature-icon" aria-hidden="true">🔄</div>
         <h3>Shift Swap Requests</h3>
         <p>Employees request swaps with an optional target employee and reason. Managers review and approve; shift assignments update automatically on approval.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📆</div>
+        <div class="feature-icon" aria-hidden="true">📆</div>
         <h3>Staff Availability</h3>
         <p>Each employee sets weekly recurring availability with day-level time ranges. Availability hints appear inside the shift assignment modal (Available, Unavailable, or Not Set) so managers avoid conflicts without leaving the screen.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">✉️</div>
+        <div class="feature-icon" aria-hidden="true">✉️</div>
         <h3>Email Notifications</h3>
         <p>Automated plain-text emails via <code>wp_mail()</code> for new accounts, shift assignments, timing changes, and leave decisions. Available on every version, including the free WordPress.org version, with full login credentials and setup links.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📱</div>
+        <div class="feature-icon" aria-hidden="true">📱</div>
         <h3>Frontend Employee Portal</h3>
         <p>Five shortcode pages (Dashboard, My Shifts, Leave, Clock In/Out, and Availability) let staff manage everything without ever touching WP Admin.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔒</div>
+        <div class="feature-icon" aria-hidden="true">🔒</div>
         <h3>Role-Based Access</h3>
         <p>In the free WordPress.org version you run the roster yourself from your own WordPress Administrator account — there is no manager or supervisor role of any kind. Paid plans add dedicated Manager and Supervisor roles with granular capabilities, so you can hand day-to-day roster management to a staff member without making them a full WordPress Administrator. Profile Mode, which blocks employee and supervisor WordPress logins entirely while keeping email notifications active, is available in every version including free.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🌐</div>
+        <div class="feature-icon" aria-hidden="true">🌐</div>
         <h3>Public Roster</h3>
         <p>Embed a read-only roster on any public page with the <code>[emp_roster_public]</code> shortcode. No login required. Ideal for displaying schedules to customers or walk-in staff.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📤</div>
+        <div class="feature-icon" aria-hidden="true">📤</div>
         <h3>Exports &amp; Reports</h3>
         <p>Export timesheet data to CSV for payroll processing. Generate a colour-coded, print-ready PDF of the current roster directly from the manager toolbar.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⏳</div>
+        <div class="feature-icon" aria-hidden="true">⏳</div>
         <h3>Weekly Hour Limits</h3>
         <p>Configure weekly hour thresholds per job type: Full-time 38h, Part-time 24h, Casual unlimited. Employees approaching or exceeding their limit are flagged in the roster view.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">👤</div>
+        <div class="feature-icon" aria-hidden="true">👤</div>
         <h3>Staff Deactivation</h3>
         <p>Deactivate employees without deleting their records. Deactivated staff are hidden from the roster and shift assignments, their frontend access is revoked, and pending leave and swap requests are cancelled automatically. Reactivate any time with a fresh welcome email.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📈</div>
+        <div class="feature-icon" aria-hidden="true">📈</div>
         <h3>Weekend Penalty Rates</h3>
         <p>Configure Saturday and Sunday pay multipliers that automatically apply to shift earnings in timesheets and daily labour cost calculations. Keeps your payroll accurate for businesses with weekend penalty award rates.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🧙</div>
+        <div class="feature-icon" aria-hidden="true">🧙</div>
         <h3>Setup Wizard</h3>
         <p>A guided setup wizard walks you through company details, locations, departments, employment settings, and key features when you first activate the plugin — so you're ready to build your first roster in minutes.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🏷️</div>
+        <div class="feature-icon" aria-hidden="true">🏷️</div>
         <h3>Skill Tags</h3>
         <p>Tag employees with skills (e.g. "Barista", "First Aid", "Forklift Licence") so managers can quickly identify the right person for each shift. Skill tags appear on staff profiles and in the shift assignment modal.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔐</div>
+        <div class="feature-icon" aria-hidden="true">🔐</div>
         <h3>Employee Login Logs</h3>
         <p>Track successful logins, logouts, and failed login attempts for roster employees. Filter by event type, date range, or staff member. Includes IP address, device detection, and a configurable auto-delete retention policy.</p>
       </div>
@@ -775,6 +777,8 @@
       cursor.style.display = 'none';
       return;
     }
+
+    el.textContent = '';
 
     function type() {
       if (i < text.length) {

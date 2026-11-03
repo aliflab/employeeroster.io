@@ -23,6 +23,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="assets/logo/favicon/android-chrome-512x512.png" />
   <link rel="manifest" href="assets/logo/favicon/site.webmanifest" />
   <meta name="theme-color" content="#3DBDA8" />
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="assets/site.css" />
   <script src="assets/site.js" defer></script>
   <style>
@@ -55,9 +56,11 @@
     .search-clear {
       position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
       background: none; border: none; cursor: pointer; font-size: 1rem;
-      color: var(--muted); display: none; line-height: 1; padding: 2px 4px;
+      color: var(--muted); display: none; line-height: 1; padding: 0;
+      width: 24px; height: 24px; border-radius: 4px; align-items: center; justify-content: center;
     }
-    .search-clear.visible { display: block; }
+    .search-clear:hover { color: var(--dark); background: var(--border); }
+    .search-clear.visible { display: flex; }
     .sidebar-nav { padding: 4px 0 24px; }
     .sidebar-group { border-bottom: 1px solid var(--border); }
     .sidebar-group-toggle {
@@ -97,8 +100,9 @@
     .doc-article img.img-gap { margin-bottom: 20px; }
 
     /* ── ARTICLES ── */
-    .doc-article { max-width: 780px; padding: 48px 40px; display: none; }
-    .doc-article.active { display: block; }
+    .doc-article { max-width: 780px; padding: 48px 40px; }
+    .js .doc-article { display: none; } /* without JavaScript every article stays readable, one after another */
+    .js .doc-article.active { display: block; }
     .doc-article h1 { font-size: 1.75rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; letter-spacing: -.3px; line-height: 1.2; }
     .doc-article h2 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
     .doc-article h3 { font-size: .98rem; font-weight: 700; color: var(--dark); margin: 20px 0 6px; }
@@ -389,11 +393,11 @@
         </table>
       </div>
       <div class="callout">
-        <span class="callout-icon">ℹ️</span>
+        <span class="callout-icon" aria-hidden="true">ℹ️</span>
         <div class="callout-body">The free and premium versions have <strong>identical</strong> requirements upgrading to a paid plan does not require a newer version of WordPress or PHP.</div>
       </div>
       <div class="callout">
-        <span class="callout-icon">ℹ️</span>
+        <span class="callout-icon" aria-hidden="true">ℹ️</span>
         <div class="callout-body">Most modern WordPress hosting satisfies these requirements. If you are unsure, check your hosting control panel under PHP version and database settings before activating the plugin.</div>
       </div>
     </article>
@@ -416,7 +420,7 @@
         <li>Add your staff at <strong>EmpRoster &gt; Staff &gt; + Add Staff</strong>, then create your first shift at <strong>EmpRoster &gt; Shifts &gt; + New Shift</strong>.</li>
       </ol>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The five frontend pages created on activation are: <strong>EmpRoster – Dashboard</strong>, <strong>– My Shifts</strong>, <strong>– Leave</strong>, <strong>– Clock In/Out</strong>, and <strong>– Availability</strong>. Their addresses are listed in <strong>Settings &gt; Frontend Pages</strong>. If you delete any of these pages, you can recreate them by placing the relevant shortcode on any WordPress page. See <em>Shortcode Pages</em> for the full shortcode list.</div>
       </div>
     </article>
@@ -441,11 +445,11 @@
       </div>
       <p>The free WordPress.org version runs a 7-step wizard the Leave Management step is not included, because the leave module is a paid feature.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">To run the wizard again at any time, go to <strong>EmpRoster &gt; Settings</strong> and click <strong>Setup Wizard</strong> in the top right of the page.</div>
       </div>
       <div class="callout">
-        <span class="callout-icon">✅</span>
+        <span class="callout-icon" aria-hidden="true">✅</span>
         <div class="callout-body">After the wizard, your first two jobs are: add your staff (<strong>EmpRoster &gt; Staff &gt; + Add Staff</strong>) and create your first shift (<strong>EmpRoster &gt; Shifts &gt; + New Shift</strong>).</div>
       </div>
     </article>
@@ -466,7 +470,7 @@
         <img src="assets/docs/employee_login.webp" alt="Employees log in" width="1530" height="737" loading="lazy" decoding="async">
       </ol>
       <div class="callout">
-        <span class="callout-icon">✅</span>
+        <span class="callout-icon" aria-hidden="true">✅</span>
         <div class="callout-body">All five steps together typically take under 15 minutes on a fresh install. You can return to Settings at any time to adjust departments, locations, payroll, and notification options.</div>
       </div>
     </article>
@@ -505,7 +509,7 @@
       <p>WordPress briefly deactivates the plugin during the file-replacement step of an update. This is standard WordPress behaviour and is handled transparently no manual deactivation or reactivation is required before or after the update. The plugin reactivates automatically once the new files are in place.</p>
       <p>When the updated plugin loads for the first time after a version change, it runs an internal upgrade routine that applies any required database schema migrations. This routine is safe to run on a live site: it is idempotent, runs only when a version increment is detected, and does not modify or delete existing data.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">No manual steps are required before or after applying a plugin update. All settings, staff accounts, shifts, and historical records are preserved automatically. If you run a staging/production workflow, test the update on staging before applying it to the live site.</div>
       </div>
 
@@ -522,7 +526,7 @@
       <h1>Custom Roles Overview</h1>
       <p>The paid plans register three custom WordPress roles on activation. These roles determine what each user can see and do within the plugin, and they also control the WordPress admin experience; roster users see only the Employee Roster menu, not the full WordPress dashboard.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>Free version:</strong> the WordPress.org version registers the Roster Employee role only. There is no manager or supervisor role of any kind you run the roster yourself from your own WordPress Administrator account, which has full access to every roster feature. Paid plans add dedicated Manager and Supervisor roles so you can delegate roster management to other staff members without granting them full WordPress Administrator access.</div>
       </div>
       <div class="table-wrap">
@@ -545,7 +549,7 @@
       </ul>
       <p>WP Administrators retain full access to all Employee Roster features in addition to their normal WordPress capabilities. Administrators are not included as roster staff by default. See <em>Admin Inclusion Settings</em> to change this.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Role assignment happens at the WordPress user level. When you create a staff member through <strong>EmpRoster &gt; Staff &gt; + Add Staff</strong>, the plugin automatically assigns the correct WordPress role to the newly created user account.</div>
       </div>
     </article>
@@ -663,7 +667,7 @@
         <li>No administrator is removed automatically removal requires each admin to manually disable their own personal toggle</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">This design ensures that turning off the global setting is non-destructive it does not silently remove managers from active rosters or break existing shift assignments.</div>
       </div>
 
@@ -712,7 +716,7 @@
       <h2>Why this matters</h2>
       <p>Showing the full WordPress admin to roster users would expose information about other installed plugins, site settings, and WordPress internals that roster staff have no reason to see. Hiding this UI reduces confusion and prevents accidental disclosure of your site configuration.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">WP Administrators always see the full WordPress admin interface regardless of this behaviour. This setting applies only to the three custom roster roles: Manager, Supervisor, and Employee.</div>
       </div>
     </article>
@@ -746,11 +750,11 @@
         <li><strong>Conflict check.</strong> The server refuses to create a shift that double-books someone, or that rosters someone on a day they have approved leave. You get a message naming the clash.</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>One record per person.</strong> Assigning several people to one direct shift creates one independent shift record per person, so editing or deleting one person's shift never disturbs anyone else's. Open shifts are the exception: they are a single shared record whose slot limit controls how many people can join.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>No shift limit:</strong> every version, including the free version on WordPress.org, supports an unlimited number of shifts.</div>
       </div>
       <img src="assets/docs/add_new_shift.webp" alt="Add new shift" width="1568" height="872" loading="lazy" decoding="async">
@@ -778,7 +782,7 @@
       <p style="margin-top: 20px;"><strong>Admin/Manager: Accepting a request for an open shift:</strong></p>
       <img src="assets/docs/admin_open_shift_accept.webp" alt="Employee shifts request" width="1512" height="743" loading="lazy" decoding="async">
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Use <strong>Direct</strong> when you know exactly who is working a shift. Use <strong>Open</strong> when you need to fill a slot and want employees to self-select, for example for casual or on-call positions.</div>
       </div>
     </article>
@@ -821,7 +825,7 @@
       <h2>Reviewing requests</h2>
       <p>Requests are reviewed under <strong>EmpRoster &gt; Requests &gt; Open Shift Requests</strong>, which lists every request pending, approved, declined, cancelled, expired with <strong>Approve</strong> and <strong>Decline</strong> buttons on the pending ones.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">When a manager approves the request that fills the <strong>last slot</strong>, any remaining pending requests for that shift are <strong>declined automatically</strong> and the manager is told how many.</div>
       </div>
       <img src="assets/docs/open_with_approval.webp" alt="Open shift with approval" width="1560" height="860" loading="lazy" decoding="async">
@@ -848,7 +852,7 @@
         <li>A shift whose only assignees have all been deactivated is not copied at all.</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Copied shifts are ordinary shifts they can be edited or deleted individually afterwards, and the same conflict and leave checks apply as when creating a shift by hand.</div>
       </div>
     </article>
@@ -883,7 +887,7 @@
       <h2>Turning it on or off</h2>
       <p>When you turn Shift Confirmation on, existing assignments are treated as accepted, so nobody is asked to confirm shifts already on the roster.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Turning Shift Confirmation off hides every confirmation status and stops the related emails. Responses already given are kept and reappear if you turn it back on. While it is off, new assignments are recorded as accepted. The same applies if a paid licence lapses: stored responses are kept and return when you renew.</div>
       </div>
     </article>
@@ -894,14 +898,14 @@
       <h2>Editing a Shift</h2>
       <p>Clicking a shift opens its detail card. Managers get <strong>Edit</strong>, <strong>Assign</strong> and <strong>Delete</strong>. All fields set at creation (department, location, start/end, assignment type, break duration, slot limit, notes, and job sheet attachment) are fully editable after saving. Reassigning employees (adding or removing assignees) can also be done from the edit modal at any time.</p>
       <div class="callout">
-        <span class="callout-icon">✉️</span>
+        <span class="callout-icon" aria-hidden="true">✉️</span>
         <div class="callout-body"><strong>Timing change notification:</strong> If you change a shift's start or end time, all currently assigned employees automatically receive a Shift Timing Change email (if email notifications are enabled). This fires on save, so employees are notified immediately. If <a href="#shift-confirmation" data-article="shift-confirmation">Shift Confirmation</a> is on, assigned staff are also asked to confirm the new time.</div>
       </div>
       <h2>Deleting a Shift</h2>
       <p>The delete button is available inside the shift modal. Deleting a shift permanently removes the shift record and all its assignment records. This action cannot be undone.</p>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body">Deleting a shift removes all employee assignments for that shift. If you only need to remove one employee from a shift, use the reassignment controls in the edit modal rather than deleting the whole shift.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span>Deleting a shift removes all employee assignments for that shift. If you only need to remove one employee from a shift, use the reassignment controls in the edit modal rather than deleting the whole shift.</div>
       </div>
     </article>
 
@@ -938,11 +942,11 @@
       <h2>Clock history</h2>
       <p>Below the dial sits the history <strong>My Clock History</strong> for staff, <strong>Recent Attendance</strong> for managers and supervisors (most recent 100 records) showing clock in, clock out, break, net hours, notes and status.</p>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Anti-abuse lockout:</strong> completing <strong>three clock-in/out cycles within 30 minutes</strong> locks clock-in for 30 minutes. The panel shows a lock with the minutes remaining.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span><strong>Anti-abuse lockout:</strong> completing <strong>three clock-in/out cycles within 30 minutes</strong> locks clock-in for 30 minutes. The panel shows a lock with the minutes remaining.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Managers can always view and correct attendance records regardless of whether self clock-in/out is enabled. The Self-Clock Setting only controls employee-facing access.</div>
       </div>
       <img src="assets/docs/clock_in.webp" alt="Clock in" width="1553" height="762" loading="lazy" decoding="async">
@@ -953,7 +957,7 @@
       <span class="plan-badge plan-starter">Starter+</span>
       <p>The <strong>Allow self clock-in/out</strong> setting in <strong>EmpRoster &gt; Settings &gt; Roster &amp; Attendance</strong> controls whether employees can record their own attendance. It is enabled by default.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">This setting only applies on the <strong>Starter plan and above</strong>. In the free version, the Attendance feature is unavailable entirely and this setting has no effect.</div>
       </div>
       <h2>When enabled</h2>
@@ -970,7 +974,7 @@
         <li>Managers can still record and correct attendance entries on behalf of staff.</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Disabling self clock-in/out does not affect existing attendance records. Managers always retain full access to view and edit all attendance entries regardless of this setting.</div>
       </div>
     </article>
@@ -987,7 +991,7 @@
         <li>Review the resulting hours and earnings per employee in Timesheets</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Supervisors can <em>view</em> attendance records but cannot edit them editing requires the <code>emr_edit_attendance</code> capability, which is granted to Managers and WP Administrators only.</div>
       </div>
     </article>
@@ -1048,11 +1052,11 @@
         <li>Employees can <strong>Withdraw</strong> their own pending requests at any time before a decision is made</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Employees cannot request leave starting in the past. Managers can, so they are able to record leave after the fact.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">When leave balances are enabled <span class="plan-badge plan-starter">Starter+</span>, the annual leave form shows how many days the employee has and warns them before they overspend and the server refuses the request if they do.</div>
       </div>
 
@@ -1067,7 +1071,7 @@
       </ul>
       <p>Approving annual or sick leave deducts from the employee's balance where balances are enabled; declining or deleting previously-approved leave restores it.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Approved leave appears on the roster grid and month calendar as an <strong>amber card</strong>, and blocks anyone from being rostered on those days. Supervisors can see leave requests but cannot approve them.</div>
       </div>
 
@@ -1106,7 +1110,7 @@
         <li><strong>Decline</strong> the request is rejected; the slot remains available for others</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">When a manager approves the request that fills the <strong>last slot</strong>, all remaining pending requests for that shift are declined automatically and the manager is told how many. Fully-filled shifts disappear from the Open Shifts row so nobody can claim beyond the limit.</div>
       </div>
 
@@ -1129,11 +1133,11 @@
       </ul>
       <p>If no cover person is specified, the request is open, meaning any eligible employee could potentially take the shift. The submitted request immediately appears in the Shift Swap Requests section with a <strong>Pending</strong> status, and employees can <strong>Withdraw</strong> their own pending requests.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Swaps cannot be requested for shifts on a past date, and a swap that would put someone on a day they have approved leave is refused.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">In the free version and on the Starter plan, the Request Swap button is hidden from shift detail views. No upgrade prompt is shown to employees; the feature is silently omitted for plans that do not support it.</div>
       </div>
 
@@ -1154,7 +1158,7 @@
         <li><strong>Delete</strong> removes the request after a confirmation prompt</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The Shift Swap Requests section is only visible to Managers and WP Administrators. Supervisors with <code>emr_approve_leave</code> capability can see leave requests but swap requests require manager-level access.</div>
       </div>
     </article>
@@ -1164,7 +1168,7 @@
       <span class="plan-badge plan-starter">Starter+</span>
       <p>Leave balance tracking requires the <strong>Starter plan or above</strong>. Turn on <strong>Settings &gt; Leave &amp; Accrual &gt; Leave Balances</strong> to track entitlements per person; each employee then has annual and sick leave balances tracked per calendar year, accruing against configured entitlements and reducing automatically when leave is approved.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Accrual is calculated lazily the first time a balance is read after enabling the setting, the whole year to date is back-filled in one go. Earlier years are not back-filled: a mid-year opt-in starts from the current year.</div>
       </div>
       <img src="assets/docs/employee_leave_balances.webp" alt="Employees leave balances" width="1650" height="447" loading="lazy" decoding="async">
@@ -1212,7 +1216,7 @@
       <h2>When no availability is set</h2>
       <p>If an employee has not set any availability at all, the shift assignment modal shows their status as <strong>Not set</strong>. This is distinct from <strong>Unavailable</strong>, which means the employee has recorded availability but it does not cover the shift's day and time. See <em>Availability Hints in Shift Modal</em> for how this information is surfaced to managers.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Availability data is advisory only; it does not block a manager from assigning an employee to a shift outside their stated availability. It is surfaced as a hint inside the shift modal to help managers make informed scheduling decisions.</div>
       </div>
     </article>
@@ -1231,12 +1235,12 @@
         </table>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Availability indicators are hints only and do not prevent assignment. If you tick someone who is marked unavailable on that weekday, a warning naming them appears and the save pauses click <strong>Save</strong> again to assign them anyway.</div>
       </div>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body">Availability is advisory, but <strong>conflicts are not</strong>. The server refuses to create a shift that double-books someone or that rosters someone on a day they have approved leave, and names the clash in the error message.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span>Availability is advisory, but <strong>conflicts are not</strong>. The server refuses to create a shift that double-books someone or that rosters someone on a day they have approved leave, and names the clash in the error message.</div>
       </div>
     </article>
 
@@ -1264,12 +1268,12 @@
       <h2>Passwords</h2>
       <p>A password is generated for the new account. On paid plans it is shown to you in an <strong>Account Created</strong> dialog with a <strong>Copy</strong> button, so you can hand it over directly; the employee can change it after signing in.</p>
       <div class="callout">
-        <span class="callout-icon">✉️</span>
+        <span class="callout-icon" aria-hidden="true">✉️</span>
         <div class="callout-body"><strong>Welcome email:</strong> If email notifications are enabled, a welcome email is sent to the new employee automatically. On <strong>paid plans</strong> it is the full onboarding email username, temporary password and a secure link to set their own password. The free WordPress.org version sends a simplified welcome email without credentials.</div>
       </div>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Role availability.</strong> Employee accounts are unlimited on every version. The free version has no Manager or Supervisor role at all you run the roster from your own WordPress Administrator account. Supervisors are capped at <strong>2 on Starter</strong> and unlimited on Professional+. The Manager role can only be assigned on <strong>Professional+</strong>; on Starter, include your administrator account in the roster as a Manager via Admin Visibility instead. Only a WordPress administrator can create, promote, demote or deactivate a Manager account. See <em>Staff Account Limits by Plan</em>.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span><strong>Role availability.</strong> Employee accounts are unlimited on every version. The free version has no Manager or Supervisor role at all you run the roster from your own WordPress Administrator account. Supervisors are capped at <strong>2 on Starter</strong> and unlimited on Professional+. The Manager role can only be assigned on <strong>Professional+</strong>; on Starter, include your administrator account in the roster as a Manager via Admin Visibility instead. Only a WordPress administrator can create, promote, demote or deactivate a Manager account. See <em>Staff Account Limits by Plan</em>.</div>
       </div>
     </article>
 
@@ -1302,7 +1306,7 @@
       <h2>Using skill tags when assigning shifts</h2>
       <p>When a manager opens the shift assignment modal to add employees to a shift, each eligible employee's skill tags are displayed as small chips alongside their name and availability indicator. This allows managers to identify qualified staff at a glance without leaving the modal.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Skill tags are display-only in the assignment modal they do not restrict which employees can be assigned to a shift. A manager can assign any employee regardless of their tags.</div>
       </div>
       <p>Skill tags also drive the <strong>All Skills</strong> filter in the roster toolbar and are included in the staff directory CSV export.</p>
@@ -1337,7 +1341,7 @@
       <p>No automated email is sent to the employee upon deactivation. Deactivation is an administrative action; whether to communicate it to the affected employee is left to the manager's discretion.</p>
 
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Deactivation is the recommended action for employees who have left the organisation but whose historical records timesheets, payroll, attendance must be retained for compliance or reporting purposes.</div>
       </div>
 
@@ -1362,8 +1366,8 @@
         <li>All availability records for that employee</li>
       </ul>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>This action cannot be undone.</strong> Deleting a user from WordPress permanently removes all their historical timesheet, attendance, leave, and shift data from Employee Roster. If you need to retain any of this for payroll or compliance, <strong>deactivate</strong> the account instead.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span><strong>This action cannot be undone.</strong> Deleting a user from WordPress permanently removes all their historical timesheet, attendance, leave, and shift data from Employee Roster. If you need to retain any of this for payroll or compliance, <strong>deactivate</strong> the account instead.</div>
       </div>
     </article>
 
@@ -1384,15 +1388,15 @@
       <h2>Team timesheets (managers and supervisors)</h2>
       <p>Managers and supervisors see the whole team one row per person with pay rate, work hours, leave days, gross earnings and, when tax is on, tax amount and net earnings. <strong>Details →</strong> drills into one person's periods and leave.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>Reveal Pay toggle:</strong> money columns are hidden behind a <strong>Reveal Pay</strong> toggle, so you can open the page in front of other people without exposing everyone's earnings.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>CSV export:</strong> the team timesheet export (<strong>Export</strong> / <strong>Export All</strong>) requires the <strong>Starter plan or above</strong>. Exporting your <em>own</em> timesheet is available on every version, including the free version.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">When self clock-in is switched off, hours are derived from the scheduled shift times instead of clock sessions the timesheet layout is otherwise identical.</div>
       </div>
     </article>
@@ -1422,7 +1426,7 @@
       <span class="plan-badge plan-starter">Starter+</span>
       <p>Configure Saturday and Sunday loadings in <strong>EmpRoster &gt; Settings &gt; Payroll</strong>. Penalty Rates are <strong>off by default</strong>; when switched on, the configured loading is applied to all shift earnings that fall on that day affecting timesheet session rows, grouped totals, the roster's daily cost figures, and CSV exports. See <em>Penalty Rates</em> for full configuration details.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Pay rates are set per employee in the Staff screen.</div>
       </div>
     </article>
@@ -1451,7 +1455,7 @@
       </div>
       <p>Set either rate to <strong>0%</strong> to remove the loading for that day without turning payroll off entirely, or switch Penalty Rates off to disable both at once.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Penalty rates apply site-wide to all employees regardless of job type. Per-employee override rates are not supported; adjust the site-wide rate if a different loading is needed for a pay period. The loading affects timesheet earnings and the roster's daily cost figures.</div>
       </div>
     </article>
@@ -1469,7 +1473,7 @@
       </ul>
       <p>The rate is configured in <strong>EmpRoster &gt; Settings &gt; Payroll &gt; Tax Rate</strong> and defaults to 0%. Setting the rate to 0 produces no deduction without needing to toggle the setting off.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">This is a flat percentage, not a progressive tax table. It is intended for estimating take-home pay, not for producing statutory payroll filings.</div>
       </div>
     </article>
@@ -1487,7 +1491,7 @@
       </ul>
       <p>The target is a single site-wide value configured under <strong>Daily Budget Target</strong>. Enable <strong>Daily Budget Target by Day</strong> to set a different target for each weekday instead useful where weekends are deliberately busier or quieter than midweek.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The daily budget figures also feed the <strong>Budget</strong> card on the analytics dashboard, which compares the estimated cost for the selected period against the summed daily targets.</div>
       </div>
     </article>
@@ -1521,11 +1525,11 @@
       </ul>
       <p>The browser's print dialog launches automatically. Choose <strong>Save as PDF</strong> in the print destination to generate a PDF file using the browser's built-in PDF printer. No additional software is needed.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Interactive buttons, pay rates and cost figures are <strong>stripped from the printout</strong>. The exported roster is a shift schedule only, suitable for sharing with employees or pinning up in a break room.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The button appears in the <strong>week</strong> and <strong>month</strong> views only there is no Print PDF in Day view. The plugin itself does not generate a PDF file: it produces a print-formatted page and hands off to your browser's print dialogue, where you choose "Save as PDF".</div>
       </div>
     </article>
@@ -1556,7 +1560,7 @@
       </div>
       <p>Cards you have no data for are hidden: Attendance Issues only appears when self clock-in is on, Leave when the leave module is on, Payroll Estimate when you are allowed to see pay, and Budget when daily budgeting is on.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>Reorderable.</strong> You can drag the cards or use the arrow buttons in each card's corner to rearrange them. The order is saved <em>per user</em>, so each manager can arrange their own dashboard.</div>
       </div>
     </article>
@@ -1577,7 +1581,7 @@
         </table>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">CSV exports respect the filters and period currently on screen set the date range and any employee filter first, then export. The login logs download uses exactly the filters shown on the Login Logs page.</div>
       </div>
       <p>See <em>Print PDF</em> for details of the printable roster.</p>
@@ -1616,7 +1620,7 @@
         <li>Notifications are triggered server-side by manager actions and do not require the employee to be logged in when the event occurs they keep arriving even when employee login is switched off via Profile Mode</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">If emails are not being delivered, check that your WordPress site has a working mail sending configuration. Many hosts require an SMTP plugin (such as WP Mail SMTP or Gravity SMTP) to route outgoing mail reliably.</div>
       </div>
     </article>
@@ -1660,7 +1664,7 @@
         <li>Location</li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Only start/end time changes trigger this email. Editing other shift fields (title, location, notes, break minutes, colour) does not send a notification to assignees.</div>
       </div>
     </article>
@@ -1677,7 +1681,7 @@
         <li>Decision: <strong>Approved</strong> or <strong>Declined</strong></li>
       </ul>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Leave decision emails require the <strong>Starter plan or above</strong>, since the leave module itself is a paid feature.</div>
       </div>
     </article>
@@ -1705,7 +1709,7 @@
       <p>The addresses of these pages are listed under <strong>EmpRoster &gt; Settings &gt; Frontend Pages</strong>. You can move the shortcodes onto any page or post you like, and if any of the auto-created pages are deleted you can re-create them by placing the corresponding shortcode on a new page.</p>
       <p>The same JavaScript app that powers the WP Admin views also powers the frontend shortcode pages; only the rendered content differs based on the page context.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Visitors who are not logged in see a <em>Please log in to access the roster</em> prompt rather than the page contents, and deactivated staff are told their access has been revoked. The only shortcode that renders without a login is the public roster shortcode <span class="plan-badge plan-pro">Professional+</span>.</div>
       </div>
     </article>
@@ -1726,8 +1730,8 @@
         <li>Let walk-in staff check the roster without signing in</li>
       </ul>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body">In the free version and on the Starter plan, the shortcode does not render the public roster even if the toggle was previously enabled the public view only activates on Professional or Business. Note also that employee names and shift details are visible to <strong>anyone</strong> who can reach the page; put it behind a password-protected page if that is not intended.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span>In the free version and on the Starter plan, the shortcode does not render the public roster even if the toggle was previously enabled the public view only activates on Professional or Business. Note also that employee names and shift details are visible to <strong>anyone</strong> who can reach the page; put it behind a password-protected page if that is not intended.</div>
       </div>
     </article>
 
@@ -1750,11 +1754,11 @@
       </div>
       <p>Departments and locations have their own cards see <em>Settings: Departments</em> and <em>Settings: Locations</em>. Both are unlimited on every version and plan.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Where a setting belongs to a higher tier, it is usually shown with a small padlock and an upgrade link rather than hidden, so you can see what is available. If a site drops to a lower plan, the affected settings are switched off automatically rather than silently continuing to apply.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The free WordPress.org version shows 6 settings cards (General, Departments, Locations, Employment Types, Roles, Frontend Pages). Paid plans show 11, adding Roster &amp; Attendance, Leave &amp; Accrual, Payroll, Integrations, Job Sheet Attachments and Employee Login Logs.</div>
       </div>
     </article>
@@ -1779,11 +1783,11 @@
       <p>Departments are managed in the <strong>Departments</strong> card of <strong>EmpRoster &gt; Settings</strong>. Each department entered here becomes available as a selectable option in the shift creation form, allowing shifts to be organised by team or business function. The department is also what appears as the shift's label on roster cards.</p>
       <p>One department, <em>General Department</em>, is seeded on activation. You can add as many as you need there is no limit on any version or plan.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Renaming a department in settings does not retroactively update existing shifts those shifts retain the department name that was in use when they were created.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">One exception: an <strong>unlicensed or lapsed premium</strong> installation is limited to 1 department and 1 location until a licence is restored. The free WordPress.org plugin has no such limit.</div>
       </div>
     </article>
@@ -1792,7 +1796,7 @@
       <h1>Settings: Locations</h1>
       <p>Locations are managed in the <strong>Locations</strong> card of <strong>EmpRoster &gt; Settings</strong>. Each location has a name and a colour. The name appears in shift forms and the roster view; the colour visually distinguishes shifts assigned to that location in calendar views. You can add as many locations as you need there is no limit on any version or plan.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Each location requires a unique name and a hex colour. The default location (<em>Main Location</em>, <code>#2563EB</code>) is seeded on activation. Deleting a location that is still referenced by existing shifts will leave those shifts with the original location name intact the name is stored on the shift record, not resolved dynamically.</div>
       </div>
     </article>
@@ -1802,7 +1806,7 @@
       <span class="plan-badge plan-starter">Starter+</span>
       <p>Navigate to <strong>EmpRoster &gt; Settings &gt; Leave &amp; Accrual</strong> to configure leave management and annual entitlements. The leave module and balance tracking both require the <strong>Starter plan or above</strong>, and this card is not present in the free version at all.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The Leave menu item is now called <strong>Requests</strong>, and holds leave, open shift and swap requests together. The frontend leave page and the <code>[empr_leave]</code> shortcode are unchanged.</div>
       </div>
       <div class="table-wrap">
@@ -1833,7 +1837,7 @@
         </table>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">Hour limit flags are advisory only they do not prevent a manager from scheduling an employee beyond their threshold. Thresholds apply to <em>scheduled</em> hours (shift duration), not to <em>worked</em> hours from clock-in/out records.</div>
       </div>
     </article>
@@ -1923,7 +1927,7 @@
         </table>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The public roster view displays the same week and month views available to logged-in users but with all editing and management actions removed. Employee names and shift details are visible to anyone who can reach the page consider placing it behind a password-protected page if unrestricted public exposure is not intended.</div>
       </div>
       <p>See <em>Public Roster Shortcode</em> in the Frontend Portal section for full usage details.</p>
@@ -1992,8 +1996,8 @@
         <li><strong>The shift record itself is untouched</strong> hours, notes and assignments are unaffected</li>
       </ul>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body">Auto-deletion is permanent. If you need to retain job sheet files for compliance or record-keeping, download and archive them externally before the configured retention period expires, or set the policy to <strong>Never</strong>.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span>Auto-deletion is permanent. If you need to retain job sheet files for compliance or record-keeping, download and archive them externally before the configured retention period expires, or set the policy to <strong>Never</strong>.</div>
       </div>
     </article>
 
@@ -2024,7 +2028,7 @@
       <span class="plan-badge plan-starter">Starter+</span>
       <p>Profile Mode is an access control feature that prevents employees and supervisors from logging into WordPress while still allowing them to receive email notifications. It requires the <strong>Starter plan or above</strong>; on the free version there is no login restriction and everyone can log in.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">The setting is labelled <strong>Allow Employees and Supervisors to Log In</strong>. New installations start with it switched <strong>off</strong> so if you want your team to be able to sign in, turn it on.</div>
       </div>
       <h2>Use case</h2>
@@ -2037,8 +2041,8 @@
         <li>Email notifications continue to fire normally; they are triggered server-side by manager actions and do not require employees to be logged in.</li>
       </ul>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Session termination is immediate.</strong> Any employee or supervisor who is actively using the WordPress admin when Profile Mode is enabled will be logged out instantly. Communicate this change to affected staff before enabling it.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span><strong>Session termination is immediate.</strong> Any employee or supervisor who is actively using the WordPress admin when Profile Mode is enabled will be logged out instantly. Communicate this change to affected staff before enabling it.</div>
       </div>
       <p>An amber warning banner is displayed on the Settings page while Profile Mode is active as a persistent visual reminder for admins and managers.</p>
       <h2>Plan downgrade behaviour</h2>
@@ -2055,8 +2059,8 @@
         <li>Click <strong>Save Settings</strong>.</li>
       </ol>
       <div class="callout callout-warn">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-body"><strong>Saving triggers immediate session termination.</strong> All active WordPress sessions for users with the <code>emr_employee</code> or <code>emr_supervisor</code> role are ended the moment settings are saved. Inform affected staff before making this change.</div>
+        <span class="callout-icon" aria-hidden="true">⚠️</span>
+        <div class="callout-body"><span class="sr-only">Warning: </span><strong>Saving triggers immediate session termination.</strong> All active WordPress sessions for users with the <code>emr_employee</code> or <code>emr_supervisor</code> role are ended the moment settings are saved. Inform affected staff before making this change.</div>
       </div>
       <h2>Restoring employee login</h2>
       <p>Switch <strong>Allow Employees and Supervisors to Log In</strong> back on and save. Employees and supervisors can log into WordPress normally again immediately, and the amber warning banner on the Settings page disappears.</p>
@@ -2117,7 +2121,7 @@
         </table>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body">WordPress Administrator login events are not tracked by this feature. The log covers only accounts with the <code>emr_employee</code>, <code>emr_supervisor</code>, or <code>emr_manager</code> role.</div>
       </div>
     </article>
@@ -2132,7 +2136,7 @@
       <p>A separate <strong>free version</strong> is available on <a href="https://wordpress.org/plugins/employee-roster/">WordPress.org</a>. It is a complete scheduling tool: unlimited employees, departments, locations, and shifts, with day, weekly, and monthly roster views, staff availability and email notifications. Staff are managed directly from your WordPress Administrator account. The "Free" column below describes that version.</p>
       <p>On the paid plans, features above your tier display an upgrade prompt rather than a broken or missing control. In the free version, features that are not included are simply absent no upgrade prompts are shown to your staff.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>Business and Professional include the same features.</strong> Business covers more sites per licence (5 instead of 1) there is no Business-only functionality.</div>
       </div>
       <div class="table-wrap">
@@ -2200,15 +2204,15 @@
       </div>
       <p style="font-size:.85rem;color:var(--muted);margin:6px 0 18px;">* On the Starter plan, attempting to create or promote a Roster Manager returns <em>"The Manager role requires a Professional plan."</em> Instead, include your own WordPress administrator account in the roster as a Manager via <strong>Settings &gt; Roles &amp; Permissions &gt; Admin Visibility</strong>; there is no cap on how many administrator accounts can be included that way. Managers created while on Professional keep the role if the site later drops to Starter.</p>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>Only a WordPress administrator</strong> can create, promote, demote or deactivate a Manager account, or reset a manager's password this prevents one manager locking out another. Nobody can change their own role.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>Existing staff are retained on downgrade.</strong> If a site downgrades to a lower plan, existing staff accounts are not deleted and continue working normally.</div>
       </div>
       <div class="callout callout-note">
-        <span class="callout-icon">📋</span>
+        <span class="callout-icon" aria-hidden="true">📋</span>
         <div class="callout-body"><strong>Upgrading restores all configuration immediately.</strong> If settings such as extra departments, locations, or plan-gated features were previously configured and then limited by a plan downgrade, they take effect again automatically the moment the site upgrades back with no manual re-enabling needed.</div>
       </div>
     </article>
