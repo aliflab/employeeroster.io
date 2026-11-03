@@ -120,7 +120,7 @@ components:
 
 The site looks like a well-run staff board: organised rows, calm colours, and one teal marker that points at what matters. Deep Harbour Navy frames every page top and bottom (nav bar and footer), cool Harbour Mist bands separate sections, and white cards and tables carry the content. Teal is the only accent, and it marks the things a visitor should act on or notice: buttons, active links, plan badges, ticks.
 
-The feel is friendly and dependable. Corners are soft, motion is a gentle lift, and nothing shouts. It is aimed at small-business owners, not developers, so the system leans on familiar patterns (sticky nav, card grid, comparison table, three pricing cards) and keeps them tidy rather than inventing new ones. The same tokens are copied into all three surfaces: landing page, docs and blog.
+The feel is friendly and dependable. Corners are soft, motion is a gentle lift, and nothing shouts. It is aimed at small-business owners, not developers, so the system leans on familiar patterns (sticky nav, card grid, comparison table, three pricing cards) and keeps them tidy rather than inventing new ones. The tokens live once, in `assets/site.css`, shared by the landing page, docs and blog.
 
 **Key Characteristics:**
 - Navy frame, mist bands, white content surfaces, one teal accent.
@@ -252,10 +252,10 @@ Flex row with an emoji icon and body text in navy at 0.9rem. Default: 7% teal ti
 - **Do** alternate white and Harbour Mist sections, separated by 1px Tide Line borders.
 - **Do** colour headings and `strong` text Deep Harbour Navy and running copy Slate Muted.
 - **Do** keep comparison data in the navy-header table with ✓ / ✗ and `cell-note` caveats.
-- **Do** copy the shared `:root` token block exactly when adding a page; landing, docs and blog all use the same values.
+- **Do** link `assets/site.css` and `assets/site.js` from every new page instead of redefining tokens; landing, docs and blog all use the same values.
 - **Do** keep hover motion small: 1px lift for buttons, 2px plus teal glow for cards, and drop the lift under `prefers-reduced-motion`.
 - **Do** put navy text on teal fills, Teal Ink for teal text on light surfaces, and Teal Light for teal text on navy.
-- **Do** copy the shared accessibility block (focus ring, selection colour, skip link, mobile nav, reduced motion) into any new page.
+- **Do** rely on `assets/site.css` for the focus ring, selection colour, skip link, mobile nav and reduced motion; don't re-declare them per page.
 
 ### Don't:
 - **Don't** introduce a second accent colour; tier buttons stay teal regardless of their class names.

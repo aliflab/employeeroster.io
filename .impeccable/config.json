@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "blog/best-wordpress-employee-scheduling-plugins-2026.html"
+        ],
+        "createdAt": "2026-11-03T05:04:55.006Z",
+        "reason": "Claude triage: .table-card is a rounded border wrapper with overflow hidden; text sits in table cells with 11px 18px padding, so nothing is flush against the border"
+      }
+    ]
+  }
+}
